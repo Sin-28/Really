@@ -26,7 +26,7 @@ from src.recipes.ingredient_parser import (  # noqa: E402
 
 DATASET_NAME = "Food.com Recipes and Reviews (Kaggle)"
 DATASET_URL = "https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews"
-DATASET_VERSION = "irkaal-foodcom-recipes-and-reviews-v3"
+DATASET_VERSION = "irkaal-foodcom-recipes-and-reviews-v4"
 BATCH_SIZE = 5000
 REFERENCE_BATCH_SIZE = 5000
 REQUIRED_COLUMNS = {
@@ -71,6 +71,18 @@ def _source_strings(values):
     return [None if value is None else str(value) for value in values]
 
 
+def _has_complete_quantity_labels(ingredients, quantities):
+    missing_values = {"", "nan", "na", "null", "none", "character(0)"}
+    return (
+        bool(ingredients)
+        and len(ingredients) == len(quantities)
+        and all(
+            quantity is not None and str(quantity).strip().casefold() not in missing_values
+            for quantity in quantities
+        )
+    )
+
+
 def _optional_source_text(value):
     if value is None:
         return None
@@ -95,6 +107,8 @@ def _recipe_row(raw):
     ingredients = [str(value) for value in _list_field(raw.get("RecipeIngredientParts"))
                    if value is not None and str(value).strip()]
     quantities = _source_strings(_list_field(raw.get("RecipeIngredientQuantities")))
+    if not _has_complete_quantity_labels(ingredients, quantities):
+        return None
     instructions = [str(value) for value in _list_field(raw.get("RecipeInstructions"))
                     if value is not None and str(value).strip()]
     keywords = [str(value) for value in _list_field(raw.get("Keywords"))
@@ -166,6 +180,7 @@ def _recipe_row(raw):
         "foodcom_tags": keywords,
         "foodcom_ingredient_names": ingredients,
         "foodcom_dataset_version": DATASET_VERSION,
+        "foodcom_quantities_complete": True,
         "foodcom_servings_raw": servings_raw,
         "details_json": json.dumps(details, ensure_ascii=False, separators=(",", ":")),
         "servings": servings,
@@ -226,6 +241,7 @@ def _delete_obsolete_records(session, batch_size=BATCH_SIZE):
         result = session.run(
             "MATCH (recipe:FoodComRecipe) "
             "WHERE coalesce(recipe.foodcom_dataset_version, '') <> $dataset_version "
+            "OR coalesce(recipe.foodcom_quantities_complete, false) <> true "
             "WITH recipe LIMIT $batch_size "
             "DETACH DELETE recipe RETURN count(*) AS deleted",
             dataset_version=DATASET_VERSION, batch_size=batch_size,
@@ -249,7 +265,8 @@ def import_recipes(driver, database, csv_path, limit=None, resume=False):
 
     recipes = []
     references = []
-    imported = skipped = skipped_existing = rows_seen = 0
+    imported = invalid_rows_skipped = incomplete_quantity_rows_skipped = 0
+    skipped_existing = rows_seen = 0
     opener = gzip.open if csv_path.suffix.casefold() == ".gz" else open
     with opener(csv_path, "rt", encoding="utf-8-sig", newline="") as source:
         reader = csv.DictReader(source)
@@ -285,9 +302,13 @@ def import_recipes(driver, database, csv_path, limit=None, resume=False):
                 if resume and source_id in existing_source_ids:
                     skipped_existing += 1
                     continue
+                name = " ".join(str(raw.get("Name") or "").split())
+                if not source_id or not name:
+                    invalid_rows_skipped += 1
+                    continue
                 row = _recipe_row(raw)
                 if row is None:
-                    skipped += 1
+                    incomplete_quantity_rows_skipped += 1
                     continue
                 recipes.append({"id": row["id"], "properties": row["properties"]})
                 references.extend(row["references"])
@@ -320,7 +341,8 @@ def import_recipes(driver, database, csv_path, limit=None, resume=False):
             ).consume()
 
     return {"recipes_imported_or_updated": imported,
-            "invalid_rows_skipped": skipped,
+            "invalid_rows_skipped": invalid_rows_skipped,
+            "recipes_without_complete_quantity_labels_skipped": incomplete_quantity_rows_skipped,
             "complete_records_skipped_on_resume": skipped_existing,
             "obsolete_foodcom_recipes_removed": deleted,
             "source_rows_read": rows_seen}
