@@ -1,0 +1,750 @@
+[
+  {
+    "model": "Qwen/Qwen3-0.6B",
+    "model_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "runtime": {
+      "python": "3.10.21",
+      "torch": "2.14.0",
+      "transformers": "5.17.0",
+      "huggingface_hub": "1.31.0",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "catalog_sha256": "d40b166e585f6ce2075e1cdcf7d541fa6f4178cb1b1b8d213dff5d723a3d6287",
+      "benchmark_sha256": "8081707e74085fcf732282a2853e5ad1d2729238983612d9070aeb265f2dc61f",
+      "test_cases": 6,
+      "warmup_calls": 1,
+      "response_review_cases": 3,
+      "method_cases": 2,
+      "decoding": {
+        "do_sample": false,
+        "max_new_tokens_plan": 420,
+        "max_new_tokens_response": 220,
+        "max_new_tokens_method": 180
+      },
+      "clinical_numeric_limits_passed_to_planner": false
+    },
+    "raw_outputs": [
+      {
+        "case_id": "D04",
+        "query": "Modify nasi lemak for an adult with diabetes, keeping the meal practical.",
+        "raw_plan": {
+          "intent": "composition_question",
+          "recipe_requests": [
+            {
+              "slot": "prototype composition",
+              "recipe_id": "shrimp_broccoli_rice_bowl",
+              "query": "shrimp, broccoli, rice"
+            }
+          ],
+          "ingredient_queries": [],
+          "composition_ingredients": [
+            {
+              "query": "shrimp",
+              "amount_g": 40
+            },
+            {
+              "query": "broccoli",
+              "amount_g": 40
+            },
+            {
+              "query": "rice",
+              "amount_g": 40
+            }
+          ],
+          "original_ingredient_query": "shrimp",
+          "substitute_ingredient_query": "broccoli",
+          "recipe_query": "shrimp_broccoli_rice_bowl",
+          "requested_count": 1,
+          "question_type": "composition_question"
+        },
+        "evidence": {
+          "lookup_status": "FOUND",
+          "recipe_id": "shrimp_broccoli_rice_bowl",
+          "recipe_name": "Shrimp, broccoli and rice bowl (prototype composition)",
+          "ingredients_per_serving": [
+            {
+              "name": "White rice, raw",
+              "amount_g": 40.0
+            },
+            {
+              "name": "Shrimp, raw",
+              "amount_g": 80.0
+            },
+            {
+              "name": "Broccoli, raw",
+              "amount_g": 60.0
+            },
+            {
+              "name": "Red bell pepper, raw",
+              "amount_g": 30.0
+            }
+          ],
+          "nutrients_per_serving": {
+            "sodium_mg": 401.7848,
+            "potassium_mg": 395.41999999999996,
+            "phosphorus_mg": 244.17999999999998,
+            "protein_g": 17.1068,
+            "carbohydrate_g": 38.26499999999999
+          },
+          "active_limits": {},
+          "constraint_status": "NOT_EVALUATED_NO_EXPLICIT_LIMITS"
+        },
+        "response": "The meal is ready and meets the requirements for an adult with diabetes. The recipe includes shrimp, broccoli, and rice, with appropriate amounts. The nutrients and constraints are all satisfied.",
+        "response_error": null,
+        "planning_error": null,
+        "raw_recipe_ids": [
+          "shrimp_broccoli_rice_bowl"
+        ]
+      },
+      {
+        "case_id": "R04",
+        "query": "Modify fish soup to better fit my haemodialysis diet without changing the dish too much.",
+        "raw_plan": {
+          "intent": "composition_question",
+          "recipe_requests": [
+            {
+              "slot": "optional meal label",
+              "recipe_id": "fish_soup",
+              "query": "fish soup"
+            }
+          ],
+          "ingredient_queries": [],
+          "composition_ingredients": [
+            {
+              "query": "fish soup",
+              "amount_g": 40
+            }
+          ],
+          "original_ingredient_query": "fish soup",
+          "substitute_ingredient_query": null,
+          "recipe_query": "fish_soup",
+          "requested_count": 1,
+          "question_type": "composition_question"
+        },
+        "evidence": {
+          "lookup_status": "FOUND",
+          "recipe_id": "fish_soup",
+          "recipe_name": "Tilapia and bok choy soup (prototype serving)",
+          "ingredients_per_serving": [
+            {
+              "name": "Tilapia, raw",
+              "amount_g": 100.0
+            },
+            {
+              "name": "Bok choy, raw",
+              "amount_g": 60.0
+            },
+            {
+              "name": "Scallion, raw",
+              "amount_g": 5.0
+            }
+          ],
+          "nutrients_per_serving": {
+            "sodium_mg": 102.7775,
+            "potassium_mg": 490.40000000000003,
+            "phosphorus_mg": 178.69500000000002,
+            "protein_g": 19.645449999999997
+          },
+          "active_limits": {},
+          "constraint_status": "NOT_EVALUATED_NO_EXPLICIT_LIMITS"
+        },
+        "response": "The fish soup recipe is available and meets the requirements for a haemodialysis diet. It contains the following ingredients:\n\n- **Tilapia, raw**: 100.0 g  \n- **Bok choy, raw**: 60.0 g  \n- **Scallion, raw**: 5.0 g  \n\nThe dish provides the following nutrients per serving:\n- Sodium: 102.7775 mg  \n- Potassium: 490.4 mg  \n- Phosphorus: 178.695 mg  \n- Protein: 19.645 g  \n\nThe recipe is **not evaluated** for any explicit limits, and the ingredients are **available**. No substitutions or changes are needed to the dish.",
+        "response_error": null,
+        "planning_error": null,
+        "raw_recipe_ids": [
+          "fish_soup"
+        ]
+      },
+      {
+        "case_id": "H02",
+        "query": "Make a lower-sodium version of chicken rice for hypertension.",
+        "raw_plan": {
+          "intent": "composition_question",
+          "recipe_requests": [
+            {
+              "slot": "optional meal label",
+              "recipe_id": "brown_chicken_rice",
+              "query": "brown chicken rice"
+            }
+          ],
+          "ingredient_queries": [],
+          "composition_ingredients": [
+            {
+              "query": "chicken rice",
+              "amount_g": 40
+            }
+          ],
+          "original_ingredient_query": "chicken rice",
+          "substitute_ingredient_query": null,
+          "recipe_query": "brown_chicken_rice",
+          "requested_count": 1,
+          "question_type": "composition_question"
+        },
+        "evidence": {
+          "lookup_status": "FOUND",
+          "recipe_id": "brown_chicken_rice",
+          "recipe_name": "Brown chicken rice (prototype serving)",
+          "ingredients_per_serving": [
+            {
+              "name": "White rice, raw",
+              "amount_g": 40.0
+            },
+            {
+              "name": "Chicken breast, cooked",
+              "amount_g": 80.0
+            },
+            {
+              "name": "Bok choy, raw",
+              "amount_g": 60.0
+            }
+          ],
+          "nutrients_per_serving": {
+            "sodium_mg": 46.3648,
+            "potassium_mg": 444.12,
+            "phosphorus_mg": 254.3,
+            "protein_g": 29.107999999999997,
+            "carbohydrate_g": 34.226
+          },
+          "active_limits": {},
+          "constraint_status": "NOT_EVALUATED_NO_EXPLICIT_LIMITS"
+        },
+        "response": "The lower-sodium version of chicken rice for hypertension can be made by replacing the original chicken breast with a lower-sodium option, such as a chicken breast with less sodium. The ingredients required are:\n\n- White rice (40 g)\n- Chicken breast (80 g, lower sodium)\n- Bok choy (60 g)\n\nNutrients per serving:\n- Sodium: 46.4 mg (lowered)\n- Potassium: 444 mg\n- Phosphorus: 254 mg\n- Protein: 29.1 g\n- Carbohydrate: 34.2 g\n\nThe recipe is available for use and meets the hypertension condition. No explicit limits were found for the ingredients.",
+        "response_error": null,
+        "planning_error": null,
+        "raw_recipe_ids": [
+          "brown_chicken_rice"
+        ]
+      },
+      {
+        "case_id": "D11",
+        "query": "Improve sandwich for diabetes while preserving the original dish and avoiding unnecessary changes.",
+        "raw_plan": {
+          "intent": "composition_question",
+          "recipe_requests": [
+            {
+              "slot": "prototype composition",
+              "recipe_id": "shrimp_broccoli_rice_bowl",
+              "query": "shrimp, broccoli, rice"
+            }
+          ],
+          "ingredient_queries": [],
+          "composition_ingredients": [
+            {
+              "query": "shrimp",
+              "amount_g": 1
+            },
+            {
+              "query": "broccoli",
+              "amount_g": 1
+            },
+            {
+              "query": "rice",
+              "amount_g": 1
+            }
+          ],
+          "original_ingredient_query": "shrimp",
+          "substitute_ingredient_query": "broccoli",
+          "recipe_query": "shrimp_broccoli_rice_bowl",
+          "requested_count": 1,
+          "question_type": "composition_question"
+        },
+        "evidence": {
+          "lookup_status": "FOUND",
+          "recipe_id": "shrimp_broccoli_rice_bowl",
+          "recipe_name": "Shrimp, broccoli and rice bowl (prototype composition)",
+          "ingredients_per_serving": [
+            {
+              "name": "White rice, raw",
+              "amount_g": 40.0
+            },
+            {
+              "name": "Shrimp, raw",
+              "amount_g": 80.0
+            },
+            {
+              "name": "Broccoli, raw",
+              "amount_g": 60.0
+            },
+            {
+              "name": "Red bell pepper, raw",
+              "amount_g": 30.0
+            }
+          ],
+          "nutrients_per_serving": {
+            "sodium_mg": 401.7848,
+            "potassium_mg": 395.41999999999996,
+            "phosphorus_mg": 244.17999999999998,
+            "protein_g": 17.1068,
+            "carbohydrate_g": 38.26499999999999
+          },
+          "active_limits": {},
+          "constraint_status": "NOT_EVALUATED_NO_EXPLICIT_LIMITS"
+        },
+        "response": "",
+        "response_error": null,
+        "planning_error": null,
+        "raw_recipe_ids": [
+          "shrimp_broccoli_rice_bowl"
+        ]
+      },
+      {
+        "case_id": "M14",
+        "query": "Make curry rice fit both my diabetes and hypertension meal plan.",
+        "raw_plan": {
+          "intent": "composition_question",
+          "recipe_requests": [
+            {
+              "slot": "optional meal label",
+              "recipe_id": "brown_chicken_rice",
+              "query": "brown chicken rice"
+            }
+          ],
+          "ingredient_queries": [],
+          "composition_ingredients": [
+            {
+              "query": "brown chicken rice",
+              "amount_g": 40
+            }
+          ],
+          "original_ingredient_query": "brown chicken rice",
+          "substitute_ingredient_query": null,
+          "recipe_query": "brown_chicken_rice",
+          "requested_count": 1,
+          "question_type": "composition_question"
+        },
+        "evidence": {
+          "lookup_status": "FOUND",
+          "recipe_id": "brown_chicken_rice",
+          "recipe_name": "Brown chicken rice (prototype serving)",
+          "ingredients_per_serving": [
+            {
+              "name": "White rice, raw",
+              "amount_g": 40.0
+            },
+            {
+              "name": "Chicken breast, cooked",
+              "amount_g": 80.0
+            },
+            {
+              "name": "Bok choy, raw",
+              "amount_g": 60.0
+            }
+          ],
+          "nutrients_per_serving": {
+            "sodium_mg": 46.3648,
+            "potassium_mg": 444.12,
+            "phosphorus_mg": 254.3,
+            "protein_g": 29.107999999999997,
+            "carbohydrate_g": 34.226
+          },
+          "active_limits": {},
+          "constraint_status": "NOT_EVALUATED_NO_EXPLICIT_LIMITS"
+        },
+        "response": "",
+        "response_error": null,
+        "planning_error": null,
+        "raw_recipe_ids": [
+          "brown_chicken_rice"
+        ]
+      },
+      {
+        "case_id": "R14",
+        "query": "Make sandwich suitable for a haemodialysis patient while keeping it realistic and recognizable.",
+        "raw_plan": {
+          "intent": "composition_question",
+          "recipe_requests": [
+            {
+              "slot": "prototype composition",
+              "recipe_id": "shrimp_broccoli_rice_bowl",
+              "query": "shrimp rice bowl"
+            }
+          ],
+          "ingredient_queries": [],
+          "composition_ingredients": [
+            {
+              "query": "shrimp",
+              "amount_g": 1
+            },
+            {
+              "query": "broccoli",
+              "amount_g": 1
+            }
+          ],
+          "original_ingredient_query": "shrimp",
+          "substitute_ingredient_query": "broccoli",
+          "recipe_query": "shrimp_broccoli_rice_bowl",
+          "requested_count": 1,
+          "question_type": "composition_question"
+        },
+        "evidence": {
+          "lookup_status": "FOUND",
+          "recipe_id": "shrimp_broccoli_rice_bowl",
+          "recipe_name": "Shrimp, broccoli and rice bowl (prototype composition)",
+          "ingredients_per_serving": [
+            {
+              "name": "White rice, raw",
+              "amount_g": 40.0
+            },
+            {
+              "name": "Shrimp, raw",
+              "amount_g": 80.0
+            },
+            {
+              "name": "Broccoli, raw",
+              "amount_g": 60.0
+            },
+            {
+              "name": "Red bell pepper, raw",
+              "amount_g": 30.0
+            }
+          ],
+          "nutrients_per_serving": {
+            "sodium_mg": 401.7848,
+            "potassium_mg": 395.41999999999996,
+            "phosphorus_mg": 244.17999999999998,
+            "protein_g": 17.1068,
+            "carbohydrate_g": 38.26499999999999
+          },
+          "active_limits": {},
+          "constraint_status": "NOT_EVALUATED_NO_EXPLICIT_LIMITS"
+        },
+        "response": "",
+        "response_error": null,
+        "planning_error": null,
+        "raw_recipe_ids": [
+          "shrimp_broccoli_rice_bowl"
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "recipe_id": "banana_soymilk_oatmeal",
+        "recipe_name": "Banana and soy milk oats (prototype composition)",
+        "passed": false,
+        "issues": [
+          "Method contains an ingredient amount that was not in the validated composition"
+        ],
+        "latency_ms": 2388.17,
+        "method": "1. Combine 40 g of rolled oats with 120 g of unsweetened soy milk in a bowl.  \n2. Add 50 g of ripe banana, ripe and raw, and stir until the oats are fully incorporated.  \n3. Top with the banana and serve.",
+        "error": null
+      },
+      {
+        "recipe_id": "berry_yogurt_bowl",
+        "recipe_name": "Berry and Greek yogurt bowl (prototype composition)",
+        "passed": false,
+        "issues": [
+          "Method contains an ingredient amount that was not in the validated composition"
+        ],
+        "latency_ms": 1581.57,
+        "method": "1. Combine 150 g of plain Greek yogurt and 50 g of strawberries, 50 g of blueberries.  \n2. Serve the mixture at room temperature.",
+        "error": null
+      }
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "model_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "runtime": {
+      "python": "3.10.21",
+      "torch": "2.14.0",
+      "transformers": "5.17.0",
+      "huggingface_hub": "1.31.0",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "catalog_sha256": "d40b166e585f6ce2075e1cdcf7d541fa6f4178cb1b1b8d213dff5d723a3d6287",
+      "benchmark_sha256": "c7e16762eab3d7ab8aeec72bfb80773fb4e7750e19af912befbd41fff4c23fea",
+      "test_cases": 6,
+      "warmup_calls": 1,
+      "response_review_cases": 3,
+      "method_cases": 2,
+      "decoding": {
+        "do_sample": false,
+        "max_new_tokens_plan": 420,
+        "max_new_tokens_response": 220,
+        "max_new_tokens_method": 180
+      },
+      "clinical_numeric_limits_passed_to_planner": false
+    },
+    "raw_outputs": [
+      {
+        "case_id": "D04",
+        "query": "Modify nasi lemak for an adult with diabetes, keeping the meal practical.",
+        "raw_plan": {
+          "intent": "single_recipe",
+          "recipe_requests": [
+            {
+              "slot": "optional meal label",
+              "recipe_id": null,
+              "query": "modify nasi lemak for an adult with diabetes"
+            }
+          ],
+          "ingredient_queries": [
+            "nasi lemak",
+            "diabetes"
+          ],
+          "composition_ingredients": [
+            {
+              "query": "nasi lemak",
+              "amount_g": 40
+            }
+          ],
+          "original_ingredient_query": "nasi lemak",
+          "substitute_ingredient_query": null,
+          "recipe_query": null,
+          "requested_count": 1,
+          "question_type": "recipe"
+        },
+        "evidence": {
+          "lookup_status": "NO_MATCHING_LOCAL_RECIPE",
+          "active_limits": {}
+        },
+        "response": "No local recipe matching \"nasi lemak\" for an adult with diabetes was found. Please provide a specific recipe or adjust the recipe parameters to find a suitable option.",
+        "response_error": null,
+        "planning_error": null,
+        "raw_recipe_ids": []
+      },
+      {
+        "case_id": "R04",
+        "query": "Modify fish soup to better fit my haemodialysis diet without changing the dish too much.",
+        "raw_plan": {
+          "intent": "single_recipe",
+          "recipe_requests": [
+            {
+              "slot": "optional meal label",
+              "recipe_id": "fish_soup",
+              "query": "Tilapia and bok choy soup"
+            }
+          ],
+          "ingredient_queries": [
+            "bok choy",
+            "tilapia"
+          ],
+          "composition_ingredients": [
+            {
+              "query": "bok choy",
+              "amount_g": 40
+            },
+            {
+              "query": "tilapia",
+              "amount_g": 40
+            }
+          ],
+          "original_ingredient_query": "bok choy",
+          "substitute_ingredient_query": null,
+          "recipe_query": "fish_soup",
+          "requested_count": 1,
+          "question_type": "recipe"
+        },
+        "evidence": {
+          "lookup_status": "FOUND",
+          "recipe_id": "fish_soup",
+          "recipe_name": "Tilapia and bok choy soup (prototype serving)",
+          "ingredients_per_serving": [
+            {
+              "name": "Tilapia, raw",
+              "amount_g": 100.0
+            },
+            {
+              "name": "Bok choy, raw",
+              "amount_g": 60.0
+            },
+            {
+              "name": "Scallion, raw",
+              "amount_g": 5.0
+            }
+          ],
+          "nutrients_per_serving": {
+            "sodium_mg": 102.7775,
+            "potassium_mg": 490.40000000000003,
+            "phosphorus_mg": 178.69500000000002,
+            "protein_g": 19.645449999999997
+          },
+          "active_limits": {},
+          "constraint_status": "NOT_EVALUATED_NO_EXPLICIT_LIMITS"
+        },
+        "response": "The recipe for Tilapia and bok choy soup (prototype serving) contains 100 g of tilapia and 60 g of bok choy per serving. The nutrient profile includes 19.645 g of protein, 102.78 mg of sodium, 490.40 mg of potassium, and 178.69 mg of phosphorus. \n\nThe sodium content (102.78 mg) is within the typical range for a haemodialysis diet, but if you are on a low-sodium diet, you may want to consider reducing the sodium content. The potassium content (490.40 mg) is also within the normal range, but if you are on a low-potassium diet, you may want to adjust the recipe accordingly. The phosphorus content (178.69 mg) is also within the normal range, but if you are on a low-phosphorus diet, you may want to adjust the recipe.\n\nNo substitutions are required for the",
+        "response_error": null,
+        "planning_error": null,
+        "raw_recipe_ids": [
+          "fish_soup"
+        ]
+      },
+      {
+        "case_id": "H02",
+        "query": "Make a lower-sodium version of chicken rice for hypertension.",
+        "raw_plan": {
+          "intent": "single_recipe",
+          "recipe_requests": [
+            {
+              "slot": "optional meal label",
+              "recipe_id": "brown_chicken_rice",
+              "query": "lower-sodium chicken rice for hypertension"
+            }
+          ],
+          "ingredient_queries": [],
+          "composition_ingredients": [],
+          "original_ingredient_query": null,
+          "substitute_ingredient_query": null,
+          "recipe_query": "brown_chicken_rice",
+          "requested_count": 1,
+          "question_type": "recipe"
+        },
+        "evidence": {
+          "lookup_status": "FOUND",
+          "recipe_id": "brown_chicken_rice",
+          "recipe_name": "Brown chicken rice (prototype serving)",
+          "ingredients_per_serving": [
+            {
+              "name": "White rice, raw",
+              "amount_g": 40.0
+            },
+            {
+              "name": "Chicken breast, cooked",
+              "amount_g": 80.0
+            },
+            {
+              "name": "Bok choy, raw",
+              "amount_g": 60.0
+            }
+          ],
+          "nutrients_per_serving": {
+            "sodium_mg": 46.3648,
+            "potassium_mg": 444.12,
+            "phosphorus_mg": 254.3,
+            "protein_g": 29.107999999999997,
+            "carbohydrate_g": 34.226
+          },
+          "active_limits": {},
+          "constraint_status": "NOT_EVALUATED_NO_EXPLICIT_LIMITS"
+        },
+        "response": "The recipe for brown chicken rice (prototype serving) contains 46.3648 mg of sodium per serving. To make a lower-sodium version for hypertension, you can reduce the sodium content by adjusting the ingredients or using substitutes. However, the current recipe does not provide specific details on how to lower the sodium content. If no substitutions are available, the sodium level in the recipe is already relatively low, and further adjustments may not be necessary. For a more precise lower-sodium version, additional information or modifications would be required.",
+        "response_error": null,
+        "planning_error": null,
+        "raw_recipe_ids": [
+          "brown_chicken_rice"
+        ]
+      },
+      {
+        "case_id": "D11",
+        "query": "Improve sandwich for diabetes while preserving the original dish and avoiding unnecessary changes.",
+        "raw_plan": {
+          "intent": "single_recipe",
+          "recipe_requests": [
+            {
+              "slot": "optional meal label",
+              "recipe_id": null,
+              "query": "Brown chicken rice"
+            }
+          ],
+          "ingredient_queries": [],
+          "composition_ingredients": [],
+          "original_ingredient_query": null,
+          "substitute_ingredient_query": null,
+          "recipe_query": null,
+          "requested_count": 1,
+          "question_type": "recipe"
+        },
+        "evidence": {
+          "lookup_status": "FOUND",
+          "recipe_id": "brown_chicken_rice",
+          "recipe_name": "Brown chicken rice (prototype serving)",
+          "ingredients_per_serving": [
+            {
+              "name": "White rice, raw",
+              "amount_g": 40.0
+            },
+            {
+              "name": "Chicken breast, cooked",
+              "amount_g": 80.0
+            },
+            {
+              "name": "Bok choy, raw",
+              "amount_g": 60.0
+            }
+          ],
+          "nutrients_per_serving": {
+            "sodium_mg": 46.3648,
+            "potassium_mg": 444.12,
+            "phosphorus_mg": 254.3,
+            "protein_g": 29.107999999999997,
+            "carbohydrate_g": 34.226
+          },
+          "active_limits": {},
+          "constraint_status": "NOT_EVALUATED_NO_EXPLICIT_LIMITS"
+        },
+        "response": "",
+        "response_error": null,
+        "planning_error": null,
+        "raw_recipe_ids": []
+      },
+      {
+        "case_id": "M14",
+        "query": "Make curry rice fit both my diabetes and hypertension meal plan.",
+        "raw_plan": {
+          "slot": "optional meal label",
+          "recipe_id": "brown_chicken_rice",
+          "query": "curry rice"
+        },
+        "evidence": {
+          "lookup_status": "NO_MATCHING_LOCAL_RECIPE",
+          "active_limits": {}
+        },
+        "response": "",
+        "response_error": null,
+        "planning_error": null,
+        "raw_recipe_ids": []
+      },
+      {
+        "case_id": "R14",
+        "query": "Make sandwich suitable for a haemodialysis patient while keeping it realistic and recognizable.",
+        "raw_plan": {
+          "intent": "single_recipe",
+          "recipe_requests": [
+            {
+              "slot": "optional meal label",
+              "recipe_id": null,
+              "query": "realistic and recognizable sandwich suitable for a haemodialysis patient"
+            }
+          ],
+          "ingredient_queries": [],
+          "composition_ingredients": [],
+          "original_ingredient_query": null,
+          "substitute_ingredient_query": null,
+          "recipe_query": null,
+          "requested_count": 1,
+          "question_type": "recipe"
+        },
+        "evidence": {
+          "lookup_status": "NO_MATCHING_LOCAL_RECIPE",
+          "active_limits": {}
+        },
+        "response": "",
+        "response_error": null,
+        "planning_error": null,
+        "raw_recipe_ids": []
+      }
+    ],
+    "methods": [
+      {
+        "recipe_id": "banana_soymilk_oatmeal",
+        "recipe_name": "Banana and soy milk oats (prototype composition)",
+        "passed": false,
+        "issues": [
+          "Method contains an ingredient amount that was not in the validated composition"
+        ],
+        "latency_ms": 4578.32,
+        "method": "1. Combine 40 g rolled oats and 120 g unsweetened soy milk in a bowl. Mix well to ensure even distribution.  \n2. Add 50 g ripe banana and mix thoroughly.  \n3. Serve immediately as a nutritious breakfast.",
+        "error": null
+      },
+      {
+        "recipe_id": "berry_yogurt_bowl",
+        "recipe_name": "Berry and Greek yogurt bowl (prototype composition)",
+        "passed": false,
+        "issues": [
+          "Method mentions unvalidated ingredient: Yogurt, plain, nonfat"
+        ],
+        "latency_ms": 4184.06,
+        "method": "1. Combine Greek yogurt, plain, nonfat, and washed strawberries and blueberries.  \n2. Serve as a bowl without additional sweeteners or toppings.  \n3. Ensure proper food safety by handling and storing ingredients appropriately.",
+        "error": null
+      }
+    ]
+  }
+]

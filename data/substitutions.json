@@ -1,0 +1,15 @@
+[
+  {"original": "roasted_chicken_breast", "substitute": "firm_tofu", "compatibility": 0.72, "evidence": "Prototype culinary judgement; requires human review"},
+  {"original": "firm_tofu", "substitute": "roasted_chicken_breast", "compatibility": 0.62, "evidence": "Prototype culinary judgement; requires human review"},
+  {"original": "foundation_chicken_breast_braised", "substitute": "firm_tofu", "compatibility": 0.72, "evidence": "Prototype culinary judgement; requires human review"},
+  {"original": "firm_tofu", "substitute": "foundation_chicken_breast_braised", "compatibility": 0.62, "evidence": "Prototype culinary judgement; requires human review"},
+  {"original": "foundation_tilapia_raw", "substitute": "foundation_atlantic_salmon_raw", "compatibility": 0.75, "evidence": "Prototype culinary judgement; requires human review"},
+  {"original": "foundation_tilapia_raw", "substitute": "foundation_sockeye_salmon_raw", "compatibility": 0.75, "evidence": "Prototype culinary judgement; requires human review"},
+  {"original": "foundation_tilapia_raw", "substitute": "foundation_cod_raw", "compatibility": 0.88, "evidence": "Prototype culinary judgement; requires human review"},
+  {"original": "foundation_tilapia_raw", "substitute": "foundation_haddock_raw", "compatibility": 0.88, "evidence": "Prototype culinary judgement; requires human review"},
+  {"original": "foundation_tilapia_raw", "substitute": "foundation_catfish_raw", "compatibility": 0.78, "evidence": "Prototype culinary judgement; requires human review"},
+  {"original": "foundation_chicken_breast_braised", "substitute": "foundation_chicken_drumstick_braised", "compatibility": 0.82, "evidence": "Prototype culinary judgement; requires human review"},
+  {"original": "foundation_chicken_drumstick_braised", "substitute": "foundation_chicken_breast_braised", "compatibility": 0.82, "evidence": "Prototype culinary judgement; requires human review"},
+  {"original": "foundation_chickpeas_canned_rinsed", "substitute": "foundation_black_beans_canned_rinsed", "compatibility": 0.78, "evidence": "Prototype culinary judgement; requires human review"},
+  {"original": "foundation_black_beans_canned_rinsed", "substitute": "foundation_chickpeas_canned_rinsed", "compatibility": 0.78, "evidence": "Prototype culinary judgement; requires human review"}
+]

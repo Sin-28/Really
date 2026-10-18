@@ -1,0 +1,34 @@
+{
+  "cooked_white_rice": {
+    "name": "White rice, cooked",
+    "aliases": ["rice", "white rice", "cooked rice"],
+    "role": "grain",
+    "nutrients_per_100g": {"energy_kcal": 130, "sodium_mg": 1, "potassium_mg": 35, "phosphorus_mg": 43, "protein_g": 2.69, "carbohydrate_g": 28.17, "fiber_g": 0.4, "added_sugar_g": null, "saturated_fat_g": 0.077},
+    "typical_amount_g": 120, "min_amount_g": 60, "max_amount_g": 250,
+    "source": {"name": "USDA FoodData Central, SR Legacy", "fdc_id": 168878, "basis": "per 100 g cooked edible portion", "url": "https://api.nal.usda.gov/fdc/v1/food/168878?api_key=DEMO_KEY"}
+  },
+  "roasted_chicken_breast": {
+    "name": "Chicken breast, roasted",
+    "aliases": ["chicken", "roasted chicken", "chicken breast"],
+    "role": "protein",
+    "nutrients_per_100g": {"energy_kcal": 165, "sodium_mg": 74, "potassium_mg": 256, "phosphorus_mg": 228, "protein_g": 31.02, "carbohydrate_g": 0, "fiber_g": 0, "added_sugar_g": 0, "saturated_fat_g": 1.01},
+    "typical_amount_g": 80, "min_amount_g": 30, "max_amount_g": 180,
+    "source": {"name": "USDA FoodData Central, SR Legacy", "fdc_id": 171477, "basis": "per 100 g cooked edible portion", "url": "https://api.nal.usda.gov/fdc/v1/food/171477?api_key=DEMO_KEY"}
+  },
+  "firm_tofu": {
+    "name": "Firm tofu",
+    "aliases": ["tofu", "firm tofu", "bean curd"],
+    "role": "protein",
+    "nutrients_per_100g": {"energy_kcal": 78, "sodium_mg": 12, "potassium_mg": 148, "phosphorus_mg": 121, "protein_g": 9.04, "carbohydrate_g": 2.85, "fiber_g": 0.9, "added_sugar_g": null, "saturated_fat_g": 0.69},
+    "typical_amount_g": 120, "min_amount_g": 40, "max_amount_g": 200,
+    "source": {"name": "USDA FoodData Central, SR Legacy", "fdc_id": 172448, "basis": "per 100 g edible portion", "url": "https://api.nal.usda.gov/fdc/v1/food/172448?api_key=DEMO_KEY"}
+  },
+  "instant_ramen_dry_reference": {
+    "name": "Instant ramen soup, dry, generic (seasoning details unspecified)",
+    "aliases": ["instant ramen", "instant noodle", "instant noodles", "ramen", "ramen noodles"],
+    "role": "prepared_reference",
+    "nutrients_per_100g": {"energy_kcal": 440, "sodium_mg": 1855, "potassium_mg": 181, "phosphorus_mg": 115, "protein_g": 10.17, "carbohydrate_g": 60.26, "fiber_g": 2.9, "added_sugar_g": null, "saturated_fat_g": 8.117},
+    "typical_amount_g": 81, "min_amount_g": 30, "max_amount_g": 150,
+    "source": {"name": "USDA FoodData Central, SR Legacy (NDB 06583; Standard Reference Release 28)", "fdc_id": 171177, "basis": "per 100 g dry generic product; composition does not distinguish brand recipes or quantify seasoning use", "portion_reference": "USDA SR28 lists 81 g as one package without flavor packet", "url": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/SR/SR28/reports/sr28fg06.pdf"}
+  }
+}

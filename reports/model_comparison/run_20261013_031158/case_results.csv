@@ -1,0 +1,42 @@
+﻿model,case_id,dish,difficulty,disease_profile,expected_intent,predicted_intent,schema_valid,intent_correct,expected_recipe_ids,predicted_recipe_id,retrieval_score,routed_query,supported_hit_at_1,unsupported_abstained,route_correct,planning_latency_ms,response_evaluated,response_latency_ms,response,response_error,planning_error
+Qwen/Qwen3-0.6B,D04,Nasi lemak,Easy,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,1.25,shrimp_broccoli_rice_bowl,False,False,False,32028.61,True,1379.81,"The meal is ready and meets the requirements for an adult with diabetes. The recipe includes shrimp, broccoli, and rice, with appropriate amounts. The nutrients and constraints are all satisfied.",,
+Qwen/Qwen3-0.6B,R04,Fish soup,Easy,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,['fish_soup'],fish_soup,1.25,fish_soup,False,False,False,25719.77,True,4917.95,"The fish soup recipe is available and meets the requirements for a haemodialysis diet. It contains the following ingredients:
+
+- **Tilapia, raw**: 100.0 g  
+- **Bok choy, raw**: 60.0 g  
+- **Scallion, raw**: 5.0 g  
+
+The dish provides the following nutrients per serving:
+- Sodium: 102.7775 mg  
+- Potassium: 490.4 mg  
+- Phosphorus: 178.695 mg  
+- Protein: 19.645 g  
+
+The recipe is **not evaluated** for any explicit limits, and the ingredients are **available**. No substitutions or changes are needed to the dish.",,
+Qwen/Qwen3-0.6B,H02,Chicken rice,Easy,Hypertension / DASH,single_recipe,composition_question,True,False,['brown_chicken_rice'],brown_chicken_rice,1.25,brown_chicken_rice,False,False,False,27928.93,True,5190.81,"The lower-sodium version of chicken rice for hypertension can be made by replacing the original chicken breast with a lower-sodium option, such as a chicken breast with less sodium. The ingredients required are:
+
+- White rice (40 g)
+- Chicken breast (80 g, lower sodium)
+- Bok choy (60 g)
+
+Nutrients per serving:
+- Sodium: 46.4 mg (lowered)
+- Potassium: 444 mg
+- Phosphorus: 254 mg
+- Protein: 29.1 g
+- Carbohydrate: 34.2 g
+
+The recipe is available for use and meets the hypertension condition. No explicit limits were found for the ingredients.",,
+Qwen/Qwen3-0.6B,D11,Sandwich,Hard,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,1.25,shrimp_broccoli_rice_bowl,False,False,False,33795.87,False,,,,
+Qwen/Qwen3-0.6B,M14,Curry rice,Hard,Diabetes + Hypertension,single_recipe,composition_question,True,False,[],brown_chicken_rice,1.25,brown_chicken_rice,False,False,False,33617.43,False,,,,
+Qwen/Qwen3-0.6B,R14,Sandwich,Hard,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,1.25,shrimp_broccoli_rice_bowl,False,False,False,41953.98,False,,,,
+Qwen/Qwen3-1.7B,D04,Nasi lemak,Easy,Diabetes,single_recipe,single_recipe,True,True,[],,0.0,modify nasi lemak for an adult with diabetes,False,True,True,50151.82,True,2736.81,"No local recipe matching ""nasi lemak"" for an adult with diabetes was found. Please provide a specific recipe or adjust the recipe parameters to find a suitable option.",,
+Qwen/Qwen3-1.7B,R04,Fish soup,Easy,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,['fish_soup'],fish_soup,1.25,fish_soup,True,False,True,100198.45,True,15350.39,"The recipe for Tilapia and bok choy soup (prototype serving) contains 100 g of tilapia and 60 g of bok choy per serving. The nutrient profile includes 19.645 g of protein, 102.78 mg of sodium, 490.40 mg of potassium, and 178.69 mg of phosphorus. 
+
+The sodium content (102.78 mg) is within the typical range for a haemodialysis diet, but if you are on a low-sodium diet, you may want to consider reducing the sodium content. The potassium content (490.40 mg) is also within the normal range, but if you are on a low-potassium diet, you may want to adjust the recipe accordingly. The phosphorus content (178.69 mg) is also within the normal range, but if you are on a low-phosphorus diet, you may want to adjust the recipe.
+
+No substitutions are required for the",,
+Qwen/Qwen3-1.7B,H02,Chicken rice,Easy,Hypertension / DASH,single_recipe,single_recipe,True,True,['brown_chicken_rice'],brown_chicken_rice,1.25,brown_chicken_rice,True,False,True,75063.05,True,8837.73,"The recipe for brown chicken rice (prototype serving) contains 46.3648 mg of sodium per serving. To make a lower-sodium version for hypertension, you can reduce the sodium content by adjusting the ingredients or using substitutes. However, the current recipe does not provide specific details on how to lower the sodium content. If no substitutions are available, the sodium level in the recipe is already relatively low, and further adjustments may not be necessary. For a more precise lower-sodium version, additional information or modifications would be required.",,
+Qwen/Qwen3-1.7B,D11,Sandwich,Hard,Diabetes,single_recipe,single_recipe,True,True,[],brown_chicken_rice,1.18,Brown chicken rice,False,False,False,74353.09,False,,,,
+Qwen/Qwen3-1.7B,M14,Curry rice,Hard,Diabetes + Hypertension,single_recipe,,False,False,[],,0.0,Make curry rice fit both my diabetes and hypertension meal plan.,False,True,True,128529.73,False,,,,
+Qwen/Qwen3-1.7B,R14,Sandwich,Hard,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,[],,0.0,realistic and recognizable sandwich suitable for a haemodialysis patient,False,True,True,84647.49,False,,,,

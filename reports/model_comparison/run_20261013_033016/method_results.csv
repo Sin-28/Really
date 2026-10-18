@@ -1,0 +1,12 @@
+﻿model,recipe_id,recipe_name,passed,issues,latency_ms,method,error
+Qwen/Qwen3-0.6B,banana_soymilk_oatmeal,Banana and soy milk oats (prototype composition),False,['Method contains an ingredient amount that was not in the validated composition'],2246.22,"1. Combine 40 g of rolled oats with 120 g of unsweetened soy milk in a bowl.  
+2. Add 50 g of ripe banana, ripe and raw, and stir until the oats are fully incorporated.  
+3. Top with the banana and serve.",
+Qwen/Qwen3-0.6B,berry_yogurt_bowl,Berry and Greek yogurt bowl (prototype composition),False,['Method contains an ingredient amount that was not in the validated composition'],1256.47,"1. Combine 150 g of plain Greek yogurt and 50 g of strawberries, 50 g of blueberries.  
+2. Serve the mixture at room temperature.",
+Qwen/Qwen3-1.7B,banana_soymilk_oatmeal,Banana and soy milk oats (prototype composition),False,['Method contains an ingredient amount that was not in the validated composition'],4880.38,"1. Combine 40 g rolled oats and 120 g unsweetened soy milk in a bowl. Mix well to ensure even distribution.  
+2. Add 50 g ripe banana and mix thoroughly.  
+3. Serve immediately as a nutritious breakfast.",
+Qwen/Qwen3-1.7B,berry_yogurt_bowl,Berry and Greek yogurt bowl (prototype composition),False,"['Method mentions unvalidated ingredient: Yogurt, plain, nonfat']",3835.98,"1. Combine Greek yogurt, plain, nonfat, and washed strawberries and blueberries.  
+2. Serve as a bowl without additional sweeteners or toppings.  
+3. Ensure proper food safety by handling and storing ingredients appropriately.",

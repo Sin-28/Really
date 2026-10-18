@@ -1,0 +1,17 @@
+{
+  "dataset": "RenAlly final recipe acceptance controlled policy cases",
+  "evidence_class": "controlled_synthetic_step_outputs_not_real_recipe_nutrition_or_human_labels",
+  "human_label_status": "PENDING_REVIEW",
+  "cases": [
+    {"case_id": "C01", "title": "Ramen seasoning to seaweed only", "culinary_fixture_id": "B", "nutrition_status": "PASS", "culinary_status": "REVIEW_REQUIRED", "mapping_complete": true, "quantity_complete": true, "expected_final_status": "REVIEW_REQUIRED"},
+    {"case_id": "C02", "title": "Ramen seasoning to broth, seaweed, and garlic", "culinary_fixture_id": "C", "nutrition_status": "PASS", "culinary_status": "PASS", "mapping_complete": true, "quantity_complete": true, "expected_final_status": "ACCEPTED"},
+    {"case_id": "C03", "title": "Basil to parsley", "culinary_fixture_id": "A", "nutrition_status": "PASS", "culinary_status": "PASS", "mapping_complete": true, "quantity_complete": true, "expected_final_status": "ACCEPTED"},
+    {"case_id": "C04", "title": "Quantity-only modification with recalculation", "culinary_fixture_id": "I", "nutrition_status": "PASS", "culinary_status": "PASS", "mapping_complete": true, "quantity_complete": true, "expected_final_status": "ACCEPTED", "nutrient_recalculation_test": "tests.test_adapted_recipe_nutrition.AdaptedRecipeNutritionTests.test_step_5c_result_and_step_6a_pass_combine_to_acceptance"},
+    {"case_id": "C05", "title": "Preparation-state change requires remapping", "nutrition_status": "UNKNOWN", "culinary_status": "REVIEW_REQUIRED", "mapping_complete": false, "quantity_complete": true, "expected_final_status": "UNVERIFIED", "step5c_remapping_test": "tests.test_adapted_recipe_nutrition.AdaptedRecipeNutritionTests.test_food_state_change_forces_remapping_even_with_same_identifier"},
+    {"case_id": "C06", "title": "Missing quantity", "culinary_fixture_id": "O", "nutrition_status": "UNKNOWN", "culinary_status": "REVIEW_REQUIRED", "mapping_complete": true, "quantity_complete": false, "expected_final_status": "UNVERIFIED"},
+    {"case_id": "C07", "title": "Missing authorized USDA mapping", "culinary_fixture_id": "O", "nutrition_status": "UNKNOWN", "culinary_status": "PASS", "mapping_complete": false, "quantity_complete": true, "expected_final_status": "UNVERIFIED"},
+    {"case_id": "C08", "title": "Definitive nutritional constraint violation", "culinary_fixture_id": "A", "nutrition_status": "FAIL", "culinary_status": "PASS", "mapping_complete": true, "quantity_complete": true, "expected_final_status": "REJECTED"},
+    {"case_id": "C09", "title": "Missing adapted culinary instructions", "culinary_fixture_id": "D", "nutrition_status": "PASS", "culinary_status": "REVIEW_REQUIRED", "mapping_complete": true, "quantity_complete": true, "expected_final_status": "UNVERIFIED"},
+    {"case_id": "C10", "title": "Complete controlled adaptation", "culinary_fixture_id": "A", "nutrition_status": "PASS", "culinary_status": "PASS", "mapping_complete": true, "quantity_complete": true, "expected_final_status": "ACCEPTED"}
+  ]
+}

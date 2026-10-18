@@ -1,0 +1,4 @@
+﻿model,recipe_id,recipe_name,passed,issues,latency_ms,method,error
+Qwen/Qwen3-0.6B,banana_soymilk_oatmeal,Banana and soy milk oats (prototype composition),False,['Method contains an ingredient amount that was not in the validated composition'],1742.59,"1. Combine 40 g of rolled oats with 120 g of unsweetened soy milk in a bowl.  
+2. Add 50 g of ripe banana, ripe and raw, and stir until the oats are fully incorporated.  
+3. Top with the banana and serve.",

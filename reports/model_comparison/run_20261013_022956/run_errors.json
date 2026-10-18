@@ -1,0 +1,10 @@
+[
+  {
+    "model": "Qwen/Qwen3-0.6B",
+    "error": "worker exited with status 1"
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "error": "worker exited with status 1"
+  }
+]

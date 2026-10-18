@@ -1,0 +1,9 @@
+{
+  "note": "Synthetic engineering fixtures only. These numbers are not clinical targets and are not taken from the guideline table.",
+  "cases": [
+    {"recipe_id": "brown_chicken_rice", "constraints": {"sodium": {"max": 40, "unit": "mg", "scope": "meal"}}},
+    {"recipe_id": "chicken_fried_rice", "constraints": {"sodium": {"max": 40, "unit": "mg", "scope": "meal"}}},
+    {"recipe_id": "chicken_congee", "constraints": {"sodium": {"max": 40, "unit": "mg", "scope": "meal"}}},
+    {"recipe_id": "tofu_rice_bowl", "constraints": {"sodium": {"max": 40, "unit": "mg", "scope": "meal"}}}
+  ]
+}

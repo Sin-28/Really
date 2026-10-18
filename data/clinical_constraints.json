@@ -1,0 +1,28 @@
+{
+  "haemodialysis": {
+    "label": "Haemodialysis (CKD 5D)",
+    "reference": [
+      {"nutrient": "sodium_mg", "type": "MAX", "max": 2300, "unit": "mg/day", "scope": "day", "source": "KDOQI 2020", "source_url": "https://doi.org/10.1053/j.ajkd.2020.05.006", "personalized": true},
+      {"nutrient": "potassium_mg", "type": "INDIVIDUALIZED", "unit": null, "scope": "ongoing/daily diet", "source": "KDOQI 2020", "source_url": "https://doi.org/10.1053/j.ajkd.2020.05.006", "personalized": true},
+      {"nutrient": "phosphorus_mg", "type": "INDIVIDUALIZED", "unit": null, "scope": "ongoing/daily diet", "source": "KDOQI 2020", "source_url": "https://doi.org/10.1053/j.ajkd.2020.05.006", "personalized": true},
+      {"nutrient": "protein_g", "type": "RANGE", "min": 1.0, "max": 1.2, "unit": "g/kg body weight/day", "scope": "day", "source": "KDOQI 2020", "source_url": "https://doi.org/10.1053/j.ajkd.2020.05.006", "personalized": true}
+    ]
+  },
+  "diabetes": {
+    "label": "Diabetes",
+    "reference": [
+      {"nutrient": "carbohydrate_g", "type": "INDIVIDUALIZED", "unit": "g", "scope": "meal/day", "source": "ADA Standards of Care 2026", "source_url": "https://diabetesjournals.org/care/issue/49/Supplement_1", "personalized": true},
+      {"nutrient": "fiber_g", "type": "MIN", "min": 14, "unit": "g/1000 kcal/day", "scope": "day", "source": "ADA Standards of Care 2026", "source_url": "https://diabetesjournals.org/care/issue/49/Supplement_1", "personalized": true},
+      {"nutrient": "sodium_mg", "type": "MAX", "max": 2300, "unit": "mg/day", "scope": "day", "source": "ADA Standards of Care 2026", "source_url": "https://diabetesjournals.org/care/issue/49/Supplement_1", "personalized": true},
+      {"nutrient": "added_sugar_g", "type": "MINIMIZE", "unit": null, "scope": "meal/day", "source": "ADA Standards of Care 2026", "source_url": "https://diabetesjournals.org/care/issue/49/Supplement_1", "personalized": true}
+    ]
+  },
+  "hypertension": {
+    "label": "Hypertension / DASH",
+    "reference": [
+      {"nutrient": "sodium_mg", "type": "MAX", "max": 2300, "unit": "mg/day", "scope": "day", "source": "NHLBI DASH Eating Plan", "source_url": "https://www.nhlbi.nih.gov/health/dash-eating-plan", "personalized": true},
+      {"nutrient": "sodium_mg", "type": "OPTIONAL LOWER TARGET", "max": 1500, "unit": "mg/day", "scope": "day", "source": "NHLBI DASH Eating Plan", "source_url": "https://www.nhlbi.nih.gov/health/dash-eating-plan", "personalized": true},
+      {"nutrient": "potassium_mg", "type": "TARGET", "min": 4700, "unit": "mg/day", "scope": "day", "source": "NHLBI DASH Eating Plan", "source_url": "https://www.nhlbi.nih.gov/health/dash-eating-plan", "personalized": true, "conflict_note": "Do not automatically apply when renal disease is present."}
+    ]
+  }
+}

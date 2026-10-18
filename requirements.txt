@@ -1,0 +1,2 @@
+# Neo4j driver for the graph-backed prototype.
+neo4j>=5.26,<7

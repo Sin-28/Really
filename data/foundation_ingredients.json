@@ -1,0 +1,2804 @@
+{
+  "foundation_chicken_breast_braised": {
+    "name": "Chicken breast, cooked",
+    "fdc_description": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, cooked, braised",
+    "aliases": [
+      "chicken",
+      "cooked chicken",
+      "chicken breast"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": 166,
+      "protein_g": 32.1,
+      "carbohydrate_g": 0.0,
+      "fiber_g": null,
+      "phosphorus_mg": 241,
+      "potassium_mg": 343,
+      "sodium_mg": 47.0,
+      "saturated_fat_g": 1.01
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 80,
+    "min_amount_g": 30,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "piece",
+        "amount": 1.0,
+        "unit": "piece",
+        "gram_weight": 174.0
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 114.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 331960,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/331960/nutrients"
+    }
+  },
+  "foundation_brown_rice_raw": {
+    "name": "Brown rice, raw",
+    "fdc_description": "Rice, brown, long grain, unenriched, raw",
+    "aliases": [
+      "brown rice",
+      "raw brown rice"
+    ],
+    "role": "grain",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 7.25,
+      "carbohydrate_g": 76.7,
+      "fiber_g": 3.02,
+      "phosphorus_mg": 303,
+      "potassium_mg": 250,
+      "sodium_mg": 0.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 27,
+    "min_amount_g": 10,
+    "max_amount_g": 100,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 45.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2512380,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2512380/nutrients"
+    }
+  },
+  "foundation_white_rice_raw": {
+    "name": "White rice, raw",
+    "fdc_description": "Rice, white, long grain, unenriched, raw",
+    "aliases": [
+      "white rice",
+      "raw white rice"
+    ],
+    "role": "grain",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 7.04,
+      "carbohydrate_g": 80.3,
+      "fiber_g": 0.149,
+      "phosphorus_mg": 108,
+      "potassium_mg": 82.3,
+      "sodium_mg": 0.462,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 27,
+    "min_amount_g": 10,
+    "max_amount_g": 100,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 45.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2512381,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2512381/nutrients"
+    }
+  },
+  "foundation_bok_choy_raw": {
+    "name": "Bok choy, raw",
+    "fdc_description": "Cabbage, bok choy, raw",
+    "aliases": [
+      "bok choy",
+      "xiao bai cai"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 1.02,
+      "carbohydrate_g": 3.51,
+      "fiber_g": 1.26,
+      "phosphorus_mg": 30.5,
+      "potassium_mg": 228,
+      "sodium_mg": 14.3,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2685572,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2685572/nutrients"
+    }
+  },
+  "foundation_scallion_raw": {
+    "name": "Scallion, raw",
+    "fdc_description": "Green onion, (scallion), bulb and greens, root removed, raw",
+    "aliases": [
+      "scallion",
+      "spring onion",
+      "green onion"
+    ],
+    "role": "aromatic",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.669,
+      "carbohydrate_g": null,
+      "fiber_g": 2.3,
+      "phosphorus_mg": 27.9,
+      "potassium_mg": 232,
+      "sodium_mg": 9.95,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 5,
+    "min_amount_g": 1,
+    "max_amount_g": 30,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2727585,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2727585/nutrients"
+    }
+  },
+  "foundation_yellow_onion_raw": {
+    "name": "Yellow onion, raw",
+    "fdc_description": "Onions, yellow, raw",
+    "aliases": [
+      "onion",
+      "yellow onion"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": 38.0,
+      "protein_g": 0.83,
+      "carbohydrate_g": 8.61,
+      "fiber_g": 1.9,
+      "phosphorus_mg": 34.0,
+      "potassium_mg": 182,
+      "sodium_mg": 1.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 30,
+    "min_amount_g": 5,
+    "max_amount_g": 150,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "Edible",
+        "amount": 1.0,
+        "unit": "Onion",
+        "gram_weight": 143.0
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 790646,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/790646/nutrients"
+    }
+  },
+  "foundation_whole_egg": {
+    "name": "Whole egg",
+    "fdc_description": "Eggs, Grade A, Large, egg whole",
+    "aliases": [
+      "egg",
+      "whole egg"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": 148,
+      "protein_g": 12.4,
+      "carbohydrate_g": 0.96,
+      "fiber_g": 0.0,
+      "phosphorus_mg": 184,
+      "potassium_mg": 132,
+      "sodium_mg": 129,
+      "saturated_fat_g": 3.2
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 50,
+    "min_amount_g": 25,
+    "max_amount_g": 120,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "whole without shell",
+        "amount": 1.0,
+        "unit": "egg",
+        "gram_weight": 50.3
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 50.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 748967,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/748967/nutrients"
+    }
+  },
+  "foundation_broccoli_raw": {
+    "name": "Broccoli, raw",
+    "fdc_description": "Broccoli, raw",
+    "aliases": [
+      "broccoli"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": 31.0,
+      "protein_g": 2.57,
+      "carbohydrate_g": 6.27,
+      "fiber_g": 2.4,
+      "phosphorus_mg": 67.0,
+      "potassium_mg": 303,
+      "sodium_mg": 36.0,
+      "saturated_fat_g": 0.039
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "chopped",
+        "amount": 1.0,
+        "unit": "cup",
+        "gram_weight": 76.0
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 747447,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/747447/nutrients"
+    }
+  },
+  "foundation_grape_tomatoes_raw": {
+    "name": "Grape tomatoes, raw",
+    "fdc_description": "Tomatoes, grape, raw",
+    "aliases": [
+      "tomato",
+      "tomatoes",
+      "grape tomato"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": 27.0,
+      "protein_g": 0.83,
+      "carbohydrate_g": 5.51,
+      "fiber_g": 2.1,
+      "phosphorus_mg": 28.0,
+      "potassium_mg": 260,
+      "sodium_mg": 6.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "tomatoes",
+        "amount": 5.0,
+        "unit": "tomatoes",
+        "gram_weight": 49.7
+      },
+      {
+        "description": "cup",
+        "amount": 1.0,
+        "unit": "cup",
+        "gram_weight": 152.0
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 321360,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/321360/nutrients"
+    }
+  },
+  "foundation_rolled_oats_dry": {
+    "name": "Rolled oats, dry",
+    "fdc_description": "Oats, whole grain, rolled, old fashioned",
+    "aliases": [
+      "oats",
+      "rolled oats",
+      "oatmeal"
+    ],
+    "role": "grain",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 13.5,
+      "carbohydrate_g": 68.7,
+      "fiber_g": null,
+      "phosphorus_mg": 387,
+      "potassium_mg": 350,
+      "sodium_mg": 0.668,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 40,
+    "min_amount_g": 20,
+    "max_amount_g": 100,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 40.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2346396,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2346396/nutrients"
+    }
+  },
+  "foundation_sockeye_salmon_raw": {
+    "name": "Sockeye salmon, raw",
+    "fdc_description": "Fish, salmon, sockeye, wild caught, raw",
+    "aliases": [
+      "salmon",
+      "sockeye salmon"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 22.3,
+      "carbohydrate_g": 0.0,
+      "fiber_g": null,
+      "phosphorus_mg": 226,
+      "potassium_mg": 330,
+      "sodium_mg": 53.3,
+      "saturated_fat_g": 0.722
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 90,
+    "min_amount_g": 30,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 115.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2684440,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2684440/nutrients"
+    }
+  },
+  "foundation_atlantic_salmon_raw": {
+    "name": "Atlantic salmon, raw",
+    "fdc_description": "Fish, salmon, Atlantic, farm raised, raw",
+    "aliases": [
+      "salmon",
+      "atlantic salmon"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 20.3,
+      "carbohydrate_g": 0.0,
+      "fiber_g": null,
+      "phosphorus_mg": 230,
+      "potassium_mg": 378,
+      "sodium_mg": 49.5,
+      "saturated_fat_g": 2.28
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 90,
+    "min_amount_g": 30,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 115.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2684441,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2684441/nutrients"
+    }
+  },
+  "foundation_tilapia_raw": {
+    "name": "Tilapia, raw",
+    "fdc_description": "Fish, tilapia, farm raised, raw",
+    "aliases": [
+      "tilapia",
+      "fish"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 19.0,
+      "carbohydrate_g": 0.0,
+      "fiber_g": null,
+      "phosphorus_mg": 159,
+      "potassium_mg": 342,
+      "sodium_mg": 93.7,
+      "saturated_fat_g": 0.647
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 100,
+    "min_amount_g": 30,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 115.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2684442,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2684442/nutrients"
+    }
+  },
+  "foundation_shrimp_raw": {
+    "name": "Shrimp, raw",
+    "fdc_description": "Crustaceans, shrimp, farm raised, raw",
+    "aliases": [
+      "shrimp",
+      "prawn"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 15.6,
+      "carbohydrate_g": 0.485,
+      "fiber_g": null,
+      "phosphorus_mg": 191,
+      "potassium_mg": 146,
+      "sodium_mg": 475,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 80,
+    "min_amount_g": 20,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 115.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2684443,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2684443/nutrients"
+    }
+  },
+  "foundation_restaurant_fried_rice": {
+    "name": "Chinese restaurant fried rice, without meat",
+    "fdc_description": "Restaurant, Chinese, fried rice, without meat",
+    "aliases": [
+      "fried rice",
+      "restaurant fried rice"
+    ],
+    "role": "prepared_reference",
+    "nutrients_per_100g": {
+      "energy_kcal": 174,
+      "protein_g": 3.84,
+      "carbohydrate_g": 32.5,
+      "fiber_g": null,
+      "phosphorus_mg": 44.0,
+      "potassium_mg": 69.0,
+      "sodium_mg": 361,
+      "saturated_fat_g": 0.493
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 133,
+    "min_amount_g": 80,
+    "max_amount_g": 400,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "cup",
+        "amount": 1.0,
+        "unit": "cup",
+        "gram_weight": 133.0
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 334536,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/334536/nutrients"
+    }
+  },
+  "foundation_marinara_sauce": {
+    "name": "Marinara pasta sauce, ready to serve",
+    "fdc_description": "Sauce, pasta, spaghetti/marinara, ready-to-serve",
+    "aliases": [
+      "tomato pasta sauce",
+      "marinara sauce"
+    ],
+    "role": "sauce",
+    "nutrients_per_100g": {
+      "energy_kcal": 45.0,
+      "protein_g": 1.41,
+      "carbohydrate_g": 8.05,
+      "fiber_g": 1.8,
+      "phosphorus_mg": 34.0,
+      "potassium_mg": 319,
+      "sodium_mg": 419,
+      "saturated_fat_g": 0.17
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 50,
+    "min_amount_g": 5,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 332282,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/332282/nutrients"
+    }
+  },
+  "foundation_green_cabbage_raw": {
+    "name": "Green cabbage, raw",
+    "fdc_description": "Cabbage, green, raw",
+    "aliases": [
+      "cabbage",
+      "green cabbage"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.961,
+      "carbohydrate_g": 6.38,
+      "fiber_g": null,
+      "phosphorus_mg": 26.9,
+      "potassium_mg": 207,
+      "sodium_mg": 16.1,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2346407,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2346407/nutrients"
+    }
+  },
+  "foundation_chicken_breast_raw": {
+    "name": "Chicken breast, raw",
+    "fdc_description": "Chicken, breast, boneless, skinless, raw",
+    "aliases": [
+      "raw chicken",
+      "raw chicken breast"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 22.5,
+      "carbohydrate_g": 0.0,
+      "fiber_g": null,
+      "phosphorus_mg": 215,
+      "potassium_mg": 330,
+      "sodium_mg": 65.8,
+      "saturated_fat_g": 0.349
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 100,
+    "min_amount_g": 30,
+    "max_amount_g": 250,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 114.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2646170,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2646170/nutrients"
+    }
+  },
+  "foundation_canned_tomato_salted": {
+    "name": "Canned tomatoes, with salt",
+    "fdc_description": "Tomatoes, whole, canned, solids and liquids, with salt added",
+    "aliases": [
+      "canned tomatoes"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.868,
+      "carbohydrate_g": 4.29,
+      "fiber_g": 0.872,
+      "phosphorus_mg": 17.3,
+      "potassium_mg": 203,
+      "sodium_mg": 112,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 100,
+    "min_amount_g": 20,
+    "max_amount_g": 250,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 130.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2685578,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2685578/nutrients"
+    }
+  },
+  "foundation_tomato_paste_no_salt": {
+    "name": "Tomato paste, no salt added",
+    "fdc_description": "Tomato, paste, canned, without salt added",
+    "aliases": [
+      "tomato paste",
+      "no-salt tomato paste"
+    ],
+    "role": "sauce",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 4.23,
+      "carbohydrate_g": 20.2,
+      "fiber_g": 4.7,
+      "phosphorus_mg": 91.2,
+      "potassium_mg": 972,
+      "sodium_mg": 61.2,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 20,
+    "min_amount_g": 5,
+    "max_amount_g": 100,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 30.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2685580,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2685580/nutrients"
+    }
+  },
+  "foundation_tomato_puree": {
+    "name": "Tomato puree, canned",
+    "fdc_description": "Tomato, puree, canned",
+    "aliases": [
+      "tomato puree",
+      "tomato purée"
+    ],
+    "role": "sauce",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 1.58,
+      "carbohydrate_g": 8.04,
+      "fiber_g": 1.97,
+      "phosphorus_mg": 34.1,
+      "potassium_mg": 416,
+      "sodium_mg": 29.4,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 50,
+    "min_amount_g": 5,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 130.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2685582,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2685582/nutrients"
+    }
+  },
+  "foundation_green_bell_pepper_raw": {
+    "name": "Green bell pepper, raw",
+    "fdc_description": "Peppers, bell, green, raw",
+    "aliases": [
+      "green pepper",
+      "green bell pepper"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.715,
+      "carbohydrate_g": 4.78,
+      "fiber_g": 0.942,
+      "phosphorus_mg": 16.8,
+      "potassium_mg": 163,
+      "sodium_mg": 0.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 50,
+    "min_amount_g": 5,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2258588,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2258588/nutrients"
+    }
+  },
+  "foundation_red_onion_raw": {
+    "name": "Red onion, raw",
+    "fdc_description": "Onions, red, raw",
+    "aliases": [
+      "red onion"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": 44.0,
+      "protein_g": 0.94,
+      "carbohydrate_g": 9.93,
+      "fiber_g": 2.2,
+      "phosphorus_mg": 41.0,
+      "potassium_mg": 197,
+      "sodium_mg": 1.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 30,
+    "min_amount_g": 5,
+    "max_amount_g": 150,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "Edible",
+        "amount": 1.0,
+        "unit": "Onion",
+        "gram_weight": 197.0
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 790577,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/790577/nutrients"
+    }
+  },
+  "foundation_chicken_drumstick_braised": {
+    "name": "Chicken drumstick, cooked",
+    "fdc_description": "Chicken, broilers or fryers, drumstick, meat only, cooked, braised",
+    "aliases": [
+      "chicken drumstick",
+      "cooked chicken drumstick"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": 156,
+      "protein_g": 23.9,
+      "carbohydrate_g": 0.0,
+      "fiber_g": null,
+      "phosphorus_mg": 184,
+      "potassium_mg": 239,
+      "sodium_mg": 117,
+      "saturated_fat_g": 1.6
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 80,
+    "min_amount_g": 30,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "with skin",
+        "amount": 1.0,
+        "unit": "drumstick",
+        "gram_weight": 104.0
+      },
+      {
+        "description": "without skin",
+        "amount": 1.0,
+        "unit": "drumstick",
+        "gram_weight": 94.7
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 114.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 331897,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/331897/nutrients"
+    }
+  },
+  "foundation_haddock_raw": {
+    "name": "Haddock, raw",
+    "fdc_description": "Fish, haddock, raw",
+    "aliases": [
+      "haddock",
+      "white fish"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": 74.0,
+      "protein_g": 16.3,
+      "carbohydrate_g": 0.0,
+      "fiber_g": null,
+      "phosphorus_mg": 227,
+      "potassium_mg": 286,
+      "sodium_mg": 213,
+      "saturated_fat_g": 0.093
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 100,
+    "min_amount_g": 30,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "fillet",
+        "amount": 1.0,
+        "unit": "fillet",
+        "gram_weight": 176.0
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 115.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 333374,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/333374/nutrients"
+    }
+  },
+  "foundation_cod_raw": {
+    "name": "Atlantic cod, raw",
+    "fdc_description": "Fish, cod, Atlantic, wild caught, raw",
+    "aliases": [
+      "cod",
+      "atlantic cod"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 16.1,
+      "carbohydrate_g": 0.0,
+      "fiber_g": null,
+      "phosphorus_mg": 224,
+      "potassium_mg": 245,
+      "sodium_mg": 299,
+      "saturated_fat_g": 0.044
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 100,
+    "min_amount_g": 30,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 115.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2684444,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2684444/nutrients"
+    }
+  },
+  "foundation_catfish_raw": {
+    "name": "Catfish, raw",
+    "fdc_description": "Fish, catfish, farm raised, raw",
+    "aliases": [
+      "catfish"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 16.5,
+      "carbohydrate_g": 0.0,
+      "fiber_g": null,
+      "phosphorus_mg": 166,
+      "potassium_mg": 292,
+      "sodium_mg": 60.5,
+      "saturated_fat_g": 1.6
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 100,
+    "min_amount_g": 30,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 115.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2684445,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2684445/nutrients"
+    }
+  },
+  "foundation_crab_lump_pasteurized": {
+    "name": "Blue swimming crab lump meat",
+    "fdc_description": "Crustaceans, crab, blue swimming, lump, pasteurized, refrigerated",
+    "aliases": [
+      "crab",
+      "crab meat"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 18.6,
+      "carbohydrate_g": 0.0,
+      "fiber_g": null,
+      "phosphorus_mg": 278,
+      "potassium_mg": 235,
+      "sodium_mg": 331,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 80,
+    "min_amount_g": 30,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2684446,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2684446/nutrients"
+    }
+  },
+  "foundation_beef_frankfurter_unheated": {
+    "name": "Beef frankfurter, unheated",
+    "fdc_description": "Frankfurter, beef, unheated",
+    "aliases": [
+      "frankfurter",
+      "beef hot dog"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": 314,
+      "protein_g": 11.7,
+      "carbohydrate_g": 2.89,
+      "fiber_g": null,
+      "phosphorus_mg": 128,
+      "potassium_mg": 343,
+      "sodium_mg": 872,
+      "saturated_fat_g": 11.4
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 50,
+    "min_amount_g": 20,
+    "max_amount_g": 120,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "piece",
+        "amount": 1.0,
+        "unit": "piece",
+        "gram_weight": 48.6
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 323121,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/323121/nutrients"
+    }
+  },
+  "foundation_cantaloupe_raw": {
+    "name": "Cantaloupe, raw",
+    "fdc_description": "Melons, cantaloupe, raw",
+    "aliases": [
+      "cantaloupe",
+      "melon"
+    ],
+    "role": "fruit",
+    "nutrients_per_100g": {
+      "energy_kcal": 34.0,
+      "protein_g": 0.82,
+      "carbohydrate_g": 8.16,
+      "fiber_g": 0.8,
+      "phosphorus_mg": 17.0,
+      "potassium_mg": 157,
+      "sodium_mg": 30.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 80,
+    "min_amount_g": 20,
+    "max_amount_g": 250,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "medium (1/8 of medium melon)",
+        "amount": 1.0,
+        "unit": "wedge",
+        "gram_weight": 69.0
+      },
+      {
+        "description": "large (1/8 of large melon)",
+        "amount": 1.0,
+        "unit": "wedge",
+        "gram_weight": 102.0
+      },
+      {
+        "description": "small (about 4-1/4\" dia)",
+        "amount": 1.0,
+        "unit": "each",
+        "gram_weight": 441.0
+      },
+      {
+        "description": "large (about 6-1/2\" dia)",
+        "amount": 1.0,
+        "unit": "each",
+        "gram_weight": 814.0
+      },
+      {
+        "description": "cubes",
+        "amount": 1.0,
+        "unit": "cup",
+        "gram_weight": 160.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 746770,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/746770/nutrients"
+    }
+  },
+  "foundation_orange_raw": {
+    "name": "Navel orange, raw",
+    "fdc_description": "Oranges, raw, navels",
+    "aliases": [
+      "orange",
+      "navel orange"
+    ],
+    "role": "fruit",
+    "nutrients_per_100g": {
+      "energy_kcal": 47.0,
+      "protein_g": 0.91,
+      "carbohydrate_g": 11.8,
+      "fiber_g": 2.0,
+      "phosphorus_mg": 23.0,
+      "potassium_mg": 166,
+      "sodium_mg": 9.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 130,
+    "min_amount_g": 30,
+    "max_amount_g": 250,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "sections no membranes",
+        "amount": 1.0,
+        "unit": "cup",
+        "gram_weight": 165.0
+      },
+      {
+        "description": " 2-7/8\" dia",
+        "amount": 1.0,
+        "unit": "each",
+        "gram_weight": 140.0
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 140.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 746771,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/746771/nutrients"
+    }
+  },
+  "foundation_shiitake_raw": {
+    "name": "Shiitake mushroom, raw",
+    "fdc_description": "Mushrooms, shiitake",
+    "aliases": [
+      "shiitake",
+      "shiitake mushroom"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 2.41,
+      "carbohydrate_g": 8.17,
+      "fiber_g": 4.17,
+      "phosphorus_mg": 75.8,
+      "potassium_mg": 243,
+      "sodium_mg": 0.936,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 40,
+    "min_amount_g": 10,
+    "max_amount_g": 150,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 1999628,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/1999628/nutrients"
+    }
+  },
+  "foundation_button_mushroom_raw": {
+    "name": "White button mushroom, raw",
+    "fdc_description": "Mushrooms, white button",
+    "aliases": [
+      "mushroom",
+      "button mushroom"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 2.89,
+      "carbohydrate_g": 4.08,
+      "fiber_g": 1.72,
+      "phosphorus_mg": 93.0,
+      "potassium_mg": 373,
+      "sodium_mg": 6.44,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 1999629,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/1999629/nutrients"
+    }
+  },
+  "foundation_soymilk_unsweetened": {
+    "name": "Unsweetened soy milk",
+    "fdc_description": "Soy milk, unsweetened, plain, shelf stable",
+    "aliases": [
+      "soy milk",
+      "soymilk"
+    ],
+    "role": "beverage",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 3.55,
+      "carbohydrate_g": 1.29,
+      "fiber_g": 0.0,
+      "phosphorus_mg": 68.6,
+      "potassium_mg": 158,
+      "sodium_mg": 34.3,
+      "saturated_fat_g": 0.314
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 150,
+    "min_amount_g": 50,
+    "max_amount_g": 300,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 1999630,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/1999630/nutrients"
+    }
+  },
+  "foundation_almondmilk_unsweetened": {
+    "name": "Unsweetened almond milk",
+    "fdc_description": "Almond milk, unsweetened, plain, shelf stable",
+    "aliases": [
+      "almond milk",
+      "almondmilk"
+    ],
+    "role": "beverage",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.555,
+      "carbohydrate_g": 0.337,
+      "fiber_g": 0.0,
+      "phosphorus_mg": 29.8,
+      "potassium_mg": 30.8,
+      "sodium_mg": 59.6,
+      "saturated_fat_g": 0.104
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 150,
+    "min_amount_g": 50,
+    "max_amount_g": 300,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 1999631,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/1999631/nutrients"
+    }
+  },
+  "foundation_baby_spinach_raw": {
+    "name": "Baby spinach, raw",
+    "fdc_description": "Spinach, baby",
+    "aliases": [
+      "spinach",
+      "baby spinach"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 2.85,
+      "carbohydrate_g": 2.41,
+      "fiber_g": 1.56,
+      "phosphorus_mg": 39.0,
+      "potassium_mg": 582,
+      "sodium_mg": 111,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 30,
+    "min_amount_g": 5,
+    "max_amount_g": 120,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 1999632,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/1999632/nutrients"
+    }
+  },
+  "foundation_roma_tomato_raw": {
+    "name": "Roma tomato, raw",
+    "fdc_description": "Tomato, roma",
+    "aliases": [
+      "roma tomato",
+      "tomato"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.696,
+      "carbohydrate_g": 3.84,
+      "fiber_g": 0.971,
+      "phosphorus_mg": 19.1,
+      "potassium_mg": 193,
+      "sodium_mg": 0.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 1999634,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/1999634/nutrients"
+    }
+  },
+  "foundation_carrot_raw": {
+    "name": "Carrot, mature, raw",
+    "fdc_description": "Carrots, mature, raw",
+    "aliases": [
+      "carrot",
+      "carrots"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.941,
+      "carbohydrate_g": 10.3,
+      "fiber_g": 3.1,
+      "phosphorus_mg": 39.8,
+      "potassium_mg": 280,
+      "sodium_mg": 86.6,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 40,
+    "min_amount_g": 10,
+    "max_amount_g": 150,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2258586,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2258586/nutrients"
+    }
+  },
+  "foundation_red_bell_pepper_raw": {
+    "name": "Red bell pepper, raw",
+    "fdc_description": "Peppers, bell, red, raw",
+    "aliases": [
+      "red pepper",
+      "red bell pepper"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.896,
+      "carbohydrate_g": 6.65,
+      "fiber_g": 1.16,
+      "phosphorus_mg": 26.6,
+      "potassium_mg": 213,
+      "sodium_mg": 0.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 30,
+    "min_amount_g": 5,
+    "max_amount_g": 120,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2258590,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2258590/nutrients"
+    }
+  },
+  "foundation_iceberg_lettuce_raw": {
+    "name": "Iceberg lettuce, raw",
+    "fdc_description": "Lettuce, iceberg, raw",
+    "aliases": [
+      "lettuce",
+      "iceberg lettuce"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.742,
+      "carbohydrate_g": 3.37,
+      "fiber_g": null,
+      "phosphorus_mg": 19.2,
+      "potassium_mg": 139,
+      "sodium_mg": 16.1,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 150,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2346388,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2346388/nutrients"
+    }
+  },
+  "foundation_cucumber_raw": {
+    "name": "Cucumber with peel, raw",
+    "fdc_description": "Cucumber, with peel, raw",
+    "aliases": [
+      "cucumber"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.625,
+      "carbohydrate_g": 2.95,
+      "fiber_g": null,
+      "phosphorus_mg": 23.2,
+      "potassium_mg": 170,
+      "sodium_mg": 1.52,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2346406,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2346406/nutrients"
+    }
+  },
+  "foundation_strawberries_raw": {
+    "name": "Strawberries, raw",
+    "fdc_description": "Strawberries, raw",
+    "aliases": [
+      "strawberries",
+      "strawberry"
+    ],
+    "role": "fruit",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.641,
+      "carbohydrate_g": 7.96,
+      "fiber_g": null,
+      "phosphorus_mg": 23.0,
+      "potassium_mg": 161,
+      "sodium_mg": 0.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 140.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2346409,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2346409/nutrients"
+    }
+  },
+  "foundation_blueberries_raw": {
+    "name": "Blueberries, raw",
+    "fdc_description": "Blueberries, raw",
+    "aliases": [
+      "blueberries",
+      "blueberry"
+    ],
+    "role": "fruit",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.703,
+      "carbohydrate_g": 14.6,
+      "fiber_g": null,
+      "phosphorus_mg": 13.0,
+      "potassium_mg": 85.6,
+      "sodium_mg": 0.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 140.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2346411,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2346411/nutrients"
+    }
+  },
+  "foundation_red_grapes_raw": {
+    "name": "Red seedless grapes, raw",
+    "fdc_description": "Grapes, red, seedless, raw",
+    "aliases": [
+      "grapes",
+      "red grapes"
+    ],
+    "role": "fruit",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.914,
+      "carbohydrate_g": 20.2,
+      "fiber_g": null,
+      "phosphorus_mg": 24.9,
+      "potassium_mg": 229,
+      "sodium_mg": 7.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 140.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2346412,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2346412/nutrients"
+    }
+  },
+  "foundation_black_beans_canned_rinsed": {
+    "name": "Black beans, canned, drained and rinsed",
+    "fdc_description": "Beans, black, canned, sodium added, drained and rinsed",
+    "aliases": [
+      "black beans",
+      "rinsed black beans"
+    ],
+    "role": "legume",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 6.91,
+      "carbohydrate_g": 19.8,
+      "fiber_g": null,
+      "phosphorus_mg": 91.0,
+      "potassium_mg": 253,
+      "sodium_mg": 218,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 60,
+    "min_amount_g": 20,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 130.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2644285,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2644285/nutrients"
+    }
+  },
+  "foundation_chickpeas_canned_rinsed": {
+    "name": "Chickpeas, canned, drained and rinsed",
+    "fdc_description": "Chickpeas (garbanzo beans, bengal gram), canned, sodium added, drained and rinsed",
+    "aliases": [
+      "chickpeas",
+      "garbanzo beans"
+    ],
+    "role": "legume",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 7.02,
+      "carbohydrate_g": 20.3,
+      "fiber_g": null,
+      "phosphorus_mg": 86.5,
+      "potassium_mg": 137,
+      "sodium_mg": 202,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 60,
+    "min_amount_g": 20,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 130.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2644288,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2644288/nutrients"
+    }
+  },
+  "foundation_cauliflower_raw": {
+    "name": "Cauliflower, raw",
+    "fdc_description": "Cauliflower, raw",
+    "aliases": [
+      "cauliflower"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 1.64,
+      "carbohydrate_g": 4.72,
+      "fiber_g": 1.95,
+      "phosphorus_mg": 39.7,
+      "potassium_mg": 274,
+      "sodium_mg": 20.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2685573,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2685573/nutrients"
+    }
+  },
+  "foundation_brussels_sprouts_raw": {
+    "name": "Brussels sprouts, raw",
+    "fdc_description": "Brussels sprouts, raw",
+    "aliases": [
+      "brussels sprouts"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 3.98,
+      "carbohydrate_g": 9.62,
+      "fiber_g": 4.78,
+      "phosphorus_mg": 78.5,
+      "potassium_mg": 477,
+      "sodium_mg": 25.7,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2685575,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2685575/nutrients"
+    }
+  },
+  "foundation_crushed_tomatoes_canned": {
+    "name": "Crushed tomatoes, canned",
+    "fdc_description": "Tomatoes, crushed, canned",
+    "aliases": [
+      "crushed tomatoes",
+      "tomatoes"
+    ],
+    "role": "vegetable",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 1.44,
+      "carbohydrate_g": 7.14,
+      "fiber_g": 1.94,
+      "phosphorus_mg": 32.9,
+      "potassium_mg": 346,
+      "sodium_mg": 140,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 60,
+    "min_amount_g": 20,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 130.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2685581,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2685581/nutrients"
+    }
+  },
+  "foundation_chia_seeds_dry": {
+    "name": "Chia seeds, dry",
+    "fdc_description": "Chia seeds, dry, raw",
+    "aliases": [
+      "chia seeds",
+      "chia"
+    ],
+    "role": "seed",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 17.0,
+      "carbohydrate_g": 38.3,
+      "fiber_g": null,
+      "phosphorus_mg": 691,
+      "potassium_mg": 642,
+      "sodium_mg": 0.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 10,
+    "min_amount_g": 2,
+    "max_amount_g": 30,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 45.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2710819,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2710819/nutrients"
+    }
+  },
+  "foundation_avocado_raw": {
+    "name": "Hass avocado, raw",
+    "fdc_description": "Avocado, Hass, peeled, raw",
+    "aliases": [
+      "avocado"
+    ],
+    "role": "fruit",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 1.81,
+      "carbohydrate_g": 8.32,
+      "fiber_g": null,
+      "phosphorus_mg": 42.4,
+      "potassium_mg": 576,
+      "sodium_mg": 0.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 25,
+    "min_amount_g": 5,
+    "max_amount_g": 100,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 140.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2710824,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2710824/nutrients"
+    }
+  },
+  "foundation_mango_raw": {
+    "name": "Mango, raw",
+    "fdc_description": "Mango, Tommy Atkins, peeled, raw",
+    "aliases": [
+      "mango"
+    ],
+    "role": "fruit",
+    "nutrients_per_100g": {
+      "energy_kcal": null,
+      "protein_g": 0.562,
+      "carbohydrate_g": 15.3,
+      "fiber_g": 1.75,
+      "phosphorus_mg": 16.4,
+      "potassium_mg": 165,
+      "sodium_mg": 0.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 140.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 2710833,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/2710833/nutrients"
+    }
+  },
+  "foundation_banana_raw": {
+    "name": "Banana, ripe, raw",
+    "fdc_description": "Bananas, ripe and slightly ripe, raw",
+    "aliases": [
+      "banana",
+      "ripe banana"
+    ],
+    "role": "fruit",
+    "nutrients_per_100g": {
+      "energy_kcal": 97.0,
+      "protein_g": 0.74,
+      "carbohydrate_g": 23.0,
+      "fiber_g": 1.7,
+      "phosphorus_mg": 22.0,
+      "potassium_mg": 326,
+      "sodium_mg": 0.0,
+      "saturated_fat_g": null
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 60,
+    "min_amount_g": 20,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "Peeled",
+        "amount": 1.0,
+        "unit": "Banana",
+        "gram_weight": 115.0
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 140.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 1105314,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/1105314/nutrients"
+    }
+  },
+  "foundation_greek_yogurt_nonfat": {
+    "name": "Greek yogurt, plain, nonfat",
+    "fdc_description": "Yogurt, Greek, plain, nonfat",
+    "aliases": [
+      "plain greek yogurt",
+      "nonfat greek yogurt",
+      "greek yogurt"
+    ],
+    "role": "dairy",
+    "nutrients_per_100g": {
+      "energy_kcal": 61.0,
+      "protein_g": 10.3,
+      "carbohydrate_g": 3.64,
+      "fiber_g": null,
+      "phosphorus_mg": 136,
+      "potassium_mg": 141,
+      "sodium_mg": 36.0,
+      "saturated_fat_g": 0.108
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 150,
+    "min_amount_g": 50,
+    "max_amount_g": 250,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "container",
+        "amount": 1.0,
+        "unit": "container",
+        "gram_weight": 156.0
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 170.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 330137,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/330137/nutrients"
+    }
+  },
+  "foundation_tuna_light_canned": {
+    "name": "Light tuna, canned in water, drained",
+    "fdc_description": "Fish, tuna, light, canned in water, drained solids",
+    "aliases": [
+      "tuna",
+      "canned tuna"
+    ],
+    "role": "protein",
+    "nutrients_per_100g": {
+      "energy_kcal": 90.0,
+      "protein_g": 19.0,
+      "carbohydrate_g": 0.08,
+      "fiber_g": null,
+      "phosphorus_mg": 137,
+      "potassium_mg": 176,
+      "sodium_mg": 219,
+      "saturated_fat_g": 0.224
+    },
+    "nutrient_units": {
+      "energy_kcal": "kcal",
+      "protein_g": "g",
+      "carbohydrate_g": "g",
+      "fiber_g": "g",
+      "phosphorus_mg": "mg",
+      "potassium_mg": "mg",
+      "sodium_mg": "mg",
+      "saturated_fat_g": "g"
+    },
+    "typical_amount_g": 80,
+    "min_amount_g": 30,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation",
+    "food_state": "as described in FDC description; see fdc_description",
+    "portions": [
+      {
+        "description": "total can contents",
+        "amount": 1.0,
+        "unit": "can",
+        "gram_weight": 142.0
+      },
+      {
+        "description": "drained solids",
+        "amount": 1.0,
+        "unit": "can",
+        "gram_weight": 107.0
+      },
+      {
+        "description": "RACC",
+        "amount": 1.0,
+        "unit": "RACC",
+        "gram_weight": 85.0
+      }
+    ],
+    "source": {
+      "name": "USDA FoodData Central, Foundation Foods",
+      "fdc_id": 334194,
+      "release_date": "2026-04-30",
+      "basis": "per 100 g; nutrient values copied from FoundationFoods JSON amount fields",
+      "url": "https://fdc.nal.usda.gov/food-details/334194/nutrients"
+    }
+  }
+}

@@ -1,0 +1,4120 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "model_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+  "parameter_count": 596049920,
+  "device": "mps",
+  "dtype": "torch.bfloat16",
+  "model_load_seconds": 4.754,
+  "peak_rss_mb": 1051.3,
+  "planning_latency_ms": {
+    "mean": 38632.752244502386,
+    "median": 39540.92595796101,
+    "p95": 44820.4885333951
+  },
+  "response_latency_ms": {
+    "mean": 1010.5793894384988,
+    "median": 1011.6230209823698,
+    "p95": 1234.0068478602918
+  },
+  "planning_metrics": {
+    "cases": 60,
+    "schema_valid_count": 58,
+    "schema_valid_rate": 0.9666666666666667,
+    "intent_correct_count": 0,
+    "intent_accuracy": 0.0,
+    "supported_catalog_cases": 20,
+    "supported_recipe_hit_at_1_count": 10,
+    "supported_recipe_hit_at_1": 0.5,
+    "unsupported_catalog_cases": 40,
+    "unsupported_abstention_count": 0,
+    "unsupported_abstention_rate": 0.0,
+    "overall_route_correct_count": 0,
+    "overall_route_accuracy": 0.0,
+    "raw_recipe_id_count": 60,
+    "invalid_recipe_id_count": 0,
+    "invalid_recipe_id_rate": 0.0
+  },
+  "method_faithfulness": {
+    "passed": 6,
+    "total": 10,
+    "rate": 0.6
+  },
+  "constraint_fixture": {
+    "passed": 2,
+    "total": 4,
+    "rate": 0.5,
+    "scope": "shared deterministic engine; synthetic engineering fixtures, not clinical targets"
+  },
+  "runtime": {
+    "python": "3.10.21",
+    "torch": "2.14.0",
+    "transformers": "5.17.0",
+    "huggingface_hub": "1.31.0",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "catalog_sha256": "d40b166e585f6ce2075e1cdcf7d541fa6f4178cb1b1b8d213dff5d723a3d6287",
+    "benchmark_sha256": "b0611f882b7ab14861d5c4fd9a68ccd465c20bff3004e20693f8395dc76a2915",
+    "test_cases": 60,
+    "warmup_calls": 1,
+    "response_review_cases": 20,
+    "method_cases": 10,
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens_plan": 420,
+      "max_new_tokens_response": 220,
+      "max_new_tokens_method": 180
+    },
+    "clinical_numeric_limits_passed_to_planner": false
+  },
+  "cases": [
+    {
+      "case_id": "R01",
+      "dish": "Instant ramen",
+      "difficulty": "Easy",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "instant_ramen_reference"
+      ],
+      "predicted_recipe_id": "instant_ramen_reference",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "instant_ramen_reference",
+      "supported_hit_at_1": true,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 25738.72,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R02",
+      "dish": "Chicken rice",
+      "difficulty": "Easy",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "brown_chicken_rice"
+      ],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 30707.95,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R03",
+      "dish": "Laksa",
+      "difficulty": "Easy",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 30471.44,
+      "response_evaluated": true,
+      "response_latency_ms": 755.55,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R04",
+      "dish": "Fish soup",
+      "difficulty": "Easy",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "fish_soup"
+      ],
+      "predicted_recipe_id": "fish_soup",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "fish_soup",
+      "supported_hit_at_1": true,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 27412.05,
+      "response_evaluated": true,
+      "response_latency_ms": 704.98,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R05",
+      "dish": "Congee",
+      "difficulty": "Easy",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "chicken_congee"
+      ],
+      "predicted_recipe_id": "brown_chicken_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "brown_chicken_rice",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 29424.82,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R06",
+      "dish": "Mee goreng",
+      "difficulty": "Medium",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 41365.56,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R07",
+      "dish": "Nasi lemak",
+      "difficulty": "Medium",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 43866.99,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R08",
+      "dish": "Curry chicken",
+      "difficulty": "Medium",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "brown_chicken_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "brown_chicken_rice",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 36430.32,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R09",
+      "dish": "Porridge with salted egg",
+      "difficulty": "Medium",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "brown_chicken_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "brown_chicken_rice",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 35800.36,
+      "response_evaluated": true,
+      "response_latency_ms": 1025.71,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R10",
+      "dish": "Bak kut teh",
+      "difficulty": "Medium",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 36929.54,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R11",
+      "dish": "Fried rice",
+      "difficulty": "Hard",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "chicken_fried_rice"
+      ],
+      "predicted_recipe_id": "brown_chicken_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "brown_chicken_rice",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 35687.62,
+      "response_evaluated": true,
+      "response_latency_ms": 964.23,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R12",
+      "dish": "Yong tau foo",
+      "difficulty": "Hard",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 39742.18,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R13",
+      "dish": "Pasta",
+      "difficulty": "Hard",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 39992.17,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R14",
+      "dish": "Sandwich",
+      "difficulty": "Hard",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 38409.91,
+      "response_evaluated": true,
+      "response_latency_ms": 973.44,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "R15",
+      "dish": "Hotpot",
+      "difficulty": "Hard",
+      "disease_profile": "Haemodialysis (CKD 5D)",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 39994.89,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D01",
+      "dish": "Chicken rice",
+      "difficulty": "Easy",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "brown_chicken_rice"
+      ],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 41515.47,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D02",
+      "dish": "Kaya toast",
+      "difficulty": "Easy",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 44705.99,
+      "response_evaluated": true,
+      "response_latency_ms": 1102.57,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D03",
+      "dish": "Bubble tea",
+      "difficulty": "Easy",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 44742.85,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D04",
+      "dish": "Nasi lemak",
+      "difficulty": "Easy",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 46630.15,
+      "response_evaluated": true,
+      "response_latency_ms": 1124.17,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D05",
+      "dish": "Fried rice",
+      "difficulty": "Easy",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "chicken_fried_rice"
+      ],
+      "predicted_recipe_id": "brown_chicken_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "brown_chicken_rice",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 40497.84,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D06",
+      "dish": "Mee siam",
+      "difficulty": "Medium",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 43713.9,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D07",
+      "dish": "Cereal breakfast",
+      "difficulty": "Medium",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 42246.48,
+      "response_evaluated": true,
+      "response_latency_ms": 1056.42,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D08",
+      "dish": "Pasta",
+      "difficulty": "Medium",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 40422.03,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D09",
+      "dish": "Fruit smoothie",
+      "difficulty": "Medium",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 44788.56,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D10",
+      "dish": "Laksa",
+      "difficulty": "Medium",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 40785.76,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D11",
+      "dish": "Sandwich",
+      "difficulty": "Hard",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 41884.01,
+      "response_evaluated": true,
+      "response_latency_ms": 1009.43,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D12",
+      "dish": "Curry rice",
+      "difficulty": "Hard",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 39638.45,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D13",
+      "dish": "Dessert bowl",
+      "difficulty": "Hard",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 48928.56,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D14",
+      "dish": "Yong tau foo",
+      "difficulty": "Hard",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 42226.3,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "D15",
+      "dish": "Oatmeal",
+      "difficulty": "Hard",
+      "disease_profile": "Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "oatmeal",
+        "banana_soymilk_oatmeal"
+      ],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 42414.1,
+      "response_evaluated": true,
+      "response_latency_ms": 1101.12,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H01",
+      "dish": "Instant ramen",
+      "difficulty": "Easy",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "instant_ramen_reference"
+      ],
+      "predicted_recipe_id": "instant_ramen_reference",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "instant_ramen_reference",
+      "supported_hit_at_1": true,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 37603.37,
+      "response_evaluated": true,
+      "response_latency_ms": 966.66,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H02",
+      "dish": "Chicken rice",
+      "difficulty": "Easy",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "brown_chicken_rice"
+      ],
+      "predicted_recipe_id": "brown_chicken_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "brown_chicken_rice",
+      "supported_hit_at_1": true,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 37280.15,
+      "response_evaluated": true,
+      "response_latency_ms": 1013.81,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H03",
+      "dish": "Fish soup",
+      "difficulty": "Easy",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "fish_soup"
+      ],
+      "predicted_recipe_id": "fish_soup",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "fish_soup",
+      "supported_hit_at_1": true,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 36329.85,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H04",
+      "dish": "Bak kut teh",
+      "difficulty": "Easy",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 40893.91,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H05",
+      "dish": "Laksa",
+      "difficulty": "Easy",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 40517.52,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H06",
+      "dish": "Mee goreng",
+      "difficulty": "Medium",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "meal_plan",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "brown_chicken_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "brown_chicken_rice",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 36377.81,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H07",
+      "dish": "Nasi lemak",
+      "difficulty": "Medium",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 33140.05,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H08",
+      "dish": "Fried rice",
+      "difficulty": "Medium",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "chicken_fried_rice"
+      ],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 30067.97,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H09",
+      "dish": "Sandwich",
+      "difficulty": "Medium",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 29653.41,
+      "response_evaluated": true,
+      "response_latency_ms": 692.88,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H10",
+      "dish": "Curry chicken",
+      "difficulty": "Medium",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 31850.11,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H11",
+      "dish": "Yong tau foo",
+      "difficulty": "Hard",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 34629.23,
+      "response_evaluated": true,
+      "response_latency_ms": 943.41,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H12",
+      "dish": "Pasta",
+      "difficulty": "Hard",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "brown_chicken_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "brown_chicken_rice",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 35384.35,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H13",
+      "dish": "Congee",
+      "difficulty": "Hard",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "chicken_congee"
+      ],
+      "predicted_recipe_id": "chicken_congee",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "chicken_congee",
+      "supported_hit_at_1": true,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 37549.98,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H14",
+      "dish": "Hotpot",
+      "difficulty": "Hard",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "brown_chicken_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "brown_chicken_rice",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 37065.02,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "H15",
+      "dish": "Rice bowl",
+      "difficulty": "Hard",
+      "disease_profile": "Hypertension / DASH",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "brown_chicken_rice",
+        "chicken_fried_rice",
+        "tofu_rice_bowl",
+        "shrimp_broccoli_rice_bowl",
+        "salmon_mushroom_rice_bowl",
+        "cod_rice_bowl",
+        "chicken_cauliflower_rice_bowl",
+        "chickpea_tomato_rice_bowl",
+        "spinach_egg_rice_bowl",
+        "tuna_cucumber_rice_bowl"
+      ],
+      "predicted_recipe_id": "brown_chicken_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "brown_chicken_rice",
+      "supported_hit_at_1": true,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 35638.97,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M01",
+      "dish": "Chicken rice",
+      "difficulty": "Medium",
+      "disease_profile": "Haemodialysis + Hypertension",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "brown_chicken_rice"
+      ],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 38966.36,
+      "response_evaluated": true,
+      "response_latency_ms": 916.14,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M02",
+      "dish": "Fish soup",
+      "difficulty": "Medium",
+      "disease_profile": "Haemodialysis + Hypertension",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "fish_soup"
+      ],
+      "predicted_recipe_id": "fish_soup",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "fish_soup",
+      "supported_hit_at_1": true,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 35605.19,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M03",
+      "dish": "Hotpot",
+      "difficulty": "Medium",
+      "disease_profile": "Haemodialysis + Hypertension",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 41300.22,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M04",
+      "dish": "Laksa",
+      "difficulty": "Medium",
+      "disease_profile": "Haemodialysis + Hypertension",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 41401.37,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M05",
+      "dish": "Yong tau foo",
+      "difficulty": "Medium",
+      "disease_profile": "Haemodialysis + Hypertension",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 41484.5,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M06",
+      "dish": "Chicken rice",
+      "difficulty": "Hard",
+      "disease_profile": "Haemodialysis + Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "brown_chicken_rice"
+      ],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 39826.57,
+      "response_evaluated": true,
+      "response_latency_ms": 894.42,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M07",
+      "dish": "Congee",
+      "difficulty": "Hard",
+      "disease_profile": "Haemodialysis + Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "recipe",
+      "schema_valid": false,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "chicken_congee"
+      ],
+      "predicted_recipe_id": "brown_chicken_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "brown_chicken_rice",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 37297.92,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M08",
+      "dish": "Nasi lemak",
+      "difficulty": "Hard",
+      "disease_profile": "Haemodialysis + Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 45427.2,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M09",
+      "dish": "Fruit smoothie",
+      "difficulty": "Hard",
+      "disease_profile": "Haemodialysis + Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 44277.55,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M10",
+      "dish": "Pasta",
+      "difficulty": "Hard",
+      "disease_profile": "Haemodialysis + Diabetes",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "recipe_requests",
+      "schema_valid": false,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "brown_chicken_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "brown_chicken_rice",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 36417.46,
+      "response_evaluated": true,
+      "response_latency_ms": 1493.78,
+      "response": "No local recipe found for \"brown chicken rice\". The recipe catalog does not contain a recipe matching your request. If you have a different recipe in mind, please provide more details.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M11",
+      "dish": "Sandwich",
+      "difficulty": "Hard",
+      "disease_profile": "Diabetes + Hypertension",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 44510.31,
+      "response_evaluated": true,
+      "response_latency_ms": 1220.33,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M12",
+      "dish": "Fried rice",
+      "difficulty": "Hard",
+      "disease_profile": "Diabetes + Hypertension",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "chicken_fried_rice"
+      ],
+      "predicted_recipe_id": "chicken_fried_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "chicken_fried_rice",
+      "supported_hit_at_1": true,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 38852.64,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M13",
+      "dish": "Bubble tea",
+      "difficulty": "Hard",
+      "disease_profile": "Diabetes + Hypertension",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "shrimp_broccoli_rice_bowl",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "shrimp_broccoli_rice_bowl",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 43321.49,
+      "response_evaluated": false,
+      "response_latency_ms": null,
+      "response": "",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M14",
+      "dish": "Curry rice",
+      "difficulty": "Hard",
+      "disease_profile": "Diabetes + Hypertension",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [],
+      "predicted_recipe_id": "brown_chicken_rice",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "brown_chicken_rice",
+      "supported_hit_at_1": false,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 39443.4,
+      "response_evaluated": true,
+      "response_latency_ms": 1132.28,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    },
+    {
+      "case_id": "M15",
+      "dish": "Instant ramen",
+      "difficulty": "Hard",
+      "disease_profile": "Haemodialysis + Diabetes + Hypertension",
+      "expected_intent": "single_recipe",
+      "predicted_intent": "composition_question",
+      "schema_valid": true,
+      "intent_correct": false,
+      "expected_recipe_ids": [
+        "instant_ramen_reference"
+      ],
+      "predicted_recipe_id": "instant_ramen_reference",
+      "effective_recipe_id": null,
+      "retrieval_score": 1.25,
+      "routed_query": "instant_ramen_reference",
+      "supported_hit_at_1": true,
+      "unsupported_abstained": false,
+      "route_correct": false,
+      "planning_latency_ms": 38736.3,
+      "response_evaluated": true,
+      "response_latency_ms": 1120.24,
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null
+    }
+  ],
+  "raw_outputs": [
+    {
+      "case_id": "R01",
+      "query": "Make me a lower-sodium instant ramen suitable for my haemodialysis diet.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "instant_ramen_reference",
+            "query": "instant ramen"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "instant ramen",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "instant ramen",
+        "substitute_ingredient_query": null,
+        "recipe_query": "instant_ramen_reference",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "instant_ramen_reference"
+      ]
+    },
+    {
+      "case_id": "R02",
+      "query": "Modify chicken rice to better fit my haemodialysis diet without changing the dish too much.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "R03",
+      "query": "Modify laksa to better fit my haemodialysis diet without changing the dish too much.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          },
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "R04",
+      "query": "Modify fish soup to better fit my haemodialysis diet without changing the dish too much.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "fish_soup",
+            "query": "fish soup"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "fish soup",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "fish soup",
+        "substitute_ingredient_query": null,
+        "recipe_query": "fish_soup",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "fish_soup"
+      ]
+    },
+    {
+      "case_id": "R05",
+      "query": "Modify congee to better fit my haemodialysis diet without changing the dish too much.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "brown_chicken_rice",
+            "query": "chicken rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "chicken rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "chicken rice",
+        "substitute_ingredient_query": null,
+        "recipe_query": "brown_chicken_rice",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "brown_chicken_rice"
+      ]
+    },
+    {
+      "case_id": "R06",
+      "query": "Create a renal-friendly version of mee goreng for dinner based on my remaining daily nutrient allowance.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          },
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "R07",
+      "query": "Create a renal-friendly version of nasi lemak for dinner based on my remaining daily nutrient allowance.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          },
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "R08",
+      "query": "Create a renal-friendly version of curry chicken for dinner based on my remaining daily nutrient allowance.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "brown_chicken_rice",
+            "query": "brown chicken rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "brown chicken rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "brown chicken rice",
+        "substitute_ingredient_query": null,
+        "recipe_query": "brown_chicken_rice",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "brown_chicken_rice"
+      ]
+    },
+    {
+      "case_id": "R09",
+      "query": "Create a renal-friendly version of porridge with salted egg for dinner based on my remaining daily nutrient allowance.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "brown_chicken_rice",
+            "query": "salted egg"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "salted egg",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "salted egg",
+        "substitute_ingredient_query": "no substitute",
+        "recipe_query": "brown_chicken_rice",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "brown_chicken_rice"
+      ]
+    },
+    {
+      "case_id": "R10",
+      "query": "Create a renal-friendly version of bak kut teh for dinner based on my remaining daily nutrient allowance.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "R11",
+      "query": "Make fried rice suitable for a haemodialysis patient while keeping it realistic and recognizable.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "brown_chicken_rice",
+            "query": "chicken rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "chicken rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "chicken rice",
+        "substitute_ingredient_query": null,
+        "recipe_query": "brown_chicken_rice",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "brown_chicken_rice"
+      ]
+    },
+    {
+      "case_id": "R12",
+      "query": "Make yong tau foo suitable for a haemodialysis patient while keeping it realistic and recognizable.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "R13",
+      "query": "Make pasta suitable for a haemodialysis patient while keeping it realistic and recognizable.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "R14",
+      "query": "Make sandwich suitable for a haemodialysis patient while keeping it realistic and recognizable.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp rice bowl"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "R15",
+      "query": "Make hotpot suitable for a haemodialysis patient while keeping it realistic and recognizable.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D01",
+      "query": "Modify chicken rice for an adult with diabetes, keeping the meal practical.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          },
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D02",
+      "query": "Modify kaya toast for an adult with diabetes, keeping the meal practical.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D03",
+      "query": "Modify bubble tea for an adult with diabetes, keeping the meal practical.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D04",
+      "query": "Modify nasi lemak for an adult with diabetes, keeping the meal practical.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          },
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D05",
+      "query": "Modify fried rice for an adult with diabetes, keeping the meal practical.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "brown_chicken_rice",
+            "query": "chicken rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "chicken rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "chicken rice",
+        "substitute_ingredient_query": null,
+        "recipe_query": "brown_chicken_rice",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "brown_chicken_rice"
+      ]
+    },
+    {
+      "case_id": "D06",
+      "query": "Recommend a diabetes-appropriate version of mee siam for this meal using my carbohydrate target.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D07",
+      "query": "Recommend a diabetes-appropriate version of cereal breakfast for this meal using my carbohydrate target.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp rice bowl"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "chicken rice",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D08",
+      "query": "Recommend a diabetes-appropriate version of pasta for this meal using my carbohydrate target.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "rice",
+        "substitute_ingredient_query": null,
+        "recipe_query": null,
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D09",
+      "query": "Recommend a diabetes-appropriate version of fruit smoothie for this meal using my carbohydrate target.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          },
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D10",
+      "query": "Recommend a diabetes-appropriate version of laksa for this meal using my carbohydrate target.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D11",
+      "query": "Improve sandwich for diabetes while preserving the original dish and avoiding unnecessary changes.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D12",
+      "query": "Improve curry rice for diabetes while preserving the original dish and avoiding unnecessary changes.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D13",
+      "query": "Improve dessert bowl for diabetes while preserving the original dish and avoiding unnecessary changes.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          },
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D14",
+      "query": "Improve yong tau foo for diabetes while preserving the original dish and avoiding unnecessary changes.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "D15",
+      "query": "Improve oatmeal for diabetes while preserving the original dish and avoiding unnecessary changes.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "H01",
+      "query": "Make a lower-sodium version of instant ramen for hypertension.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "instant_ramen_reference",
+            "query": "lower-sodium version of instant ramen"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "instant ramen",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "instant ramen",
+        "substitute_ingredient_query": null,
+        "recipe_query": "instant_ramen_reference",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "instant_ramen_reference"
+      ]
+    },
+    {
+      "case_id": "H02",
+      "query": "Make a lower-sodium version of chicken rice for hypertension.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "brown_chicken_rice",
+            "query": "brown chicken rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "chicken rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "chicken rice",
+        "substitute_ingredient_query": null,
+        "recipe_query": "brown_chicken_rice",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "brown_chicken_rice"
+      ]
+    },
+    {
+      "case_id": "H03",
+      "query": "Make a lower-sodium version of fish soup for hypertension.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "fish_soup",
+            "query": "fish soup"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "fish soup",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "fish soup",
+        "substitute_ingredient_query": null,
+        "recipe_query": "fish_soup",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "fish_soup"
+      ]
+    },
+    {
+      "case_id": "H04",
+      "query": "Make a lower-sodium version of bak kut teh for hypertension.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "H05",
+      "query": "Make a lower-sodium version of laksa for hypertension.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "H06",
+      "query": "Make mee goreng fit a DASH-style eating pattern while keeping it realistic.",
+      "raw_plan": {
+        "intent": "meal_plan",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "brown_chicken_rice",
+            "query": "brown chicken rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [],
+        "original_ingredient_query": "brown chicken rice",
+        "substitute_ingredient_query": null,
+        "recipe_query": "brown_chicken_rice",
+        "requested_count": 1,
+        "question_type": "recipe"
+      },
+      "evidence": {
+        "lookup_status": "NO_MATCHING_LOCAL_RECIPE",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "brown_chicken_rice"
+      ]
+    },
+    {
+      "case_id": "H07",
+      "query": "Make nasi lemak fit a DASH-style eating pattern while keeping it realistic.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "H08",
+      "query": "Make fried rice fit a DASH-style eating pattern while keeping it realistic.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          },
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "H09",
+      "query": "Make sandwich fit a DASH-style eating pattern while keeping it realistic.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "H10",
+      "query": "Make curry chicken fit a DASH-style eating pattern while keeping it realistic.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 10
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 10
+          },
+          {
+            "query": "rice",
+            "amount_g": 10
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "H11",
+      "query": "Recommend yong tau foo for dinner using my remaining sodium allowance today.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          },
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "H12",
+      "query": "Recommend pasta for dinner using my remaining sodium allowance today.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "brown_chicken_rice",
+            "query": "brown chicken rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "rice",
+        "substitute_ingredient_query": null,
+        "recipe_query": "brown_chicken_rice",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "brown_chicken_rice"
+      ]
+    },
+    {
+      "case_id": "H13",
+      "query": "Recommend congee for dinner using my remaining sodium allowance today.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "chicken_congee",
+            "query": "chicken congee"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "chicken",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "chicken",
+        "substitute_ingredient_query": null,
+        "recipe_query": "chicken_congee",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "chicken_congee"
+      ]
+    },
+    {
+      "case_id": "H14",
+      "query": "Recommend hotpot for dinner using my remaining sodium allowance today.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "brown_chicken_rice",
+            "query": "brown chicken rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "brown chicken rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "brown chicken rice",
+        "substitute_ingredient_query": null,
+        "recipe_query": "brown_chicken_rice",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "brown_chicken_rice"
+      ]
+    },
+    {
+      "case_id": "H15",
+      "query": "Recommend rice bowl for dinner using my remaining sodium allowance today.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "brown_chicken_rice",
+            "query": "rice bowl"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "rice",
+        "substitute_ingredient_query": null,
+        "recipe_query": "brown_chicken_rice",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "brown_chicken_rice"
+      ]
+    },
+    {
+      "case_id": "M01",
+      "query": "Make chicken rice suitable for my dialysis diet and hypertension.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp rice bowl"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "M02",
+      "query": "I have dialysis and hypertension. Make fish soup fit both diets.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "fish_soup",
+            "query": "fish soup"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "fish",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "fish",
+        "substitute_ingredient_query": "tofu_rice_bowl",
+        "recipe_query": "fish_soup",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "fish_soup"
+      ]
+    },
+    {
+      "case_id": "M03",
+      "query": "Can I have a renal- and hypertension-friendly hotpot tonight?",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 10
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 10
+          },
+          {
+            "query": "rice",
+            "amount_g": 10
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "M04",
+      "query": "Modify laksa for dialysis and high blood pressure without turning it into a different dish.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          },
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "M05",
+      "query": "Build a suitable yong tau foo bowl for dialysis and hypertension.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "M06",
+      "query": "Make chicken rice suitable for both dialysis and diabetes.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "M07",
+      "query": "Recommend a dialysis- and diabetes-appropriate congee breakfast.",
+      "raw_plan": {
+        "intent": "recipe",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "brown_chicken_rice",
+            "query": "brown chicken rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [],
+        "original_ingredient_query": "brown chicken rice",
+        "substitute_ingredient_query": null,
+        "recipe_query": "brown chicken rice",
+        "requested_count": 1,
+        "question_type": "recipe"
+      },
+      "evidence": {
+        "lookup_status": "NO_MATCHING_LOCAL_RECIPE",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "brown_chicken_rice"
+      ]
+    },
+    {
+      "case_id": "M08",
+      "query": "Modify nasi lemak for dialysis and diabetes while keeping it recognizable.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 40
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 40
+          },
+          {
+            "query": "rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "M09",
+      "query": "Can you make a smoothie that fits my dialysis and diabetes targets?",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "M10",
+      "query": "Make pasta for dinner based on what I have already eaten today.",
+      "raw_plan": {
+        "intent": "recipe_requests",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "brown_chicken_rice",
+            "query": "brown chicken rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [],
+        "original_ingredient_query": "brown chicken rice",
+        "substitute_ingredient_query": null,
+        "recipe_query": "brown_chicken_rice",
+        "requested_count": 1,
+        "question_type": "recipe"
+      },
+      "evidence": {
+        "lookup_status": "NO_MATCHING_LOCAL_RECIPE",
+        "active_limits": {}
+      },
+      "response": "No local recipe found for \"brown chicken rice\". The recipe catalog does not contain a recipe matching your request. If you have a different recipe in mind, please provide more details.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "brown_chicken_rice"
+      ]
+    },
+    {
+      "case_id": "M11",
+      "query": "Make this sandwich appropriate for diabetes and hypertension.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "M12",
+      "query": "Modify fried rice for diabetes and hypertension.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "chicken_fried_rice",
+            "query": "chicken fried rice (prototype serving)"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "chicken",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "chicken",
+        "substitute_ingredient_query": null,
+        "recipe_query": "chicken_fried_rice",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "chicken_fried_rice"
+      ]
+    },
+    {
+      "case_id": "M13",
+      "query": "Recommend a version of bubble tea for diabetes and hypertension.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "prototype composition",
+            "recipe_id": "shrimp_broccoli_rice_bowl",
+            "query": "shrimp, broccoli, rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "shrimp",
+            "amount_g": 1
+          },
+          {
+            "query": "broccoli",
+            "amount_g": 1
+          },
+          {
+            "query": "rice",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "shrimp",
+        "substitute_ingredient_query": "broccoli",
+        "recipe_query": "shrimp_broccoli_rice_bowl",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "shrimp_broccoli_rice_bowl"
+      ]
+    },
+    {
+      "case_id": "M14",
+      "query": "Make curry rice fit both my diabetes and hypertension meal plan.",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "brown_chicken_rice",
+            "query": "brown chicken rice"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "brown chicken rice",
+            "amount_g": 40
+          }
+        ],
+        "original_ingredient_query": "brown chicken rice",
+        "substitute_ingredient_query": null,
+        "recipe_query": "brown_chicken_rice",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "brown_chicken_rice"
+      ]
+    },
+    {
+      "case_id": "M15",
+      "query": "I have dialysis, diabetes, and hypertension. Can you modify instant ramen for tonight?",
+      "raw_plan": {
+        "intent": "composition_question",
+        "recipe_requests": [
+          {
+            "slot": "optional meal label",
+            "recipe_id": "instant_ramen_reference",
+            "query": "instant ramen"
+          }
+        ],
+        "ingredient_queries": [],
+        "composition_ingredients": [
+          {
+            "query": "instant ramen",
+            "amount_g": 1
+          }
+        ],
+        "original_ingredient_query": "instant ramen",
+        "substitute_ingredient_query": null,
+        "recipe_query": "instant_ramen_reference",
+        "requested_count": 1,
+        "question_type": "composition_question"
+      },
+      "evidence": {
+        "lookup_status": "NEEDS_DETAILS",
+        "message": "The plan asks about a food composition but no explicit food amounts were provided.",
+        "active_limits": {}
+      },
+      "response": "The plan asks about a food composition but no explicit food amounts were provided. A limit fails.",
+      "response_error": null,
+      "planning_error": null,
+      "raw_recipe_ids": [
+        "instant_ramen_reference"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "recipe_id": "banana_soymilk_oatmeal",
+      "recipe_name": "Banana and soy milk oats (prototype composition)",
+      "passed": false,
+      "issues": [
+        "Method contains an ingredient amount that was not in the validated composition"
+      ],
+      "latency_ms": 2045.35,
+      "method": "1. Combine 40 g of rolled oats with 120 g of unsweetened soy milk in a bowl.  \n2. Add 50 g of ripe banana, ripe and raw, and stir until the oats are fully incorporated.  \n3. Top with the banana and serve.",
+      "error": null
+    },
+    {
+      "recipe_id": "berry_yogurt_bowl",
+      "recipe_name": "Berry and Greek yogurt bowl (prototype composition)",
+      "passed": false,
+      "issues": [
+        "Method contains an ingredient amount that was not in the validated composition"
+      ],
+      "latency_ms": 1371.64,
+      "method": "1. Combine 150 g of plain Greek yogurt and 50 g of strawberries, 50 g of blueberries.  \n2. Serve the mixture at room temperature.",
+      "error": null
+    },
+    {
+      "recipe_id": "brown_chicken_rice",
+      "recipe_name": "Brown chicken rice (prototype serving)",
+      "passed": true,
+      "issues": [],
+      "latency_ms": 1126.98,
+      "method": "1. Cook the white rice in water until it is tender.  \n2. Slice the cooked chicken breast and serve it over the rice.",
+      "error": null
+    },
+    {
+      "recipe_id": "chicken_cauliflower_rice_bowl",
+      "recipe_name": "Chicken and cauliflower rice bowl (prototype composition)",
+      "passed": true,
+      "issues": [],
+      "latency_ms": 1650.63,
+      "method": "1. Cook the white rice in water to make it soft.  \n2. Add the chicken breast, cooked, and cauliflower, raw, to the rice.  \n3. Serve with the cooked chicken and cauliflower rice.",
+      "error": null
+    },
+    {
+      "recipe_id": "chicken_congee",
+      "recipe_name": "Chicken congee (prototype serving)",
+      "passed": true,
+      "issues": [],
+      "latency_ms": 1032.31,
+      "method": "1. Simmer the listed dry rice with water until soft and porridge-like.  \n2. Top with the cooked chicken and serve.",
+      "error": null
+    },
+    {
+      "recipe_id": "chicken_fried_rice",
+      "recipe_name": "Chicken fried rice (prototype serving)",
+      "passed": true,
+      "issues": [],
+      "latency_ms": 1664.2,
+      "method": "1. Cook the white rice in a pot of water until it is tender.  \n2. Add the cooked chicken breast to the rice and cook until the chicken is fully cooked.  \n3. Once the chicken is cooked, serve the rice and chicken.",
+      "error": null
+    },
+    {
+      "recipe_id": "chickpea_garden_salad",
+      "recipe_name": "Chickpea garden salad (prototype composition)",
+      "passed": false,
+      "issues": [
+        "Method mentions unvalidated ingredient: tomato"
+      ],
+      "latency_ms": 1585.93,
+      "method": "1. Combine the listed washed produce and drained, rinsed chickpeas.  \n2. Add the raw iceberg lettuce, cucumber with peel, and Roma tomato.  \n3. Serve without an unlisted dressing.",
+      "error": null
+    },
+    {
+      "recipe_id": "chickpea_tomato_rice_bowl",
+      "recipe_name": "Chickpea and tomato rice bowl (prototype composition)",
+      "passed": false,
+      "issues": [
+        "Method mentions unvalidated ingredient: tomatoes"
+      ],
+      "latency_ms": 1973.94,
+      "method": "1. Cook the white rice in water until it is tender.  \n2. Combine the drained and rinsed chickpeas with the crushed tomatoes and scallion.  \n3. Serve the rice bowl with the chickpeas, tomatoes, and scallion.",
+      "error": null
+    },
+    {
+      "recipe_id": "cod_rice_bowl",
+      "recipe_name": "Cod and cauliflower rice bowl (prototype composition)",
+      "passed": true,
+      "issues": [],
+      "latency_ms": 1738.09,
+      "method": "1. Cook the white rice in water to prepare the rice bowl.  \n2. Add the raw Atlantic cod and cauliflower to the rice.  \n3. Add the raw red bell pepper to the rice.  \n4. Serve with the rice.",
+      "error": null
+    },
+    {
+      "recipe_id": "fish_soup",
+      "recipe_name": "Tilapia and bok choy soup (prototype serving)",
+      "passed": true,
+      "issues": [],
+      "latency_ms": 1399.9,
+      "method": "1. Cook the tilapia and bok choy using a suitable soup method.  \n2. Add the scallion and stir until well combined.  \n3. Serve the soup as is.",
+      "error": null
+    }
+  ]
+}

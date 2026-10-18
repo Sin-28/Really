@@ -1,0 +1,11 @@
+﻿case_id,dish,difficulty,disease_profile,blind_model,response,relevance_1_to_5,evidence_grounding_1_to_5,constraint_safety_1_to_5,clarity_1_to_5,material_error_yes_no,review_notes
+D04,Nasi lemak,Easy,Diabetes,A,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,,,,,
+D04,Nasi lemak,Easy,Diabetes,B,"No local recipe matching ""nasi lemak"" for an adult with diabetes was found. Please provide a specific recipe or adjust the recipe parameters to find a suitable option.",,,,,,
+R04,Fish soup,Easy,Haemodialysis (CKD 5D),A,"The recipe for Tilapia and bok choy soup (prototype serving) contains 100 g of tilapia and 60 g of bok choy per serving. The nutrient profile includes 19.645 g of protein, 102.78 mg of sodium, 490.40 mg of potassium, and 178.69 mg of phosphorus. 
+
+The sodium content (102.78 mg) is within the typical range for a haemodialysis diet, but if you are on a low-sodium diet, you may want to consider reducing the sodium content. The potassium content (490.40 mg) is also within the normal range, but if you are on a low-potassium diet, you may want to adjust the recipe accordingly. The phosphorus content (178.69 mg) is also within the normal range, but if you are on a low-phosphorus diet, you may want to adjust the recipe.
+
+No substitutions are required for the",,,,,,
+R04,Fish soup,Easy,Haemodialysis (CKD 5D),B,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,,,,,
+H02,Chicken rice,Easy,Hypertension / DASH,A,"The recipe for brown chicken rice (prototype serving) contains 46.3648 mg of sodium per serving. To make a lower-sodium version for hypertension, you can reduce the sodium content by adjusting the ingredients or using substitutes. However, the current recipe does not provide specific details on how to lower the sodium content. If no substitutions are available, the sodium level in the recipe is already relatively low, and further adjustments may not be necessary. For a more precise lower-sodium version, additional information or modifications would be required.",,,,,,
+H02,Chicken rice,Easy,Hypertension / DASH,B,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,,,,,

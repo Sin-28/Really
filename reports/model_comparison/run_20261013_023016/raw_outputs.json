@@ -1,0 +1,81 @@
+[
+  {
+    "model": "Qwen/Qwen3-0.6B",
+    "model_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "runtime": {
+      "python": "3.10.21",
+      "torch": "2.14.0",
+      "transformers": "5.17.0",
+      "huggingface_hub": "1.31.0",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "catalog_sha256": "d40b166e585f6ce2075e1cdcf7d541fa6f4178cb1b1b8d213dff5d723a3d6287",
+      "benchmark_sha256": "21f89c7538b1d6a5c32b19ecc4e71849969b8ad729ef53fc0555c0330e2a8f91",
+      "test_cases": 1,
+      "warmup_calls": 1,
+      "method_cases": 1,
+      "decoding": {
+        "do_sample": false,
+        "max_new_tokens_plan": 420,
+        "max_new_tokens_response": 220,
+        "max_new_tokens_method": 180
+      },
+      "clinical_numeric_limits_passed_to_planner": false
+    },
+    "raw_outputs": [
+      {
+        "case_id": "R01",
+        "query": "Make me a lower-sodium instant ramen suitable for my haemodialysis diet.",
+        "raw_plan": {
+          "intent": "composition_question",
+          "recipe_requests": [
+            {
+              "slot": "optional meal label",
+              "recipe_id": "instant_ramen_reference",
+              "query": "instant ramen"
+            }
+          ],
+          "ingredient_queries": [],
+          "composition_ingredients": [
+            {
+              "query": "instant ramen",
+              "amount_g": 40
+            }
+          ],
+          "original_ingredient_query": "instant ramen",
+          "substitute_ingredient_query": null,
+          "recipe_query": "instant_ramen_reference",
+          "requested_count": 1,
+          "question_type": "composition_question"
+        },
+        "evidence": {
+          "lookup_status": "FOUND",
+          "recipe_id": "instant_ramen_reference",
+          "recipe_name": "Instant ramen (generic dry reference serving)",
+          "ingredients_per_serving": [],
+          "nutrients_per_serving": {},
+          "active_limits": {},
+          "constraint_status": "NOT_EVALUATED_NO_EXPLICIT_LIMITS"
+        },
+        "response": "The recipe for instant ramen is available, but there are no specific limits for sodium in this recipe. If you have a lower-sodium requirement, you may need to adjust the recipe or look for a different option.",
+        "response_error": null,
+        "planning_error": null,
+        "raw_recipe_ids": [
+          "instant_ramen_reference"
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "recipe_id": "banana_soymilk_oatmeal",
+        "recipe_name": "Banana and soy milk oats (prototype composition)",
+        "passed": false,
+        "issues": [
+          "Method contains an ingredient amount that was not in the validated composition"
+        ],
+        "latency_ms": 1742.59,
+        "method": "1. Combine 40 g of rolled oats with 120 g of unsweetened soy milk in a bowl.  \n2. Add 50 g of ripe banana, ripe and raw, and stir until the oats are fully incorporated.  \n3. Top with the banana and serve.",
+        "error": null
+      }
+    ]
+  }
+]

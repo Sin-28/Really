@@ -1,0 +1,59 @@
+﻿model,recipe_id,recipe_name,passed,issues,latency_ms,method,error
+Qwen/Qwen3-0.6B,banana_soymilk_oatmeal,Banana and soy milk oats (prototype composition),False,['Method contains an ingredient amount that was not in the validated composition'],2045.35,"1. Combine 40 g of rolled oats with 120 g of unsweetened soy milk in a bowl.  
+2. Add 50 g of ripe banana, ripe and raw, and stir until the oats are fully incorporated.  
+3. Top with the banana and serve.",
+Qwen/Qwen3-0.6B,berry_yogurt_bowl,Berry and Greek yogurt bowl (prototype composition),False,['Method contains an ingredient amount that was not in the validated composition'],1371.64,"1. Combine 150 g of plain Greek yogurt and 50 g of strawberries, 50 g of blueberries.  
+2. Serve the mixture at room temperature.",
+Qwen/Qwen3-0.6B,brown_chicken_rice,Brown chicken rice (prototype serving),True,[],1126.98,"1. Cook the white rice in water until it is tender.  
+2. Slice the cooked chicken breast and serve it over the rice.",
+Qwen/Qwen3-0.6B,chicken_cauliflower_rice_bowl,Chicken and cauliflower rice bowl (prototype composition),True,[],1650.63,"1. Cook the white rice in water to make it soft.  
+2. Add the chicken breast, cooked, and cauliflower, raw, to the rice.  
+3. Serve with the cooked chicken and cauliflower rice.",
+Qwen/Qwen3-0.6B,chicken_congee,Chicken congee (prototype serving),True,[],1032.31,"1. Simmer the listed dry rice with water until soft and porridge-like.  
+2. Top with the cooked chicken and serve.",
+Qwen/Qwen3-0.6B,chicken_fried_rice,Chicken fried rice (prototype serving),True,[],1664.2,"1. Cook the white rice in a pot of water until it is tender.  
+2. Add the cooked chicken breast to the rice and cook until the chicken is fully cooked.  
+3. Once the chicken is cooked, serve the rice and chicken.",
+Qwen/Qwen3-0.6B,chickpea_garden_salad,Chickpea garden salad (prototype composition),False,['Method mentions unvalidated ingredient: tomato'],1585.93,"1. Combine the listed washed produce and drained, rinsed chickpeas.  
+2. Add the raw iceberg lettuce, cucumber with peel, and Roma tomato.  
+3. Serve without an unlisted dressing.",
+Qwen/Qwen3-0.6B,chickpea_tomato_rice_bowl,Chickpea and tomato rice bowl (prototype composition),False,['Method mentions unvalidated ingredient: tomatoes'],1973.94,"1. Cook the white rice in water until it is tender.  
+2. Combine the drained and rinsed chickpeas with the crushed tomatoes and scallion.  
+3. Serve the rice bowl with the chickpeas, tomatoes, and scallion.",
+Qwen/Qwen3-0.6B,cod_rice_bowl,Cod and cauliflower rice bowl (prototype composition),True,[],1738.09,"1. Cook the white rice in water to prepare the rice bowl.  
+2. Add the raw Atlantic cod and cauliflower to the rice.  
+3. Add the raw red bell pepper to the rice.  
+4. Serve with the rice.",
+Qwen/Qwen3-0.6B,fish_soup,Tilapia and bok choy soup (prototype serving),True,[],1399.9,"1. Cook the tilapia and bok choy using a suitable soup method.  
+2. Add the scallion and stir until well combined.  
+3. Serve the soup as is.",
+Qwen/Qwen3-1.7B,banana_soymilk_oatmeal,Banana and soy milk oats (prototype composition),False,['Method contains an ingredient amount that was not in the validated composition'],3519.98,"1. Combine 40 g rolled oats and 120 g unsweetened soy milk in a bowl. Mix well to ensure even distribution.  
+2. Add 50 g ripe banana and mix thoroughly.  
+3. Serve immediately as a nutritious breakfast.",
+Qwen/Qwen3-1.7B,berry_yogurt_bowl,Berry and Greek yogurt bowl (prototype composition),False,"['Method mentions unvalidated ingredient: Yogurt, plain, nonfat']",2944.77,"1. Combine Greek yogurt, plain, nonfat, and washed strawberries and blueberries.  
+2. Serve as a bowl without additional sweeteners or toppings.  
+3. Ensure proper food safety by handling and storing ingredients appropriately.",
+Qwen/Qwen3-1.7B,brown_chicken_rice,Brown chicken rice (prototype serving),False,['Method contains an ingredient amount that was not in the validated composition'],4658.34,"1. Cook white rice by rinsing 40 g of raw white rice in boiling water for 5 minutes, then let sit for 10 minutes.  
+2. Cook 80 g of cooked chicken breast in a pan with a small amount of oil, then serve over the rice.  
+3. Serve bok choy, raw, as a side.",
+Qwen/Qwen3-1.7B,chicken_cauliflower_rice_bowl,Chicken and cauliflower rice bowl (prototype composition),False,['Method contains an ingredient amount that was not in the validated composition'],4806.61,"1. Cook white rice using 40 g of raw white rice with 200 ml of water, following standard rice cooking instructions.  
+2. Prepare red bell pepper by steaming or boiling for 5 minutes, then let cool.  
+3. Combine cooked rice, cooked chicken breast, and steamed red bell pepper in a bowl.  
+4. Serve immediately.",
+Qwen/Qwen3-1.7B,chicken_congee,Chicken congee (prototype serving),True,[],2099.66,"1. Simmer white rice, raw with water until soft and porridge-like.  
+2. Top with cooked chicken breast and serve.",
+Qwen/Qwen3-1.7B,chicken_fried_rice,Chicken fried rice (prototype serving),True,[],3108.64,"1. Cook white rice, raw in water according to package instructions, then let sit and cool slightly.  
+2. Cook chicken breast, cooked in a pan with the rice, ensuring both are heated through.  
+3. Serve immediately.",
+Qwen/Qwen3-1.7B,chickpea_garden_salad,Chickpea garden salad (prototype composition),True,[],2121.75,"1. Combine the listed washed produce and drained, rinsed chickpeas.  
+2. Serve as a fresh salad without an additional dressing.",
+Qwen/Qwen3-1.7B,chickpea_tomato_rice_bowl,Chickpea and tomato rice bowl (prototype composition),False,"['Method mentions unvalidated ingredient: tomatoes', 'Method contains an ingredient amount that was not in the validated composition']",4832.34,"1. Cook white rice using 40 g of raw rice and 200 ml of water according to standard rice cooking instructions.  
+2. Combine 70 g of drained and rinsed chickpeas, 50 g of crushed tomatoes, and 5 g of raw scallion in a bowl.  
+3. Serve the mixture with the cooked rice.",
+Qwen/Qwen3-1.7B,cod_rice_bowl,Cod and cauliflower rice bowl (prototype composition),False,['Method contains an ingredient amount that was not in the validated composition'],6391.35,"1. Cook white rice using 40 g of raw white rice with 200 ml of water, following standard rice cooking instructions.  
+2. Prepare Atlantic cod by briefly cooking it in a pan with a small amount of water to ensure it is fully cooked but not overcooked.  
+3. Prepare cauliflower by steaming or boiling it until tender, then finely chopping.  
+4. Combine cooked rice, cooked cod, and cauliflower in a bowl, and serve.",
+Qwen/Qwen3-1.7B,fish_soup,Tilapia and bok choy soup (prototype serving),True,[],4216.37,"1. Cook tilapia, raw, in a suitable soup method, ensuring it is properly prepared and cooked through.  
+2. Add bok choy, raw, to the soup and cook until tender.  
+3. Serve the soup as is, without additional ingredients or modifications.",

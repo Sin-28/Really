@@ -1,0 +1,7 @@
+﻿case_id,blind_model,model
+D04,A,Qwen/Qwen3-0.6B
+D04,B,Qwen/Qwen3-1.7B
+R04,A,Qwen/Qwen3-1.7B
+R04,B,Qwen/Qwen3-0.6B
+H02,A,Qwen/Qwen3-1.7B
+H02,B,Qwen/Qwen3-0.6B

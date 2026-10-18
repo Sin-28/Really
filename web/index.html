@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5f1">
+  <title>RenAlly · Local prototype</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="RenAlly home">
+        <span class="brand-mark">r</span>
+        <span><strong>RenAlly</strong><small>FOOD, WITH CONTEXT</small></span>
+      </a>
+      <div class="local-pill"><span></span> Runs on this computer</div>
+      <div class="sidebar-copy">
+        <p class="eyebrow">RESEARCH PROTOTYPE</p>
+        <h1>A clearer way to explore a meal.</h1>
+        <p>Ask about a recipe, an ingredient, or a menu. When enabled, Qwen interprets the request; RenAlly retrieves matching local records and checks explicit limits.</p>
+      </div>
+      <div class="catalog-card">
+        <div class="catalog-title"><span>Recipe catalog</span><span class="catalog-count">18</span></div>
+        <div class="catalog-chips">
+          <span>Chicken rice</span><span>Fish soup</span><span>Instant ramen</span>
+          <span>Rice bowls</span><span>Oat breakfasts</span><span>Salads & fruit</span>
+        </div>
+        <p>Ask about one dish, an ingredient's nutrients, or a menu with the number of meals you want. Unsupported records are reported instead of estimated.</p>
+      </div>
+      <div class="sidebar-foot">Prototype estimates are not for patient use.</div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div><span class="eyebrow">LOCAL CHAT</span><h2>Meal conversation</h2></div>
+        <nav class="nav-actions" aria-label="Prototype pages">
+          <a class="text-button graph-link" href="/graph" aria-label="Explore graph"><span class="desktop-nav">Explore graph ↗</span><span class="mobile-nav">Graph</span></a>
+          <button id="clear-chat" class="text-button" type="button" aria-label="Start a new conversation"><span class="desktop-nav">New conversation</span><span class="mobile-nav">New</span></button>
+          <button id="settings-toggle" class="text-button" type="button" aria-controls="settings-panel" aria-expanded="false"><span class="desktop-nav">Meal context</span><span class="mobile-nav">Context</span></button>
+        </nav>
+      </header>
+
+      <section id="chat-log" class="chat-log" aria-live="polite" aria-label="Conversation">
+        <article class="message assistant welcome-message">
+          <div class="avatar">R</div>
+          <div class="message-body">
+            <div class="message-meta">RENALLY <span>PROTOTYPE</span></div>
+            <div class="bubble">
+              <p>Hi, I can explore dishes in the prototype catalog. Try asking:</p>
+              <button class="suggestion" type="button" data-query="Can you make a lower-sodium shrimp broccoli rice bowl?">“Can you make a lower-sodium shrimp broccoli rice bowl?”</button>
+              <button class="suggestion" type="button" data-query="Can I replace the shrimp with crab?">“Can I replace the shrimp with crab?”</button>
+              <button class="suggestion" type="button" data-query="I have hypertension. Is instant ramen okay?">“I have hypertension. Is instant ramen okay?”</button>
+              <button class="suggestion" type="button" data-query="Can you suggest breakfast, lunch, and dinner from the prototype catalog?">“Can you suggest breakfast, lunch, and dinner from the prototype catalog?”</button>
+              <p class="quiet-note">Choose any relevant profile and enter only limits provided for you by your care team.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <div class="composer-wrap">
+        <form id="chat-form" class="composer">
+          <label for="query" class="sr-only">Ask about a recipe</label>
+          <textarea id="query" rows="2" placeholder="Ask about a recipe, ingredient, or meal plan…" required></textarea>
+          <div class="composer-bottom">
+            <span class="composer-hint">Qwen routes the request when enabled; nutrient checks stay deterministic</span>
+            <button id="send-button" class="send-button" type="submit" aria-label="Send question"><span>Send</span><b>↑</b></button>
+          </div>
+        </form>
+        <p class="disclaimer">Ingredient totals are estimates. Missing data stays missing; daily reference values are not treated as meal limits.</p>
+      </div>
+    </main>
+
+    <aside id="settings-panel" class="settings-panel">
+      <div class="settings-heading"><div><span class="eyebrow">OPTIONAL INPUTS</span><h2>Meal context</h2></div><span class="settings-icon">☷</span><button id="settings-close" class="text-button" type="button" aria-label="Close meal context">Close</button></div>
+      <p class="settings-intro">Profiles show reference guidance. Only the limits you enter below filter candidates.</p>
+
+      <fieldset class="profile-fieldset">
+        <legend>Conditions to consider</legend>
+        <label class="check-row"><input type="checkbox" name="condition" value="haemodialysis"><span class="custom-check"></span><span><strong>Haemodialysis</strong><small>Individualized potassium & phosphorus</small></span></label>
+        <label class="check-row"><input type="checkbox" name="condition" value="diabetes"><span class="custom-check"></span><span><strong>Diabetes</strong><small>Personalized carbohydrate targets</small></span></label>
+        <label class="check-row"><input type="checkbox" name="condition" value="hypertension"><span class="custom-check"></span><span><strong>Hypertension</strong><small>Daily sodium references</small></span></label>
+      </fieldset>
+
+      <section class="limit-section">
+        <div class="section-heading"><h3>Explicit meal limits</h3><span>optional</span></div>
+        <p>Per serving. Leave blank unless you have a specific target.</p>
+        <label class="number-row"><span>Sodium <small>mg</small></span><input id="meal-sodium" type="number" min="0" step="any" placeholder="—"></label>
+        <label class="number-row"><span>Potassium <small>mg</small></span><input id="meal-potassium" type="number" min="0" step="any" placeholder="—"></label>
+        <label class="number-row"><span>Phosphorus <small>mg</small></span><input id="meal-phosphorus" type="number" min="0" step="any" placeholder="—"></label>
+        <label class="number-row"><span>Carbohydrate <small>g</small></span><input id="meal-carbohydrate" type="number" min="0" step="any" placeholder="—"></label>
+      </section>
+
+      <section class="limit-section remaining-section">
+        <div class="section-heading"><h3>Remaining today</h3><span>optional</span></div>
+        <p>Compared against the whole requested serving count.</p>
+        <label class="number-row"><span>Sodium <small>mg</small></span><input id="remaining-sodium" type="number" min="0" step="any" placeholder="—"></label>
+        <label class="number-row"><span>Potassium <small>mg</small></span><input id="remaining-potassium" type="number" min="0" step="any" placeholder="—"></label>
+        <label class="number-row"><span>Phosphorus <small>mg</small></span><input id="remaining-phosphorus" type="number" min="0" step="any" placeholder="—"></label>
+      </section>
+
+      <div class="servings-row"><label for="servings">Servings</label><div class="stepper"><button type="button" id="servings-minus" aria-label="Decrease servings">−</button><input id="servings" type="number" min="1" max="20" value="1"><button type="button" id="servings-plus" aria-label="Increase servings">+</button></div></div>
+      <label class="slm-toggle"><input id="use-slm" type="checkbox" checked><span>Use local Qwen SLM for question planning</span></label>
+      <p class="slm-note">The default Qwen3-1.7B model routes requests, can propose a new composition from catalog foods, and drafts constrained cooking steps. For Food.com recipes, local Qwen also helps disambiguate USDA ingredient candidates. Candidate IDs and attributes are checked against local records; nutrient totals and limit results remain deterministic.</p>
+      <div class="context-note"><strong>How to read this</strong><p>Recipe grams are per serving. Totals for the selected serving count appear in each answer. Source states and omissions are shown with the result.</p></div>
+    </aside>
+  </div>
+</body>
+</html>

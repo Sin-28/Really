@@ -1,0 +1,823 @@
+{
+  "foundation_chicken_breast_braised": {
+    "fdc_id": 331960,
+    "name": "Chicken breast, cooked",
+    "aliases": [
+      "chicken",
+      "cooked chicken",
+      "chicken breast"
+    ],
+    "role": "protein",
+    "ingredient_type": "poultry",
+    "substitution_group": "cooked_chicken",
+    "typical_amount_g": 80,
+    "min_amount_g": 30,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_brown_rice_raw": {
+    "fdc_id": 2512380,
+    "name": "Brown rice, raw",
+    "aliases": [
+      "brown rice",
+      "raw brown rice"
+    ],
+    "role": "grain",
+    "ingredient_type": "grain",
+    "substitution_group": "dry_rice",
+    "typical_amount_g": 27,
+    "min_amount_g": 10,
+    "max_amount_g": 100,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_white_rice_raw": {
+    "fdc_id": 2512381,
+    "name": "White rice, raw",
+    "aliases": [
+      "white rice",
+      "raw white rice"
+    ],
+    "role": "grain",
+    "ingredient_type": "grain",
+    "substitution_group": "dry_rice",
+    "typical_amount_g": 27,
+    "min_amount_g": 10,
+    "max_amount_g": 100,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_bok_choy_raw": {
+    "fdc_id": 2685572,
+    "name": "Bok choy, raw",
+    "aliases": [
+      "bok choy",
+      "xiao bai cai"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "leafy vegetable",
+    "substitution_group": "leafy_green",
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_scallion_raw": {
+    "fdc_id": 2727585,
+    "name": "Scallion, raw",
+    "aliases": [
+      "scallion",
+      "spring onion",
+      "green onion"
+    ],
+    "role": "aromatic",
+    "ingredient_type": "aromatic",
+    "substitution_group": "allium_aromatic",
+    "typical_amount_g": 5,
+    "min_amount_g": 1,
+    "max_amount_g": 30,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_yellow_onion_raw": {
+    "fdc_id": 790646,
+    "name": "Yellow onion, raw",
+    "aliases": [
+      "onion",
+      "yellow onion"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "aromatic",
+    "substitution_group": "onion",
+    "typical_amount_g": 30,
+    "min_amount_g": 5,
+    "max_amount_g": 150,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_whole_egg": {
+    "fdc_id": 748967,
+    "name": "Whole egg",
+    "aliases": [
+      "egg",
+      "whole egg"
+    ],
+    "role": "protein",
+    "ingredient_type": "egg",
+    "substitution_group": "whole_egg",
+    "typical_amount_g": 50,
+    "min_amount_g": 25,
+    "max_amount_g": 120,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_broccoli_raw": {
+    "fdc_id": 747447,
+    "name": "Broccoli, raw",
+    "aliases": [
+      "broccoli"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "cruciferous vegetable",
+    "substitution_group": "cruciferous_vegetable",
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_grape_tomatoes_raw": {
+    "fdc_id": 321360,
+    "name": "Grape tomatoes, raw",
+    "aliases": [
+      "tomato",
+      "tomatoes",
+      "grape tomato"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "vegetable",
+    "substitution_group": "raw_tomato",
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_rolled_oats_dry": {
+    "fdc_id": 2346396,
+    "name": "Rolled oats, dry",
+    "aliases": [
+      "oats",
+      "rolled oats",
+      "oatmeal"
+    ],
+    "role": "grain",
+    "ingredient_type": "grain",
+    "substitution_group": "oats",
+    "typical_amount_g": 40,
+    "min_amount_g": 20,
+    "max_amount_g": 100,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_sockeye_salmon_raw": {
+    "fdc_id": 2684440,
+    "name": "Sockeye salmon, raw",
+    "aliases": [
+      "salmon",
+      "sockeye salmon"
+    ],
+    "role": "protein",
+    "ingredient_type": "seafood",
+    "substitution_group": "raw_fish",
+    "typical_amount_g": 90,
+    "min_amount_g": 30,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_atlantic_salmon_raw": {
+    "fdc_id": 2684441,
+    "name": "Atlantic salmon, raw",
+    "aliases": [
+      "salmon",
+      "atlantic salmon"
+    ],
+    "role": "protein",
+    "ingredient_type": "seafood",
+    "substitution_group": "raw_fish",
+    "typical_amount_g": 90,
+    "min_amount_g": 30,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_tilapia_raw": {
+    "fdc_id": 2684442,
+    "name": "Tilapia, raw",
+    "aliases": [
+      "tilapia",
+      "fish"
+    ],
+    "role": "protein",
+    "ingredient_type": "seafood",
+    "substitution_group": "raw_fish",
+    "typical_amount_g": 100,
+    "min_amount_g": 30,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_shrimp_raw": {
+    "fdc_id": 2684443,
+    "name": "Shrimp, raw",
+    "aliases": [
+      "shrimp",
+      "prawn"
+    ],
+    "role": "protein",
+    "ingredient_type": "seafood",
+    "substitution_group": "shellfish",
+    "typical_amount_g": 80,
+    "min_amount_g": 20,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_restaurant_fried_rice": {
+    "fdc_id": 334536,
+    "name": "Chinese restaurant fried rice, without meat",
+    "aliases": [
+      "fried rice",
+      "restaurant fried rice"
+    ],
+    "role": "prepared_reference",
+    "ingredient_type": "prepared food",
+    "substitution_group": "rice_dish",
+    "typical_amount_g": 133,
+    "min_amount_g": 80,
+    "max_amount_g": 400,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_marinara_sauce": {
+    "fdc_id": 332282,
+    "name": "Marinara pasta sauce, ready to serve",
+    "aliases": [
+      "tomato pasta sauce",
+      "marinara sauce"
+    ],
+    "role": "sauce",
+    "ingredient_type": "condiment",
+    "substitution_group": "tomato_sauce",
+    "typical_amount_g": 50,
+    "min_amount_g": 5,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_green_cabbage_raw": {
+    "fdc_id": 2346407,
+    "name": "Green cabbage, raw",
+    "aliases": [
+      "cabbage",
+      "green cabbage"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "cruciferous vegetable",
+    "substitution_group": "cruciferous_vegetable",
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_chicken_breast_raw": {
+    "fdc_id": 2646170,
+    "name": "Chicken breast, raw",
+    "aliases": [
+      "raw chicken",
+      "raw chicken breast"
+    ],
+    "role": "protein",
+    "ingredient_type": "poultry",
+    "substitution_group": "raw_chicken",
+    "typical_amount_g": 100,
+    "min_amount_g": 30,
+    "max_amount_g": 250,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_canned_tomato_salted": {
+    "fdc_id": 2685578,
+    "name": "Canned tomatoes, with salt",
+    "aliases": [
+      "canned tomatoes"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "condiment",
+    "substitution_group": "canned_tomato",
+    "typical_amount_g": 100,
+    "min_amount_g": 20,
+    "max_amount_g": 250,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_tomato_paste_no_salt": {
+    "fdc_id": 2685580,
+    "name": "Tomato paste, no salt added",
+    "aliases": [
+      "tomato paste",
+      "no-salt tomato paste"
+    ],
+    "role": "sauce",
+    "ingredient_type": "condiment",
+    "substitution_group": "tomato_concentrate",
+    "typical_amount_g": 20,
+    "min_amount_g": 5,
+    "max_amount_g": 100,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_tomato_puree": {
+    "fdc_id": 2685582,
+    "name": "Tomato puree, canned",
+    "aliases": [
+      "tomato puree",
+      "tomato purée"
+    ],
+    "role": "sauce",
+    "ingredient_type": "condiment",
+    "substitution_group": "tomato_sauce",
+    "typical_amount_g": 50,
+    "min_amount_g": 5,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_green_bell_pepper_raw": {
+    "fdc_id": 2258588,
+    "name": "Green bell pepper, raw",
+    "aliases": [
+      "green pepper",
+      "green bell pepper"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "vegetable",
+    "substitution_group": "bell_pepper",
+    "typical_amount_g": 50,
+    "min_amount_g": 5,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_red_onion_raw": {
+    "fdc_id": 790577,
+    "name": "Red onion, raw",
+    "aliases": [
+      "red onion"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "aromatic",
+    "substitution_group": "onion",
+    "typical_amount_g": 30,
+    "min_amount_g": 5,
+    "max_amount_g": 150,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_chicken_drumstick_braised": {
+    "fdc_id": 331897,
+    "name": "Chicken drumstick, cooked",
+    "aliases": [
+      "chicken drumstick",
+      "cooked chicken drumstick"
+    ],
+    "role": "protein",
+    "ingredient_type": "poultry",
+    "substitution_group": "cooked_chicken",
+    "typical_amount_g": 80,
+    "min_amount_g": 30,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_haddock_raw": {
+    "fdc_id": 333374,
+    "name": "Haddock, raw",
+    "aliases": [
+      "haddock",
+      "white fish"
+    ],
+    "role": "protein",
+    "ingredient_type": "seafood",
+    "substitution_group": "raw_fish",
+    "typical_amount_g": 100,
+    "min_amount_g": 30,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_cod_raw": {
+    "fdc_id": 2684444,
+    "name": "Atlantic cod, raw",
+    "aliases": [
+      "cod",
+      "atlantic cod"
+    ],
+    "role": "protein",
+    "ingredient_type": "seafood",
+    "substitution_group": "raw_fish",
+    "typical_amount_g": 100,
+    "min_amount_g": 30,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_catfish_raw": {
+    "fdc_id": 2684445,
+    "name": "Catfish, raw",
+    "aliases": [
+      "catfish"
+    ],
+    "role": "protein",
+    "ingredient_type": "seafood",
+    "substitution_group": "raw_fish",
+    "typical_amount_g": 100,
+    "min_amount_g": 30,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_crab_lump_pasteurized": {
+    "fdc_id": 2684446,
+    "name": "Blue swimming crab lump meat",
+    "aliases": [
+      "crab",
+      "crab meat"
+    ],
+    "role": "protein",
+    "ingredient_type": "seafood",
+    "substitution_group": "shellfish",
+    "typical_amount_g": 80,
+    "min_amount_g": 30,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_beef_frankfurter_unheated": {
+    "fdc_id": 323121,
+    "name": "Beef frankfurter, unheated",
+    "aliases": [
+      "frankfurter",
+      "beef hot dog"
+    ],
+    "role": "protein",
+    "ingredient_type": "processed meat",
+    "substitution_group": "sausage",
+    "typical_amount_g": 50,
+    "min_amount_g": 20,
+    "max_amount_g": 120,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_cantaloupe_raw": {
+    "fdc_id": 746770,
+    "name": "Cantaloupe, raw",
+    "aliases": [
+      "cantaloupe",
+      "melon"
+    ],
+    "role": "fruit",
+    "ingredient_type": "fruit",
+    "substitution_group": "fresh_fruit",
+    "typical_amount_g": 80,
+    "min_amount_g": 20,
+    "max_amount_g": 250,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_orange_raw": {
+    "fdc_id": 746771,
+    "name": "Navel orange, raw",
+    "aliases": [
+      "orange",
+      "navel orange"
+    ],
+    "role": "fruit",
+    "ingredient_type": "fruit",
+    "substitution_group": "fresh_fruit",
+    "typical_amount_g": 130,
+    "min_amount_g": 30,
+    "max_amount_g": 250,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_shiitake_raw": {
+    "fdc_id": 1999628,
+    "name": "Shiitake mushroom, raw",
+    "aliases": [
+      "shiitake",
+      "shiitake mushroom"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "mushroom",
+    "substitution_group": "mushroom",
+    "typical_amount_g": 40,
+    "min_amount_g": 10,
+    "max_amount_g": 150,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_button_mushroom_raw": {
+    "fdc_id": 1999629,
+    "name": "White button mushroom, raw",
+    "aliases": [
+      "mushroom",
+      "button mushroom"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "mushroom",
+    "substitution_group": "mushroom",
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_soymilk_unsweetened": {
+    "fdc_id": 1999630,
+    "name": "Unsweetened soy milk",
+    "aliases": [
+      "soy milk",
+      "soymilk"
+    ],
+    "role": "beverage",
+    "ingredient_type": "plant milk",
+    "substitution_group": "plant_milk",
+    "typical_amount_g": 150,
+    "min_amount_g": 50,
+    "max_amount_g": 300,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_almondmilk_unsweetened": {
+    "fdc_id": 1999631,
+    "name": "Unsweetened almond milk",
+    "aliases": [
+      "almond milk",
+      "almondmilk"
+    ],
+    "role": "beverage",
+    "ingredient_type": "plant milk",
+    "substitution_group": "plant_milk",
+    "typical_amount_g": 150,
+    "min_amount_g": 50,
+    "max_amount_g": 300,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_baby_spinach_raw": {
+    "fdc_id": 1999632,
+    "name": "Baby spinach, raw",
+    "aliases": [
+      "spinach",
+      "baby spinach"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "leafy vegetable",
+    "substitution_group": "leafy_green",
+    "typical_amount_g": 30,
+    "min_amount_g": 5,
+    "max_amount_g": 120,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_roma_tomato_raw": {
+    "fdc_id": 1999634,
+    "name": "Roma tomato, raw",
+    "aliases": [
+      "roma tomato",
+      "tomato"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "vegetable",
+    "substitution_group": "raw_tomato",
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_carrot_raw": {
+    "fdc_id": 2258586,
+    "name": "Carrot, mature, raw",
+    "aliases": [
+      "carrot",
+      "carrots"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "root vegetable",
+    "substitution_group": "root_vegetable",
+    "typical_amount_g": 40,
+    "min_amount_g": 10,
+    "max_amount_g": 150,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_red_bell_pepper_raw": {
+    "fdc_id": 2258590,
+    "name": "Red bell pepper, raw",
+    "aliases": [
+      "red pepper",
+      "red bell pepper"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "vegetable",
+    "substitution_group": "bell_pepper",
+    "typical_amount_g": 30,
+    "min_amount_g": 5,
+    "max_amount_g": 120,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_iceberg_lettuce_raw": {
+    "fdc_id": 2346388,
+    "name": "Iceberg lettuce, raw",
+    "aliases": [
+      "lettuce",
+      "iceberg lettuce"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "leafy vegetable",
+    "substitution_group": "salad_leaf",
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 150,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_cucumber_raw": {
+    "fdc_id": 2346406,
+    "name": "Cucumber with peel, raw",
+    "aliases": [
+      "cucumber"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "vegetable",
+    "substitution_group": "salad_vegetable",
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_strawberries_raw": {
+    "fdc_id": 2346409,
+    "name": "Strawberries, raw",
+    "aliases": [
+      "strawberries",
+      "strawberry"
+    ],
+    "role": "fruit",
+    "ingredient_type": "fruit",
+    "substitution_group": "berry",
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_blueberries_raw": {
+    "fdc_id": 2346411,
+    "name": "Blueberries, raw",
+    "aliases": [
+      "blueberries",
+      "blueberry"
+    ],
+    "role": "fruit",
+    "ingredient_type": "fruit",
+    "substitution_group": "berry",
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_red_grapes_raw": {
+    "fdc_id": 2346412,
+    "name": "Red seedless grapes, raw",
+    "aliases": [
+      "grapes",
+      "red grapes"
+    ],
+    "role": "fruit",
+    "ingredient_type": "fruit",
+    "substitution_group": "fresh_fruit",
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_black_beans_canned_rinsed": {
+    "fdc_id": 2644285,
+    "name": "Black beans, canned, drained and rinsed",
+    "aliases": [
+      "black beans",
+      "rinsed black beans"
+    ],
+    "role": "legume",
+    "ingredient_type": "legume",
+    "substitution_group": "canned_legume",
+    "typical_amount_g": 60,
+    "min_amount_g": 20,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_chickpeas_canned_rinsed": {
+    "fdc_id": 2644288,
+    "name": "Chickpeas, canned, drained and rinsed",
+    "aliases": [
+      "chickpeas",
+      "garbanzo beans"
+    ],
+    "role": "legume",
+    "ingredient_type": "legume",
+    "substitution_group": "canned_legume",
+    "typical_amount_g": 60,
+    "min_amount_g": 20,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_cauliflower_raw": {
+    "fdc_id": 2685573,
+    "name": "Cauliflower, raw",
+    "aliases": [
+      "cauliflower"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "cruciferous vegetable",
+    "substitution_group": "cruciferous_vegetable",
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_brussels_sprouts_raw": {
+    "fdc_id": 2685575,
+    "name": "Brussels sprouts, raw",
+    "aliases": [
+      "brussels sprouts"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "cruciferous vegetable",
+    "substitution_group": "cruciferous_vegetable",
+    "typical_amount_g": 60,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_crushed_tomatoes_canned": {
+    "fdc_id": 2685581,
+    "name": "Crushed tomatoes, canned",
+    "aliases": [
+      "crushed tomatoes",
+      "tomatoes"
+    ],
+    "role": "vegetable",
+    "ingredient_type": "condiment",
+    "substitution_group": "canned_tomato",
+    "typical_amount_g": 60,
+    "min_amount_g": 20,
+    "max_amount_g": 200,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_chia_seeds_dry": {
+    "fdc_id": 2710819,
+    "name": "Chia seeds, dry",
+    "aliases": [
+      "chia seeds",
+      "chia"
+    ],
+    "role": "seed",
+    "ingredient_type": "seed",
+    "substitution_group": "seed",
+    "typical_amount_g": 10,
+    "min_amount_g": 2,
+    "max_amount_g": 30,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_avocado_raw": {
+    "fdc_id": 2710824,
+    "name": "Hass avocado, raw",
+    "aliases": [
+      "avocado"
+    ],
+    "role": "fruit",
+    "ingredient_type": "fruit",
+    "substitution_group": "fresh_fruit",
+    "typical_amount_g": 25,
+    "min_amount_g": 5,
+    "max_amount_g": 100,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_mango_raw": {
+    "fdc_id": 2710833,
+    "name": "Mango, raw",
+    "aliases": [
+      "mango"
+    ],
+    "role": "fruit",
+    "ingredient_type": "fruit",
+    "substitution_group": "fresh_fruit",
+    "typical_amount_g": 50,
+    "min_amount_g": 10,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_banana_raw": {
+    "fdc_id": 1105314,
+    "name": "Banana, ripe, raw",
+    "aliases": [
+      "banana",
+      "ripe banana"
+    ],
+    "role": "fruit",
+    "ingredient_type": "fruit",
+    "substitution_group": "fresh_fruit",
+    "typical_amount_g": 60,
+    "min_amount_g": 20,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_greek_yogurt_nonfat": {
+    "fdc_id": 330137,
+    "name": "Greek yogurt, plain, nonfat",
+    "aliases": [
+      "plain greek yogurt",
+      "nonfat greek yogurt",
+      "greek yogurt"
+    ],
+    "role": "dairy",
+    "ingredient_type": "dairy",
+    "substitution_group": "plain_yogurt",
+    "typical_amount_g": 150,
+    "min_amount_g": 50,
+    "max_amount_g": 250,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  },
+  "foundation_tuna_light_canned": {
+    "fdc_id": 334194,
+    "name": "Light tuna, canned in water, drained",
+    "aliases": [
+      "tuna",
+      "canned tuna"
+    ],
+    "role": "protein",
+    "ingredient_type": "seafood",
+    "substitution_group": "canned_fish",
+    "typical_amount_g": 80,
+    "min_amount_g": 30,
+    "max_amount_g": 180,
+    "amount_range_basis": "RenAlly prototype plausibility range; not a clinical recommendation"
+  }
+}

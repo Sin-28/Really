@@ -1,0 +1,617 @@
+{
+  "brown_chicken_rice": {
+    "name": "Brown chicken rice (prototype serving)",
+    "aliases": [
+      "chicken rice",
+      "hainanese chicken rice",
+      "brown chicken rice",
+      "chicken rice bowl"
+    ],
+    "description": "A simplified one-serving model based on the Singapore HPB Brown Chicken Rice recipe. Calculated ingredients include Foundation Foods dry white rice, cooked braised chicken breast, and raw bok choy as a composition proxy. Broth, aromatics, cooking oil, sauces and the bok choy cooking-yield change are not modeled, so totals are incomplete. Rice uses the USDA Foundation Foods raw entry. Its dry-weight amount is an illustrative prototype portion, not a USDA cooking-yield conversion; cooking water, final cooked mass, and cooking-related nutrient changes are not included in totals.",
+    "servings": 1,
+    "source": {
+      "name": "Singapore Health Promotion Board, Brown Chicken Rice",
+      "url": "https://www.healthhub.sg/sites/assets/Assets/PDFs/HPB/Healthier%20Meals%20in%20Childcare%20Centres%20Programme/Brown%20Chicken%20Rice.pdf",
+      "basis": "Adapted one-serving composition; the dry-rice amount is an illustrative prototype portion, not a USDA cooking-yield conversion. Nutrient values come only from linked USDA Foundation Foods records. Broth, oil, aromatics, sauces and recipe cooking changes are omitted."
+    },
+    "ingredients": [
+      {
+        "id": "foundation_white_rice_raw",
+        "amount_g": 40.0
+      },
+      {
+        "id": "foundation_chicken_breast_braised",
+        "amount_g": 80
+      },
+      {
+        "id": "foundation_bok_choy_raw",
+        "amount_g": 60
+      }
+    ],
+    "method": [
+      "Cook the listed dry rice in water; its dry weight is used for nutrient calculation.",
+      "Slice the cooked chicken and serve over the rice."
+    ]
+  },
+  "chicken_fried_rice": {
+    "name": "Chicken fried rice (prototype serving)",
+    "aliases": [
+      "fried rice",
+      "chicken fried rice",
+      "fried-rice bowl"
+    ],
+    "description": "Demonstration composition using Foundation Foods dry white rice and braised chicken breast; not a sourced complete recipe. Oil, vegetables and seasonings are not included in the nutrient calculation. Rice uses the USDA Foundation Foods raw entry. Its dry-weight amount is an illustrative prototype portion, not a USDA cooking-yield conversion; cooking water, final cooked mass, and cooking-related nutrient changes are not included in totals.",
+    "servings": 1,
+    "source": {
+      "name": "RenAlly illustrative recipe composition; ingredient nutrition from linked USDA Foundation Foods records",
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "basis": "Per-serving ingredient amounts are prototype choices; white rice is weighed dry using its USDA Foundation Foods record."
+    },
+    "ingredients": [
+      {
+        "id": "foundation_white_rice_raw",
+        "amount_g": 53.3
+      },
+      {
+        "id": "foundation_chicken_breast_braised",
+        "amount_g": 60
+      }
+    ],
+    "method": [
+      "Cook the listed dry rice in water, then warm it with the cooked chicken in a pan.",
+      "Serve once heated through."
+    ]
+  },
+  "chicken_congee": {
+    "name": "Chicken congee (prototype serving)",
+    "aliases": [
+      "congee",
+      "chicken congee"
+    ],
+    "description": "Demonstration composition using Foundation Foods dry white rice and braised chicken breast; water is not nutrient-bearing in this model. Seasonings and toppings are not included. Rice uses the USDA Foundation Foods raw entry. Its dry-weight amount is an illustrative prototype portion, not a USDA cooking-yield conversion; cooking water, final cooked mass, and cooking-related nutrient changes are not included in totals.",
+    "servings": 1,
+    "source": {
+      "name": "RenAlly illustrative recipe composition; ingredient nutrition from linked USDA Foundation Foods records",
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "basis": "Per-serving ingredient amounts are prototype choices; white rice is weighed dry using its USDA Foundation Foods record."
+    },
+    "ingredients": [
+      {
+        "id": "foundation_white_rice_raw",
+        "amount_g": 60.0
+      },
+      {
+        "id": "foundation_chicken_breast_braised",
+        "amount_g": 40
+      }
+    ],
+    "method": [
+      "Simmer the listed dry rice with water until soft and porridge-like.",
+      "Top with the cooked chicken and serve."
+    ]
+  },
+  "tofu_rice_bowl": {
+    "name": "Tofu rice bowl (prototype serving)",
+    "aliases": [
+      "tofu rice bowl",
+      "rice bowl",
+      "tofu bowl"
+    ],
+    "description": "Demonstration composition using USDA Foundation Foods dry white rice; tofu has no matching Foundation Foods record; sauces and vegetables are not included in calculated totals. Rice uses the USDA Foundation Foods raw entry. Its dry-weight amount is an illustrative prototype portion, not a USDA cooking-yield conversion; cooking water, final cooked mass, and cooking-related nutrient changes are not included in totals.",
+    "servings": 1,
+    "source": {
+      "name": "RenAlly illustrative recipe composition; ingredient nutrition from linked USDA Foundation Foods records",
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "basis": "Per-serving ingredient amounts are prototype choices; white rice is weighed dry using its USDA Foundation Foods record."
+    },
+    "ingredients": [
+      {
+        "id": "foundation_white_rice_raw",
+        "amount_g": 40.0
+      },
+      {
+        "id": "firm_tofu",
+        "amount_g": 120
+      }
+    ],
+    "method": [
+      "Cook the listed dry rice in water; warm the tofu separately.",
+      "Serve the tofu over the rice."
+    ]
+  },
+  "fish_soup": {
+    "name": "Tilapia and bok choy soup (prototype serving)",
+    "aliases": [
+      "fish soup",
+      "tilapia soup",
+      "fish and vegetable soup"
+    ],
+    "description": "Illustrative ingredient composition using raw Foundation Foods fish, bok choy, and scallion records. Water/broth, salt, oil and other seasonings are excluded; the raw ingredient weights do not model cooking yield or nutrient leaching.",
+    "servings": 1,
+    "source": {
+      "name": "Prototype composition using USDA FoodData Central Foundation Foods",
+      "url": "https://fdc.nal.usda.gov/",
+      "basis": "illustrative raw ingredient weights; not a sourced complete recipe"
+    },
+    "ingredients": [
+      {
+        "id": "foundation_tilapia_raw",
+        "amount_g": 100
+      },
+      {
+        "id": "foundation_bok_choy_raw",
+        "amount_g": 60
+      },
+      {
+        "id": "foundation_scallion_raw",
+        "amount_g": 5
+      }
+    ],
+    "method": [
+      "Cook the listed fish and vegetables using a suitable soup method.",
+      "Serve without adding unlisted ingredients or changing listed amounts."
+    ]
+  },
+  "oatmeal": {
+    "name": "Rolled oats (prototype serving)",
+    "aliases": [
+      "oatmeal",
+      "rolled oats",
+      "oats"
+    ],
+    "description": "Illustrative single-ingredient composition using USDA Foundation Foods dry rolled oats. Water and optional toppings are excluded; some nutrients are unavailable in the source record and will not be estimated.",
+    "servings": 1,
+    "source": {
+      "name": "Prototype composition using USDA FoodData Central Foundation Foods",
+      "url": "https://fdc.nal.usda.gov/",
+      "basis": "40 g dry rolled oats; water and toppings omitted"
+    },
+    "ingredients": [
+      {
+        "id": "foundation_rolled_oats_dry",
+        "amount_g": 40
+      }
+    ],
+    "method": [
+      "Prepare the listed oats using a suitable method.",
+      "Do not add unlisted ingredients or change the listed amount."
+    ]
+  },
+  "instant_ramen_reference": {
+    "name": "Instant ramen (generic dry reference serving)",
+    "aliases": [
+      "instant ramen",
+      "instant noodle",
+      "instant noodles",
+      "ramen",
+      "ramen noodles"
+    ],
+    "description": "Placeholder for an instant-noodle request. The selected USDA Foundation Foods release does not contain a matching generic instant noodle record, so this recipe has no verified nutrient estimate.",
+    "servings": 1,
+    "source": {
+      "name": "RenAlly prototype placeholder; no matching USDA Foundation Foods ingredient record",
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "basis": "nutrition is intentionally unavailable; use a Foundation Foods record or a product label"
+    },
+    "ingredients": [
+      {
+        "id": "instant_ramen_dry_reference",
+        "amount_g": 81
+      }
+    ],
+    "method": [
+      "Prepare according to the product label; this estimate is for the generic dry reference only.",
+      "Do not treat the generic estimate as a calculation for a specific brand or as personalized medical advice."
+    ]
+  },
+  "shrimp_broccoli_rice_bowl": {
+    "name": "Shrimp, broccoli and rice bowl (prototype composition)",
+    "aliases": [
+      "shrimp rice bowl",
+      "shrimp broccoli rice",
+      "prawn rice bowl"
+    ],
+    "description": "Illustrative ingredient combination, not a published complete recipe. Foundation Foods values use raw shrimp and raw broccoli composition; cooked yield, oil, salt and sauces are omitted, so totals are partial. Rice uses the USDA Foundation Foods raw entry. Its dry-weight amount is an illustrative prototype portion, not a USDA cooking-yield conversion; cooking water, final cooked mass, and cooking-related nutrient changes are not included in totals.",
+    "servings": 1,
+    "source": {
+      "name": "RenAlly illustrative recipe composition; ingredient nutrition from linked USDA Foundation Foods records",
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "basis": "Per-serving ingredient amounts are prototype choices; white rice is weighed dry using its USDA Foundation Foods record."
+    },
+    "ingredients": [
+      {
+        "id": "foundation_white_rice_raw",
+        "amount_g": 40.0
+      },
+      {
+        "id": "foundation_shrimp_raw",
+        "amount_g": 80
+      },
+      {
+        "id": "foundation_broccoli_raw",
+        "amount_g": 60
+      },
+      {
+        "id": "foundation_red_bell_pepper_raw",
+        "amount_g": 30
+      }
+    ],
+    "method": [
+      "Cook the listed dry rice in water; its dry weight is used for nutrient calculation.",
+      "Prepare the listed foods using a suitable method for the raw ingredients.",
+      "Serve with the listed rice; no unlisted sauce or seasoning is included in the estimate."
+    ]
+  },
+  "salmon_mushroom_rice_bowl": {
+    "name": "Salmon and shiitake rice bowl (prototype composition)",
+    "aliases": [
+      "salmon rice bowl",
+      "salmon mushroom rice",
+      "shiitake salmon bowl"
+    ],
+    "description": "Illustrative ingredient combination, not a published complete recipe. Salmon and shiitake values use raw Foundation Foods composition; cooking yield, oil and seasonings are omitted. Rice uses the USDA Foundation Foods raw entry. Its dry-weight amount is an illustrative prototype portion, not a USDA cooking-yield conversion; cooking water, final cooked mass, and cooking-related nutrient changes are not included in totals.",
+    "servings": 1,
+    "source": {
+      "name": "RenAlly illustrative recipe composition; ingredient nutrition from linked USDA Foundation Foods records",
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "basis": "Per-serving ingredient amounts are prototype choices; white rice is weighed dry using its USDA Foundation Foods record."
+    },
+    "ingredients": [
+      {
+        "id": "foundation_white_rice_raw",
+        "amount_g": 40.0
+      },
+      {
+        "id": "foundation_atlantic_salmon_raw",
+        "amount_g": 90
+      },
+      {
+        "id": "foundation_shiitake_raw",
+        "amount_g": 40
+      },
+      {
+        "id": "foundation_scallion_raw",
+        "amount_g": 5
+      }
+    ],
+    "method": [
+      "Cook the listed dry rice in water; its dry weight is used for nutrient calculation.",
+      "Prepare the listed raw fish and vegetables using a suitable method.",
+      "Serve with the listed rice; no unlisted ingredients are included in the estimate."
+    ]
+  },
+  "cod_rice_bowl": {
+    "name": "Cod and cauliflower rice bowl (prototype composition)",
+    "aliases": [
+      "cod rice bowl",
+      "cod and cauliflower bowl",
+      "white fish rice bowl"
+    ],
+    "description": "Illustrative ingredient combination, not a published complete recipe. Cod and cauliflower use raw Foundation Foods composition; cooking yield, oil, salt and seasoning are omitted. Rice uses the USDA Foundation Foods raw entry. Its dry-weight amount is an illustrative prototype portion, not a USDA cooking-yield conversion; cooking water, final cooked mass, and cooking-related nutrient changes are not included in totals.",
+    "servings": 1,
+    "source": {
+      "name": "RenAlly illustrative recipe composition; ingredient nutrition from linked USDA Foundation Foods records",
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "basis": "Per-serving ingredient amounts are prototype choices; white rice is weighed dry using its USDA Foundation Foods record."
+    },
+    "ingredients": [
+      {
+        "id": "foundation_white_rice_raw",
+        "amount_g": 40.0
+      },
+      {
+        "id": "foundation_cod_raw",
+        "amount_g": 100
+      },
+      {
+        "id": "foundation_cauliflower_raw",
+        "amount_g": 60
+      },
+      {
+        "id": "foundation_red_bell_pepper_raw",
+        "amount_g": 25
+      }
+    ],
+    "method": [
+      "Cook the listed dry rice in water; its dry weight is used for nutrient calculation.",
+      "Prepare the listed raw fish and vegetables using a suitable method.",
+      "Serve with the listed rice; no unlisted ingredients are included in the estimate."
+    ]
+  },
+  "chicken_cauliflower_rice_bowl": {
+    "name": "Chicken and cauliflower rice bowl (prototype composition)",
+    "aliases": [
+      "chicken cauliflower bowl",
+      "chicken cauliflower rice",
+      "chicken vegetable rice bowl"
+    ],
+    "description": "Illustrative ingredient combination, not a published complete recipe. Chicken uses the cooked braised breast record; cauliflower and pepper use raw composition. Oil, salt and cooking-yield changes are omitted. Rice uses the USDA Foundation Foods raw entry. Its dry-weight amount is an illustrative prototype portion, not a USDA cooking-yield conversion; cooking water, final cooked mass, and cooking-related nutrient changes are not included in totals.",
+    "servings": 1,
+    "source": {
+      "name": "RenAlly illustrative recipe composition; ingredient nutrition from linked USDA Foundation Foods records",
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "basis": "Per-serving ingredient amounts are prototype choices; white rice is weighed dry using its USDA Foundation Foods record."
+    },
+    "ingredients": [
+      {
+        "id": "foundation_white_rice_raw",
+        "amount_g": 40.0
+      },
+      {
+        "id": "foundation_chicken_breast_braised",
+        "amount_g": 80
+      },
+      {
+        "id": "foundation_cauliflower_raw",
+        "amount_g": 60
+      },
+      {
+        "id": "foundation_red_bell_pepper_raw",
+        "amount_g": 25
+      }
+    ],
+    "method": [
+      "Cook the listed dry rice in water; its dry weight is used for nutrient calculation.",
+      "Prepare the listed vegetables using a suitable method.",
+      "Serve with the cooked chicken and listed rice; no unlisted ingredients are included in the estimate."
+    ]
+  },
+  "chickpea_tomato_rice_bowl": {
+    "name": "Chickpea and tomato rice bowl (prototype composition)",
+    "aliases": [
+      "chickpea rice bowl",
+      "chickpea tomato bowl",
+      "tomato chickpea rice"
+    ],
+    "description": "Illustrative combination, not a published complete recipe. Chickpeas are the USDA canned, drained and rinsed entry; canned tomato and raw dry rice are measured before cooking. Added salt, oil and sauces are omitted. Rice uses the USDA Foundation Foods raw entry. Its dry-weight amount is an illustrative prototype portion, not a USDA cooking-yield conversion; cooking water, final cooked mass, and cooking-related nutrient changes are not included in totals.",
+    "servings": 1,
+    "source": {
+      "name": "RenAlly illustrative recipe composition; ingredient nutrition from linked USDA Foundation Foods records",
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "basis": "Per-serving ingredient amounts are prototype choices; white rice is weighed dry using its USDA Foundation Foods record."
+    },
+    "ingredients": [
+      {
+        "id": "foundation_white_rice_raw",
+        "amount_g": 40.0
+      },
+      {
+        "id": "foundation_chickpeas_canned_rinsed",
+        "amount_g": 70
+      },
+      {
+        "id": "foundation_crushed_tomatoes_canned",
+        "amount_g": 50
+      },
+      {
+        "id": "foundation_scallion_raw",
+        "amount_g": 5
+      }
+    ],
+    "method": [
+      "Cook the listed dry rice in water; its dry weight is used for nutrient calculation.",
+      "Combine the listed drained and rinsed chickpeas with the listed tomato and scallion.",
+      "Serve with the listed rice; no added salt or unlisted ingredients are included in the estimate."
+    ]
+  },
+  "spinach_egg_rice_bowl": {
+    "name": "Spinach and egg rice bowl (prototype composition)",
+    "aliases": [
+      "spinach egg rice",
+      "egg rice bowl",
+      "spinach egg bowl"
+    ],
+    "description": "Illustrative ingredient combination, not a published complete recipe. Egg, spinach and tomato use Foundation Foods source states; cooking yield, oil and seasonings are omitted. Rice uses the USDA Foundation Foods raw entry. Its dry-weight amount is an illustrative prototype portion, not a USDA cooking-yield conversion; cooking water, final cooked mass, and cooking-related nutrient changes are not included in totals.",
+    "servings": 1,
+    "source": {
+      "name": "RenAlly illustrative recipe composition; ingredient nutrition from linked USDA Foundation Foods records",
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "basis": "Per-serving ingredient amounts are prototype choices; white rice is weighed dry using its USDA Foundation Foods record."
+    },
+    "ingredients": [
+      {
+        "id": "foundation_white_rice_raw",
+        "amount_g": 40.0
+      },
+      {
+        "id": "foundation_whole_egg",
+        "amount_g": 50
+      },
+      {
+        "id": "foundation_baby_spinach_raw",
+        "amount_g": 30
+      },
+      {
+        "id": "foundation_roma_tomato_raw",
+        "amount_g": 50
+      }
+    ],
+    "method": [
+      "Cook the listed dry rice in water; its dry weight is used for nutrient calculation.",
+      "Prepare the listed egg and vegetables using a suitable method.",
+      "Serve with the listed rice; no oil or unlisted ingredients are included in the estimate."
+    ]
+  },
+  "chickpea_garden_salad": {
+    "name": "Chickpea garden salad (prototype composition)",
+    "aliases": [
+      "chickpea salad",
+      "chickpea cucumber salad",
+      "garden salad with chickpeas"
+    ],
+    "description": "Illustrative no-cook ingredient combination, not a published complete recipe. Chickpeas are canned, drained and rinsed; all produce uses the recorded raw composition. Dressing is omitted.",
+    "servings": 1,
+    "source": {
+      "name": "USDA FoodData Central Foundation Foods ingredient records",
+      "url": "https://fdc.nal.usda.gov/",
+      "basis": "prototype combination; per-ingredient sources and FDC IDs are attached to ingredient records"
+    },
+    "ingredients": [
+      {
+        "id": "foundation_iceberg_lettuce_raw",
+        "amount_g": 50
+      },
+      {
+        "id": "foundation_cucumber_raw",
+        "amount_g": 60
+      },
+      {
+        "id": "foundation_chickpeas_canned_rinsed",
+        "amount_g": 60
+      },
+      {
+        "id": "foundation_roma_tomato_raw",
+        "amount_g": 50
+      },
+      {
+        "id": "foundation_avocado_raw",
+        "amount_g": 25
+      }
+    ],
+    "method": [
+      "Combine the listed washed produce and drained, rinsed chickpeas.",
+      "Serve without an unlisted dressing; the estimate excludes dressing."
+    ]
+  },
+  "berry_yogurt_bowl": {
+    "name": "Berry and Greek yogurt bowl (prototype composition)",
+    "aliases": [
+      "berry yogurt bowl",
+      "greek yogurt fruit bowl",
+      "yogurt with berries"
+    ],
+    "description": "Illustrative no-cook ingredient combination using Foundation Foods Greek yogurt and raw berries. Sweeteners and toppings are omitted; use the listed yogurt type, not a branded product assumption.",
+    "servings": 1,
+    "source": {
+      "name": "USDA FoodData Central Foundation Foods ingredient records",
+      "url": "https://fdc.nal.usda.gov/",
+      "basis": "prototype combination; per-ingredient sources and FDC IDs are attached to ingredient records"
+    },
+    "ingredients": [
+      {
+        "id": "foundation_greek_yogurt_nonfat",
+        "amount_g": 150
+      },
+      {
+        "id": "foundation_strawberries_raw",
+        "amount_g": 50
+      },
+      {
+        "id": "foundation_blueberries_raw",
+        "amount_g": 50
+      }
+    ],
+    "method": [
+      "Combine the listed yogurt and washed berries.",
+      "Serve without unlisted sweeteners or toppings."
+    ]
+  },
+  "mixed_fruit_bowl": {
+    "name": "Mixed fruit bowl (prototype composition)",
+    "aliases": [
+      "fruit salad",
+      "mixed fruit bowl",
+      "fruit bowl"
+    ],
+    "description": "Illustrative no-cook combination of raw fruit ingredient records, not a standard serving or meal plan. Edible portions and fruit sizes vary.",
+    "servings": 1,
+    "source": {
+      "name": "USDA FoodData Central Foundation Foods ingredient records",
+      "url": "https://fdc.nal.usda.gov/",
+      "basis": "prototype combination; per-ingredient sources and FDC IDs are attached to ingredient records"
+    },
+    "ingredients": [
+      {
+        "id": "foundation_cantaloupe_raw",
+        "amount_g": 60
+      },
+      {
+        "id": "foundation_mango_raw",
+        "amount_g": 50
+      },
+      {
+        "id": "foundation_red_grapes_raw",
+        "amount_g": 40
+      },
+      {
+        "id": "foundation_strawberries_raw",
+        "amount_g": 50
+      }
+    ],
+    "method": [
+      "Wash and prepare the listed raw fruit.",
+      "Combine and serve without unlisted ingredients."
+    ]
+  },
+  "banana_soymilk_oatmeal": {
+    "name": "Banana and soy milk oats (prototype composition)",
+    "aliases": [
+      "banana oatmeal",
+      "banana oats",
+      "oats with soy milk"
+    ],
+    "description": "Illustrative breakfast composition using dry oats, raw banana and unsweetened soy milk Foundation records. The liquid-to-oat ratio is a prototype choice; cooking yield and optional toppings are excluded.",
+    "servings": 1,
+    "source": {
+      "name": "USDA FoodData Central Foundation Foods ingredient records",
+      "url": "https://fdc.nal.usda.gov/",
+      "basis": "prototype combination; per-ingredient sources and FDC IDs are attached to ingredient records"
+    },
+    "ingredients": [
+      {
+        "id": "foundation_rolled_oats_dry",
+        "amount_g": 40
+      },
+      {
+        "id": "foundation_banana_raw",
+        "amount_g": 50
+      },
+      {
+        "id": "foundation_soymilk_unsweetened",
+        "amount_g": 120
+      }
+    ],
+    "method": [
+      "Prepare the listed oats with the listed soy milk using a suitable method.",
+      "Top with the listed banana only; no unlisted sweeteners or toppings are included."
+    ]
+  },
+  "tuna_cucumber_rice_bowl": {
+    "name": "Tuna and cucumber rice bowl (prototype composition)",
+    "aliases": [
+      "tuna rice bowl",
+      "tuna cucumber bowl",
+      "canned tuna rice"
+    ],
+    "description": "Illustrative combination using canned tuna drained as described by USDA, Foundation Foods dry white rice and raw cucumber. Added sauces, salt and oil are omitted; check the actual can label for brand-specific sodium. Rice uses the USDA Foundation Foods raw entry. Its dry-weight amount is an illustrative prototype portion, not a USDA cooking-yield conversion; cooking water, final cooked mass, and cooking-related nutrient changes are not included in totals.",
+    "servings": 1,
+    "source": {
+      "name": "RenAlly illustrative recipe composition; ingredient nutrition from linked USDA Foundation Foods records",
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "basis": "Per-serving ingredient amounts are prototype choices; white rice is weighed dry using its USDA Foundation Foods record."
+    },
+    "ingredients": [
+      {
+        "id": "foundation_white_rice_raw",
+        "amount_g": 40.0
+      },
+      {
+        "id": "foundation_tuna_light_canned",
+        "amount_g": 80
+      },
+      {
+        "id": "foundation_cucumber_raw",
+        "amount_g": 40
+      },
+      {
+        "id": "foundation_scallion_raw",
+        "amount_g": 5
+      }
+    ],
+    "method": [
+      "Cook the listed dry rice in water; its dry weight is used for nutrient calculation.",
+      "Combine the drained tuna with the listed cucumber and scallion.",
+      "Serve with the listed rice; no unlisted sauces are included in the estimate."
+    ]
+  }
+}

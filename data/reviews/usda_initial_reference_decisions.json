@@ -1,0 +1,3509 @@
+{
+  "proposal_version": 1,
+  "source_manifest_version": 1,
+  "reference_policy_version": 2,
+  "source_manifest_reference_policy_version": 1,
+  "persistent_database_writes": true,
+  "actually_approved_count": 9,
+  "preexisting_approved_reference_count": 0,
+  "entries": [
+    {
+      "review_entry_id": "429c7cfe2cbf3aa1c014",
+      "canonical_ingredient_category": "salt",
+      "proposed_fdc_id": 173468,
+      "food_record_id": "fdc-sr-legacy:173468",
+      "usda_description": "Salt, table",
+      "usda_data_type": "SR Legacy",
+      "dataset_key": "sr_legacy",
+      "nutrition_basis": "per 100 g",
+      "reference_policy_version": 2,
+      "source_reference_policy_version": 1,
+      "identity_compatibility": "exact",
+      "proposed_reference_scope": [
+        "table salt"
+      ],
+      "scope_attributes": {
+        "salt_type": "table"
+      },
+      "scope_exclusions": [
+        "generic salt without an approved default",
+        "potassium-based salt substitutes",
+        "seasoned salt",
+        "other salt products"
+      ],
+      "missing_attributes": [],
+      "scope_unknown_attributes": [],
+      "nutritional_completeness": "COMPLETE",
+      "nutrient_validation": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 38800.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 38800.00000000001,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 8.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 8.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 0.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 0.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 0.0,
+          "unit": "g",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 0.0,
+          "normalized_unit": "g",
+          "status": "AVAILABLE"
+        }
+      },
+      "nutrients_per_100g": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 38800.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 38800.00000000001,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 8.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 8.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 0.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 0.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 0.0,
+          "unit": "g",
+          "normalized_amount_per_100g": 0.0,
+          "normalized_unit": "g",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        }
+      },
+      "review_recommendation": "READY_FOR_HUMAN_APPROVAL",
+      "reasoning": "The local SR Legacy record explicitly identifies table salt and contains all four required nutrients.",
+      "required_human_decision": "Confirm or reject this exact FDC ID and scope. If approving, explicitly choose whether it may be used as a default; generic use remains disabled unless the reviewer separately opts in.",
+      "decision": "APPROVED",
+      "review_status": "APPROVED",
+      "reviewer_identity": "fyp-project-owner",
+      "approval_timestamp": "2026-10-16T10:57:30+00:00",
+      "approval_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "429c7cfe2cbf3aa1c014",
+        "approved_scope": [
+          "table salt"
+        ],
+        "scope_exclusions": [
+          "generic salt without an approved default",
+          "potassium-based salt substitutes",
+          "seasoned salt",
+          "other salt products"
+        ],
+        "missing_attributes": [],
+        "scope_unknown_attributes": []
+      },
+      "allow_as_default": false,
+      "review_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "429c7cfe2cbf3aa1c014",
+        "approved_scope": [
+          "table salt"
+        ],
+        "scope_exclusions": [
+          "generic salt without an approved default",
+          "potassium-based salt substitutes",
+          "seasoned salt",
+          "other salt products"
+        ],
+        "missing_attributes": [],
+        "scope_unknown_attributes": []
+      },
+      "reviewed_at": "2026-10-16T10:57:30+00:00",
+      "review_notes": null,
+      "reviewer_confirmed_attributes": {
+        "salt_type": "table"
+      }
+    },
+    {
+      "review_entry_id": "dd4d1355c21fb3c68b8a",
+      "canonical_ingredient_category": "egg",
+      "proposed_fdc_id": 171287,
+      "food_record_id": "fdc-sr-legacy:171287",
+      "usda_description": "Egg, whole, raw, fresh",
+      "usda_data_type": "SR Legacy",
+      "dataset_key": "sr_legacy",
+      "nutrition_basis": "per 100 g",
+      "reference_policy_version": 2,
+      "source_reference_policy_version": 1,
+      "identity_compatibility": "exact",
+      "proposed_reference_scope": [
+        "raw whole egg with species left unspecified"
+      ],
+      "scope_attributes": {
+        "egg_part": "whole",
+        "species": "unspecified",
+        "preparation_state": "raw"
+      },
+      "scope_exclusions": [
+        "egg whites",
+        "egg yolks",
+        "duck eggs",
+        "cooked eggs"
+      ],
+      "missing_attributes": [
+        "species"
+      ],
+      "scope_unknown_attributes": [
+        "species"
+      ],
+      "nutritional_completeness": "COMPLETE",
+      "nutrient_validation": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 142.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 142.00000000000003,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 138.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 138.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 198.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 198.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 12.6,
+          "unit": "g",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 12.6,
+          "normalized_unit": "g",
+          "status": "AVAILABLE"
+        }
+      },
+      "nutrients_per_100g": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 142.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 142.00000000000003,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 138.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 138.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 198.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 198.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 12.6,
+          "unit": "g",
+          "normalized_amount_per_100g": 12.6,
+          "normalized_unit": "g",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        }
+      },
+      "review_recommendation": "READY_FOR_HUMAN_APPROVAL",
+      "reasoning": "The local SR Legacy record identifies whole, raw egg but does not state species; the proposed scope preserves that uncertainty.",
+      "required_human_decision": "Confirm or reject this exact FDC ID and scope. If approving, explicitly choose whether it may be used as a default; generic use remains disabled unless the reviewer separately opts in.",
+      "decision": "APPROVED",
+      "review_status": "APPROVED",
+      "reviewer_identity": "fyp-project-owner",
+      "approval_timestamp": "2026-10-16T10:57:31+00:00",
+      "approval_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "dd4d1355c21fb3c68b8a",
+        "approved_scope": [
+          "raw whole egg with species left unspecified"
+        ],
+        "scope_exclusions": [
+          "egg whites",
+          "egg yolks",
+          "duck eggs",
+          "cooked eggs"
+        ],
+        "missing_attributes": [
+          "species"
+        ],
+        "scope_unknown_attributes": [
+          "species"
+        ]
+      },
+      "allow_as_default": false,
+      "review_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "dd4d1355c21fb3c68b8a",
+        "approved_scope": [
+          "raw whole egg with species left unspecified"
+        ],
+        "scope_exclusions": [
+          "egg whites",
+          "egg yolks",
+          "duck eggs",
+          "cooked eggs"
+        ],
+        "missing_attributes": [
+          "species"
+        ],
+        "scope_unknown_attributes": [
+          "species"
+        ]
+      },
+      "reviewed_at": "2026-10-16T10:57:31+00:00",
+      "review_notes": null,
+      "reviewer_confirmed_attributes": {
+        "egg_part": "whole",
+        "species": "unspecified",
+        "preparation_state": "raw"
+      }
+    },
+    {
+      "review_entry_id": "72afcb09c0b50ef2581b",
+      "canonical_ingredient_category": "butter",
+      "proposed_fdc_id": 173410,
+      "food_record_id": "fdc-sr-legacy:173410",
+      "usda_description": "Butter, salted",
+      "usda_data_type": "SR Legacy",
+      "dataset_key": "sr_legacy",
+      "nutrition_basis": "per 100 g",
+      "reference_policy_version": 2,
+      "source_reference_policy_version": 1,
+      "identity_compatibility": "exact",
+      "proposed_reference_scope": [
+        "salted dairy butter"
+      ],
+      "scope_attributes": {
+        "saltedness": "salted",
+        "processing_state": "unspecified"
+      },
+      "scope_exclusions": [
+        "unsalted butter",
+        "nut butter",
+        "ghee",
+        "generic butter unless a reviewer explicitly permits that default"
+      ],
+      "missing_attributes": [
+        "processing_state"
+      ],
+      "scope_unknown_attributes": [
+        "processing_state"
+      ],
+      "nutritional_completeness": "COMPLETE",
+      "nutrient_validation": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 643.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 643.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 24.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 24.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 24.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 24.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 0.85,
+          "unit": "g",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 0.85,
+          "normalized_unit": "g",
+          "status": "AVAILABLE"
+        }
+      },
+      "nutrients_per_100g": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 643.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 643.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 24.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 24.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 24.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 24.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 0.85,
+          "unit": "g",
+          "normalized_amount_per_100g": 0.85,
+          "normalized_unit": "g",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        }
+      },
+      "review_recommendation": "READY_FOR_HUMAN_APPROVAL",
+      "reasoning": "The source explicitly identifies salted butter. Its processing form is not stated and remains unspecified.",
+      "required_human_decision": "Confirm or reject this exact FDC ID and scope. If approving, explicitly choose whether it may be used as a default; generic use remains disabled unless the reviewer separately opts in.",
+      "decision": "APPROVED",
+      "review_status": "APPROVED",
+      "reviewer_identity": "fyp-project-owner",
+      "approval_timestamp": "2026-10-16T10:57:31+00:00",
+      "approval_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "72afcb09c0b50ef2581b",
+        "approved_scope": [
+          "salted dairy butter"
+        ],
+        "scope_exclusions": [
+          "unsalted butter",
+          "nut butter",
+          "ghee",
+          "generic butter unless a reviewer explicitly permits that default"
+        ],
+        "missing_attributes": [
+          "processing_state"
+        ],
+        "scope_unknown_attributes": [
+          "processing_state"
+        ]
+      },
+      "allow_as_default": false,
+      "review_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "72afcb09c0b50ef2581b",
+        "approved_scope": [
+          "salted dairy butter"
+        ],
+        "scope_exclusions": [
+          "unsalted butter",
+          "nut butter",
+          "ghee",
+          "generic butter unless a reviewer explicitly permits that default"
+        ],
+        "missing_attributes": [
+          "processing_state"
+        ],
+        "scope_unknown_attributes": [
+          "processing_state"
+        ]
+      },
+      "reviewed_at": "2026-10-16T10:57:31+00:00",
+      "review_notes": null,
+      "reviewer_confirmed_attributes": {
+        "saltedness": "salted",
+        "processing_state": "unspecified"
+      }
+    },
+    {
+      "review_entry_id": "9e2b66101b32ee92b160",
+      "canonical_ingredient_category": "butter",
+      "proposed_fdc_id": 173430,
+      "food_record_id": "fdc-sr-legacy:173430",
+      "usda_description": "Butter, without salt",
+      "usda_data_type": "SR Legacy",
+      "dataset_key": "sr_legacy",
+      "nutrition_basis": "per 100 g",
+      "reference_policy_version": 2,
+      "source_reference_policy_version": 1,
+      "identity_compatibility": "exact",
+      "proposed_reference_scope": [
+        "unsalted dairy butter"
+      ],
+      "scope_attributes": {
+        "saltedness": "unsalted",
+        "processing_state": "unspecified"
+      },
+      "scope_exclusions": [
+        "salted butter",
+        "nut butter",
+        "ghee",
+        "generic butter unless a reviewer explicitly permits that default"
+      ],
+      "missing_attributes": [
+        "processing_state"
+      ],
+      "scope_unknown_attributes": [
+        "processing_state"
+      ],
+      "nutritional_completeness": "COMPLETE",
+      "nutrient_validation": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 11.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 11.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 24.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 24.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 24.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 24.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 0.85,
+          "unit": "g",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 0.85,
+          "normalized_unit": "g",
+          "status": "AVAILABLE"
+        }
+      },
+      "nutrients_per_100g": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 11.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 11.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 24.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 24.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 24.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 24.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 0.85,
+          "unit": "g",
+          "normalized_amount_per_100g": 0.85,
+          "normalized_unit": "g",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        }
+      },
+      "review_recommendation": "READY_FOR_HUMAN_APPROVAL",
+      "reasoning": "The source explicitly identifies butter without salt. Its processing form is not stated and remains unspecified.",
+      "required_human_decision": "Confirm or reject this exact FDC ID and scope. If approving, explicitly choose whether it may be used as a default; generic use remains disabled unless the reviewer separately opts in.",
+      "decision": "APPROVED",
+      "review_status": "APPROVED",
+      "reviewer_identity": "fyp-project-owner",
+      "approval_timestamp": "2026-10-16T10:57:31+00:00",
+      "approval_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "9e2b66101b32ee92b160",
+        "approved_scope": [
+          "unsalted dairy butter"
+        ],
+        "scope_exclusions": [
+          "salted butter",
+          "nut butter",
+          "ghee",
+          "generic butter unless a reviewer explicitly permits that default"
+        ],
+        "missing_attributes": [
+          "processing_state"
+        ],
+        "scope_unknown_attributes": [
+          "processing_state"
+        ]
+      },
+      "allow_as_default": false,
+      "review_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "9e2b66101b32ee92b160",
+        "approved_scope": [
+          "unsalted dairy butter"
+        ],
+        "scope_exclusions": [
+          "salted butter",
+          "nut butter",
+          "ghee",
+          "generic butter unless a reviewer explicitly permits that default"
+        ],
+        "missing_attributes": [
+          "processing_state"
+        ],
+        "scope_unknown_attributes": [
+          "processing_state"
+        ]
+      },
+      "reviewed_at": "2026-10-16T10:57:31+00:00",
+      "review_notes": null,
+      "reviewer_confirmed_attributes": {
+        "saltedness": "unsalted",
+        "processing_state": "unspecified"
+      }
+    },
+    {
+      "review_entry_id": "f5d674cd0faba5510b8b",
+      "canonical_ingredient_category": "sugar",
+      "proposed_fdc_id": 169655,
+      "food_record_id": "fdc-sr-legacy:169655",
+      "usda_description": "Sugars, granulated",
+      "usda_data_type": "SR Legacy",
+      "dataset_key": "sr_legacy",
+      "nutrition_basis": "per 100 g",
+      "reference_policy_version": 2,
+      "source_reference_policy_version": 1,
+      "identity_compatibility": "exact",
+      "proposed_reference_scope": [
+        "granulated sugar"
+      ],
+      "scope_attributes": {
+        "sugar_type": "granulated"
+      },
+      "scope_exclusions": [
+        "brown sugar",
+        "turbinado sugar",
+        "artificial sweeteners"
+      ],
+      "missing_attributes": [],
+      "scope_unknown_attributes": [],
+      "nutritional_completeness": "COMPLETE",
+      "nutrient_validation": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 1.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 1.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 2.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 2.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 0.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 0.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 0.0,
+          "unit": "g",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 0.0,
+          "normalized_unit": "g",
+          "status": "AVAILABLE"
+        }
+      },
+      "nutrients_per_100g": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 1.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 1.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 2.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 2.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 0.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 0.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 0.0,
+          "unit": "g",
+          "normalized_amount_per_100g": 0.0,
+          "normalized_unit": "g",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        }
+      },
+      "review_recommendation": "READY_FOR_HUMAN_APPROVAL",
+      "reasoning": "The local SR Legacy record explicitly identifies granulated sugar and contains all four required nutrients.",
+      "required_human_decision": "Confirm or reject this exact FDC ID and scope. If approving, explicitly choose whether it may be used as a default; generic use remains disabled unless the reviewer separately opts in.",
+      "decision": "APPROVED",
+      "review_status": "APPROVED",
+      "reviewer_identity": "fyp-project-owner",
+      "approval_timestamp": "2026-10-16T10:57:31+00:00",
+      "approval_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "f5d674cd0faba5510b8b",
+        "approved_scope": [
+          "granulated sugar"
+        ],
+        "scope_exclusions": [
+          "brown sugar",
+          "turbinado sugar",
+          "artificial sweeteners"
+        ],
+        "missing_attributes": [],
+        "scope_unknown_attributes": []
+      },
+      "allow_as_default": false,
+      "review_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "f5d674cd0faba5510b8b",
+        "approved_scope": [
+          "granulated sugar"
+        ],
+        "scope_exclusions": [
+          "brown sugar",
+          "turbinado sugar",
+          "artificial sweeteners"
+        ],
+        "missing_attributes": [],
+        "scope_unknown_attributes": []
+      },
+      "reviewed_at": "2026-10-16T10:57:31+00:00",
+      "review_notes": null,
+      "reviewer_confirmed_attributes": {
+        "sugar_type": "granulated"
+      }
+    },
+    {
+      "review_entry_id": "20fd10400caf014b30b4",
+      "canonical_ingredient_category": "olive oil",
+      "proposed_fdc_id": 171413,
+      "food_record_id": "fdc-sr-legacy:171413",
+      "usda_description": "Oil, olive, salad or cooking",
+      "usda_data_type": "SR Legacy",
+      "dataset_key": "sr_legacy",
+      "nutrition_basis": "per 100 g",
+      "reference_policy_version": 2,
+      "source_reference_policy_version": 1,
+      "identity_compatibility": "ambiguous",
+      "proposed_reference_scope": [
+        "olive oil described as salad or cooking oil, with processing unspecified"
+      ],
+      "scope_attributes": {
+        "oil_type": "olive",
+        "processing_state": "unspecified"
+      },
+      "scope_exclusions": [
+        "explicit extra-virgin olive oil",
+        "explicit extra-light olive oil",
+        "blended oils"
+      ],
+      "missing_attributes": [
+        "processing_state"
+      ],
+      "scope_unknown_attributes": [
+        "processing_state"
+      ],
+      "nutritional_completeness": "COMPLETE",
+      "nutrient_validation": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 2.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 2.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 1.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 1.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 0.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 0.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 0.0,
+          "unit": "g",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 0.0,
+          "normalized_unit": "g",
+          "status": "AVAILABLE"
+        }
+      },
+      "nutrients_per_100g": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 2.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 2.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 1.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 1.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 0.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 0.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 0.0,
+          "unit": "g",
+          "normalized_amount_per_100g": 0.0,
+          "normalized_unit": "g",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        }
+      },
+      "review_recommendation": "READY_FOR_HUMAN_APPROVAL",
+      "reasoning": "The local SR Legacy record is nutrient-complete but does not state all processing attributes; the narrower scope preserves that uncertainty.",
+      "required_human_decision": "Confirm or reject this exact FDC ID and scope. If approving, explicitly choose whether it may be used as a default; generic use remains disabled unless the reviewer separately opts in.",
+      "decision": "APPROVED",
+      "review_status": "APPROVED",
+      "reviewer_identity": "fyp-project-owner",
+      "approval_timestamp": "2026-10-16T10:57:31+00:00",
+      "approval_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "20fd10400caf014b30b4",
+        "approved_scope": [
+          "olive oil described as salad or cooking oil, with processing unspecified"
+        ],
+        "scope_exclusions": [
+          "explicit extra-virgin olive oil",
+          "explicit extra-light olive oil",
+          "blended oils"
+        ],
+        "missing_attributes": [
+          "processing_state"
+        ],
+        "scope_unknown_attributes": [
+          "processing_state"
+        ]
+      },
+      "allow_as_default": false,
+      "review_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "20fd10400caf014b30b4",
+        "approved_scope": [
+          "olive oil described as salad or cooking oil, with processing unspecified"
+        ],
+        "scope_exclusions": [
+          "explicit extra-virgin olive oil",
+          "explicit extra-light olive oil",
+          "blended oils"
+        ],
+        "missing_attributes": [
+          "processing_state"
+        ],
+        "scope_unknown_attributes": [
+          "processing_state"
+        ]
+      },
+      "reviewed_at": "2026-10-16T10:57:31+00:00",
+      "review_notes": null,
+      "reviewer_confirmed_attributes": {
+        "oil_type": "olive",
+        "processing_state": "unspecified"
+      }
+    },
+    {
+      "review_entry_id": "c37d6f7d28effaebd97f",
+      "canonical_ingredient_category": "chicken breast",
+      "proposed_fdc_id": 2646170,
+      "food_record_id": "fdc:2646170",
+      "usda_description": "Chicken, breast, boneless, skinless, raw",
+      "usda_data_type": "Foundation",
+      "dataset_key": "foundation_foods",
+      "nutrition_basis": "per 100 g",
+      "reference_policy_version": 2,
+      "source_reference_policy_version": 1,
+      "identity_compatibility": "exact",
+      "proposed_reference_scope": [
+        "raw boneless skinless chicken breast with solution status unspecified"
+      ],
+      "scope_attributes": {
+        "preparation_state": "raw",
+        "skin_state": "skinless",
+        "bone_state": "boneless",
+        "added_solution": "unspecified"
+      },
+      "scope_exclusions": [
+        "cooked chicken",
+        "skin-on chicken",
+        "bone-in chicken",
+        "chicken explicitly described with added solution"
+      ],
+      "missing_attributes": [
+        "added_solution"
+      ],
+      "scope_unknown_attributes": [
+        "added_solution"
+      ],
+      "nutritional_completeness": "COMPLETE",
+      "nutrient_validation": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 65.8,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 65.8,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 330.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 330.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 215.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 215.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 22.5,
+          "unit": "g",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 22.5,
+          "normalized_unit": "g",
+          "status": "AVAILABLE"
+        }
+      },
+      "nutrients_per_100g": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 65.8,
+          "unit": "mg",
+          "normalized_amount_per_100g": 65.8,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 330.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 330.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 215.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 215.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 22.5,
+          "unit": "g",
+          "normalized_amount_per_100g": 22.5,
+          "normalized_unit": "g",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        }
+      },
+      "review_recommendation": "READY_FOR_HUMAN_APPROVAL",
+      "reasoning": "The local Foundation record establishes raw, boneless, skinless breast. It does not state solution status, so the proposal does not assume added_solution=no.",
+      "required_human_decision": "Confirm or reject this exact FDC ID and scope. If approving, explicitly choose whether it may be used as a default; generic use remains disabled unless the reviewer separately opts in.",
+      "decision": "APPROVED",
+      "review_status": "APPROVED",
+      "reviewer_identity": "fyp-project-owner",
+      "approval_timestamp": "2026-10-16T10:57:31+00:00",
+      "approval_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "c37d6f7d28effaebd97f",
+        "approved_scope": [
+          "raw boneless skinless chicken breast with solution status unspecified"
+        ],
+        "scope_exclusions": [
+          "cooked chicken",
+          "skin-on chicken",
+          "bone-in chicken",
+          "chicken explicitly described with added solution"
+        ],
+        "missing_attributes": [
+          "added_solution"
+        ],
+        "scope_unknown_attributes": [
+          "added_solution"
+        ]
+      },
+      "allow_as_default": false,
+      "review_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "c37d6f7d28effaebd97f",
+        "approved_scope": [
+          "raw boneless skinless chicken breast with solution status unspecified"
+        ],
+        "scope_exclusions": [
+          "cooked chicken",
+          "skin-on chicken",
+          "bone-in chicken",
+          "chicken explicitly described with added solution"
+        ],
+        "missing_attributes": [
+          "added_solution"
+        ],
+        "scope_unknown_attributes": [
+          "added_solution"
+        ]
+      },
+      "reviewed_at": "2026-10-16T10:57:31+00:00",
+      "review_notes": null,
+      "reviewer_confirmed_attributes": {
+        "preparation_state": "raw",
+        "skin_state": "skinless",
+        "bone_state": "boneless",
+        "added_solution": "unspecified"
+      }
+    },
+    {
+      "review_entry_id": "6cc96a5a48583a38e8f3",
+      "canonical_ingredient_category": "salmon",
+      "proposed_fdc_id": 2684441,
+      "food_record_id": "fdc:2684441",
+      "usda_description": "Fish, salmon, Atlantic, farm raised, raw",
+      "usda_data_type": "Foundation",
+      "dataset_key": "foundation_foods",
+      "nutrition_basis": "per 100 g",
+      "reference_policy_version": 2,
+      "source_reference_policy_version": 1,
+      "identity_compatibility": "exact",
+      "proposed_reference_scope": [
+        "raw farm-raised Atlantic salmon"
+      ],
+      "scope_attributes": {
+        "species": "atlantic",
+        "farm_raised": "yes",
+        "preparation_state": "raw",
+        "processing_state": "unspecified"
+      },
+      "scope_exclusions": [
+        "wild Atlantic salmon",
+        "sockeye salmon",
+        "pink salmon",
+        "cooked salmon",
+        "smoked salmon",
+        "generic salmon without an explicitly approved default"
+      ],
+      "missing_attributes": [
+        "processing_state"
+      ],
+      "scope_unknown_attributes": [
+        "processing_state"
+      ],
+      "nutritional_completeness": "COMPLETE",
+      "nutrient_validation": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 49.5,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 49.5,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 378.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 378.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 230.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 230.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 20.3,
+          "unit": "g",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 20.3,
+          "normalized_unit": "g",
+          "status": "AVAILABLE"
+        }
+      },
+      "nutrients_per_100g": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 49.5,
+          "unit": "mg",
+          "normalized_amount_per_100g": 49.5,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 378.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 378.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 230.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 230.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 20.3,
+          "unit": "g",
+          "normalized_amount_per_100g": 20.3,
+          "normalized_unit": "g",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        }
+      },
+      "review_recommendation": "READY_FOR_HUMAN_APPROVAL",
+      "reasoning": "The local Foundation record states Atlantic, farm-raised, and raw. Farm-raising is preserved as a distinct identity attribute; processing beyond the stated raw form remains unspecified.",
+      "required_human_decision": "Confirm or reject this exact FDC ID and scope. If approving, explicitly choose whether it may be used as a default; generic use remains disabled unless the reviewer separately opts in.",
+      "decision": "APPROVED",
+      "review_status": "APPROVED",
+      "reviewer_identity": "fyp-project-owner",
+      "approval_timestamp": "2026-10-16T10:57:31+00:00",
+      "approval_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "6cc96a5a48583a38e8f3",
+        "approved_scope": [
+          "raw farm-raised Atlantic salmon"
+        ],
+        "scope_exclusions": [
+          "wild Atlantic salmon",
+          "sockeye salmon",
+          "pink salmon",
+          "cooked salmon",
+          "smoked salmon",
+          "generic salmon without an explicitly approved default"
+        ],
+        "missing_attributes": [
+          "processing_state"
+        ],
+        "scope_unknown_attributes": [
+          "processing_state"
+        ]
+      },
+      "allow_as_default": false,
+      "review_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "6cc96a5a48583a38e8f3",
+        "approved_scope": [
+          "raw farm-raised Atlantic salmon"
+        ],
+        "scope_exclusions": [
+          "wild Atlantic salmon",
+          "sockeye salmon",
+          "pink salmon",
+          "cooked salmon",
+          "smoked salmon",
+          "generic salmon without an explicitly approved default"
+        ],
+        "missing_attributes": [
+          "processing_state"
+        ],
+        "scope_unknown_attributes": [
+          "processing_state"
+        ]
+      },
+      "reviewed_at": "2026-10-16T10:57:31+00:00",
+      "review_notes": null,
+      "reviewer_confirmed_attributes": {
+        "species": "atlantic",
+        "farm_raised": "yes",
+        "preparation_state": "raw",
+        "processing_state": "unspecified"
+      }
+    },
+    {
+      "review_entry_id": "1c115267a0cb905d151f",
+      "canonical_ingredient_category": "rice",
+      "proposed_fdc_id": 2512381,
+      "food_record_id": "fdc:2512381",
+      "usda_description": "Rice, white, long grain, unenriched, raw",
+      "usda_data_type": "Foundation",
+      "dataset_key": "foundation_foods",
+      "nutrition_basis": "per 100 g",
+      "reference_policy_version": 2,
+      "source_reference_policy_version": 1,
+      "identity_compatibility": "exact",
+      "proposed_reference_scope": [
+        "raw unenriched white long-grain rice"
+      ],
+      "scope_attributes": {
+        "variety": "white",
+        "grain": "long",
+        "enrichment_state": "unenriched",
+        "preparation_state": "raw"
+      },
+      "scope_exclusions": [
+        "cooked rice",
+        "brown rice",
+        "glutinous rice",
+        "enriched rice",
+        "other grain varieties"
+      ],
+      "missing_attributes": [],
+      "scope_unknown_attributes": [],
+      "nutritional_completeness": "COMPLETE",
+      "nutrient_validation": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 0.462,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 0.462,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 82.3,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 82.3,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 108.0,
+          "unit": "mg",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 108.0,
+          "normalized_unit": "mg",
+          "status": "AVAILABLE"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 7.04,
+          "unit": "g",
+          "basis": "per 100 g",
+          "normalized_amount_per_100g": 7.04,
+          "normalized_unit": "g",
+          "status": "AVAILABLE"
+        }
+      },
+      "nutrients_per_100g": {
+        "sodium": {
+          "fdc_nutrient_id": "1093",
+          "name": "Sodium, Na",
+          "amount": 0.462,
+          "unit": "mg",
+          "normalized_amount_per_100g": 0.462,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "potassium": {
+          "fdc_nutrient_id": "1092",
+          "name": "Potassium, K",
+          "amount": 82.3,
+          "unit": "mg",
+          "normalized_amount_per_100g": 82.3,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "phosphorus": {
+          "fdc_nutrient_id": "1091",
+          "name": "Phosphorus, P",
+          "amount": 108.0,
+          "unit": "mg",
+          "normalized_amount_per_100g": 108.0,
+          "normalized_unit": "mg",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        },
+        "protein": {
+          "fdc_nutrient_id": "1003",
+          "name": "Protein",
+          "amount": 7.04,
+          "unit": "g",
+          "normalized_amount_per_100g": 7.04,
+          "normalized_unit": "g",
+          "availability": "AVAILABLE",
+          "basis": "per 100 g"
+        }
+      },
+      "review_recommendation": "READY_FOR_HUMAN_APPROVAL",
+      "reasoning": "The local Foundation record states white, long-grain, unenriched, and raw. Cooking state and enrichment are retained as identity attributes.",
+      "required_human_decision": "Confirm or reject this exact FDC ID and scope. If approving, explicitly choose whether it may be used as a default; generic use remains disabled unless the reviewer separately opts in.",
+      "decision": "APPROVED",
+      "review_status": "APPROVED",
+      "reviewer_identity": "fyp-project-owner",
+      "approval_timestamp": "2026-10-16T10:57:31+00:00",
+      "approval_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "1c115267a0cb905d151f",
+        "approved_scope": [
+          "raw unenriched white long-grain rice"
+        ],
+        "scope_exclusions": [
+          "cooked rice",
+          "brown rice",
+          "glutinous rice",
+          "enriched rice",
+          "other grain varieties"
+        ],
+        "missing_attributes": [],
+        "scope_unknown_attributes": []
+      },
+      "allow_as_default": false,
+      "review_provenance": {
+        "reviewer_statement": "Manually approved for RenAlly FYP based on USDA ingredient identity, nutritional completeness, and reference scope review.",
+        "authorization_source": "Explicit project-owner authorization in the Step 5A.1 persist request.",
+        "review_entry_id": "1c115267a0cb905d151f",
+        "approved_scope": [
+          "raw unenriched white long-grain rice"
+        ],
+        "scope_exclusions": [
+          "cooked rice",
+          "brown rice",
+          "glutinous rice",
+          "enriched rice",
+          "other grain varieties"
+        ],
+        "missing_attributes": [],
+        "scope_unknown_attributes": []
+      },
+      "reviewed_at": "2026-10-16T10:57:31+00:00",
+      "review_notes": null,
+      "reviewer_confirmed_attributes": {
+        "variety": "white",
+        "grain": "long",
+        "enrichment_state": "unenriched",
+        "preparation_state": "raw"
+      }
+    }
+  ],
+  "recommendation_counts": {
+    "READY_FOR_HUMAN_APPROVAL": 9,
+    "REQUIRES_SCOPE_REFINEMENT": 0,
+    "INSUFFICIENT_NUTRIENT_DATA": 0,
+    "NOT_RECOMMENDED": 0
+  },
+  "comparisons": {
+    "butter": [
+      {
+        "review_entry_id": "72afcb09c0b50ef2581b",
+        "canonical_ingredient_category": "butter",
+        "proposed_fdc_id": 173410,
+        "food_record_id": "fdc-sr-legacy:173410",
+        "usda_description": "Butter, salted",
+        "usda_data_type": "SR Legacy",
+        "dataset_key": "sr_legacy",
+        "nutrition_basis": "per 100 g",
+        "source_url": "https://fdc.nal.usda.gov/food-details/173410/nutrients",
+        "relevant_attributes": {
+          "saltedness": "salted"
+        },
+        "proposed_reference_scope": "Only for butter explicitly matching saltedness=salted; this is not a universal default for a generic ingredient. Candidate description also omits: processing_state.",
+        "nutritional_data_availability": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "unit": "g",
+            "normalized_unit": "g",
+            "availability": "AVAILABLE"
+          }
+        },
+        "nutrients_per_100g": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "amount": 643.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 643.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "amount": 24.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 24.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "amount": 24.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 24.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "amount": 0.85,
+            "unit": "g",
+            "normalized_amount_per_100g": 0.85,
+            "normalized_unit": "g",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          }
+        },
+        "identity_compatibility": "exact",
+        "missing_attributes": [
+          "processing_state",
+          "saltedness"
+        ],
+        "candidate_description_missing_attributes": [
+          "processing_state"
+        ],
+        "generic_default_consideration": "NOT_PROPOSED_PENDING_HUMAN_DECISION",
+        "review_status": "PENDING_REVIEW",
+        "review_notes": "USDA description does not state: processing_state. Generic ingredient wording leaves unspecified: processing_state, saltedness.",
+        "reference_policy_version": 1,
+        "best_search_evidence": {
+          "query": "salted butter",
+          "source": "ingredient_reranker",
+          "identity_match": "exact_identity",
+          "variety_compatibility": "explicit_match",
+          "preparation_state_compatibility": "query_unspecified",
+          "processing_state_compatibility": "query_unspecified",
+          "unresolved_attributes": [],
+          "conflicts": [],
+          "requested_attributes": {
+            "saltedness": "salted"
+          },
+          "unmatched_requested_attributes": [],
+          "specificity": 1
+        },
+        "search_evidence": [
+          {
+            "query": "butter",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "query_unspecified",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "saltedness"
+            ]
+          },
+          {
+            "query": "butter",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "salted butter",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "explicit_match",
+            "preparation_state_compatibility": "query_unspecified",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": []
+          },
+          {
+            "query": "salted butter",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "unsalted butter",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "whipped butter",
+            "source": "ingredient_reranker",
+            "identity_match": "head_noun",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "query_unspecified",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "saltedness"
+            ]
+          },
+          {
+            "query": "whipped butter",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          }
+        ],
+        "reviewer_identity": null,
+        "review_provenance": null,
+        "reviewed_at": null
+      },
+      {
+        "review_entry_id": "9e2b66101b32ee92b160",
+        "canonical_ingredient_category": "butter",
+        "proposed_fdc_id": 173430,
+        "food_record_id": "fdc-sr-legacy:173430",
+        "usda_description": "Butter, without salt",
+        "usda_data_type": "SR Legacy",
+        "dataset_key": "sr_legacy",
+        "nutrition_basis": "per 100 g",
+        "source_url": "https://fdc.nal.usda.gov/food-details/173430/nutrients",
+        "relevant_attributes": {
+          "saltedness": "unsalted"
+        },
+        "proposed_reference_scope": "Only for butter explicitly matching saltedness=unsalted; this is not a universal default for a generic ingredient. Candidate description also omits: processing_state.",
+        "nutritional_data_availability": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "unit": "g",
+            "normalized_unit": "g",
+            "availability": "AVAILABLE"
+          }
+        },
+        "nutrients_per_100g": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "amount": 11.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 11.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "amount": 24.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 24.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "amount": 24.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 24.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "amount": 0.85,
+            "unit": "g",
+            "normalized_amount_per_100g": 0.85,
+            "normalized_unit": "g",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          }
+        },
+        "identity_compatibility": "exact",
+        "missing_attributes": [
+          "processing_state",
+          "saltedness"
+        ],
+        "candidate_description_missing_attributes": [
+          "processing_state"
+        ],
+        "generic_default_consideration": "NOT_PROPOSED_PENDING_HUMAN_DECISION",
+        "review_status": "PENDING_REVIEW",
+        "review_notes": "USDA description does not state: processing_state. Generic ingredient wording leaves unspecified: processing_state, saltedness.",
+        "reference_policy_version": 1,
+        "best_search_evidence": {
+          "query": "unsalted butter",
+          "source": "ingredient_reranker",
+          "identity_match": "exact_identity",
+          "variety_compatibility": "explicit_match",
+          "preparation_state_compatibility": "query_unspecified",
+          "processing_state_compatibility": "query_unspecified",
+          "unresolved_attributes": [],
+          "conflicts": [],
+          "requested_attributes": {
+            "saltedness": "unsalted"
+          },
+          "unmatched_requested_attributes": [],
+          "specificity": 1
+        },
+        "search_evidence": [
+          {
+            "query": "butter",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "query_unspecified",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "saltedness"
+            ]
+          },
+          {
+            "query": "butter",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "unsalted butter",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "explicit_match",
+            "preparation_state_compatibility": "query_unspecified",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": []
+          },
+          {
+            "query": "whipped butter",
+            "source": "ingredient_reranker",
+            "identity_match": "head_noun",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "query_unspecified",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "saltedness"
+            ]
+          },
+          {
+            "query": "whipped butter",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          }
+        ],
+        "reviewer_identity": null,
+        "review_provenance": null,
+        "reviewed_at": null
+      }
+    ],
+    "salmon": [
+      {
+        "review_entry_id": "6cc96a5a48583a38e8f3",
+        "canonical_ingredient_category": "salmon",
+        "proposed_fdc_id": 2684441,
+        "food_record_id": "fdc:2684441",
+        "usda_description": "Fish, salmon, Atlantic, farm raised, raw",
+        "usda_data_type": "Foundation",
+        "dataset_key": "foundation_foods",
+        "nutrition_basis": "per 100 g",
+        "source_url": "https://fdc.nal.usda.gov/food-details/2684441/nutrients",
+        "relevant_attributes": {
+          "preparation_state": "raw",
+          "species": "atlantic"
+        },
+        "proposed_reference_scope": "Only for salmon explicitly matching preparation_state=raw, species=atlantic; this is not a universal default for a generic ingredient. Candidate description also omits: processing_state.",
+        "nutritional_data_availability": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "unit": "g",
+            "normalized_unit": "g",
+            "availability": "AVAILABLE"
+          }
+        },
+        "nutrients_per_100g": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "amount": 49.5,
+            "unit": "mg",
+            "normalized_amount_per_100g": 49.5,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "amount": 378.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 378.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "amount": 230.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 230.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "amount": 20.3,
+            "unit": "g",
+            "normalized_amount_per_100g": 20.3,
+            "normalized_unit": "g",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          }
+        },
+        "identity_compatibility": "exact",
+        "missing_attributes": [
+          "preparation_state",
+          "processing_state",
+          "species"
+        ],
+        "candidate_description_missing_attributes": [
+          "processing_state"
+        ],
+        "generic_default_consideration": "NOT_PROPOSED_PENDING_HUMAN_DECISION",
+        "review_status": "PENDING_REVIEW",
+        "review_notes": "USDA description does not state: processing_state. Generic ingredient wording leaves unspecified: preparation_state, processing_state, species.",
+        "reference_policy_version": 1,
+        "best_search_evidence": {
+          "query": "Atlantic salmon raw",
+          "source": "ingredient_reranker",
+          "identity_match": "exact_identity",
+          "variety_compatibility": "explicit_match",
+          "preparation_state_compatibility": "explicit_match",
+          "processing_state_compatibility": "query_unspecified",
+          "unresolved_attributes": [],
+          "conflicts": [],
+          "requested_attributes": {
+            "preparation_state": "raw",
+            "species": "atlantic"
+          },
+          "unmatched_requested_attributes": [],
+          "specificity": 2
+        },
+        "search_evidence": [
+          {
+            "query": "salmon",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "candidate_more_specific",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "species"
+            ]
+          },
+          {
+            "query": "salmon",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "Atlantic salmon raw",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "explicit_match",
+            "preparation_state_compatibility": "explicit_match",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": []
+          },
+          {
+            "query": "Atlantic salmon raw",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "sockeye salmon raw",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "pink salmon raw",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "Atlantic salmon cooked",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "sockeye salmon cooked",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "pink salmon cooked",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "cooked salmon",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          }
+        ],
+        "reviewer_identity": null,
+        "review_provenance": null,
+        "reviewed_at": null
+      },
+      {
+        "review_entry_id": "49a433855a45ff1b6991",
+        "canonical_ingredient_category": "salmon",
+        "proposed_fdc_id": 173686,
+        "food_record_id": "fdc-sr-legacy:173686",
+        "usda_description": "Fish, salmon, Atlantic, wild, raw",
+        "usda_data_type": "SR Legacy",
+        "dataset_key": "sr_legacy",
+        "nutrition_basis": "per 100 g",
+        "source_url": "https://fdc.nal.usda.gov/food-details/173686/nutrients",
+        "relevant_attributes": {
+          "preparation_state": "raw",
+          "species": "atlantic"
+        },
+        "proposed_reference_scope": "Only for salmon explicitly matching preparation_state=raw, species=atlantic; this is not a universal default for a generic ingredient. Candidate description also omits: processing_state.",
+        "nutritional_data_availability": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "unit": "g",
+            "normalized_unit": "g",
+            "availability": "AVAILABLE"
+          }
+        },
+        "nutrients_per_100g": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "amount": 44.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 44.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "amount": 490.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 490.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "amount": 200.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 200.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "amount": 19.8,
+            "unit": "g",
+            "normalized_amount_per_100g": 19.8,
+            "normalized_unit": "g",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          }
+        },
+        "identity_compatibility": "exact",
+        "missing_attributes": [
+          "preparation_state",
+          "processing_state",
+          "species"
+        ],
+        "candidate_description_missing_attributes": [
+          "processing_state"
+        ],
+        "generic_default_consideration": "NOT_PROPOSED_PENDING_HUMAN_DECISION",
+        "review_status": "PENDING_REVIEW",
+        "review_notes": "USDA description does not state: processing_state. Generic ingredient wording leaves unspecified: preparation_state, processing_state, species.",
+        "reference_policy_version": 1,
+        "best_search_evidence": {
+          "query": "Atlantic salmon raw",
+          "source": "ingredient_reranker",
+          "identity_match": "exact_identity",
+          "variety_compatibility": "explicit_match",
+          "preparation_state_compatibility": "explicit_match",
+          "processing_state_compatibility": "query_unspecified",
+          "unresolved_attributes": [],
+          "conflicts": [],
+          "requested_attributes": {
+            "preparation_state": "raw",
+            "species": "atlantic"
+          },
+          "unmatched_requested_attributes": [],
+          "specificity": 2
+        },
+        "search_evidence": [
+          {
+            "query": "salmon",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "candidate_more_specific",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "species"
+            ]
+          },
+          {
+            "query": "salmon",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "Atlantic salmon raw",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "explicit_match",
+            "preparation_state_compatibility": "explicit_match",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": []
+          },
+          {
+            "query": "Atlantic salmon raw",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "sockeye salmon raw",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "pink salmon raw",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "Atlantic salmon cooked",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "sockeye salmon cooked",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "cooked salmon",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          }
+        ],
+        "reviewer_identity": null,
+        "review_provenance": null,
+        "reviewed_at": null
+      }
+    ],
+    "chicken breast": [
+      {
+        "review_entry_id": "c37d6f7d28effaebd97f",
+        "canonical_ingredient_category": "chicken breast",
+        "proposed_fdc_id": 2646170,
+        "food_record_id": "fdc:2646170",
+        "usda_description": "Chicken, breast, boneless, skinless, raw",
+        "usda_data_type": "Foundation",
+        "dataset_key": "foundation_foods",
+        "nutrition_basis": "per 100 g",
+        "source_url": "https://fdc.nal.usda.gov/food-details/2646170/nutrients",
+        "relevant_attributes": {
+          "preparation_state": "raw",
+          "skin_state": "skinless",
+          "bone_state": "boneless"
+        },
+        "proposed_reference_scope": "Only for chicken breast explicitly matching bone_state=boneless, preparation_state=raw, skin_state=skinless; this is not a universal default for a generic ingredient. Candidate description also omits: added_solution.",
+        "nutritional_data_availability": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "unit": "g",
+            "normalized_unit": "g",
+            "availability": "AVAILABLE"
+          }
+        },
+        "nutrients_per_100g": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "amount": 65.8,
+            "unit": "mg",
+            "normalized_amount_per_100g": 65.8,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "amount": 330.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 330.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "amount": 215.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 215.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "amount": 22.5,
+            "unit": "g",
+            "normalized_amount_per_100g": 22.5,
+            "normalized_unit": "g",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          }
+        },
+        "identity_compatibility": "exact",
+        "missing_attributes": [
+          "added_solution",
+          "bone_state",
+          "preparation_state",
+          "skin_state"
+        ],
+        "candidate_description_missing_attributes": [
+          "added_solution"
+        ],
+        "generic_default_consideration": "NOT_PROPOSED_PENDING_HUMAN_DECISION",
+        "review_status": "PENDING_REVIEW",
+        "review_notes": "USDA description does not state: added_solution. Generic ingredient wording leaves unspecified: added_solution, bone_state, preparation_state, skin_state.",
+        "reference_policy_version": 1,
+        "best_search_evidence": {
+          "query": "raw boneless skinless chicken breast",
+          "source": "ingredient_reranker",
+          "identity_match": "exact_identity",
+          "variety_compatibility": "unspecified",
+          "preparation_state_compatibility": "explicit_match",
+          "processing_state_compatibility": "query_unspecified",
+          "unresolved_attributes": [],
+          "conflicts": [],
+          "requested_attributes": {
+            "preparation_state": "raw",
+            "skin_state": "skinless",
+            "bone_state": "boneless"
+          },
+          "unmatched_requested_attributes": [],
+          "specificity": 3
+        },
+        "search_evidence": [
+          {
+            "query": "chicken breast",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "candidate_more_specific",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "bone_state",
+              "skin_state"
+            ]
+          },
+          {
+            "query": "chicken breast",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "raw boneless skinless chicken breast",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "unspecified",
+            "preparation_state_compatibility": "explicit_match",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": []
+          },
+          {
+            "query": "raw boneless skinless chicken breast",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "raw chicken breast with skin",
+            "source": "ingredient_reranker",
+            "identity_match": "head_noun",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "explicit_match",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "bone_state"
+            ]
+          },
+          {
+            "query": "raw chicken breast with skin",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "cooked chicken breast",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "chicken breast added solution",
+            "source": "ingredient_reranker",
+            "identity_match": "head_noun",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "candidate_more_specific",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "bone_state",
+              "skin_state"
+            ]
+          },
+          {
+            "query": "chicken breast added solution",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          }
+        ],
+        "reviewer_identity": null,
+        "review_provenance": null,
+        "reviewed_at": null
+      },
+      {
+        "review_entry_id": "90ffc806bc8ab9a037fb",
+        "canonical_ingredient_category": "chicken breast",
+        "proposed_fdc_id": 171509,
+        "food_record_id": "fdc-sr-legacy:171509",
+        "usda_description": "Chicken, broilers or fryers, breast, skinless, boneless, meat only, with added solution, raw",
+        "usda_data_type": "SR Legacy",
+        "dataset_key": "sr_legacy",
+        "nutrition_basis": "per 100 g",
+        "source_url": "https://fdc.nal.usda.gov/food-details/171509/nutrients",
+        "relevant_attributes": {
+          "preparation_state": "raw",
+          "skin_state": "skinless",
+          "bone_state": "boneless",
+          "added_solution": "yes"
+        },
+        "proposed_reference_scope": "Only for chicken breast explicitly matching added_solution=yes, bone_state=boneless, preparation_state=raw, skin_state=skinless; this is not a universal default for a generic ingredient.",
+        "nutritional_data_availability": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "unit": "g",
+            "normalized_unit": "g",
+            "availability": "AVAILABLE"
+          }
+        },
+        "nutrients_per_100g": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "amount": 173.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 173.00000000000003,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "amount": 332.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 332.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "amount": 198.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 198.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "amount": 20.3,
+            "unit": "g",
+            "normalized_amount_per_100g": 20.3,
+            "normalized_unit": "g",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          }
+        },
+        "identity_compatibility": "exact",
+        "missing_attributes": [
+          "added_solution",
+          "bone_state",
+          "preparation_state",
+          "skin_state"
+        ],
+        "candidate_description_missing_attributes": [],
+        "generic_default_consideration": "NOT_PROPOSED_PENDING_HUMAN_DECISION",
+        "review_status": "PENDING_REVIEW",
+        "review_notes": "Generic ingredient wording leaves unspecified: added_solution, bone_state, preparation_state, skin_state.",
+        "reference_policy_version": 1,
+        "best_search_evidence": {
+          "query": "raw boneless skinless chicken breast",
+          "source": "bounded_fulltext_search",
+          "identity_match": "exact_identity",
+          "variety_compatibility": null,
+          "preparation_state_compatibility": null,
+          "processing_state_compatibility": null,
+          "unresolved_attributes": [],
+          "conflicts": [],
+          "requested_attributes": {
+            "preparation_state": "raw",
+            "skin_state": "skinless",
+            "bone_state": "boneless"
+          },
+          "unmatched_requested_attributes": [],
+          "specificity": 3
+        },
+        "search_evidence": [
+          {
+            "query": "chicken breast",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "candidate_more_specific",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "added_solution",
+              "bone_state",
+              "meat_and_skin_composition",
+              "skin_state"
+            ]
+          },
+          {
+            "query": "raw boneless skinless chicken breast",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "explicit_match",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "added_solution"
+            ]
+          },
+          {
+            "query": "raw boneless skinless chicken breast",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "raw chicken breast with skin",
+            "source": "ingredient_reranker",
+            "identity_match": "head_noun",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "explicit_match",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "added_solution",
+              "bone_state"
+            ]
+          },
+          {
+            "query": "raw chicken breast with skin",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "chicken breast added solution",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "candidate_more_specific",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "bone_state",
+              "meat_and_skin_composition",
+              "skin_state"
+            ]
+          },
+          {
+            "query": "chicken breast added solution",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          }
+        ],
+        "reviewer_identity": null,
+        "review_provenance": null,
+        "reviewed_at": null
+      }
+    ],
+    "rice": [
+      {
+        "review_entry_id": "1c115267a0cb905d151f",
+        "canonical_ingredient_category": "rice",
+        "proposed_fdc_id": 2512381,
+        "food_record_id": "fdc:2512381",
+        "usda_description": "Rice, white, long grain, unenriched, raw",
+        "usda_data_type": "Foundation",
+        "dataset_key": "foundation_foods",
+        "nutrition_basis": "per 100 g",
+        "source_url": "https://fdc.nal.usda.gov/food-details/2512381/nutrients",
+        "relevant_attributes": {
+          "preparation_state": "raw",
+          "variety": "white",
+          "grain": "long"
+        },
+        "proposed_reference_scope": "Only for rice explicitly matching grain=long, preparation_state=raw, variety=white; this is not a universal default for a generic ingredient.",
+        "nutritional_data_availability": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "unit": "g",
+            "normalized_unit": "g",
+            "availability": "AVAILABLE"
+          }
+        },
+        "nutrients_per_100g": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "amount": 0.462,
+            "unit": "mg",
+            "normalized_amount_per_100g": 0.462,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "amount": 82.3,
+            "unit": "mg",
+            "normalized_amount_per_100g": 82.3,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "amount": 108.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 108.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "amount": 7.04,
+            "unit": "g",
+            "normalized_amount_per_100g": 7.04,
+            "normalized_unit": "g",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          }
+        },
+        "identity_compatibility": "exact",
+        "missing_attributes": [
+          "grain",
+          "preparation_state",
+          "variety"
+        ],
+        "candidate_description_missing_attributes": [],
+        "generic_default_consideration": "NOT_PROPOSED_PENDING_HUMAN_DECISION",
+        "review_status": "PENDING_REVIEW",
+        "review_notes": "Generic ingredient wording leaves unspecified: grain, preparation_state, variety.",
+        "reference_policy_version": 1,
+        "best_search_evidence": {
+          "query": "white long grain rice raw",
+          "source": "ingredient_reranker",
+          "identity_match": "exact_identity",
+          "variety_compatibility": "explicit_match",
+          "preparation_state_compatibility": "explicit_match",
+          "processing_state_compatibility": "query_unspecified",
+          "unresolved_attributes": [],
+          "conflicts": [],
+          "requested_attributes": {
+            "preparation_state": "raw",
+            "variety": "white",
+            "grain": "long"
+          },
+          "unmatched_requested_attributes": [],
+          "specificity": 3
+        },
+        "search_evidence": [
+          {
+            "query": "rice",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "candidate_more_specific",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "rice_grain",
+              "rice_variety"
+            ]
+          },
+          {
+            "query": "rice",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "white long grain rice raw",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "explicit_match",
+            "preparation_state_compatibility": "explicit_match",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": []
+          },
+          {
+            "query": "white long grain rice raw",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "white long grain rice cooked",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "brown rice raw",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "brown rice cooked",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "wild rice cooked",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          }
+        ],
+        "reviewer_identity": null,
+        "review_provenance": null,
+        "reviewed_at": null
+      },
+      {
+        "proposed_fdc_id": 169757,
+        "food_record_id": "fdc-sr-legacy:169757",
+        "usda_description": "Rice, white, long-grain, regular, unenriched, cooked without salt",
+        "usda_data_type": "SR Legacy",
+        "dataset_key": "sr_legacy",
+        "nutrition_basis": "per 100 g",
+        "nutrients_per_100g": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "amount": 1.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 1.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "amount": 35.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 35.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "amount": 43.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 43.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "amount": 2.69,
+            "unit": "g",
+            "normalized_amount_per_100g": 2.69,
+            "normalized_unit": "g",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          }
+        }
+      }
+    ],
+    "olive oil": [
+      {
+        "review_entry_id": "20fd10400caf014b30b4",
+        "canonical_ingredient_category": "olive oil",
+        "proposed_fdc_id": 171413,
+        "food_record_id": "fdc-sr-legacy:171413",
+        "usda_description": "Oil, olive, salad or cooking",
+        "usda_data_type": "SR Legacy",
+        "dataset_key": "sr_legacy",
+        "nutrition_basis": "per 100 g",
+        "source_url": "https://fdc.nal.usda.gov/food-details/171413/nutrients",
+        "relevant_attributes": {
+          "oil_type": "olive"
+        },
+        "proposed_reference_scope": "Only for olive oil explicitly matching oil_type=olive; this is not a universal default for a generic ingredient. Candidate description also omits: processing_state.",
+        "nutritional_data_availability": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "unit": "mg",
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "unit": "g",
+            "normalized_unit": "g",
+            "availability": "AVAILABLE"
+          }
+        },
+        "nutrients_per_100g": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": "Sodium, Na",
+            "amount": 2.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 2.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": "Potassium, K",
+            "amount": 1.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 1.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": "Phosphorus, P",
+            "amount": 0.0,
+            "unit": "mg",
+            "normalized_amount_per_100g": 0.0,
+            "normalized_unit": "mg",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": "Protein",
+            "amount": 0.0,
+            "unit": "g",
+            "normalized_amount_per_100g": 0.0,
+            "normalized_unit": "g",
+            "availability": "AVAILABLE",
+            "basis": "per 100 g"
+          }
+        },
+        "identity_compatibility": "ambiguous",
+        "missing_attributes": [
+          "processing_state"
+        ],
+        "candidate_description_missing_attributes": [
+          "processing_state"
+        ],
+        "generic_default_consideration": "NOT_PROPOSED_PENDING_HUMAN_DECISION",
+        "review_status": "PENDING_REVIEW",
+        "review_notes": "USDA description does not state: processing_state. Generic ingredient wording leaves unspecified: processing_state. The candidate is suitable only for a narrower reviewer-defined scope.",
+        "reference_policy_version": 1,
+        "best_search_evidence": {
+          "query": "extra virgin olive oil",
+          "source": "bounded_fulltext_search",
+          "identity_match": "fulltext_candidate",
+          "variety_compatibility": null,
+          "preparation_state_compatibility": null,
+          "processing_state_compatibility": null,
+          "unresolved_attributes": [],
+          "conflicts": [],
+          "requested_attributes": {
+            "processing_state": [
+              "extra",
+              "virgin"
+            ],
+            "oil_type": "olive"
+          },
+          "unmatched_requested_attributes": [
+            "processing_state"
+          ],
+          "specificity": 2
+        },
+        "search_evidence": [
+          {
+            "query": "olive oil",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "unspecified",
+            "preparation_state_compatibility": "query_unspecified",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": []
+          },
+          {
+            "query": "olive oil",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "extra virgin olive oil",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "extra light olive oil",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "refined olive oil",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          }
+        ],
+        "reviewer_identity": null,
+        "review_provenance": null,
+        "reviewed_at": null
+      },
+      {
+        "review_entry_id": "51729eec5a19368f9f98",
+        "canonical_ingredient_category": "olive oil",
+        "proposed_fdc_id": 748608,
+        "food_record_id": "fdc:748608",
+        "usda_description": "Oil, olive, extra virgin",
+        "usda_data_type": "Foundation",
+        "dataset_key": "foundation_foods",
+        "nutrition_basis": "per 100 g",
+        "source_url": "https://fdc.nal.usda.gov/food-details/748608/nutrients",
+        "relevant_attributes": {
+          "processing_state": [
+            "extra",
+            "virgin"
+          ],
+          "oil_type": "olive"
+        },
+        "proposed_reference_scope": "Only for olive oil explicitly matching oil_type=olive, processing_state=extra, virgin; this is not a universal default for a generic ingredient.",
+        "nutritional_data_availability": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": null,
+            "unit": null,
+            "normalized_unit": "mg",
+            "availability": "MISSING"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": null,
+            "unit": null,
+            "normalized_unit": "mg",
+            "availability": "MISSING"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": null,
+            "unit": null,
+            "normalized_unit": "mg",
+            "availability": "MISSING"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": null,
+            "unit": null,
+            "normalized_unit": "g",
+            "availability": "MISSING"
+          }
+        },
+        "nutrients_per_100g": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": null,
+            "amount": null,
+            "unit": null,
+            "normalized_amount_per_100g": null,
+            "normalized_unit": "mg",
+            "availability": "MISSING",
+            "basis": "per 100 g"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": null,
+            "amount": null,
+            "unit": null,
+            "normalized_amount_per_100g": null,
+            "normalized_unit": "mg",
+            "availability": "MISSING",
+            "basis": "per 100 g"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": null,
+            "amount": null,
+            "unit": null,
+            "normalized_amount_per_100g": null,
+            "normalized_unit": "mg",
+            "availability": "MISSING",
+            "basis": "per 100 g"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": null,
+            "amount": null,
+            "unit": null,
+            "normalized_amount_per_100g": null,
+            "normalized_unit": "g",
+            "availability": "MISSING",
+            "basis": "per 100 g"
+          }
+        },
+        "identity_compatibility": "exact",
+        "missing_attributes": [
+          "processing_state"
+        ],
+        "candidate_description_missing_attributes": [],
+        "generic_default_consideration": "NOT_PROPOSED_PENDING_HUMAN_DECISION",
+        "review_status": "PENDING_REVIEW",
+        "review_notes": "Generic ingredient wording leaves unspecified: processing_state.",
+        "reference_policy_version": 1,
+        "best_search_evidence": {
+          "query": "extra virgin olive oil",
+          "source": "ingredient_reranker",
+          "identity_match": "exact_identity",
+          "variety_compatibility": "explicit_match",
+          "preparation_state_compatibility": "query_unspecified",
+          "processing_state_compatibility": "query_unspecified",
+          "unresolved_attributes": [],
+          "conflicts": [],
+          "requested_attributes": {
+            "processing_state": [
+              "extra",
+              "virgin"
+            ],
+            "oil_type": "olive"
+          },
+          "unmatched_requested_attributes": [],
+          "specificity": 2
+        },
+        "search_evidence": [
+          {
+            "query": "olive oil",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "query_unspecified",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "oil_processing"
+            ]
+          },
+          {
+            "query": "olive oil",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "extra virgin olive oil",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "explicit_match",
+            "preparation_state_compatibility": "query_unspecified",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": []
+          },
+          {
+            "query": "extra virgin olive oil",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "extra light olive oil",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "refined olive oil",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          }
+        ],
+        "reviewer_identity": null,
+        "review_provenance": null,
+        "reviewed_at": null
+      },
+      {
+        "review_entry_id": "c491e09b1635857748f3",
+        "canonical_ingredient_category": "olive oil",
+        "proposed_fdc_id": 1750351,
+        "food_record_id": "fdc:1750351",
+        "usda_description": "Oil, olive, extra light",
+        "usda_data_type": "Foundation",
+        "dataset_key": "foundation_foods",
+        "nutrition_basis": "per 100 g",
+        "source_url": "https://fdc.nal.usda.gov/food-details/1750351/nutrients",
+        "relevant_attributes": {
+          "processing_state": [
+            "extra",
+            "light"
+          ],
+          "oil_type": "olive"
+        },
+        "proposed_reference_scope": "Only for olive oil explicitly matching oil_type=olive, processing_state=extra, light; this is not a universal default for a generic ingredient.",
+        "nutritional_data_availability": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": null,
+            "unit": null,
+            "normalized_unit": "mg",
+            "availability": "MISSING"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": null,
+            "unit": null,
+            "normalized_unit": "mg",
+            "availability": "MISSING"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": null,
+            "unit": null,
+            "normalized_unit": "mg",
+            "availability": "MISSING"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": null,
+            "unit": null,
+            "normalized_unit": "g",
+            "availability": "MISSING"
+          }
+        },
+        "nutrients_per_100g": {
+          "sodium": {
+            "fdc_nutrient_id": "1093",
+            "name": null,
+            "amount": null,
+            "unit": null,
+            "normalized_amount_per_100g": null,
+            "normalized_unit": "mg",
+            "availability": "MISSING",
+            "basis": "per 100 g"
+          },
+          "potassium": {
+            "fdc_nutrient_id": "1092",
+            "name": null,
+            "amount": null,
+            "unit": null,
+            "normalized_amount_per_100g": null,
+            "normalized_unit": "mg",
+            "availability": "MISSING",
+            "basis": "per 100 g"
+          },
+          "phosphorus": {
+            "fdc_nutrient_id": "1091",
+            "name": null,
+            "amount": null,
+            "unit": null,
+            "normalized_amount_per_100g": null,
+            "normalized_unit": "mg",
+            "availability": "MISSING",
+            "basis": "per 100 g"
+          },
+          "protein": {
+            "fdc_nutrient_id": "1003",
+            "name": null,
+            "amount": null,
+            "unit": null,
+            "normalized_amount_per_100g": null,
+            "normalized_unit": "g",
+            "availability": "MISSING",
+            "basis": "per 100 g"
+          }
+        },
+        "identity_compatibility": "exact",
+        "missing_attributes": [
+          "processing_state"
+        ],
+        "candidate_description_missing_attributes": [],
+        "generic_default_consideration": "NOT_PROPOSED_PENDING_HUMAN_DECISION",
+        "review_status": "PENDING_REVIEW",
+        "review_notes": "Generic ingredient wording leaves unspecified: processing_state.",
+        "reference_policy_version": 1,
+        "best_search_evidence": {
+          "query": "extra light olive oil",
+          "source": "ingredient_reranker",
+          "identity_match": "exact_identity",
+          "variety_compatibility": "explicit_match",
+          "preparation_state_compatibility": "query_unspecified",
+          "processing_state_compatibility": "query_unspecified",
+          "unresolved_attributes": [],
+          "conflicts": [],
+          "requested_attributes": {
+            "processing_state": [
+              "extra",
+              "light"
+            ],
+            "oil_type": "olive"
+          },
+          "unmatched_requested_attributes": [],
+          "specificity": 2
+        },
+        "search_evidence": [
+          {
+            "query": "olive oil",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "candidate_more_specific",
+            "preparation_state_compatibility": "query_unspecified",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": [
+              "oil_processing"
+            ]
+          },
+          {
+            "query": "olive oil",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "extra virgin olive oil",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "extra light olive oil",
+            "source": "ingredient_reranker",
+            "identity_match": "exact_identity",
+            "variety_compatibility": "explicit_match",
+            "preparation_state_compatibility": "query_unspecified",
+            "processing_state_compatibility": "query_unspecified",
+            "unresolved_attributes": []
+          },
+          {
+            "query": "extra light olive oil",
+            "source": "bounded_fulltext_search",
+            "identity_match": "exact_identity",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          },
+          {
+            "query": "refined olive oil",
+            "source": "bounded_fulltext_search",
+            "identity_match": "fulltext_candidate",
+            "variety_compatibility": null,
+            "preparation_state_compatibility": null,
+            "processing_state_compatibility": null,
+            "unresolved_attributes": []
+          }
+        ],
+        "reviewer_identity": null,
+        "review_provenance": null,
+        "reviewed_at": null
+      }
+    ]
+  }
+}

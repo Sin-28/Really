@@ -1,0 +1,1484 @@
+{
+  "dataset": "RenAlly representative culinary human review set",
+  "label_status": "PENDING_REVIEW; no human labels were supplied or inferred",
+  "source_fixture_label_status": "developer_defined_test_expectations_not_human_validated",
+  "sample_size": 13,
+  "cases": [
+    {
+      "case_id": "A",
+      "title": "Basil to parsley",
+      "source_fixture_id": "A",
+      "original_recipe": {
+        "id": "herb-pasta",
+        "name": "Pasta with basil",
+        "servings": 2,
+        "ingredients": [
+          {
+            "id": "pasta",
+            "name": "pasta",
+            "amount_g": 160
+          },
+          {
+            "id": "basil",
+            "name": "fresh basil",
+            "amount_g": 8
+          }
+        ],
+        "method": [
+          "Boil pasta and finish with fresh basil."
+        ]
+      },
+      "adapted_recipe": {
+        "id": "herb-pasta-adapted",
+        "name": "Pasta with parsley",
+        "servings": 2,
+        "ingredients": [
+          {
+            "id": "pasta",
+            "name": "pasta",
+            "amount_g": 160
+          },
+          {
+            "id": "parsley",
+            "name": "fresh parsley",
+            "amount_g": 8,
+            "replaces_id": "basil"
+          }
+        ],
+        "method": [
+          "Boil pasta and finish with fresh parsley."
+        ]
+      },
+      "ingredient_changes": [
+        {
+          "change_type": "UNCHANGED",
+          "identity_unchanged": true,
+          "original_position": 0,
+          "adapted_position": 0,
+          "original_ingredient_id": "pasta",
+          "adapted_ingredient_id": "pasta",
+          "original_ingredient": "pasta",
+          "adapted_ingredient": "pasta",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 160,
+          "adapted_quantity_g": 160,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "REPLACED",
+          "identity_unchanged": false,
+          "original_position": 1,
+          "adapted_position": 1,
+          "original_ingredient_id": "basil",
+          "adapted_ingredient_id": "parsley",
+          "original_ingredient": "fresh basil",
+          "adapted_ingredient": "fresh parsley",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 8,
+          "adapted_quantity_g": 8,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        }
+      ],
+      "model_judgment": {
+        "run_status": "UNAVAILABLE",
+        "ingredient_judgments": [],
+        "functional_coverage": [],
+        "input_tokens": 887,
+        "output_tokens": 17,
+        "prompt_version": "adapted-recipe-culinary-v8"
+      },
+      "deterministic_findings": [],
+      "final_culinary_status": "UNAVAILABLE",
+      "human_label": "PENDING_REVIEW",
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "B",
+      "title": "Ramen packet to seaweed only",
+      "source_fixture_id": "B",
+      "original_recipe": {
+        "id": "ramen",
+        "name": "Instant ramen",
+        "servings": 1,
+        "ingredients": [
+          {
+            "id": "noodles",
+            "name": "instant ramen noodles",
+            "amount_g": 80
+          },
+          {
+            "id": "packet",
+            "name": "instant ramen seasoning packet",
+            "amount_g": 6
+          }
+        ],
+        "method": [
+          "Boil noodles in water and stir in seasoning packet."
+        ]
+      },
+      "adapted_recipe": {
+        "id": "ramen-adapted",
+        "name": "Instant ramen",
+        "servings": 1,
+        "ingredients": [
+          {
+            "id": "noodles",
+            "name": "instant ramen noodles",
+            "amount_g": 80
+          },
+          {
+            "id": "seaweed",
+            "name": "dried seaweed",
+            "amount_g": 3,
+            "replaces_id": "packet"
+          }
+        ],
+        "method": [
+          "Boil noodles in water and stir in dried seaweed."
+        ]
+      },
+      "ingredient_changes": [
+        {
+          "change_type": "UNCHANGED",
+          "identity_unchanged": true,
+          "original_position": 0,
+          "adapted_position": 0,
+          "original_ingredient_id": "noodles",
+          "adapted_ingredient_id": "noodles",
+          "original_ingredient": "instant ramen noodles",
+          "adapted_ingredient": "instant ramen noodles",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 80,
+          "adapted_quantity_g": 80,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "REPLACED",
+          "identity_unchanged": false,
+          "original_position": 1,
+          "adapted_position": 1,
+          "original_ingredient_id": "packet",
+          "adapted_ingredient_id": "seaweed",
+          "original_ingredient": "instant ramen seasoning packet",
+          "adapted_ingredient": "dried seaweed",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 6,
+          "adapted_quantity_g": 3,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        }
+      ],
+      "model_judgment": {
+        "run_status": "REVIEW_REQUIRED",
+        "ingredient_judgments": [
+          {
+            "change_id": "change-1",
+            "functional_compatibility": "COMPATIBLE",
+            "quantity_appropriateness": "PLAUSIBLE",
+            "cooking_compatibility": "COMPATIBLE",
+            "recipe_coherence": "COHERENT",
+            "reason": "replaced seasoning packet with dried seaweed",
+            "functional_coverage": [
+              {
+                "function": "FLAVOR_BASE",
+                "importance": "ESSENTIAL",
+                "coverage": "COVERED",
+                "supporting_evidence_ids": [
+                  "adapted-ingredient-2",
+                  "adapted-step-1"
+                ],
+                "reason": "dried seaweed adds umami and flavor"
+              },
+              {
+                "function": "SALTINESS",
+                "importance": "ESSENTIAL",
+                "coverage": "COVERED",
+                "supporting_evidence_ids": [
+                  "adapted-ingredient-2",
+                  "adapted-step-1"
+                ],
+                "reason": "dried seaweed may reduce saltiness"
+              },
+              {
+                "function": "UMAMI",
+                "importance": "ESSENTIAL",
+                "coverage": "COVERED",
+                "supporting_evidence_ids": [
+                  "adapted-ingredient-2",
+                  "adapted-step-1"
+                ],
+                "reason": "dried seaweed adds umami"
+              }
+            ]
+          }
+        ],
+        "functional_coverage": [
+          {
+            "function": "FLAVOR_BASE",
+            "importance": "ESSENTIAL",
+            "coverage": "COVERED",
+            "supporting_evidence_ids": [
+              "adapted-ingredient-2",
+              "adapted-step-1"
+            ],
+            "reason": "dried seaweed adds umami and flavor",
+            "source_change_ids": [
+              "change-1"
+            ]
+          },
+          {
+            "function": "SALTINESS",
+            "importance": "ESSENTIAL",
+            "coverage": "COVERED",
+            "supporting_evidence_ids": [
+              "adapted-ingredient-2",
+              "adapted-step-1"
+            ],
+            "reason": "dried seaweed may reduce saltiness",
+            "source_change_ids": [
+              "change-1"
+            ]
+          },
+          {
+            "function": "UMAMI",
+            "importance": "ESSENTIAL",
+            "coverage": "COVERED",
+            "supporting_evidence_ids": [
+              "adapted-ingredient-2",
+              "adapted-step-1"
+            ],
+            "reason": "dried seaweed adds umami",
+            "source_change_ids": [
+              "change-1"
+            ]
+          }
+        ],
+        "input_tokens": 1063,
+        "output_tokens": 298,
+        "prompt_version": "adapted-recipe-culinary-v8"
+      },
+      "deterministic_findings": [],
+      "final_culinary_status": "REVIEW_REQUIRED",
+      "human_label": "PENDING_REVIEW",
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "C",
+      "title": "Ramen packet to seaweed, broth, and garlic",
+      "source_fixture_id": "C",
+      "original_recipe": {
+        "id": "ramen",
+        "name": "Instant ramen",
+        "servings": 1,
+        "ingredients": [
+          {
+            "id": "noodles",
+            "name": "instant ramen noodles",
+            "amount_g": 80
+          },
+          {
+            "id": "packet",
+            "name": "instant ramen seasoning packet",
+            "amount_g": 6
+          }
+        ],
+        "method": [
+          "Boil noodles in water and stir in seasoning packet."
+        ]
+      },
+      "adapted_recipe": {
+        "id": "ramen-adapted",
+        "name": "Instant ramen",
+        "servings": 1,
+        "ingredients": [
+          {
+            "id": "noodles",
+            "name": "instant ramen noodles",
+            "amount_g": 80
+          },
+          {
+            "id": "seaweed",
+            "name": "dried seaweed",
+            "amount_g": 3,
+            "replaces_id": "packet"
+          },
+          {
+            "id": "broth",
+            "name": "low-sodium vegetable broth",
+            "amount_g": 240
+          },
+          {
+            "id": "garlic",
+            "name": "garlic",
+            "amount_g": 2
+          }
+        ],
+        "method": [
+          "Boil noodles in low-sodium vegetable broth with garlic and seaweed."
+        ]
+      },
+      "ingredient_changes": [
+        {
+          "change_type": "UNCHANGED",
+          "identity_unchanged": true,
+          "original_position": 0,
+          "adapted_position": 0,
+          "original_ingredient_id": "noodles",
+          "adapted_ingredient_id": "noodles",
+          "original_ingredient": "instant ramen noodles",
+          "adapted_ingredient": "instant ramen noodles",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 80,
+          "adapted_quantity_g": 80,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "REPLACED",
+          "identity_unchanged": false,
+          "original_position": 1,
+          "adapted_position": 1,
+          "original_ingredient_id": "packet",
+          "adapted_ingredient_id": "seaweed",
+          "original_ingredient": "instant ramen seasoning packet",
+          "adapted_ingredient": "dried seaweed",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 6,
+          "adapted_quantity_g": 3,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "ADDED",
+          "identity_unchanged": false,
+          "original_position": null,
+          "adapted_position": 2,
+          "original_ingredient_id": null,
+          "adapted_ingredient_id": "broth",
+          "original_ingredient": null,
+          "adapted_ingredient": "low-sodium vegetable broth",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": null,
+          "adapted_quantity_g": 240,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "ADDED",
+          "identity_unchanged": false,
+          "original_position": null,
+          "adapted_position": 3,
+          "original_ingredient_id": null,
+          "adapted_ingredient_id": "garlic",
+          "original_ingredient": null,
+          "adapted_ingredient": "garlic",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": null,
+          "adapted_quantity_g": 2,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        }
+      ],
+      "model_judgment": {
+        "run_status": "UNAVAILABLE",
+        "ingredient_judgments": [],
+        "functional_coverage": [],
+        "input_tokens": 1430,
+        "output_tokens": 282,
+        "prompt_version": "adapted-recipe-culinary-v8"
+      },
+      "deterministic_findings": [],
+      "final_culinary_status": "UNAVAILABLE",
+      "human_label": "PENDING_REVIEW",
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "D",
+      "title": "Missing adapted cooking instructions",
+      "source_fixture_id": "D",
+      "original_recipe": {
+        "id": "ramen",
+        "name": "Instant ramen",
+        "servings": 1,
+        "ingredients": [
+          {
+            "id": "noodles",
+            "name": "instant ramen noodles",
+            "amount_g": 80
+          },
+          {
+            "id": "packet",
+            "name": "instant ramen seasoning packet",
+            "amount_g": 6
+          }
+        ],
+        "method": [
+          "Boil noodles in water and stir in seasoning packet."
+        ]
+      },
+      "adapted_recipe": {
+        "id": "ramen-adapted",
+        "name": "Instant ramen",
+        "servings": 1,
+        "ingredients": [
+          {
+            "id": "noodles",
+            "name": "instant ramen noodles",
+            "amount_g": 80
+          },
+          {
+            "id": "seaweed",
+            "name": "dried seaweed",
+            "amount_g": 3,
+            "replaces_id": "packet"
+          }
+        ],
+        "method": null
+      },
+      "ingredient_changes": [
+        {
+          "change_type": "UNCHANGED",
+          "identity_unchanged": true,
+          "original_position": 0,
+          "adapted_position": 0,
+          "original_ingredient_id": "noodles",
+          "adapted_ingredient_id": "noodles",
+          "original_ingredient": "instant ramen noodles",
+          "adapted_ingredient": "instant ramen noodles",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 80,
+          "adapted_quantity_g": 80,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "REPLACED",
+          "identity_unchanged": false,
+          "original_position": 1,
+          "adapted_position": 1,
+          "original_ingredient_id": "packet",
+          "adapted_ingredient_id": "seaweed",
+          "original_ingredient": "instant ramen seasoning packet",
+          "adapted_ingredient": "dried seaweed",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 6,
+          "adapted_quantity_g": 3,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        }
+      ],
+      "model_judgment": {
+        "run_status": "REVIEW_REQUIRED",
+        "ingredient_judgments": [
+          {
+            "change_id": "change-1",
+            "functional_compatibility": "COMPATIBLE",
+            "quantity_appropriateness": "PLAUSIBLE",
+            "cooking_compatibility": "COMPATIBLE",
+            "recipe_coherence": "COHERENT",
+            "reason": "replaced seasoning packet with dried seaweed",
+            "functional_coverage": [
+              {
+                "function": "FLAVOR_BASE",
+                "importance": "ESSENTIAL",
+                "coverage": "COVERED",
+                "supporting_evidence_ids": [
+                  "adapted-ingredient-2"
+                ],
+                "reason": "dried seaweed adds umami and flavor"
+              },
+              {
+                "function": "SALTINESS",
+                "importance": "ESSENTIAL",
+                "coverage": "PARTIALLY_COVERED",
+                "supporting_evidence_ids": [
+                  "adapted-ingredient-2"
+                ],
+                "reason": "dried seaweed may reduce saltiness"
+              },
+              {
+                "function": "UMAMI",
+                "importance": "ESSENTIAL",
+                "coverage": "COVERED",
+                "supporting_evidence_ids": [
+                  "adapted-ingredient-2"
+                ],
+                "reason": "dried seaweed adds umami"
+              }
+            ]
+          }
+        ],
+        "functional_coverage": [
+          {
+            "function": "FLAVOR_BASE",
+            "importance": "ESSENTIAL",
+            "coverage": "COVERED",
+            "supporting_evidence_ids": [
+              "adapted-ingredient-2"
+            ],
+            "reason": "dried seaweed adds umami and flavor",
+            "source_change_ids": [
+              "change-1"
+            ]
+          },
+          {
+            "function": "SALTINESS",
+            "importance": "ESSENTIAL",
+            "coverage": "PARTIALLY_COVERED",
+            "supporting_evidence_ids": [
+              "adapted-ingredient-2"
+            ],
+            "reason": "dried seaweed may reduce saltiness",
+            "source_change_ids": [
+              "change-1"
+            ]
+          },
+          {
+            "function": "UMAMI",
+            "importance": "ESSENTIAL",
+            "coverage": "COVERED",
+            "supporting_evidence_ids": [
+              "adapted-ingredient-2"
+            ],
+            "reason": "dried seaweed adds umami",
+            "source_change_ids": [
+              "change-1"
+            ]
+          }
+        ],
+        "input_tokens": 1027,
+        "output_tokens": 281,
+        "prompt_version": "adapted-recipe-culinary-v8"
+      },
+      "deterministic_findings": [],
+      "final_culinary_status": "REVIEW_REQUIRED",
+      "human_label": "PENDING_REVIEW",
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E",
+      "title": "Egg replaced by flax and water in a loaf",
+      "source_fixture_id": "E",
+      "original_recipe": {
+        "id": "flax-loaf",
+        "name": "Seed loaf",
+        "servings": 4,
+        "ingredients": [
+          {
+            "id": "flour",
+            "name": "whole wheat flour",
+            "amount_g": 300
+          },
+          {
+            "id": "egg",
+            "name": "egg",
+            "amount_g": 50
+          }
+        ],
+        "method": [
+          "Mix ingredients and bake the loaf."
+        ]
+      },
+      "adapted_recipe": {
+        "id": "flax-loaf-adapted",
+        "name": "Seed loaf",
+        "servings": 4,
+        "ingredients": [
+          {
+            "id": "flour",
+            "name": "whole wheat flour",
+            "amount_g": 300
+          },
+          {
+            "id": "flax",
+            "name": "ground flaxseed",
+            "amount_g": 10,
+            "replaces_id": "egg"
+          },
+          {
+            "id": "water",
+            "name": "water",
+            "amount_g": 30
+          }
+        ],
+        "method": [
+          "Mix flaxseed with water, combine with flour, and bake the loaf."
+        ]
+      },
+      "ingredient_changes": [
+        {
+          "change_type": "UNCHANGED",
+          "identity_unchanged": true,
+          "original_position": 0,
+          "adapted_position": 0,
+          "original_ingredient_id": "flour",
+          "adapted_ingredient_id": "flour",
+          "original_ingredient": "whole wheat flour",
+          "adapted_ingredient": "whole wheat flour",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 300,
+          "adapted_quantity_g": 300,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "REPLACED",
+          "identity_unchanged": false,
+          "original_position": 1,
+          "adapted_position": 1,
+          "original_ingredient_id": "egg",
+          "adapted_ingredient_id": "flax",
+          "original_ingredient": "egg",
+          "adapted_ingredient": "ground flaxseed",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 50,
+          "adapted_quantity_g": 10,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "ADDED",
+          "identity_unchanged": false,
+          "original_position": null,
+          "adapted_position": 2,
+          "original_ingredient_id": null,
+          "adapted_ingredient_id": "water",
+          "original_ingredient": null,
+          "adapted_ingredient": "water",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": null,
+          "adapted_quantity_g": 30,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        }
+      ],
+      "model_judgment": {
+        "run_status": "UNAVAILABLE",
+        "ingredient_judgments": [],
+        "functional_coverage": [],
+        "input_tokens": 1144,
+        "output_tokens": 262,
+        "prompt_version": "adapted-recipe-culinary-v8"
+      },
+      "deterministic_findings": [],
+      "final_culinary_status": "UNAVAILABLE",
+      "human_label": "PENDING_REVIEW",
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "F",
+      "title": "Egg removed without binder",
+      "source_fixture_id": "F",
+      "original_recipe": {
+        "id": "loaf",
+        "name": "Savory loaf",
+        "servings": 4,
+        "ingredients": [
+          {
+            "id": "flour",
+            "name": "whole wheat flour",
+            "amount_g": 300
+          },
+          {
+            "id": "egg",
+            "name": "egg",
+            "amount_g": 50
+          }
+        ],
+        "method": [
+          "Mix ingredients and bake the loaf."
+        ]
+      },
+      "adapted_recipe": {
+        "id": "loaf-adapted",
+        "name": "Savory loaf",
+        "servings": 4,
+        "ingredients": [
+          {
+            "id": "flour",
+            "name": "whole wheat flour",
+            "amount_g": 300
+          }
+        ],
+        "method": [
+          "Mix flour with water and bake the loaf."
+        ]
+      },
+      "ingredient_changes": [
+        {
+          "change_type": "UNCHANGED",
+          "identity_unchanged": true,
+          "original_position": 0,
+          "adapted_position": 0,
+          "original_ingredient_id": "flour",
+          "adapted_ingredient_id": "flour",
+          "original_ingredient": "whole wheat flour",
+          "adapted_ingredient": "whole wheat flour",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 300,
+          "adapted_quantity_g": 300,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "REMOVED",
+          "identity_unchanged": false,
+          "original_position": 1,
+          "adapted_position": null,
+          "original_ingredient_id": "egg",
+          "adapted_ingredient_id": null,
+          "original_ingredient": "egg",
+          "adapted_ingredient": null,
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 50,
+          "adapted_quantity_g": null,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        }
+      ],
+      "model_judgment": {
+        "run_status": "NOT_RUN",
+        "ingredient_judgments": [],
+        "functional_coverage": [],
+        "input_tokens": null,
+        "output_tokens": null,
+        "prompt_version": null
+      },
+      "deterministic_findings": [],
+      "final_culinary_status": "NOT_RUN",
+      "human_label": "PENDING_REVIEW",
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "G",
+      "title": "Cream replaced by oat milk and starch",
+      "source_fixture_id": "G",
+      "original_recipe": {
+        "id": "soup",
+        "name": "Cream soup",
+        "servings": 3,
+        "ingredients": [
+          {
+            "id": "vegetables",
+            "name": "mixed vegetables",
+            "amount_g": 400
+          },
+          {
+            "id": "cream",
+            "name": "heavy cream",
+            "amount_g": 120
+          }
+        ],
+        "method": [
+          "Simmer vegetables and stir in cream."
+        ]
+      },
+      "adapted_recipe": {
+        "id": "soup-adapted",
+        "name": "Cream soup",
+        "servings": 3,
+        "ingredients": [
+          {
+            "id": "vegetables",
+            "name": "mixed vegetables",
+            "amount_g": 400
+          },
+          {
+            "id": "oatmilk",
+            "name": "unsweetened oat milk",
+            "amount_g": 120,
+            "replaces_id": "cream"
+          },
+          {
+            "id": "cornstarch",
+            "name": "cornstarch",
+            "amount_g": 8
+          }
+        ],
+        "method": [
+          "Simmer vegetables, whisk cornstarch into oat milk, and stir into the soup."
+        ]
+      },
+      "ingredient_changes": [
+        {
+          "change_type": "UNCHANGED",
+          "identity_unchanged": true,
+          "original_position": 0,
+          "adapted_position": 0,
+          "original_ingredient_id": "vegetables",
+          "adapted_ingredient_id": "vegetables",
+          "original_ingredient": "mixed vegetables",
+          "adapted_ingredient": "mixed vegetables",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 400,
+          "adapted_quantity_g": 400,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "REPLACED",
+          "identity_unchanged": false,
+          "original_position": 1,
+          "adapted_position": 1,
+          "original_ingredient_id": "cream",
+          "adapted_ingredient_id": "oatmilk",
+          "original_ingredient": "heavy cream",
+          "adapted_ingredient": "unsweetened oat milk",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 120,
+          "adapted_quantity_g": 120,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "ADDED",
+          "identity_unchanged": false,
+          "original_position": null,
+          "adapted_position": 2,
+          "original_ingredient_id": null,
+          "adapted_ingredient_id": "cornstarch",
+          "original_ingredient": null,
+          "adapted_ingredient": "cornstarch",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": null,
+          "adapted_quantity_g": 8,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        }
+      ],
+      "model_judgment": {
+        "run_status": "UNAVAILABLE",
+        "ingredient_judgments": [],
+        "functional_coverage": [],
+        "input_tokens": 1222,
+        "output_tokens": 174,
+        "prompt_version": "adapted-recipe-culinary-v8"
+      },
+      "deterministic_findings": [],
+      "final_culinary_status": "UNAVAILABLE",
+      "human_label": "PENDING_REVIEW",
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "H",
+      "title": "Intentional saltiness reduction",
+      "source_fixture_id": "H",
+      "original_recipe": {
+        "id": "soup-salt",
+        "name": "Vegetable soup",
+        "servings": 2,
+        "ingredients": [
+          {
+            "id": "vegetables",
+            "name": "mixed vegetables",
+            "amount_g": 300
+          },
+          {
+            "id": "salt",
+            "name": "salt",
+            "amount_g": 4
+          }
+        ],
+        "method": [
+          "Simmer vegetables with salt."
+        ]
+      },
+      "adapted_recipe": {
+        "id": "soup-salt-adapted",
+        "name": "Vegetable soup",
+        "servings": 2,
+        "ingredients": [
+          {
+            "id": "vegetables",
+            "name": "mixed vegetables",
+            "amount_g": 300
+          },
+          {
+            "id": "herbs",
+            "name": "fresh herbs",
+            "amount_g": 8,
+            "replaces_id": "salt"
+          }
+        ],
+        "method": [
+          "Simmer vegetables and finish with fresh herbs."
+        ]
+      },
+      "ingredient_changes": [
+        {
+          "change_type": "UNCHANGED",
+          "identity_unchanged": true,
+          "original_position": 0,
+          "adapted_position": 0,
+          "original_ingredient_id": "vegetables",
+          "adapted_ingredient_id": "vegetables",
+          "original_ingredient": "mixed vegetables",
+          "adapted_ingredient": "mixed vegetables",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 300,
+          "adapted_quantity_g": 300,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "REPLACED",
+          "identity_unchanged": false,
+          "original_position": 1,
+          "adapted_position": 1,
+          "original_ingredient_id": "salt",
+          "adapted_ingredient_id": "herbs",
+          "original_ingredient": "salt",
+          "adapted_ingredient": "fresh herbs",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 4,
+          "adapted_quantity_g": 8,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        }
+      ],
+      "model_judgment": {
+        "run_status": "NOT_RUN",
+        "ingredient_judgments": [],
+        "functional_coverage": [],
+        "input_tokens": null,
+        "output_tokens": null,
+        "prompt_version": null
+      },
+      "deterministic_findings": [],
+      "final_culinary_status": "NOT_RUN",
+      "human_label": "PENDING_REVIEW",
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "I",
+      "title": "Quantity-only oil change",
+      "source_fixture_id": "I",
+      "original_recipe": {
+        "id": "salad",
+        "name": "Roasted vegetables",
+        "servings": 2,
+        "ingredients": [
+          {
+            "id": "carrots",
+            "name": "carrots",
+            "amount_g": 300
+          },
+          {
+            "id": "oil",
+            "name": "olive oil",
+            "amount_g": 15
+          }
+        ],
+        "method": [
+          "Toss vegetables with oil and roast."
+        ]
+      },
+      "adapted_recipe": {
+        "id": "salad-adapted",
+        "name": "Roasted vegetables",
+        "servings": 2,
+        "ingredients": [
+          {
+            "id": "carrots",
+            "name": "carrots",
+            "amount_g": 300
+          },
+          {
+            "id": "oil",
+            "name": "olive oil",
+            "amount_g": 8
+          }
+        ],
+        "method": [
+          "Toss vegetables with oil and roast."
+        ]
+      },
+      "ingredient_changes": [
+        {
+          "change_type": "UNCHANGED",
+          "identity_unchanged": true,
+          "original_position": 0,
+          "adapted_position": 0,
+          "original_ingredient_id": "carrots",
+          "adapted_ingredient_id": "carrots",
+          "original_ingredient": "carrots",
+          "adapted_ingredient": "carrots",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 300,
+          "adapted_quantity_g": 300,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "QUANTITY_CHANGED",
+          "identity_unchanged": true,
+          "original_position": 1,
+          "adapted_position": 1,
+          "original_ingredient_id": "oil",
+          "adapted_ingredient_id": "oil",
+          "original_ingredient": "olive oil",
+          "adapted_ingredient": "olive oil",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 15,
+          "adapted_quantity_g": 8,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        }
+      ],
+      "model_judgment": {
+        "run_status": "NOT_RUN",
+        "ingredient_judgments": [],
+        "functional_coverage": [],
+        "input_tokens": null,
+        "output_tokens": null,
+        "prompt_version": null
+      },
+      "deterministic_findings": [],
+      "final_culinary_status": "NOT_RUN",
+      "human_label": "PENDING_REVIEW",
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "K",
+      "title": "Butter replaced by applesauce in cookies",
+      "source_fixture_id": "K",
+      "original_recipe": {
+        "id": "cookies",
+        "name": "Oat cookies",
+        "servings": 8,
+        "ingredients": [
+          {
+            "id": "oats",
+            "name": "rolled oats",
+            "amount_g": 200
+          },
+          {
+            "id": "butter",
+            "name": "butter",
+            "amount_g": 80
+          }
+        ],
+        "method": [
+          "Mix ingredients and bake cookies."
+        ]
+      },
+      "adapted_recipe": {
+        "id": "cookies-adapted",
+        "name": "Oat cookies",
+        "servings": 8,
+        "ingredients": [
+          {
+            "id": "oats",
+            "name": "rolled oats",
+            "amount_g": 200
+          },
+          {
+            "id": "applesauce",
+            "name": "unsweetened applesauce",
+            "amount_g": 80,
+            "replaces_id": "butter"
+          }
+        ],
+        "method": [
+          "Mix ingredients and bake cookies."
+        ]
+      },
+      "ingredient_changes": [
+        {
+          "change_type": "UNCHANGED",
+          "identity_unchanged": true,
+          "original_position": 0,
+          "adapted_position": 0,
+          "original_ingredient_id": "oats",
+          "adapted_ingredient_id": "oats",
+          "original_ingredient": "rolled oats",
+          "adapted_ingredient": "rolled oats",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 200,
+          "adapted_quantity_g": 200,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "REPLACED",
+          "identity_unchanged": false,
+          "original_position": 1,
+          "adapted_position": 1,
+          "original_ingredient_id": "butter",
+          "adapted_ingredient_id": "applesauce",
+          "original_ingredient": "butter",
+          "adapted_ingredient": "unsweetened applesauce",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 80,
+          "adapted_quantity_g": 80,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        }
+      ],
+      "model_judgment": {
+        "run_status": "NOT_RUN",
+        "ingredient_judgments": [],
+        "functional_coverage": [],
+        "input_tokens": null,
+        "output_tokens": null,
+        "prompt_version": null
+      },
+      "deterministic_findings": [],
+      "final_culinary_status": "NOT_RUN",
+      "human_label": "PENDING_REVIEW",
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "L",
+      "title": "Leavening agent removed from muffins",
+      "source_fixture_id": "L",
+      "original_recipe": {
+        "id": "muffins",
+        "name": "Muffins",
+        "servings": 6,
+        "ingredients": [
+          {
+            "id": "flour",
+            "name": "flour",
+            "amount_g": 240
+          },
+          {
+            "id": "soda",
+            "name": "baking soda",
+            "amount_g": 4
+          }
+        ],
+        "method": [
+          "Mix batter and bake muffins."
+        ]
+      },
+      "adapted_recipe": {
+        "id": "muffins-adapted",
+        "name": "Muffins",
+        "servings": 6,
+        "ingredients": [
+          {
+            "id": "flour",
+            "name": "flour",
+            "amount_g": 240
+          }
+        ],
+        "method": [
+          "Mix batter and bake muffins."
+        ]
+      },
+      "ingredient_changes": [
+        {
+          "change_type": "UNCHANGED",
+          "identity_unchanged": true,
+          "original_position": 0,
+          "adapted_position": 0,
+          "original_ingredient_id": "flour",
+          "adapted_ingredient_id": "flour",
+          "original_ingredient": "flour",
+          "adapted_ingredient": "flour",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 240,
+          "adapted_quantity_g": 240,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "REMOVED",
+          "identity_unchanged": false,
+          "original_position": 1,
+          "adapted_position": null,
+          "original_ingredient_id": "soda",
+          "adapted_ingredient_id": null,
+          "original_ingredient": "baking soda",
+          "adapted_ingredient": null,
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 4,
+          "adapted_quantity_g": null,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        }
+      ],
+      "model_judgment": {
+        "run_status": "NOT_RUN",
+        "ingredient_judgments": [],
+        "functional_coverage": [],
+        "input_tokens": null,
+        "output_tokens": null,
+        "prompt_version": null
+      },
+      "deterministic_findings": [],
+      "final_culinary_status": "NOT_RUN",
+      "human_label": "PENDING_REVIEW",
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "O",
+      "title": "Ambiguous ingredient identity",
+      "source_fixture_id": "O",
+      "original_recipe": {
+        "id": "sauce-ambiguous",
+        "name": "Sauce",
+        "servings": 2,
+        "ingredients": [
+          {
+            "id": "vinegar",
+            "name": "vinegar",
+            "amount_g": 10
+          }
+        ],
+        "method": [
+          "Stir vinegar into the sauce."
+        ]
+      },
+      "adapted_recipe": {
+        "id": "sauce-ambiguous-adapted",
+        "name": "Sauce",
+        "servings": 2,
+        "ingredients": [
+          {
+            "id": "acid",
+            "name": "acid ingredient",
+            "amount_g": 10,
+            "replaces_id": "vinegar"
+          }
+        ],
+        "method": [
+          "Stir the acid ingredient into the sauce."
+        ]
+      },
+      "ingredient_changes": [
+        {
+          "change_type": "REPLACED",
+          "identity_unchanged": false,
+          "original_position": 0,
+          "adapted_position": 0,
+          "original_ingredient_id": "vinegar",
+          "adapted_ingredient_id": "acid",
+          "original_ingredient": "vinegar",
+          "adapted_ingredient": "acid ingredient",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 10,
+          "adapted_quantity_g": 10,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        }
+      ],
+      "model_judgment": {
+        "run_status": "NOT_RUN",
+        "ingredient_judgments": [],
+        "functional_coverage": [],
+        "input_tokens": null,
+        "output_tokens": null,
+        "prompt_version": null
+      },
+      "deterministic_findings": [],
+      "final_culinary_status": "NOT_RUN",
+      "human_label": "PENDING_REVIEW",
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "P",
+      "title": "Broth replaced by water with aromatics",
+      "source_fixture_id": "P",
+      "original_recipe": {
+        "id": "grain-bowl",
+        "name": "Savory grain bowl",
+        "servings": 2,
+        "ingredients": [
+          {
+            "id": "rice",
+            "name": "rice",
+            "amount_g": 160
+          },
+          {
+            "id": "broth",
+            "name": "vegetable broth",
+            "amount_g": 300
+          }
+        ],
+        "method": [
+          "Cook rice in vegetable broth."
+        ]
+      },
+      "adapted_recipe": {
+        "id": "grain-bowl-adapted",
+        "name": "Savory grain bowl",
+        "servings": 2,
+        "ingredients": [
+          {
+            "id": "rice",
+            "name": "rice",
+            "amount_g": 160
+          },
+          {
+            "id": "water",
+            "name": "water",
+            "amount_g": 300,
+            "replaces_id": "broth"
+          },
+          {
+            "id": "garlic",
+            "name": "garlic",
+            "amount_g": 3
+          }
+        ],
+        "method": [
+          "Cook rice in water with garlic."
+        ]
+      },
+      "ingredient_changes": [
+        {
+          "change_type": "UNCHANGED",
+          "identity_unchanged": true,
+          "original_position": 0,
+          "adapted_position": 0,
+          "original_ingredient_id": "rice",
+          "adapted_ingredient_id": "rice",
+          "original_ingredient": "rice",
+          "adapted_ingredient": "rice",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 160,
+          "adapted_quantity_g": 160,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "REPLACED",
+          "identity_unchanged": false,
+          "original_position": 1,
+          "adapted_position": 1,
+          "original_ingredient_id": "broth",
+          "adapted_ingredient_id": "water",
+          "original_ingredient": "vegetable broth",
+          "adapted_ingredient": "water",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": 300,
+          "adapted_quantity_g": 300,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        },
+        {
+          "change_type": "ADDED",
+          "identity_unchanged": false,
+          "original_position": null,
+          "adapted_position": 2,
+          "original_ingredient_id": null,
+          "adapted_ingredient_id": "garlic",
+          "original_ingredient": null,
+          "adapted_ingredient": "garlic",
+          "original_quantity": null,
+          "adapted_quantity": null,
+          "original_quantity_g": null,
+          "adapted_quantity_g": 3,
+          "original_unit": null,
+          "adapted_unit": null,
+          "original_attributes": {},
+          "adapted_attributes": {}
+        }
+      ],
+      "model_judgment": {
+        "run_status": "NOT_RUN",
+        "ingredient_judgments": [],
+        "functional_coverage": [],
+        "input_tokens": null,
+        "output_tokens": null,
+        "prompt_version": null
+      },
+      "deterministic_findings": [],
+      "final_culinary_status": "NOT_RUN",
+      "human_label": "PENDING_REVIEW",
+      "reviewer_notes": ""
+    }
+  ]
+}

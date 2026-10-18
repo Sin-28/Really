@@ -1,0 +1,205 @@
+﻿model,case_id,dish,difficulty,disease_profile,expected_intent,predicted_intent,schema_valid,intent_correct,expected_recipe_ids,predicted_recipe_id,effective_recipe_id,retrieval_score,routed_query,supported_hit_at_1,unsupported_abstained,route_correct,planning_latency_ms,response_evaluated,response_latency_ms,response,response_error,planning_error
+Qwen/Qwen3-0.6B,R01,Instant ramen,Easy,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,['instant_ramen_reference'],instant_ramen_reference,,1.25,instant_ramen_reference,True,False,False,25738.72,False,,,,
+Qwen/Qwen3-0.6B,R02,Chicken rice,Easy,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,['brown_chicken_rice'],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,30707.95,False,,,,
+Qwen/Qwen3-0.6B,R03,Laksa,Easy,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,30471.44,True,755.55,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,R04,Fish soup,Easy,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,['fish_soup'],fish_soup,,1.25,fish_soup,True,False,False,27412.05,True,704.98,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,R05,Congee,Easy,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,['chicken_congee'],brown_chicken_rice,,1.25,brown_chicken_rice,False,False,False,29424.82,False,,,,
+Qwen/Qwen3-0.6B,R06,Mee goreng,Medium,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,41365.56,False,,,,
+Qwen/Qwen3-0.6B,R07,Nasi lemak,Medium,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,43866.99,False,,,,
+Qwen/Qwen3-0.6B,R08,Curry chicken,Medium,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,[],brown_chicken_rice,,1.25,brown_chicken_rice,False,False,False,36430.32,False,,,,
+Qwen/Qwen3-0.6B,R09,Porridge with salted egg,Medium,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,[],brown_chicken_rice,,1.25,brown_chicken_rice,False,False,False,35800.36,True,1025.71,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,R10,Bak kut teh,Medium,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,36929.54,False,,,,
+Qwen/Qwen3-0.6B,R11,Fried rice,Hard,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,['chicken_fried_rice'],brown_chicken_rice,,1.25,brown_chicken_rice,False,False,False,35687.62,True,964.23,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,R12,Yong tau foo,Hard,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,39742.18,False,,,,
+Qwen/Qwen3-0.6B,R13,Pasta,Hard,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,39992.17,False,,,,
+Qwen/Qwen3-0.6B,R14,Sandwich,Hard,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,38409.91,True,973.44,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,R15,Hotpot,Hard,Haemodialysis (CKD 5D),single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,39994.89,False,,,,
+Qwen/Qwen3-0.6B,D01,Chicken rice,Easy,Diabetes,single_recipe,composition_question,True,False,['brown_chicken_rice'],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,41515.47,False,,,,
+Qwen/Qwen3-0.6B,D02,Kaya toast,Easy,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,44705.99,True,1102.57,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,D03,Bubble tea,Easy,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,44742.85,False,,,,
+Qwen/Qwen3-0.6B,D04,Nasi lemak,Easy,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,46630.15,True,1124.17,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,D05,Fried rice,Easy,Diabetes,single_recipe,composition_question,True,False,['chicken_fried_rice'],brown_chicken_rice,,1.25,brown_chicken_rice,False,False,False,40497.84,False,,,,
+Qwen/Qwen3-0.6B,D06,Mee siam,Medium,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,43713.9,False,,,,
+Qwen/Qwen3-0.6B,D07,Cereal breakfast,Medium,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,42246.48,True,1056.42,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,D08,Pasta,Medium,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,40422.03,False,,,,
+Qwen/Qwen3-0.6B,D09,Fruit smoothie,Medium,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,44788.56,False,,,,
+Qwen/Qwen3-0.6B,D10,Laksa,Medium,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,40785.76,False,,,,
+Qwen/Qwen3-0.6B,D11,Sandwich,Hard,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,41884.01,True,1009.43,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,D12,Curry rice,Hard,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,39638.45,False,,,,
+Qwen/Qwen3-0.6B,D13,Dessert bowl,Hard,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,48928.56,False,,,,
+Qwen/Qwen3-0.6B,D14,Yong tau foo,Hard,Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,42226.3,False,,,,
+Qwen/Qwen3-0.6B,D15,Oatmeal,Hard,Diabetes,single_recipe,composition_question,True,False,"['oatmeal', 'banana_soymilk_oatmeal']",shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,42414.1,True,1101.12,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,H01,Instant ramen,Easy,Hypertension / DASH,single_recipe,composition_question,True,False,['instant_ramen_reference'],instant_ramen_reference,,1.25,instant_ramen_reference,True,False,False,37603.37,True,966.66,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,H02,Chicken rice,Easy,Hypertension / DASH,single_recipe,composition_question,True,False,['brown_chicken_rice'],brown_chicken_rice,,1.25,brown_chicken_rice,True,False,False,37280.15,True,1013.81,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,H03,Fish soup,Easy,Hypertension / DASH,single_recipe,composition_question,True,False,['fish_soup'],fish_soup,,1.25,fish_soup,True,False,False,36329.85,False,,,,
+Qwen/Qwen3-0.6B,H04,Bak kut teh,Easy,Hypertension / DASH,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,40893.91,False,,,,
+Qwen/Qwen3-0.6B,H05,Laksa,Easy,Hypertension / DASH,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,40517.52,False,,,,
+Qwen/Qwen3-0.6B,H06,Mee goreng,Medium,Hypertension / DASH,single_recipe,meal_plan,True,False,[],brown_chicken_rice,,1.25,brown_chicken_rice,False,False,False,36377.81,False,,,,
+Qwen/Qwen3-0.6B,H07,Nasi lemak,Medium,Hypertension / DASH,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,33140.05,False,,,,
+Qwen/Qwen3-0.6B,H08,Fried rice,Medium,Hypertension / DASH,single_recipe,composition_question,True,False,['chicken_fried_rice'],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,30067.97,False,,,,
+Qwen/Qwen3-0.6B,H09,Sandwich,Medium,Hypertension / DASH,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,29653.41,True,692.88,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,H10,Curry chicken,Medium,Hypertension / DASH,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,31850.11,False,,,,
+Qwen/Qwen3-0.6B,H11,Yong tau foo,Hard,Hypertension / DASH,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,34629.23,True,943.41,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,H12,Pasta,Hard,Hypertension / DASH,single_recipe,composition_question,True,False,[],brown_chicken_rice,,1.25,brown_chicken_rice,False,False,False,35384.35,False,,,,
+Qwen/Qwen3-0.6B,H13,Congee,Hard,Hypertension / DASH,single_recipe,composition_question,True,False,['chicken_congee'],chicken_congee,,1.25,chicken_congee,True,False,False,37549.98,False,,,,
+Qwen/Qwen3-0.6B,H14,Hotpot,Hard,Hypertension / DASH,single_recipe,composition_question,True,False,[],brown_chicken_rice,,1.25,brown_chicken_rice,False,False,False,37065.02,False,,,,
+Qwen/Qwen3-0.6B,H15,Rice bowl,Hard,Hypertension / DASH,single_recipe,composition_question,True,False,"['brown_chicken_rice', 'chicken_fried_rice', 'tofu_rice_bowl', 'shrimp_broccoli_rice_bowl', 'salmon_mushroom_rice_bowl', 'cod_rice_bowl', 'chicken_cauliflower_rice_bowl', 'chickpea_tomato_rice_bowl', 'spinach_egg_rice_bowl', 'tuna_cucumber_rice_bowl']",brown_chicken_rice,,1.25,brown_chicken_rice,True,False,False,35638.97,False,,,,
+Qwen/Qwen3-0.6B,M01,Chicken rice,Medium,Haemodialysis + Hypertension,single_recipe,composition_question,True,False,['brown_chicken_rice'],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,38966.36,True,916.14,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,M02,Fish soup,Medium,Haemodialysis + Hypertension,single_recipe,composition_question,True,False,['fish_soup'],fish_soup,,1.25,fish_soup,True,False,False,35605.19,False,,,,
+Qwen/Qwen3-0.6B,M03,Hotpot,Medium,Haemodialysis + Hypertension,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,41300.22,False,,,,
+Qwen/Qwen3-0.6B,M04,Laksa,Medium,Haemodialysis + Hypertension,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,41401.37,False,,,,
+Qwen/Qwen3-0.6B,M05,Yong tau foo,Medium,Haemodialysis + Hypertension,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,41484.5,False,,,,
+Qwen/Qwen3-0.6B,M06,Chicken rice,Hard,Haemodialysis + Diabetes,single_recipe,composition_question,True,False,['brown_chicken_rice'],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,39826.57,True,894.42,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,M07,Congee,Hard,Haemodialysis + Diabetes,single_recipe,recipe,False,False,['chicken_congee'],brown_chicken_rice,,1.25,brown_chicken_rice,False,False,False,37297.92,False,,,,
+Qwen/Qwen3-0.6B,M08,Nasi lemak,Hard,Haemodialysis + Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,45427.2,False,,,,
+Qwen/Qwen3-0.6B,M09,Fruit smoothie,Hard,Haemodialysis + Diabetes,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,44277.55,False,,,,
+Qwen/Qwen3-0.6B,M10,Pasta,Hard,Haemodialysis + Diabetes,single_recipe,recipe_requests,False,False,[],brown_chicken_rice,,1.25,brown_chicken_rice,False,False,False,36417.46,True,1493.78,"No local recipe found for ""brown chicken rice"". The recipe catalog does not contain a recipe matching your request. If you have a different recipe in mind, please provide more details.",,
+Qwen/Qwen3-0.6B,M11,Sandwich,Hard,Diabetes + Hypertension,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,44510.31,True,1220.33,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,M12,Fried rice,Hard,Diabetes + Hypertension,single_recipe,composition_question,True,False,['chicken_fried_rice'],chicken_fried_rice,,1.25,chicken_fried_rice,True,False,False,38852.64,False,,,,
+Qwen/Qwen3-0.6B,M13,Bubble tea,Hard,Diabetes + Hypertension,single_recipe,composition_question,True,False,[],shrimp_broccoli_rice_bowl,,1.25,shrimp_broccoli_rice_bowl,False,False,False,43321.49,False,,,,
+Qwen/Qwen3-0.6B,M14,Curry rice,Hard,Diabetes + Hypertension,single_recipe,composition_question,True,False,[],brown_chicken_rice,,1.25,brown_chicken_rice,False,False,False,39443.4,True,1132.28,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-0.6B,M15,Instant ramen,Hard,Haemodialysis + Diabetes + Hypertension,single_recipe,composition_question,True,False,['instant_ramen_reference'],instant_ramen_reference,,1.25,instant_ramen_reference,True,False,False,38736.3,True,1120.24,The plan asks about a food composition but no explicit food amounts were provided. A limit fails.,,
+Qwen/Qwen3-1.7B,R01,Instant ramen,Easy,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,['instant_ramen_reference'],instant_ramen_reference,instant_ramen_reference,1.13,lower-sodium instant ramen suitable for my haemodialysis diet,True,False,True,58918.57,False,,,,
+Qwen/Qwen3-1.7B,R02,Chicken rice,Easy,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,['brown_chicken_rice'],brown_chicken_rice,brown_chicken_rice,1.25,brown_chicken_rice,True,False,True,72514.98,False,,,,
+Qwen/Qwen3-1.7B,R03,Laksa,Easy,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,[],,,0.0,laksa,False,True,True,57391.73,True,2789.49,"There is no locally available recipe for ""laksa"" that fits your haemodialysis diet. Please provide a specific recipe or adjust the dish to meet your dietary needs.",,
+Qwen/Qwen3-1.7B,R04,Fish soup,Easy,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,['fish_soup'],fish_soup,fish_soup,1.25,fish_soup,True,False,True,65342.53,True,14810.05,"The recipe for Tilapia and bok choy soup (prototype serving) contains 100 g of tilapia and 60 g of bok choy per serving. The nutrient profile includes 19.645 g of protein, 102.78 mg of sodium, 490.40 mg of potassium, and 178.69 mg of phosphorus. 
+
+The sodium content (102.78 mg) is within the typical range for a haemodialysis diet, but if you are on a low-sodium diet, you may want to consider reducing the sodium content. The potassium content (490.40 mg) is also within the normal range, but if you are on a low-potassium diet, you may want to adjust the recipe accordingly. The phosphorus content (178.69 mg) is also within the normal range, but if you are on a low-phosphorus diet, you may want to adjust the recipe.
+
+No substitutions are required for the",,
+Qwen/Qwen3-1.7B,R05,Congee,Easy,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,['chicken_congee'],chicken_congee,chicken_congee,1.06,modify congee to better fit my haemodialysis diet without changing the dish too much,True,False,True,57740.77,False,,,,
+Qwen/Qwen3-1.7B,R06,Mee goreng,Medium,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,[],,,0.0,renal-friendly mee goreng dinner,False,True,True,61633.7,False,,,,
+Qwen/Qwen3-1.7B,R07,Nasi lemak,Medium,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,[],,,0.0,renal-friendly nasi lemak dinner,False,True,True,62064.9,False,,,,
+Qwen/Qwen3-1.7B,R08,Curry chicken,Medium,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,[],brown_chicken_rice,brown_chicken_rice,0.42669226110667735,renal-friendly curry chicken dinner,False,False,False,75409.83,False,,,,
+Qwen/Qwen3-1.7B,R09,Porridge with salted egg,Medium,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,[],spinach_egg_rice_bowl,spinach_egg_rice_bowl,0.5256447590168881,renal-friendly porridge with salted egg for dinner,False,False,False,70866.96,True,13736.77,"Based on your remaining daily nutrient allowance, here is a renal-friendly version of porridge with salted egg for dinner:
+
+**Ingredients per serving:**
+- White rice, raw: 40.0 g  
+- Whole egg: 50.0 g  
+- Baby spinach, raw: 30.0 g  
+- Roma tomato, raw: 50.0 g  
+
+**Nutrients per serving:**
+- Sodium: 97.98 mg  
+- Potassium: 370.02 mg  
+- Phosphorus: 156.45 mg  
+- Protein: 10.22 g  
+- Carbohydrate: 35.24 g  
+- Fiber: 1.01 g  
+
+**Constraint status:**  
+- No explicit nutrient limits are in place, so the recipe is suitable for your current allowance.  
+
+Let me know if you need adjustments for specific dietary restrictions or additional details!",,
+Qwen/Qwen3-1.7B,R10,Bak kut teh,Medium,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,[],,,0.0,renal-friendly bak kut teh dinner,False,True,True,64439.59,False,,,,
+Qwen/Qwen3-1.7B,R11,Fried rice,Hard,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,['chicken_fried_rice'],brown_chicken_rice,brown_chicken_rice,1.25,brown_chicken_rice,False,False,False,75027.98,True,13183.34,"The recipe ""Brown chicken rice (prototype serving)"" is suitable for a haemodialysis patient. It includes the following ingredients:
+
+- White rice, raw: 40.0 g  
+- Chicken breast, cooked: 80.0 g  
+- Bok choy, raw: 60.0 g  
+
+The nutrient profile per serving is:
+- Sodium: 46.3648 mg  
+- Potassium: 444.12 mg  
+- Phosphorus: 254.3 mg  
+- Protein: 29.108 g  
+- Carbohydrate: 34.226 g  
+
+The recipe does not have any active limits or constraints that would make it unsuitable for a haemodialysis patient. The nutrient values are realistic and recognizable, and the recipe maintains a familiar taste and texture.",,
+Qwen/Qwen3-1.7B,R12,Yong tau foo,Hard,Haemodialysis (CKD 5D),single_recipe,suitability,False,False,[],,,0.0,Yong tau foo,False,False,False,71438.33,False,,,,
+Qwen/Qwen3-1.7B,R13,Pasta,Hard,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,[],,,0.0,pasta suitable for a haemodialysis patient,False,True,True,60732.29,False,,,,
+Qwen/Qwen3-1.7B,R14,Sandwich,Hard,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,[],,,0.0,realistic and recognizable sandwich suitable for a haemodialysis patient,False,True,True,59435.38,True,2912.86,"No matching local recipe was found that is realistic, recognizable, and suitable for a haemodialysis patient. Please consult a nutritionist or dietitian for a personalized recommendation.",,
+Qwen/Qwen3-1.7B,R15,Hotpot,Hard,Haemodialysis (CKD 5D),single_recipe,single_recipe,True,True,[],,,0.0,hotpot suitable for a haemodialysis patient,False,True,True,58642.71,False,,,,
+Qwen/Qwen3-1.7B,D01,Chicken rice,Easy,Diabetes,single_recipe,single_recipe,True,True,['brown_chicken_rice'],brown_chicken_rice,brown_chicken_rice,1.25,brown_chicken_rice,True,False,True,60554.53,False,,,,
+Qwen/Qwen3-1.7B,D02,Kaya toast,Easy,Diabetes,single_recipe,single_recipe,True,True,[],,,0.0,kaya toast for an adult with diabetes,False,True,True,65311.23,True,3286.92,"There is no locally available recipe for ""kaya toast for an adult with diabetes."" Please consult a nutritionist or dietitian for a personalized recipe that meets the dietary needs of an adult with diabetes.",,
+Qwen/Qwen3-1.7B,D03,Bubble tea,Easy,Diabetes,single_recipe,single_recipe,True,True,[],,,0.0,bubble tea for adult with diabetes,False,True,True,59518.75,False,,,,
+Qwen/Qwen3-1.7B,D04,Nasi lemak,Easy,Diabetes,single_recipe,single_recipe,True,True,[],,,0.0,modify nasi lemak for an adult with diabetes,False,True,True,66396.09,True,2837.25,"No local recipe matching ""nasi lemak"" for an adult with diabetes was found. Please provide a specific recipe or adjust the recipe parameters to find a suitable option.",,
+Qwen/Qwen3-1.7B,D05,Fried rice,Easy,Diabetes,single_recipe,single_recipe,True,True,['chicken_fried_rice'],chicken_fried_rice,chicken_fried_rice,1.1,modified fried rice for an adult with diabetes,True,False,True,59238.62,False,,,,
+Qwen/Qwen3-1.7B,D06,Mee siam,Medium,Diabetes,single_recipe,single_recipe,True,True,[],,,0.0,diabetes-appropriate mee siam,False,True,True,58499.52,False,,,,
+Qwen/Qwen3-1.7B,D07,Cereal breakfast,Medium,Diabetes,single_recipe,single_recipe,True,True,[],,,0.0,diabetes-appropriate cereal breakfast,False,True,True,59444.82,True,2378.99,I cannot find a diabetes-appropriate cereal breakfast recipe in the local recipe catalog. Please provide more details or check a nutrition database for suitable options.,,
+Qwen/Qwen3-1.7B,D08,Pasta,Medium,Diabetes,single_recipe,single_recipe,True,True,[],,,0.0,diabetes-appropriate pasta,False,True,True,57851.76,False,,,,
+Qwen/Qwen3-1.7B,D09,Fruit smoothie,Medium,Diabetes,single_recipe,single_recipe,True,True,[],mixed_fruit_bowl,mixed_fruit_bowl,0.4930478997918673,diabetes-appropriate fruit smoothie,False,False,False,62592.1,False,,,,
+Qwen/Qwen3-1.7B,D10,Laksa,Medium,Diabetes,single_recipe,single_recipe,True,True,[],,,0.0,diabetes-appropriate laksa,False,True,True,63112.11,False,,,,
+Qwen/Qwen3-1.7B,D11,Sandwich,Hard,Diabetes,single_recipe,single_recipe,True,True,[],brown_chicken_rice,brown_chicken_rice,1.18,Brown chicken rice,False,False,False,58734.1,True,13361.53,"The original recipe for ""Brown chicken rice (prototype serving)"" is as follows:
+
+- **Ingredients per serving**:
+  - White rice, raw: 40.0 g
+  - Chicken breast, cooked: 80.0 g
+  - Bok choy, raw: 60.0 g
+
+- **Nutrients per serving**:
+  - Sodium: 46.3648 mg
+  - Potassium: 444.12 mg
+  - Phosphorus: 254.3 mg
+  - Protein: 29.108 g
+  - Carbohydrate: 34.226 g
+
+The recipe does not have any active limits or constraints that would prevent it from being used as is. Therefore, the recipe can be preserved as is for a diabetic-friendly sandwich. If you need a modified version, please provide additional details about the desired changes.",,
+Qwen/Qwen3-1.7B,D12,Curry rice,Hard,Diabetes,single_recipe,single_recipe,True,True,[],,,0.0,curry rice,False,True,True,62152.94,False,,,,
+Qwen/Qwen3-1.7B,D13,Dessert bowl,Hard,Diabetes,single_recipe,single_recipe,True,True,[],,,0.0,dessert bowl for diabetes,False,True,True,58934.5,False,,,,
+Qwen/Qwen3-1.7B,D14,Yong tau foo,Hard,Diabetes,single_recipe,single_recipe,True,True,[],,,0.0,yong tau foo,False,True,True,58457.81,False,,,,
+Qwen/Qwen3-1.7B,D15,Oatmeal,Hard,Diabetes,single_recipe,single_recipe,True,True,"['oatmeal', 'banana_soymilk_oatmeal']",oatmeal,oatmeal,1.07,Oatmeal,True,False,True,61680.66,True,10124.07,"The original oatmeal recipe has been found with the following details:
+
+- **Ingredients per serving**: 40 g of rolled oats, dry.
+- **Nutrients per serving**:
+  - Sodium: 0.2672 mg
+  - Potassium: 140 mg
+  - Phosphorus: 154.8 mg
+  - Protein: 5.4 g
+  - Carbohydrate: 27.48 g
+
+**Constraint status**: No explicit limits are defined for the nutrients or ingredients.
+
+The recipe is already suitable for diabetes management, as it contains no added sugars or other ingredients that would affect blood sugar levels. No changes are necessary to preserve the original dish.",,
+Qwen/Qwen3-1.7B,H01,Instant ramen,Easy,Hypertension / DASH,single_recipe,single_recipe,True,True,['instant_ramen_reference'],instant_ramen_reference,instant_ramen_reference,1.13,lower-sodium instant ramen for hypertension,True,False,True,60505.19,True,4015.47,"A lower-sodium version of instant ramen for hypertension is not available in the local recipe catalog. The provided recipe information does not include any modifications or substitutions for sodium content. Therefore, it is not possible to create a lower-sodium version based on the available data.",,
+Qwen/Qwen3-1.7B,H02,Chicken rice,Easy,Hypertension / DASH,single_recipe,single_recipe,True,True,['brown_chicken_rice'],brown_chicken_rice,brown_chicken_rice,1.25,brown_chicken_rice,True,False,True,60728.8,True,7836.15,"The recipe for brown chicken rice (prototype serving) contains 46.3648 mg of sodium per serving. To make a lower-sodium version for hypertension, you can reduce the sodium content by adjusting the ingredients or using substitutes. However, the current recipe does not provide specific details on how to lower the sodium content. If no substitutions are available, the sodium level in the recipe is already relatively low, and further adjustments may not be necessary. For a more precise lower-sodium version, additional information or modifications would be required.",,
+Qwen/Qwen3-1.7B,H03,Fish soup,Easy,Hypertension / DASH,single_recipe,single_recipe,True,True,['fish_soup'],fish_soup,fish_soup,1.25,fish_soup,True,False,True,69112.12,False,,,,
+Qwen/Qwen3-1.7B,H04,Bak kut teh,Easy,Hypertension / DASH,single_recipe,single_recipe,True,True,[],,,0.0,lower-sodium bak kut teh,False,True,True,62940.98,False,,,,
+Qwen/Qwen3-1.7B,H05,Laksa,Easy,Hypertension / DASH,single_recipe,single_recipe,True,True,[],,,0.0,lower-sodium laksa for hypertension,False,True,True,66047.79,False,,,,
+Qwen/Qwen3-1.7B,H06,Mee goreng,Medium,Hypertension / DASH,single_recipe,,False,False,[],,,0.0,Make mee goreng fit a DASH-style eating pattern while keeping it realistic.,False,False,False,100961.09,False,,,,
+Qwen/Qwen3-1.7B,H07,Nasi lemak,Medium,Hypertension / DASH,single_recipe,single_recipe,True,True,[],,,0.0,nasi lemak fit a DASH-style eating pattern,False,True,True,62390.12,False,,,,
+Qwen/Qwen3-1.7B,H08,Fried rice,Medium,Hypertension / DASH,single_recipe,single_recipe,True,True,['chicken_fried_rice'],brown_chicken_rice,brown_chicken_rice,1.25,brown_chicken_rice,False,False,False,69711.64,False,,,,
+Qwen/Qwen3-1.7B,H09,Sandwich,Medium,Hypertension / DASH,single_recipe,single_recipe,True,True,[],,,0.0,sandwich fit a DASH-style eating pattern,False,True,True,58850.72,True,4165.18,"No DASH-style sandwich recipe was found in the local recipe catalog. The DASH diet emphasizes whole foods, low sodium, and high fiber, but no specific sandwich recipe aligns with this pattern in the available data. Consider consulting a nutritionist or using a DASH-compliant recipe database for personalized suggestions.",,
+Qwen/Qwen3-1.7B,H10,Curry chicken,Medium,Hypertension / DASH,single_recipe,single_recipe,True,True,[],brown_chicken_rice,brown_chicken_rice,0.42669226110667735,curry chicken,False,False,False,66708.83,False,,,,
+Qwen/Qwen3-1.7B,H11,Yong tau foo,Hard,Hypertension / DASH,single_recipe,single_recipe,True,True,[],,,0.0,yong tau foo,False,True,True,58795.33,True,3288.73,"There is no local recipe matching ""yong tau foo"" that can be recommended for dinner based on your remaining sodium allowance. Please check if you have access to a recipe database or if the recipe name is correctly spelled.",,
+Qwen/Qwen3-1.7B,H12,Pasta,Hard,Hypertension / DASH,single_recipe,single_recipe,True,True,[],,,0.0,pasta,False,True,True,57983.88,False,,,,
+Qwen/Qwen3-1.7B,H13,Congee,Hard,Hypertension / DASH,single_recipe,single_recipe,True,True,['chicken_congee'],chicken_congee,chicken_congee,1.25,chicken_congee,True,False,True,65150.43,False,,,,
+Qwen/Qwen3-1.7B,H14,Hotpot,Hard,Hypertension / DASH,single_recipe,single_recipe,True,True,[],,,0.0,hotpot dinner,False,True,True,58351.49,False,,,,
+Qwen/Qwen3-1.7B,H15,Rice bowl,Hard,Hypertension / DASH,single_recipe,single_recipe,True,True,"['brown_chicken_rice', 'chicken_fried_rice', 'tofu_rice_bowl', 'shrimp_broccoli_rice_bowl', 'salmon_mushroom_rice_bowl', 'cod_rice_bowl', 'chicken_cauliflower_rice_bowl', 'chickpea_tomato_rice_bowl', 'spinach_egg_rice_bowl', 'tuna_cucumber_rice_bowl']",tofu_rice_bowl,tofu_rice_bowl,1.09,rice bowl for dinner,True,False,True,58715.11,False,,,,
+Qwen/Qwen3-1.7B,M01,Chicken rice,Medium,Haemodialysis + Hypertension,single_recipe,single_recipe,True,True,['brown_chicken_rice'],brown_chicken_rice,brown_chicken_rice,1.25,brown_chicken_rice,True,False,True,61281.2,True,10260.75,"The recipe for brown chicken rice (prototype serving) is suitable for a dialysis diet and hypertension. It contains the following nutrients per serving:
+
+- Sodium: 46.36 mg
+- Potassium: 444.12 mg
+- Phosphorus: 254.3 mg
+- Protein: 29.11 g
+- Carbohydrates: 34.23 g
+
+The recipe does not have any active limits specified, and the constraint status is ""NOT_EVALUATED_NO_EXPLICIT_LIMITS,"" indicating no explicit limits are in place. However, it is important to consult with a healthcare professional to ensure this recipe aligns with your specific dietary needs and medical conditions.",,
+Qwen/Qwen3-1.7B,M02,Fish soup,Medium,Haemodialysis + Hypertension,single_recipe,single_recipe,True,True,['fish_soup'],fish_soup,fish_soup,1.25,fish_soup,True,False,True,66223.94,False,,,,
+Qwen/Qwen3-1.7B,M03,Hotpot,Medium,Haemodialysis + Hypertension,single_recipe,single_recipe,True,True,[],,,0.0,renal and hypertension-friendly hotpot,False,True,True,58970.81,False,,,,
+Qwen/Qwen3-1.7B,M04,Laksa,Medium,Haemodialysis + Hypertension,single_recipe,single_recipe,True,True,[],,,0.0,laksa modified for dialysis and high blood pressure,False,True,True,59706.08,False,,,,
+Qwen/Qwen3-1.7B,M05,Yong tau foo,Medium,Haemodialysis + Hypertension,single_recipe,single_recipe,True,True,[],,,0.0,yong tau foo bowl for dialysis and hypertension,False,True,True,60476.3,False,,,,
+Qwen/Qwen3-1.7B,M06,Chicken rice,Hard,Haemodialysis + Diabetes,single_recipe,single_recipe,True,True,['brown_chicken_rice'],brown_chicken_rice,brown_chicken_rice,1.25,brown_chicken_rice,True,False,True,60316.53,True,13002.68,"The recipe for brown chicken rice contains the following ingredients:  
+- 40.0 g White rice, raw  
+- 80.0 g Chicken breast, cooked  
+- 60.0 g Bok choy, raw  
+
+The nutrient profile per serving is:  
+- Sodium: 46.3648 mg  
+- Potassium: 444.12 mg  
+- Phosphorus: 254.3 mg  
+- Protein: 29.108 g  
+- Carbohydrate: 34.226 g  
+
+The recipe does not specify any restrictions or limitations, and no explicit nutritional limits are provided.  
+
+**Note:** This recipe is not explicitly designed for dialysis or diabetes, and its suitability for these conditions may require additional adjustments (e.g., sodium content, carbohydrate levels, or protein intake). For personalized dietary recommendations, consult a healthcare professional or registered dietitian.",,
+Qwen/Qwen3-1.7B,M07,Congee,Hard,Haemodialysis + Diabetes,single_recipe,single_recipe,True,True,['chicken_congee'],chicken_congee,chicken_congee,1.25,chicken_congee,True,False,True,66330.92,False,,,,
+Qwen/Qwen3-1.7B,M08,Nasi lemak,Hard,Haemodialysis + Diabetes,single_recipe,single_recipe,True,True,[],,,0.0,modify nasi lemak for dialysis and diabetes while keeping it recognizable,False,True,True,59220.68,False,,,,
+Qwen/Qwen3-1.7B,M09,Fruit smoothie,Hard,Haemodialysis + Diabetes,single_recipe,single_recipe,True,True,[],,,0.0,smoothie that fits dialysis and diabetes targets,False,True,True,59979.97,False,,,,
+Qwen/Qwen3-1.7B,M10,Pasta,Hard,Haemodialysis + Diabetes,single_recipe,single_recipe,True,True,[],,,0.0,pasta for dinner,False,True,True,58352.42,True,2773.35,There is no matching local recipe available for pasta that fits your current meal plan. Please check if you have any pasta ingredients or if you can adjust the recipe based on available ingredients.,,
+Qwen/Qwen3-1.7B,M11,Sandwich,Hard,Diabetes + Hypertension,single_recipe,single_recipe,True,True,[],,,0.0,sandwich appropriate for diabetes and hypertension,False,True,True,59550.98,True,2421.12,There is no local recipe found that is appropriate for diabetes and hypertension. Please consult a nutritionist or dietitian for a personalized recipe recommendation.,,
+Qwen/Qwen3-1.7B,M12,Fried rice,Hard,Diabetes + Hypertension,single_recipe,single_recipe,True,True,['chicken_fried_rice'],chicken_fried_rice,chicken_fried_rice,1.1,modify fried rice for diabetes and hypertension,True,False,True,59315.62,False,,,,
+Qwen/Qwen3-1.7B,M13,Bubble tea,Hard,Diabetes + Hypertension,single_recipe,single_recipe,True,True,[],,,0.0,bubble tea for diabetes and hypertension,False,True,True,66719.8,False,,,,
+Qwen/Qwen3-1.7B,M14,Curry rice,Hard,Diabetes + Hypertension,single_recipe,,False,False,[],,,0.0,Make curry rice fit both my diabetes and hypertension meal plan.,False,False,False,110797.46,True,2882.44,"There is no local recipe available for ""curry rice"" that fits both your diabetes and hypertension meal plan. Please provide a recipe ID or specify a different dish that meets the criteria.",,
+Qwen/Qwen3-1.7B,M15,Instant ramen,Hard,Haemodialysis + Diabetes + Hypertension,single_recipe,single_recipe,True,True,['instant_ramen_reference'],instant_ramen_reference,instant_ramen_reference,1.13,instant ramen,True,False,True,53155.66,True,3606.84,"The recipe for instant ramen (generic dry reference serving) is available. However, since the recipe does not include any ingredients or nutrients, it cannot be modified to accommodate your conditions of dialysis, diabetes, and hypertension. Please consult a registered dietitian for personalized dietary recommendations.",,

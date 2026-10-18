@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08091d">
+  <title>RenAlly · Ingredient graph</title>
+  <link rel="stylesheet" href="/graph.css">
+  <script src="/graph.js" defer></script>
+</head>
+<body class="graph-page">
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula nebula-one" aria-hidden="true"></div>
+  <div class="nebula nebula-two" aria-hidden="true"></div>
+  <header class="graph-topbar">
+    <a class="graph-brand" href="/" aria-label="Return to RenAlly chat">
+      <span class="brand-glyph">R</span>
+      <span><strong>RenAlly</strong><small>KNOWLEDGE GRAPH</small></span>
+    </a>
+    <div class="graph-top-actions">
+      <span class="local-indicator"><i></i> LOCAL DATA</span>
+      <a class="back-link" href="/">← Back to chat</a>
+    </div>
+  </header>
+
+  <main class="graph-layout">
+    <section class="graph-stage" aria-labelledby="graph-title">
+      <div class="graph-heading">
+        <div>
+          <p class="kicker">RENALLY · RECIPE + INGREDIENT NETWORK</p>
+          <h1 id="graph-title">Ingredients in relation</h1>
+          <p class="graph-subtitle">Explore which catalog recipes contain each food, and which ingredient substitutions are recorded.</p>
+        </div>
+        <div class="graph-stats">
+          <div><strong id="node-count">—</strong><span>nodes</span></div>
+          <div><strong id="edge-count">—</strong><span>relationships</span></div>
+        </div>
+      </div>
+
+      <div class="graph-toolbar">
+        <label class="search-box" for="graph-search">
+          <span aria-hidden="true">⌕</span>
+          <input id="graph-search" type="search" placeholder="Find a recipe or ingredient…" autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <div class="view-tools" aria-label="Graph controls">
+          <button id="zoom-out" type="button" aria-label="Zoom out">−</button>
+          <button id="zoom-reset" type="button" aria-label="Reset graph view">Reset</button>
+          <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+        </div>
+      </div>
+
+      <div class="canvas-frame">
+        <canvas id="graph-canvas" aria-label="Interactive graph of recipe and ingredient relationships"></canvas>
+        <div class="canvas-loading" id="graph-loading">Tracing local recipe relationships…</div>
+        <div class="canvas-error" id="graph-error" hidden>Could not load the local graph data. Return to chat and restart the local server.</div>
+        <div class="canvas-hint"><span class="pulse-dot"></span> Drag to explore <b>·</b> Select a node for details</div>
+      </div>
+
+      <footer class="graph-legend" aria-label="Relationship legend">
+        <span><i class="legend-node recipe-node"></i> Recipe</span>
+        <span><i class="legend-node ingredient-node"></i> Ingredient</span>
+        <span><i class="legend-node type-node"></i> Ingredient type</span>
+        <span><i class="legend-line contains-line"></i> contains</span>
+        <span><i class="legend-line type-line"></i> is a</span>
+        <span><i class="legend-line substitute-line"></i> substitute for</span>
+        <span class="source-note">Graph view is retrieved from local Neo4j; nutrition records stay in the database.</span>
+      </footer>
+    </section>
+
+    <aside class="inspector" aria-live="polite">
+      <div class="inspector-top">
+        <span class="inspector-mark">✳</span>
+        <div><p class="kicker">NODE INSPECTOR</p><h2 id="inspector-title">Explore the graph</h2></div>
+      </div>
+      <p id="inspector-description" class="inspector-copy">Select a glowing node to see its catalog record and connected ingredients or recipes.</p>
+      <div id="inspector-type" class="node-type" hidden></div>
+      <div id="inspector-source" class="source-chip" hidden></div>
+      <div class="relation-block">
+        <div class="relation-heading"><span>CONNECTED RECORDS</span><span id="neighbor-count">0</span></div>
+        <div id="neighbor-list" class="neighbor-list"><p class="empty-neighbors">Select a node to inspect its links.</p></div>
+      </div>
+      <div class="graph-note">
+        <span class="note-icon">↗</span>
+        <p><strong>How to read it</strong> Recipes contain ingredients. Ingredients connect to their type through “is a.” A line between ingredients is an explicit substitution; same-group discovery is still checked against nutrient constraints.</p>
+      </div>
+      <a class="inspector-back" href="/">Return to meal chat <span>→</span></a>
+    </aside>
+  </main>
+  <div id="node-tooltip" class="node-tooltip" hidden></div>
+</body>
+</html>

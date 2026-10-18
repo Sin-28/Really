@@ -1,0 +1,4 @@
+# Optional only for the experimental local Qwen module.
+torch
+transformers
+safetensors

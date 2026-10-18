@@ -1,0 +1,119 @@
+{
+  "dataset": "Step 6A.3 culinary functional coverage review fixtures",
+  "label_status": "developer_defined_test_expectations_not_human_validated",
+  "cases": [
+    {
+      "case_id": "A",
+      "title": "Basil to parsley",
+      "expected_status": "PASS",
+      "original_recipe": {"id": "herb-pasta", "name": "Pasta with basil", "servings": 2, "ingredients": [{"id": "pasta", "name": "pasta", "amount_g": 160}, {"id": "basil", "name": "fresh basil", "amount_g": 8}], "method": ["Boil pasta and finish with fresh basil."]},
+      "adapted_recipe": {"id": "herb-pasta-adapted", "name": "Pasta with parsley", "servings": 2, "ingredients": [{"id": "pasta", "name": "pasta", "amount_g": 160}, {"id": "parsley", "name": "fresh parsley", "amount_g": 8, "replaces_id": "basil"}], "method": ["Boil pasta and finish with fresh parsley."]}
+    },
+    {
+      "case_id": "B",
+      "title": "Ramen packet to seaweed only",
+      "expected_status": "REVIEW_REQUIRED",
+      "original_recipe": {"id": "ramen", "name": "Instant ramen", "servings": 1, "ingredients": [{"id": "noodles", "name": "instant ramen noodles", "amount_g": 80}, {"id": "packet", "name": "instant ramen seasoning packet", "amount_g": 6}], "method": ["Boil noodles in water and stir in seasoning packet."]},
+      "adapted_recipe": {"id": "ramen-adapted", "name": "Instant ramen", "servings": 1, "ingredients": [{"id": "noodles", "name": "instant ramen noodles", "amount_g": 80}, {"id": "seaweed", "name": "dried seaweed", "amount_g": 3, "replaces_id": "packet"}], "method": ["Boil noodles in water and stir in dried seaweed."]}
+    },
+    {
+      "case_id": "C",
+      "title": "Ramen packet to seaweed, broth, and garlic",
+      "expected_status": "PASS",
+      "original_recipe": {"id": "ramen", "name": "Instant ramen", "servings": 1, "ingredients": [{"id": "noodles", "name": "instant ramen noodles", "amount_g": 80}, {"id": "packet", "name": "instant ramen seasoning packet", "amount_g": 6}], "method": ["Boil noodles in water and stir in seasoning packet."]},
+      "adapted_recipe": {"id": "ramen-adapted", "name": "Instant ramen", "servings": 1, "ingredients": [{"id": "noodles", "name": "instant ramen noodles", "amount_g": 80}, {"id": "seaweed", "name": "dried seaweed", "amount_g": 3, "replaces_id": "packet"}, {"id": "broth", "name": "low-sodium vegetable broth", "amount_g": 240}, {"id": "garlic", "name": "garlic", "amount_g": 2}], "method": ["Boil noodles in low-sodium vegetable broth with garlic and seaweed."]}
+    },
+    {
+      "case_id": "D",
+      "title": "Missing adapted cooking instructions",
+      "expected_status": "REVIEW_REQUIRED",
+      "original_recipe": {"id": "ramen", "name": "Instant ramen", "servings": 1, "ingredients": [{"id": "noodles", "name": "instant ramen noodles", "amount_g": 80}, {"id": "packet", "name": "instant ramen seasoning packet", "amount_g": 6}], "method": ["Boil noodles in water and stir in seasoning packet."]},
+      "adapted_recipe": {"id": "ramen-adapted", "name": "Instant ramen", "servings": 1, "ingredients": [{"id": "noodles", "name": "instant ramen noodles", "amount_g": 80}, {"id": "seaweed", "name": "dried seaweed", "amount_g": 3, "replaces_id": "packet"}], "method": null}
+    },
+    {
+      "case_id": "E",
+      "title": "Egg replaced by flax and water in a loaf",
+      "expected_status": "PASS",
+      "original_recipe": {"id": "flax-loaf", "name": "Seed loaf", "servings": 4, "ingredients": [{"id": "flour", "name": "whole wheat flour", "amount_g": 300}, {"id": "egg", "name": "egg", "amount_g": 50}], "method": ["Mix ingredients and bake the loaf."]},
+      "adapted_recipe": {"id": "flax-loaf-adapted", "name": "Seed loaf", "servings": 4, "ingredients": [{"id": "flour", "name": "whole wheat flour", "amount_g": 300}, {"id": "flax", "name": "ground flaxseed", "amount_g": 10, "replaces_id": "egg"}, {"id": "water", "name": "water", "amount_g": 30}], "method": ["Mix flaxseed with water, combine with flour, and bake the loaf."]}
+    },
+    {
+      "case_id": "F",
+      "title": "Egg removed without binder",
+      "expected_status": "REVIEW_REQUIRED",
+      "original_recipe": {"id": "loaf", "name": "Savory loaf", "servings": 4, "ingredients": [{"id": "flour", "name": "whole wheat flour", "amount_g": 300}, {"id": "egg", "name": "egg", "amount_g": 50}], "method": ["Mix ingredients and bake the loaf."]},
+      "adapted_recipe": {"id": "loaf-adapted", "name": "Savory loaf", "servings": 4, "ingredients": [{"id": "flour", "name": "whole wheat flour", "amount_g": 300}], "method": ["Mix flour with water and bake the loaf."]}
+    },
+    {
+      "case_id": "G",
+      "title": "Cream replaced by oat milk and starch",
+      "expected_status": "PASS",
+      "original_recipe": {"id": "soup", "name": "Cream soup", "servings": 3, "ingredients": [{"id": "vegetables", "name": "mixed vegetables", "amount_g": 400}, {"id": "cream", "name": "heavy cream", "amount_g": 120}], "method": ["Simmer vegetables and stir in cream."]},
+      "adapted_recipe": {"id": "soup-adapted", "name": "Cream soup", "servings": 3, "ingredients": [{"id": "vegetables", "name": "mixed vegetables", "amount_g": 400}, {"id": "oatmilk", "name": "unsweetened oat milk", "amount_g": 120, "replaces_id": "cream"}, {"id": "cornstarch", "name": "cornstarch", "amount_g": 8}], "method": ["Simmer vegetables, whisk cornstarch into oat milk, and stir into the soup."]}
+    },
+    {
+      "case_id": "H",
+      "title": "Intentional saltiness reduction",
+      "expected_status": "PASS",
+      "adaptation_intent": "Intentionally reduce sodium while retaining a plausible seasoning role.",
+      "original_recipe": {"id": "soup-salt", "name": "Vegetable soup", "servings": 2, "ingredients": [{"id": "vegetables", "name": "mixed vegetables", "amount_g": 300}, {"id": "salt", "name": "salt", "amount_g": 4}], "method": ["Simmer vegetables with salt."]},
+      "adapted_recipe": {"id": "soup-salt-adapted", "name": "Vegetable soup", "servings": 2, "ingredients": [{"id": "vegetables", "name": "mixed vegetables", "amount_g": 300}, {"id": "herbs", "name": "fresh herbs", "amount_g": 8, "replaces_id": "salt"}], "method": ["Simmer vegetables and finish with fresh herbs."]}
+    },
+    {
+      "case_id": "I",
+      "title": "Quantity-only oil change",
+      "expected_status": "PASS",
+      "original_recipe": {"id": "salad", "name": "Roasted vegetables", "servings": 2, "ingredients": [{"id": "carrots", "name": "carrots", "amount_g": 300}, {"id": "oil", "name": "olive oil", "amount_g": 15}], "method": ["Toss vegetables with oil and roast."]},
+      "adapted_recipe": {"id": "salad-adapted", "name": "Roasted vegetables", "servings": 2, "ingredients": [{"id": "carrots", "name": "carrots", "amount_g": 300}, {"id": "oil", "name": "olive oil", "amount_g": 8}], "method": ["Toss vegetables with oil and roast."]}
+    },
+    {
+      "case_id": "J",
+      "title": "Chicken replaced by tofu",
+      "expected_status": "PASS",
+      "original_recipe": {"id": "stirfry", "name": "Vegetable stir-fry", "servings": 2, "ingredients": [{"id": "chicken", "name": "chicken breast", "amount_g": 200}, {"id": "vegetables", "name": "mixed vegetables", "amount_g": 250}], "method": ["Cook chicken and vegetables in a pan."]},
+      "adapted_recipe": {"id": "stirfry-adapted", "name": "Vegetable stir-fry", "servings": 2, "ingredients": [{"id": "tofu", "name": "firm tofu", "amount_g": 220, "replaces_id": "chicken"}, {"id": "vegetables", "name": "mixed vegetables", "amount_g": 250}], "method": ["Cook tofu and vegetables in a pan."]}
+    },
+    {
+      "case_id": "K",
+      "title": "Butter replaced by applesauce in cookies",
+      "expected_status": "REVIEW_REQUIRED",
+      "original_recipe": {"id": "cookies", "name": "Oat cookies", "servings": 8, "ingredients": [{"id": "oats", "name": "rolled oats", "amount_g": 200}, {"id": "butter", "name": "butter", "amount_g": 80}], "method": ["Mix ingredients and bake cookies."]},
+      "adapted_recipe": {"id": "cookies-adapted", "name": "Oat cookies", "servings": 8, "ingredients": [{"id": "oats", "name": "rolled oats", "amount_g": 200}, {"id": "applesauce", "name": "unsweetened applesauce", "amount_g": 80, "replaces_id": "butter"}], "method": ["Mix ingredients and bake cookies."]}
+    },
+    {
+      "case_id": "L",
+      "title": "Leavening agent removed from muffins",
+      "expected_status": "REVIEW_REQUIRED",
+      "original_recipe": {"id": "muffins", "name": "Muffins", "servings": 6, "ingredients": [{"id": "flour", "name": "flour", "amount_g": 240}, {"id": "soda", "name": "baking soda", "amount_g": 4}], "method": ["Mix batter and bake muffins."]},
+      "adapted_recipe": {"id": "muffins-adapted", "name": "Muffins", "servings": 6, "ingredients": [{"id": "flour", "name": "flour", "amount_g": 240}], "method": ["Mix batter and bake muffins."]}
+    },
+    {
+      "case_id": "M",
+      "title": "Cornstarch replaced by arrowroot",
+      "expected_status": "PASS",
+      "original_recipe": {"id": "sauce", "name": "Pan sauce", "servings": 2, "ingredients": [{"id": "stock", "name": "vegetable stock", "amount_g": 200}, {"id": "cornstarch", "name": "cornstarch", "amount_g": 8}], "method": ["Whisk cornstarch into stock and heat until thickened."]},
+      "adapted_recipe": {"id": "sauce-adapted", "name": "Pan sauce", "servings": 2, "ingredients": [{"id": "stock", "name": "vegetable stock", "amount_g": 200}, {"id": "arrowroot", "name": "arrowroot starch", "amount_g": 8, "replaces_id": "cornstarch"}], "method": ["Whisk arrowroot into stock and heat until thickened."]}
+    },
+    {
+      "case_id": "N",
+      "title": "Cooking method changed from baking to pan cooking",
+      "expected_status": "REVIEW_REQUIRED",
+      "original_recipe": {"id": "baked-tofu", "name": "Baked tofu", "servings": 2, "ingredients": [{"id": "tofu", "name": "firm tofu", "amount_g": 250}, {"id": "oil", "name": "olive oil", "amount_g": 5}], "method": ["Toss tofu with oil and bake until browned."]},
+      "adapted_recipe": {"id": "pan-tofu", "name": "Pan-cooked tofu", "servings": 2, "ingredients": [{"id": "tofu", "name": "firm tofu", "amount_g": 250}, {"id": "oil", "name": "olive oil", "amount_g": 5}], "method": ["Pan-cook tofu with oil until browned."]}
+    },
+    {
+      "case_id": "O",
+      "title": "Ambiguous ingredient identity",
+      "expected_status": "REVIEW_REQUIRED",
+      "original_recipe": {"id": "sauce-ambiguous", "name": "Sauce", "servings": 2, "ingredients": [{"id": "vinegar", "name": "vinegar", "amount_g": 10}], "method": ["Stir vinegar into the sauce."]},
+      "adapted_recipe": {"id": "sauce-ambiguous-adapted", "name": "Sauce", "servings": 2, "ingredients": [{"id": "acid", "name": "acid ingredient", "amount_g": 10, "replaces_id": "vinegar"}], "method": ["Stir the acid ingredient into the sauce."]}
+    },
+    {
+      "case_id": "P",
+      "title": "Broth replaced by water with aromatics",
+      "expected_status": "REVIEW_REQUIRED",
+      "original_recipe": {"id": "grain-bowl", "name": "Savory grain bowl", "servings": 2, "ingredients": [{"id": "rice", "name": "rice", "amount_g": 160}, {"id": "broth", "name": "vegetable broth", "amount_g": 300}], "method": ["Cook rice in vegetable broth."]},
+      "adapted_recipe": {"id": "grain-bowl-adapted", "name": "Savory grain bowl", "servings": 2, "ingredients": [{"id": "rice", "name": "rice", "amount_g": 160}, {"id": "water", "name": "water", "amount_g": 300, "replaces_id": "broth"}, {"id": "garlic", "name": "garlic", "amount_g": 3}], "method": ["Cook rice in water with garlic."]}
+    }
+  ]
+}
