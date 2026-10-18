@@ -4,7 +4,7 @@ RenAlly uses Neo4j as the source of truth for recipe relationships and the loade
 
 ## Graph model
 
-- `(:Recipe)-[:CONTAINS {amount_g, position}]->(:FoundationFood)` records curated recipe ingredients and their per-serving amounts.
+- `(:Recipe:FoodComRecipe)` stores recipes from the Food.com source dataset; `LISTS_INGREDIENT_TEXT` preserves the source ingredient names and quantities.
 - `(:FoodRecord)-[:HAS_NUTRIENT {amount, unit, basis}]->(:Nutrient)` stores each source record's nutrient measurements, FDC nutrient ID, and per-100-g basis.
 - `(:FoodRecord)-[:IS_A]->(:IngredientType)` records USDA food categories and curated Foundation Foods ingredient types.
 - `(:FoundationFood)-[:SUBSTITUTE_FOR]->(:FoundationFood)` contains the prototype's reviewed substitution fixtures.
@@ -16,7 +16,7 @@ Neo4j full-text indexes retrieve recipes and all loaded food records. The SLM su
 
 The supplied April 30, 2026 Foundation Foods file contains 363 valid food records in this local copy; the importer reports and skips non-record `null` entries. It loads every valid Foundation Foods record and its numeric nutrient measurements, with FDC IDs, food state, units, release date, and source URLs. SR Legacy can be loaded from USDA's April 2018 release and is identified separately as historical source data. Missing nutrient amounts stay missing; explicit zero values stay zero.
 
-The current 55 curated Foundation Foods entries contribute prototype aliases, types, substitution groups, and portion ranges. Other records stay searchable by their USDA descriptions and food categories. Recipe compositions remain linked to curated Foundation Foods; SR Legacy records are not automatically substituted into recipe compositions.
+The current 55 curated Foundation Foods entries contribute prototype aliases, types, substitution groups, and portion ranges. Other records stay searchable by their USDA descriptions and food categories. Food.com is the only recipe catalog; Foundation Foods and SR Legacy are ingredient and nutrient sources, not recipe sources.
 
 Food.com recipe discovery uses the expanded [Food.com Recipes and Reviews dataset](https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews). Download `recipes.csv` from Kaggle, extract it from `recipes.zip`, and import it with `python scripts/import_foodcom_recipes.py <path-to-recipes.csv>`. A full import replaces the previous Food.com catalog after processing completes. Source ingredient quantities and serving counts remain verbatim. Each ingredient item also includes parsed quantity fields in `details_json`: weight units convert to grams, ranges keep both endpoints, and volume/count measures stay unresolved unless an exact, source-labelled ingredient factor is supplied to the parser. These parsed amounts are not linked to USDA foods or used in nutrient calculations.
 
@@ -128,7 +128,7 @@ Qwen selects MPS only when PyTorch reports it both built and available; otherwis
 
 Each enrichment result preserves source text and quantity status and reports the mapping resolution, FDC ID and description when resolved, verification provenance, candidate IDs, unresolved attributes, reference assumptions, nutritional uncertainty, and retrieval/validation errors. Deterministic policy eligibility without configured persistence remains `EXACT_IDENTITY`; guarded recipe-context Qwen choices are `SLM_RESOLVED`. Neither becomes a persistent `VERIFIED` mapping. Numeric nutrients still come only from the selected USDA record, and an unresolved family or quantity cannot produce a complete nutritional result.
 
-Recipe rice amounts now use the Foundation Foods raw white-rice record and are measured dry before cooking. They are illustrative prototype portions, not USDA cooking-yield conversions. Cooking water, final cooked yield, and nutrient changes during cooking are excluded from totals. Tofu and generic instant noodles do not have matching records in the supplied Foundation Foods release, so recipes that require them remain marked incomplete until an explicit curated mapping is made. Loading SR Legacy does not automatically change those recipe links.
+Food.com ingredient names, quantities, servings, and instructions remain source data. Quantities and ingredient identities are not automatically treated as USDA weights or validated food matches, so imported recipes do not receive calculated nutrient totals until their ingredients and amounts are independently validated.
 
 ## Start Neo4j locally
 
@@ -147,7 +147,7 @@ conda activate fyp
 pip install -r requirements.txt
 ```
 
-Import either or both USDA datasets with the prototype's recipe catalog. The importer is additive by default, so an SR Legacy import retains the existing Foundation Foods records. USDA records remain separate and carry their dataset, release, food state, source ID, URL, and per-100-g nutrient basis.
+Import either or both USDA datasets, then import the Food.com recipe dataset using the command above. USDA imports remove legacy illustrative RenAlly recipes while preserving separately imported Food.com recipes. The importer is additive by default, so an SR Legacy import retains the existing Foundation Foods records. USDA records remain separate and carry their dataset, release, food state, source ID, URL, and per-100-g nutrient basis.
 
 ```bash
 python scripts/import_foundation_neo4j.py \
@@ -183,7 +183,7 @@ The app reads these keys from `.env` or the shell environment. Shell values take
 | `RENALLY_QWEN_CULINARY_MAX_TIME_SECONDS` | `90` |
 | `RENALLY_QWEN_CPU_THREADS` | `8` by default |
 
-Re-run the importer after changing a USDA release or the recipe fixture data. Existing food records stay separated by source and are not used to auto-fill the curated Foundation Foods recipe links.
+Re-run the USDA importer after changing a USDA release, and re-run the Food.com importer after updating its source dataset. Existing food records stay separated by source; recipe ingredients remain unlinked to USDA records unless independently validated.
 
 ## Run the prototype
 

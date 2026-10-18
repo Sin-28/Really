@@ -93,12 +93,13 @@ class Neo4jKnowledgeGraph:
     def _require_imported_catalog(self):
         rows = self._rows(
             "MATCH (f:FoodRecord) WITH count(f) AS foods "
-            "OPTIONAL MATCH (r:Recipe) RETURN foods, count(r) AS recipes"
+            "OPTIONAL MATCH (r:FoodComRecipe) RETURN foods, count(r) AS recipes"
         )
         if not rows or rows[0]["foods"] == 0 or rows[0]["recipes"] == 0:
             raise RuntimeError(
-                "RenAlly data is not loaded in Neo4j. Run "
-                "'python scripts/import_foundation_neo4j.py <foundation-foods.json> --sr-legacy-json <sr-legacy.json>' first."
+                "USDA foods and Food.com recipes are not loaded in Neo4j. Run "
+                "'python scripts/import_foundation_neo4j.py <foundation-foods.json> --sr-legacy-json <sr-legacy.json>' "
+                "and then 'python scripts/import_foodcom_recipes.py <recipes.csv>'."
             )
 
     def _wait_for_search_indexes(self, timeout_seconds=45):
@@ -150,7 +151,7 @@ class Neo4jKnowledgeGraph:
         after_id = ""
         while True:
             rows = self._rows(
-                "MATCH (recipe:Recipe) "
+                "MATCH (recipe:Recipe:FoodComRecipe) "
                 "WHERE recipe.id > $after_id "
                 "WITH recipe ORDER BY recipe.id LIMIT $limit "
                 "OPTIONAL MATCH (recipe)-[contains:CONTAINS]->(item) "
@@ -246,7 +247,7 @@ class Neo4jKnowledgeGraph:
     def _load_graph_projection(self):
         """Build the small graph-page projection from graph relationships."""
         recipe_rows = self._rows(
-            "MATCH (recipe:Recipe)-[contains:CONTAINS]->(food:FoundationFood) "
+            "MATCH (recipe:Recipe:FoodComRecipe)-[contains:CONTAINS]->(food:FoundationFood) "
             "RETURN properties(recipe) AS recipe, properties(food) AS food, "
             "contains.amount_g AS amount_g"
         )
@@ -308,7 +309,8 @@ class Neo4jKnowledgeGraph:
         rows = self._rows(
             "CALL db.index.fulltext.queryNodes($index_name, $search_query) "
             "YIELD node, score "
-            "WHERE $dataset_keys IS NULL OR node.dataset_key IN $dataset_keys "
+            "WHERE ($dataset_keys IS NULL OR node.dataset_key IN $dataset_keys) "
+            "AND ($index_name <> 'renally_recipe_search' OR node:FoodComRecipe) "
             "RETURN node.id AS id, node.name AS name, node.aliases AS aliases, "
             "node.dataset_key AS dataset_key, score "
             "ORDER BY score DESC LIMIT $limit",

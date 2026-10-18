@@ -1,4 +1,4 @@
-"""Load USDA Foundation Foods and/or SR Legacy, plus RenAlly recipes, into Neo4j."""
+"""Load USDA Foundation Foods and/or SR Legacy into Neo4j."""
 import argparse
 import json
 import os
@@ -156,52 +156,6 @@ def _load_curated_data(data_dir):
     return curated_by_fdc, canonical_to_fdc
 
 
-def _recipe_rows(data_dir, canonical_to_fdc):
-    recipes = json.loads((data_dir / "recipes.json").read_text())
-    rows, unresolved_rows = [], {}
-    for recipe_id, recipe in recipes.items():
-        items = []
-        missing_ids = []
-        for position, item in enumerate(recipe.get("ingredients", [])):
-            canonical_id = item.get("id")
-            if not canonical_id:
-                continue
-            fdc_id = canonical_to_fdc.get(canonical_id)
-            if fdc_id:
-                target_id = fdc_id
-            else:
-                target_id = f"unresolved:{canonical_id}"
-                missing_ids.append(canonical_id)
-                unresolved_rows[target_id] = {
-                    "id": target_id,
-                    "canonical_id": canonical_id,
-                    "name": f"No Foundation Foods record: {canonical_id}",
-                    "reason": "The selected USDA Foundation Foods release has no linked record for this recipe ingredient.",
-                }
-            items.append({
-                "id": target_id,
-                "amount_g": float(item.get("amount_g", 0)),
-                "position": position,
-            })
-        source = recipe.get("source") or {}
-        row = {
-            "id": recipe_id,
-            "name": str(recipe.get("name") or recipe_id),
-            "description": str(recipe.get("description") or ""),
-            "aliases": [str(item) for item in recipe.get("aliases", [])],
-            "search_text": " ".join([str(recipe.get("name") or recipe_id),
-                                     *[str(item) for item in recipe.get("aliases", [])]]),
-            "method": [str(item) for item in recipe.get("method", [])],
-            "servings": int(recipe.get("servings") or 1),
-            "source_json": _json(source),
-            "ingredients": items,
-            "missing_ingredient_ids": missing_ids,
-            "nutrition_complete": not missing_ids,
-        }
-        rows.append(row)
-    return rows, list(unresolved_rows.values())
-
-
 def _substitution_rows(data_dir, canonical_to_fdc):
     source = json.loads((data_dir / "substitutions.json").read_text())
     rows = []
@@ -356,7 +310,7 @@ def import_data(driver, database, data_dir, foundation_json=None, release_date="
         missing_curated_ids = sorted(set(curated_by_fdc) - imported_fdc_ids)
         if missing_curated_ids:
             raise ValueError(
-                "The Foundation Foods input does not contain curated FDC IDs used by the recipe catalog: "
+                "The Foundation Foods input does not contain curated FDC IDs used by ingredient metadata: "
                 f"{missing_curated_ids}"
             )
         imports.append(("foundation_foods", release_date, foods, nutrients, None))
@@ -366,12 +320,19 @@ def import_data(driver, database, data_dir, foundation_json=None, release_date="
     if not imports:
         raise ValueError("Provide at least one USDA dataset JSON file to import.")
 
-    recipe_rows, unresolved_rows = _recipe_rows(data_dir, canonical_to_fdc)
     substitution_rows = _substitution_rows(data_dir, canonical_to_fdc)
 
     with driver.session(database=database) as session:
         if replace_existing:
             session.run("MATCH (node:RenAllyData) DETACH DELETE node").consume()
+        else:
+            # Remove legacy illustrative recipes while keeping the separately
+            # imported Food.com catalog and USDA records intact.
+            session.run("MATCH (recipe:Recipe:RenAllyData) DETACH DELETE recipe").consume()
+            session.run(
+                "MATCH (reference:UnresolvedIngredientReference:RenAllyData) "
+                "DETACH DELETE reference"
+            ).consume()
         for statement in SCHEMA:
             session.run(statement).consume()
 
@@ -484,27 +445,6 @@ def import_data(driver, database, data_dir, foundation_json=None, release_date="
 
         _run_batches(session,
             "UNWIND $rows AS row "
-            "MERGE (reference:UnresolvedIngredientReference:RenAllyData {id: row.id}) "
-            "SET reference += row",
-            unresolved_rows)
-
-        _run_batches(session,
-            "UNWIND $rows AS row "
-            "MERGE (recipe:Recipe:RenAllyData {id: row.id}) "
-            "SET recipe.name = row.name, recipe.description = row.description, "
-            "recipe.aliases = row.aliases, recipe.search_text = row.search_text, "
-            "recipe.method = row.method, recipe.servings = row.servings, "
-            "recipe.source_json = row.source_json, "
-            "recipe.missing_ingredient_ids = row.missing_ingredient_ids, "
-            "recipe.nutrition_complete = row.nutrition_complete "
-            "WITH recipe, row UNWIND row.ingredients AS item "
-            "MATCH (ingredient {id: item.id}) "
-            "MERGE (recipe)-[contains:CONTAINS {position: item.position}]->(ingredient) "
-            "SET contains.amount_g = item.amount_g",
-            recipe_rows)
-
-        _run_batches(session,
-            "UNWIND $rows AS row "
             "MATCH (substitute:FoundationFood:RenAllyData {id: row.substitute}) "
             "MATCH (original:FoundationFood:RenAllyData {id: row.original}) "
             "MERGE (substitute)-[rel:SUBSTITUTE_FOR]->(original) "
@@ -525,8 +465,6 @@ def import_data(driver, database, data_dir, foundation_json=None, release_date="
         "foods": sum(record_counts.values()),
         "foods_by_dataset": record_counts,
         "nutrient_measurements": nutrient_count,
-        "recipes": len(recipe_rows),
-        "unresolved_recipe_ingredients": len(unresolved_rows),
         "substitutions": len(substitution_rows),
         "invalid_source_entries_skipped": invalid_count,
     }
@@ -543,7 +481,7 @@ def main():
                         help="Release date represented by the SR Legacy input file")
     parser.add_argument("--database", default=None, help="Neo4j database name (defaults to NEO4J_DATABASE or neo4j)")
     parser.add_argument("--replace-existing", action="store_true",
-                        help="Delete all RenAllyData nodes before importing the selected inputs")
+                        help="Delete all RenAllyData nodes before importing the selected USDA inputs")
     args = parser.parse_args()
     if not args.foundation_json and not args.sr_legacy_json:
         parser.error("provide a Foundation Foods JSON path, --sr-legacy-json, or both")
@@ -570,7 +508,7 @@ def main():
         )
     finally:
         driver.close()
-    print("RenAlly USDA food datasets and recipe graph imported:")
+    print("RenAlly USDA food datasets imported:")
     for name, value in summary.items():
         print(f"- {name.replace('_', ' ')}: {value}")
     print("All imported nutrient measurements retain the USDA per-100-g basis and source FDC IDs.")
