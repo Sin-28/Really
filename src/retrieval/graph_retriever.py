@@ -467,6 +467,62 @@ class GraphRetriever:
             return [(query, 1.25)]
         return self._retrieve(query, "renally_recipe_search", k)
 
+    def recommend_foodcom_recipes(self, query, k=5):
+        """Rank bounded Food.com hits using titles, tags, and listed ingredients.
+
+        Scores express retrieval relevance only. They contain no nutritional
+        estimate or dietary feasibility assessment.
+        """
+        text = str(query or "").casefold()
+        low_sodium = bool(re.search(r"\b(?:low[ -]sodium|reduced[ -]sodium|low[ -]salt)\b", text))
+        focus = re.sub(r"\b(?:suggest|recommend|some|what|can|i|eat|for|the|a|an|me|please|dishes|dish|recipes|recipe|meals|meal)\b", " ", text)
+        focus = " ".join(re.findall(r"[a-z0-9]+", focus))
+        focus = focus or "dinner"
+        broad = focus in {"dinner", "lunch", "breakfast", "food"}
+        search_text = "low sodium unsalted" if low_sodium else focus
+        ranked = self.search_recipes(search_text, k=80)
+        if broad and len(ranked) < max(1, k):
+            seen = {recipe_id for recipe_id, _ in ranked}
+            ranked.extend((recipe_id, score) for recipe_id, score in self.retrieve_nodes(focus, k=80)
+                          if recipe_id not in seen)
+        ids = [recipe_id for recipe_id, _ in ranked if self.kg.recipes.get(recipe_id, {}).get("source_dataset")
+               == "Food.com Recipes and Reviews (Kaggle)"][:80]
+        links = {}
+        reader = getattr(self.kg, "foodcom_ingredient_links", None)
+        if callable(reader) and ids:
+            for row in reader(ids):
+                if row.get("recipe_id") in ids and row.get("name"):
+                    links.setdefault(row["recipe_id"], []).append(str(row["name"]))
+        requested = set(re.findall(r"[a-z0-9]+", focus)) - {"dinner", "lunch", "breakfast", "low", "sodium", "salt"}
+        results = []
+        for recipe_id, base_score in ranked:
+            if recipe_id not in ids:
+                continue
+            recipe = self.kg.recipes[recipe_id]
+            name = str(recipe.get("name") or "")
+            tags = [str(value) for value in (recipe.get("tags") or recipe.get("foodcom_tags") or [])]
+            ingredients = links.get(recipe_id) or [str(value) for value in (recipe.get("ingredient_names") or
+                                                                            recipe.get("foodcom_ingredient_names") or [])]
+            name_tokens = set(_normalized_tokens(name))
+            tag_text = " ".join(tags).casefold()
+            tag_tokens = set(_normalized_tokens(tag_text))
+            ingredient_tokens = set(_normalized_tokens(" ".join(ingredients)))
+            label_text = f"{name} {tag_text}".casefold().replace("-", " ")
+            if low_sodium and not any(term in label_text for term in ("low sodium", "reduced sodium", "low salt", "unsalted", "no salt")):
+                continue
+            overlap = requested & (name_tokens | tag_tokens | ingredient_tokens)
+            if requested and not overlap and not low_sodium:
+                continue
+            title_hits = len(requested & name_tokens)
+            tag_hits = len(requested & tag_tokens)
+            ingredient_hits = len(requested & ingredient_tokens)
+            score = round(float(base_score) + 0.3 * title_hits + 0.15 * tag_hits
+                          + 0.1 * ingredient_hits + (0.2 if low_sodium else 0), 6)
+            results.append({"recipe_id": recipe_id, "retrieval_score": score,
+                            "ingredient_names": ingredients, "matched_ingredients": sorted(requested & ingredient_tokens)})
+        results.sort(key=lambda row: (-row["retrieval_score"], row["recipe_id"]))
+        return results[:max(1, min(int(k), 7))]
+
     def retrieve_recipe(self, query):
         if query in self.kg.recipes:
             return query, 1.25

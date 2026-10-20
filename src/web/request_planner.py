@@ -93,6 +93,45 @@ class RequestPlanner:
             return int(raw) if raw.isdigit() else words[raw]
         return None
 
+    @classmethod
+    def _daily_meal_plan(cls, query):
+        text = str(query or "").casefold()
+        asks_day = bool(re.search(
+            r"\b(?:daily\s+meal\s+plan|plan\s+my\s+meals|meals?\s+for\s+tomorrow|"
+            r"breakfast\b.*\blunch\b.*\bdinner|breakfast\b.*\bdinner)\b", text))
+        if not asks_day or not re.search(r"\b(?:plan|suggest|recommend|create)\b", text):
+            return None
+        return {"intent": "daily_meal_plan", "requested_count": 3,
+                "recipe_requests": [], "ingredient_queries": [], "question_type": "recipe"}
+
+    @classmethod
+    def _food_recommendation_plan(cls, query):
+        """Route dish suggestions and eatability questions away from meal planning."""
+        text = str(query).strip()
+        lowered = text.casefold()
+        asks_optimisation = bool(re.search(
+            r"\b(?:optimise|optimize)\b.*\b(?:ingredients?|quantit(?:y|ies)|recipe|dish|meal)\b",
+            lowered,
+        ))
+        if not (re.search(r"\b(?:suggest|recommend)\b", lowered)
+                or re.search(r"\bwhat\s+can\s+i\s+eat\b", lowered)
+                or re.search(r"\bcan\s+i\s+eat\b", lowered)
+                or asks_optimisation):
+            return None
+        if re.fullmatch(r"(?:please\s+)?(?:suggest|recommend)\s+(?:a|one)\s+(?:dish|meal|recipe)[.!?]?", lowered):
+            return None
+        if re.search(r"\b(?:meal\s+plan|plan\s+my\s+meals|daily\s+plan|for\s+(?:the\s+)?(?:day|week))\b", lowered):
+            return None
+        if cls.WEIGHT_PATTERN.search(text):
+            return None
+        count = cls._count_from_text(text)
+        return {
+            "intent": "food_recommendation", "requested_count": max(1, min(count or 5, cls.MAX_MEALS)),
+            "recommendation_query": text[:240], "recipe_requests": [],
+            "ingredient_queries": [], "question_type": "recipe",
+            "optimise_quantities": asks_optimisation,
+        }
+
     def _ingredient_lookup_plan(self, query):
         """Route explicit nutrient questions about a known food to food lookup.
 
@@ -578,6 +617,9 @@ class RequestPlanner:
 
     def fallback_plan(self, query):
         text = query.casefold()
+        daily = self._daily_meal_plan(query)
+        if daily:
+            return daily
         catalog_plan = self._ingredient_catalog_plan(query)
         if catalog_plan:
             return catalog_plan
@@ -590,6 +632,9 @@ class RequestPlanner:
         ingredient_plan = self._ingredient_lookup_plan(query)
         if ingredient_plan:
             return ingredient_plan
+        recommendation_plan = self._food_recommendation_plan(query)
+        if recommendation_plan:
+            return recommendation_plan
         count = self._count_from_text(text)
         asks_for_many = count is not None or any(term in text for term in (
             "meal plan", "plan my meals", "what to eat today", "breakfast", "lunch", "dinner",
@@ -710,6 +755,12 @@ class RequestPlanner:
         plan["generated_composition_invalid"] = invalid
 
     def plan(self, query, use_slm, context):
+        daily = self._daily_meal_plan(query)
+        if daily:
+            return daily, self.deterministic_generator, None, False
+        recommendation_plan = self._food_recommendation_plan(query)
+        if recommendation_plan:
+            return recommendation_plan, self.deterministic_generator, None, False
         generator, warning = self._generator(use_slm)
         if use_slm and generator is not self.deterministic_generator:
             try:

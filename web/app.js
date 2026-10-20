@@ -267,7 +267,7 @@ function appendIngredientResolution(container, enrichment) {
     quantity.className = "quiet-note";
     const amount = row.quantity_raw || (enrichment.quantity_alignment_status === "MISMATCHED_ARRAY_LENGTHS"
       ? "not assignable because source lists do not align" : "not listed");
-    quantity.textContent = `Source amount: ${amount} · gram amount ${row.quantity_g == null ? "unresolved" : `${row.quantity_g} g (${String(row.quantity_status || "parsed").replaceAll("_", " ").toLowerCase()})`}`;
+    quantity.textContent = `Source amount: ${amount} · not a validated ingredient weight`;
     item.append(quantity);
     if (mapping.fdc_id == null && mapping.candidates?.length) {
       const details = document.createElement("details");
@@ -292,6 +292,215 @@ function appendIngredientResolution(container, enrichment) {
 
 function renderResult(data) {
   const fragment = document.createDocumentFragment();
+  if (data.daily_meal_plan) {
+    const plan = data.daily_meal_plan;
+    const card = document.createElement("section");
+    card.className = "result-card";
+    const head = document.createElement("div");
+    head.className = "result-head";
+    const title = document.createElement("strong");
+    title.textContent = "Breakfast, lunch, and dinner";
+    const status = document.createElement("span");
+    status.className = "status-pill status-unknown";
+    status.textContent = formatStatus(plan.status);
+    head.append(title, status);
+    const body = document.createElement("div");
+    body.className = "result-body";
+    const basis = document.createElement("p");
+    basis.textContent = `${plan.reason} ${plan.serving_basis || ""} ${plan.requested_servings ? `${plan.requested_servings} serving(s) requested; displayed gram weights and daily limits are per person.` : ""}`;
+    body.append(basis);
+    for (const meal of plan.meals || []) {
+      const section = document.createElement("section");
+      section.className = "result-details";
+      const heading = document.createElement("strong");
+      heading.textContent = `${meal.slot}: ${meal.name} (${meal.recipe_id})`;
+      section.append(heading);
+      const ingredients = document.createElement("ul");
+      for (const ingredient of meal.ingredients) {
+        const row = document.createElement("li");
+        row.textContent = `${ingredient.name}: ${ingredient.quantity_g.toFixed(2)} g; FDC ${ingredient.fdc_id}; bounds basis ${(ingredient.bounds_basis || []).join("; ")}`;
+        ingredients.append(row);
+      }
+      section.append(ingredients);
+      const totals = document.createElement("p");
+      const values = meal.nutrient_totals;
+      totals.textContent = `Sodium ${values.sodium_mg.toFixed(1)} mg · potassium ${values.potassium_mg.toFixed(1)} mg · phosphorus ${values.phosphorus_mg.toFixed(1)} mg · protein ${values.protein_g.toFixed(1)} g. Culinary: ${formatStatus(meal.culinary_status)}.`;
+      section.append(totals);
+      if (meal.missing_culinary_information?.length) {
+        const missing = document.createElement("p");
+        missing.className = "quiet-note";
+        missing.textContent = `Missing culinary rules: ${meal.missing_culinary_information.join(", ")}.`;
+        section.append(missing);
+      }
+      if (meal.instructions?.length) {
+        const detail = document.createElement("details");
+        const label = document.createElement("summary");
+        label.textContent = "Cooking instructions";
+        const steps = document.createElement("ol");
+        for (const instruction of meal.instructions) {
+          const step = document.createElement("li");
+          step.textContent = instruction;
+          steps.append(step);
+        }
+        detail.append(label, steps);
+        section.append(detail);
+      }
+      body.append(section);
+    }
+    if (plan.daily_nutrient_totals) {
+      const totals = plan.daily_nutrient_totals;
+      const daily = document.createElement("p");
+      daily.textContent = `Daily totals: sodium ${totals.sodium_mg.toFixed(1)} mg · potassium ${totals.potassium_mg.toFixed(1)} mg · phosphorus ${totals.phosphorus_mg.toFixed(1)} mg · protein ${totals.protein_g.toFixed(1)} g.`;
+      body.append(daily);
+      if (plan.requested_servings > 1) {
+        const combined = document.createElement("p");
+        combined.className = "quiet-note";
+        const all = plan.daily_nutrient_totals_for_requested_servings;
+        combined.textContent = `Totals for ${plan.requested_servings} servings: sodium ${all.sodium_mg.toFixed(1)} mg · potassium ${all.potassium_mg.toFixed(1)} mg · phosphorus ${all.phosphorus_mg.toFixed(1)} mg · protein ${all.protein_g.toFixed(1)} g.`;
+        body.append(combined);
+      }
+    }
+    const limits = document.createElement("p");
+    limits.className = "quiet-note";
+    limits.textContent = `Applied daily limits: ${JSON.stringify(plan.applied_daily_constraints)}. ${plan.limitations.join(" ")}`;
+    body.append(limits);
+    if (plan.candidate_issues?.length) {
+      const issues = document.createElement("p");
+      issues.className = "quiet-note";
+      issues.textContent = `Unavailable candidates: ${plan.candidate_issues.map((item) => `${item.slot} ${item.recipe_id}: ${formatStatus(item.status)}`).join("; ")}.`;
+      body.append(issues);
+    }
+    card.append(head, body);
+    fragment.append(card);
+  }
+  if (data.food_recommendations?.length) {
+    for (const candidate of data.food_recommendations) {
+      const card = document.createElement("section");
+      card.className = "result-card";
+      const head = document.createElement("div");
+      head.className = "result-head";
+      const title = document.createElement("strong");
+      title.textContent = candidate.name;
+      const status = document.createElement("span");
+      status.className = "status-pill status-unknown";
+      status.textContent = formatStatus(candidate.nutritional_status);
+      head.append(title, status);
+      const body = document.createElement("div");
+      body.className = "result-body";
+      const metadata = document.createElement("p");
+      metadata.className = "quiet-note";
+      metadata.textContent = `Recipe ${candidate.recipe_id} · retrieval score ${Number(candidate.retrieval_score).toFixed(3)} · ${candidate.nutritional_reason}`;
+      body.append(metadata);
+      if (candidate.ingredient_matching_coverage) {
+        const coverage = candidate.ingredient_matching_coverage;
+        const evidence = document.createElement("p");
+        evidence.className = "quiet-note";
+        const nutrientCoverage = Object.entries(candidate.nutrient_data_availability || {})
+          .map(([name, data]) => `${name.replace("_mg", "").replace("_g", "")}: ${data.available_ingredients}/${data.total_ingredients}`)
+          .join(" · ");
+        evidence.textContent = `Ingredient matches ${coverage.matched}/${coverage.total} · Nutrient profiles ${nutrientCoverage || "unavailable"} · Future quantity optimisation: ${candidate.can_proceed_to_quantity_optimisation ? "possible" : "needs data"}`;
+        body.append(evidence);
+      }
+      if (candidate.missing_or_unresolved_ingredients?.length) {
+        const missing = document.createElement("p");
+        missing.className = "quiet-note";
+        missing.textContent = `Missing or unresolved: ${candidate.missing_or_unresolved_ingredients.map((item) => item.name).join(", ")}.`;
+        body.append(missing);
+      }
+      if (candidate.quantity_optimisation) {
+        const result = candidate.quantity_optimisation;
+        const summary = document.createElement("p");
+        summary.textContent = `Quantity optimisation: ${formatStatus(result.optimisation_status)}. ${result.reason}`;
+        body.append(summary);
+        if (result.ingredients?.length) {
+          const composition = document.createElement("p");
+          composition.textContent = `Initial constructed serving: ${result.ingredients.map((item) => `${item.name} ${item.quantity_g.toFixed(2)} g`).join(", ")}.`;
+          body.append(composition);
+          const totals = document.createElement("p");
+          totals.className = "quiet-note";
+          totals.textContent = `Per serving: sodium ${result.nutrient_totals.sodium_mg.toFixed(1)} mg · potassium ${result.nutrient_totals.potassium_mg.toFixed(1)} mg · phosphorus ${result.nutrient_totals.phosphorus_mg.toFixed(1)} mg · protein ${result.nutrient_totals.protein_g.toFixed(1)} g. ${result.serving_count} serving(s) requested.`;
+          body.append(totals);
+          const limitations = document.createElement("p");
+          limitations.className = "quiet-note";
+          limitations.textContent = `Bounds basis: ${(result.assumptions || []).join("; ")}. Numeric limits passed; culinary and medical suitability remain unverified.`;
+          body.append(limitations);
+        }
+      }
+      if (candidate.culinary_validation) {
+        const culinary = candidate.culinary_validation;
+        const note = document.createElement("p");
+        note.className = "quiet-note";
+        note.textContent = `Culinary validation: ${formatStatus(culinary.status)}. Missing rules: ${(culinary.missing_information_after_adjustment || culinary.missing_information || []).join(", ") || "none"}.`;
+        body.append(note);
+        if (culinary.adjusted_optimisation?.optimisation_status === "OPTIMISED") {
+          const adjusted = document.createElement("p");
+          adjusted.textContent = `Adjusted serving: ${culinary.adjusted_optimisation.ingredients.map((item) => `${item.name} ${item.quantity_g.toFixed(2)} g`).join(", ")}. Nutrient limits were rechecked.`;
+          body.append(adjusted);
+        } else if (culinary.adjustment_status === "NO_FEASIBLE_CULINARY_COMBINATION") {
+          const failure = document.createElement("p");
+          failure.textContent = "No combination met both the nutritional and culinary rules.";
+          body.append(failure);
+        }
+        if (culinary.model_assessment?.result) {
+          const model = document.createElement("p");
+          model.className = "quiet-note";
+          model.textContent = `Qwen opinion (unverified): ${formatStatus(culinary.model_assessment.result.status)}. ${culinary.model_assessment.result.reason || ""}`;
+          body.append(model);
+        }
+      }
+      if (candidate.quantity_ranges) {
+        const ranges = candidate.quantity_ranges;
+        const summary = document.createElement("p");
+        summary.textContent = `Ingredient ranges: ${formatStatus(ranges.status)}. ${ranges.reason}`;
+        body.append(summary);
+        if (ranges.ingredient_ranges?.length) {
+          const basis = document.createElement("p");
+          basis.className = "quiet-note";
+          basis.textContent = `${candidate.name} · ${ranges.serving_count} serving(s) · ${ranges.serving_basis}. Culinary validation: ${formatStatus(ranges.culinary_status)}.`;
+          body.append(basis);
+          const list = document.createElement("ul");
+          for (const ingredient of ranges.ingredient_ranges) {
+            const row = document.createElement("li");
+            row.textContent = `${ingredient.name}: recommended ${ingredient.recommended_g.toFixed(2)} g; conditional range ${ingredient.minimum_feasible_g.toFixed(2)}–${ingredient.maximum_feasible_g.toFixed(2)} g. Bounds basis: ${(ingredient.bounds_basis || []).join("; ")}.`;
+            list.append(row);
+          }
+          body.append(list);
+          const totals = ranges.nutrient_totals;
+          const nutrition = document.createElement("p");
+          nutrition.className = "quiet-note";
+          nutrition.textContent = `Recommended combination: sodium ${totals.sodium_mg.toFixed(1)} mg · potassium ${totals.potassium_mg.toFixed(1)} mg · phosphorus ${totals.phosphorus_mg.toFixed(1)} mg · protein ${totals.protein_g.toFixed(1)} g.`;
+          body.append(nutrition);
+          const applied = document.createElement("p");
+          applied.className = "quiet-note";
+          applied.textContent = `Applied nutritional constraints: ${JSON.stringify(ranges.applied_nutritional_constraints)}. Applied culinary constraints: ${(ranges.applied_culinary_constraints || []).map((rule) => `${rule.code} (${rule.basis})`).join(", ") || "none supplied"}. Identity requirements: ${JSON.stringify(ranges.applied_identity_requirements || {})}. Total meal weight bounds: ${JSON.stringify(ranges.total_meal_weight_bounds || {})}.`;
+          body.append(applied);
+          const warning = document.createElement("p");
+          warning.className = "quiet-note";
+          warning.textContent = `${ranges.conditional_range_explanation} These configured limits do not establish medical safety.`;
+          body.append(warning);
+        }
+      }
+      const ingredients = document.createElement("p");
+      ingredients.textContent = `Ingredients: ${(candidate.ingredients || []).join(", ") || "not listed"}.`;
+      body.append(ingredients);
+      if (candidate.instructions?.length) {
+        const steps = document.createElement("details");
+        steps.className = "result-details";
+        const summary = document.createElement("summary");
+        summary.textContent = "Cooking instructions";
+        const list = document.createElement("ol");
+        for (const instruction of candidate.instructions) {
+          const row = document.createElement("li");
+          row.textContent = instruction;
+          list.append(row);
+        }
+        steps.append(summary, list);
+        body.append(steps);
+      }
+      card.append(head, body);
+      fragment.append(card);
+    }
+  }
   if (data.tool_trace?.length) {
     const details = document.createElement("details");
     details.className = "result-details tool-trace";
@@ -1018,13 +1227,29 @@ function readLimits(prefix, names) {
 
 function requestPayload(query, history = []) {
   const conditions = [...document.querySelectorAll('input[name="condition"]:checked')].map(input => input.value);
+  const mealLimits = readLimits("meal", ["sodium", "potassium", "phosphorus", "carbohydrate"]);
+  const proteinMinimum = document.querySelector("#meal-protein-min").value;
+  if (proteinMinimum !== "") mealLimits.protein = {min: proteinMinimum};
+  const dailyLimits = {};
+  for (const nutrient of ["sodium", "potassium", "phosphorus", "protein"]) {
+    const minimum = document.querySelector(`#daily-${nutrient}-min`).value;
+    const maximum = document.querySelector(`#daily-${nutrient}-max`).value;
+    if (minimum !== "" || maximum !== "") {
+      dailyLimits[nutrient] = {};
+      if (minimum !== "") dailyLimits[nutrient].min = minimum;
+      if (maximum !== "") dailyLimits[nutrient].max = maximum;
+    }
+  }
   return {
     query,
     conditions,
     servings: document.querySelector("#servings").value,
-    meal_limits: readLimits("meal", ["sodium", "potassium", "phosphorus", "carbohydrate"]),
+    meal_limits: mealLimits,
+    daily_limits: dailyLimits,
     remaining_limits: readLimits("remaining", ["sodium", "potassium", "phosphorus"]),
     use_slm: document.querySelector("#use-slm").checked,
+    optimise_quantities: document.querySelector("#optimise-quantities").checked,
+    assess_culinary_with_slm: document.querySelector("#assess-culinary-with-slm").checked,
     conversation_history: history,
   };
 }

@@ -20,6 +20,7 @@ from src.recipes.ingredient_mapping_validator import SharedQwenEvaluator, SLMIng
 from src.recipes.adapted_recipe_nutrition import AdaptedRecipeNutritionEnrichmentService
 from src.recipes.adapted_recipe_culinary import AdaptedRecipeCulinaryValidationService
 from src.recipes.final_recipe_acceptance import FinalRecipeAcceptancePolicy
+from src.recipes.recipe_nutrient_enrichment import assess_foodcom_nutrient_evidence
 from src.web.request_planner import RequestPlanner
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -138,6 +139,10 @@ class RenAllyWebService:
                 **({"validator": self.ingredient_slm_validator} if mapping_slm else {}),
             )
         self.chat_ingredient_mapping_service = None
+        self.recommendation_nutrient_service = None
+        self.quantity_optimiser = None
+        self.culinary_quantity_validator = None
+        self.daily_meal_planner = None
         self.recipe_nutrient_enrichment_service = None
         if (self.recipe_nutrition_enrichment_enabled or self.recipe_constraint_enrichment_enabled
                 or self.adapted_recipe_nutrition_enrichment_enabled):
@@ -230,6 +235,140 @@ class RenAllyWebService:
                 "error": f"Ingredient resolution unavailable ({type(exc).__name__}).",
             }
         return response
+
+    def _recommend_food(self, query, plan, response_context, trace, *, optimisation_request=None):
+        ranked = self.retriever.recommend_foodcom_recipes(
+            plan.get("recommendation_query") or query,
+            k=plan.get("requested_count", 5),
+        )
+        candidates = []
+        for match in ranked:
+            recipe_id = match["recipe_id"]
+            recipe = self.kg.recipe_details(recipe_id) or self.kg.recipes[recipe_id]
+            ingredients = recipe.get("raw_ingredients") or match["ingredient_names"]
+            try:
+                nutrient_service = getattr(self, "recommendation_nutrient_service", None)
+                if nutrient_service is None:
+                    nutrient_service = self.runtime.create_recipe_nutrient_enrichment()
+                    self.recommendation_nutrient_service = nutrient_service
+                calculation = nutrient_service.enrich(recipe, max_ingredients=20)
+                assessment = assess_foodcom_nutrient_evidence(calculation)
+            except Exception as exc:
+                calculation = {"calculation_status": "UNAVAILABLE", "ingredients": [
+                    {"position": position, "ingredient_name": str(name), "mapping": {}}
+                    for position, name in enumerate(ingredients)
+                ]}
+                assessment = assess_foodcom_nutrient_evidence(calculation)
+                assessment["nutritional_reason"] = (
+                    f"Ingredient identity or USDA nutrient lookup was unavailable ({type(exc).__name__})."
+                )
+            budgets = response_context.get("active_budgets") or {}
+            if budgets:
+                adapter = getattr(self, "recipe_nutrient_constraint_adapter", None)
+                if adapter is None:
+                    adapter = RecipeNutrientConstraintAdapter()
+                assessment["constraint_assessment"] = adapter.evaluate(
+                    calculation, budgets, requested_servings=response_context.get("servings"),
+                )
+            candidate = {
+                "recipe_id": recipe_id,
+                "name": recipe.get("name") or recipe_id,
+                "ingredients": [str(item) for item in ingredients],
+                "retrieval_score": match["retrieval_score"],
+                "matched_ingredients": match["matched_ingredients"],
+                "instructions": recipe.get("method") or [],
+                "source_quantities": recipe.get("raw_ingredient_quantities") or [],
+                **assessment,
+            }
+            if optimisation_request:
+                optimiser = getattr(self, "quantity_optimiser", None)
+                if optimiser is None:
+                    optimiser = self.runtime.create_ingredient_quantity_optimiser()
+                    self.quantity_optimiser = optimiser
+                candidate["quantity_optimisation"] = optimiser.optimise(
+                    recipe, calculation, budgets,
+                    serving_count=response_context.get("servings", 1),
+                    role_bounds=optimisation_request.get("role_bounds"),
+                    total_weight_bounds=optimisation_request.get("total_meal_weight_bounds"),
+                )
+                if candidate["quantity_optimisation"]["optimisation_status"] == "OPTIMISED":
+                    validator = getattr(self, "culinary_quantity_validator", None)
+                    if validator is None:
+                        provider = getattr(getattr(self, "planner", None), "get_slm_generator", None)
+                        validator = self.runtime.create_culinary_quantity_validator(
+                            model_provider=provider,
+                        )
+                        self.culinary_quantity_validator = validator
+                    candidate["culinary_validation"] = validator.validate_and_reoptimise(
+                        recipe, calculation, budgets, candidate["quantity_optimisation"], optimiser,
+                        rules=optimisation_request.get("culinary_rules"),
+                        serving_count=response_context.get("servings", 1),
+                        role_bounds=optimisation_request.get("role_bounds"),
+                        total_weight_bounds=optimisation_request.get("total_meal_weight_bounds"),
+                        assess_with_model=optimisation_request.get("assess_culinary_with_slm") is True,
+                    )
+                else:
+                    candidate["culinary_validation"] = {
+                        "status": "CULINARY_UNVERIFIED",
+                        "missing_information": ["NUTRITIONALLY_VERIFIED_COMBINATION_MISSING"],
+                        "findings": [], "adjusted_optimisation": None,
+                        "adjustment_status": "NOT_APPLICABLE",
+                        "model_assessment": None,
+                    }
+                culinary = candidate["culinary_validation"]
+                recommended = (culinary.get("adjusted_optimisation")
+                               if (culinary.get("adjusted_optimisation") or {}).get("optimisation_status") == "OPTIMISED"
+                               else candidate["quantity_optimisation"])
+                if culinary["status"] == "CULINARY_INVALID":
+                    candidate["quantity_ranges"] = {
+                        "status": "INFEASIBLE_CONSTRAINTS",
+                        "reason": "No verified combination satisfies both the nutritional and deterministic culinary rules.",
+                        "recipe_id": recipe_id, "name": recipe.get("name"),
+                        "recommended_ingredients": [], "ingredient_ranges": [],
+                    }
+                else:
+                    candidate["quantity_ranges"] = optimiser.optimise_ranges(
+                        recipe, calculation, budgets, recommended=recommended,
+                        serving_count=response_context.get("servings", 1),
+                        role_bounds=optimisation_request.get("role_bounds"),
+                        total_weight_bounds=optimisation_request.get("total_meal_weight_bounds"),
+                        culinary_linear_constraints=culinary.get("applied_linear_constraints") or [],
+                    )
+                    if (candidate["quantity_ranges"]["status"] == "FEASIBLE_RANGES"
+                            and culinary["status"] == "CULINARY_UNVERIFIED"):
+                        candidate["quantity_ranges"]["status"] = "CULINARY_UNVERIFIED"
+                        candidate["quantity_ranges"]["reason"] = (
+                            "Conditional ranges satisfy the available deterministic rules, "
+                            "but missing culinary information prevents full validation."
+                        )
+                candidate["quantity_ranges"]["culinary_status"] = culinary["status"]
+                candidate["quantity_ranges"]["missing_culinary_information"] = culinary.get("missing_information") or []
+                candidate["quantity_ranges"]["applied_identity_requirements"] = culinary.get("applied_identity_requirements")
+            candidates.append(candidate)
+        trace.append(f"Neo4j Food.com search and ingredient relationships ranked {len(candidates)} dishes.")
+        trace.append("Read-only ingredient matching and USDA per-100-g nutrient lookup assessed profile coverage; source quantities were not used for calculation.")
+        if candidates:
+            answer = f"I found {len(candidates)} Food.com dish candidate{'s' if len(candidates) != 1 else ''}."
+            if re.search(r"\b(?:low[ -]sodium|reduced[ -]sodium|low[ -]salt)\b", query, re.I):
+                answer += " The low-sodium wording is a search preference, not a verified nutrient claim."
+            ready = sum(row["nutritional_status"] == "REQUIRES_OPTIMISATION" for row in candidates)
+            answer += (f" {ready} candidate{'s' if ready != 1 else ''} have complete ingredient nutrient profiles "
+                       "for quantity optimisation. No original Food.com dish has verified nutritional feasibility.")
+            if optimisation_request:
+                optimised = sum(row["quantity_optimisation"]["optimisation_status"] == "OPTIMISED"
+                                for row in candidates)
+                culinary_valid = sum((row.get("culinary_validation") or {}).get("status") == "CULINARY_VALID"
+                                     for row in candidates)
+                answer += (f" {optimised} newly constructed combination{'s' if optimised != 1 else ''} meet the supplied numeric limits. "
+                           f"{culinary_valid} pass the supplied deterministic culinary rules; medical suitability remains unverified.")
+        else:
+            answer = "I could not find a Food.com dish matching that request. Nutritional suitability was not evaluated."
+        return {
+            **response_context, "answer": answer, "tool_trace": trace,
+            "food_recommendations": candidates, "constraints_applied": False,
+            "recipe": None, "missing_data": None, "meal_plan": None,
+            "evaluations": [], "selected": None,
+        }
 
     def _attach_ingredient_mapping_enrichment(self, response, recipe, *, constraints=None,
                                               requested_servings=None):
@@ -1268,8 +1407,10 @@ class RenAllyWebService:
         if not 1 <= servings <= 20:
             raise ValueError("Servings must be between 1 and 20.")
 
-        constraints = parse_budgets(payload.get("meal_limits", {}), "meal")
+        meal_constraints = parse_budgets(payload.get("meal_limits", {}), "meal")
+        constraints = dict(meal_constraints)
         constraints.update(parse_budgets(payload.get("remaining_limits", {}), "remaining"))
+        daily_constraints = parse_budgets(payload.get("daily_limits", {}), "day")
         rules, conflicts = resolve_reference_rules(conditions, self.profiles)
         conversation_history = self._sanitize_conversation_history(payload.get("conversation_history"))
         plan, generator, slm_warning, slm_used = self.planner.plan(
@@ -1291,6 +1432,7 @@ class RenAllyWebService:
             ],
             "profile_conflicts": conflicts,
             "active_budgets": constraints,
+            "active_daily_budgets": daily_constraints,
             "slm_warning": slm_warning,
         }
         if plan.get("intent") == "single_recipe":
@@ -1305,6 +1447,41 @@ class RenAllyWebService:
             trace.append(
                 "USDA data scope selected: "
                 + self._dataset_scope_label(plan.get("dataset_scope", "all")) + "."
+            )
+        if plan.get("intent") == "daily_meal_plan":
+            planner = getattr(self, "daily_meal_planner", None)
+            if planner is None:
+                planner = self.runtime.create_daily_meal_planner()
+                self.daily_meal_planner = planner
+            day = planner.plan(
+                query, daily_constraints,
+                meal_constraints=meal_constraints,
+                role_bounds=payload.get("role_bounds"),
+                total_meal_weight_bounds=payload.get("total_meal_weight_bounds"),
+                culinary_rules=payload.get("culinary_rules"),
+                servings=servings,
+            )
+            if day["nutritional_status"] == "FEASIBLE":
+                answer = ("I constructed breakfast, lunch, and dinner from Food.com dishes. "
+                          "The combined nutrient totals meet your explicit daily limits; "
+                          "this does not establish medical safety.")
+            elif day["meals"]:
+                answer = ("I constructed breakfast, lunch, and dinner with gram quantities and nutrient totals. "
+                          "No personal daily numeric limits were supplied, so daily suitability was not evaluated.")
+            else:
+                answer = "I could not construct a verified complete daily plan. " + day["reason"]
+            if day["status"] == "CULINARY_UNVERIFIED":
+                answer += " Some dish-specific culinary rules were unavailable."
+            return {**response_context, "answer": answer, "tool_trace": trace,
+                    "daily_meal_plan": day, "meal_plan": None,
+                    "food_recommendations": [], "recipe": None, "missing_data": None,
+                    "evaluations": [], "selected": None,
+                    "constraints_applied": bool(daily_constraints)}
+        if plan.get("intent") == "food_recommendation":
+            return self._recommend_food(
+                query, plan, response_context, trace,
+                optimisation_request=(payload if payload.get("optimise_quantities") is True
+                                      or plan.get("optimise_quantities") is True else None),
             )
         if plan.get("intent") == "unsupported":
             trace.append("No grounded catalog action was selected; RenAlly asked for clarification instead of choosing a recipe.")
@@ -1573,14 +1750,21 @@ class RenAllyWebService:
             if selected_candidate else None
         )
         if adapted_validation_enabled and recipe_data and result.get("evaluations"):
-            try:
-                original_nutrient_enrichment = self.recipe_nutrient_enrichment_service.enrich(recipe_data)
-            except Exception as exc:
+            if recipe_data.get("source_dataset") == "Food.com Recipes and Reviews (Kaggle)":
                 original_nutrient_enrichment = {
                     "calculation_status": "UNAVAILABLE",
-                    "error": f"Original nutrient enrichment failed ({type(exc).__name__}).",
+                    "error": "Food.com source quantities are not ingredient weights.",
                     "ingredient_mapping_enrichment": {"results": []},
                 }
+            else:
+                try:
+                    original_nutrient_enrichment = self.recipe_nutrient_enrichment_service.enrich(recipe_data)
+                except Exception as exc:
+                    original_nutrient_enrichment = {
+                        "calculation_status": "UNAVAILABLE",
+                        "error": f"Original nutrient enrichment failed ({type(exc).__name__}).",
+                        "ingredient_mapping_enrichment": {"results": []},
+                    }
         for item in result.get("evaluations", []):
             evaluation_status = ("NOT_EVALUATED" if not constraints else
                                  "UNVERIFIED" if item.get("not_evaluated") else

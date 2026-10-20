@@ -1,4 +1,4 @@
-"""Conservative Food.com ingredient parsing; no food identity or nutrient validation.
+"""Ingredient names and explicitly supplied units for non-Food.com inputs.
 
 Volume and count weights require an explicit, source-labelled factor for the
 *exact* normalized ingredient name and unit. No density or serving weight is
@@ -174,19 +174,18 @@ def parse_ingredient_text(text, conversion_factors=None):
     return result
 
 
-def parse_foodcom_ingredient(name, quantity_raw, conversion_factors=None):
-    """Parse split Food.com fields without changing either raw source field."""
+def parse_foodcom_ingredient(name, quantity_raw):
+    """Keep Food.com amounts as source metadata, never as usable weights."""
     name_text = "" if name is None else str(name)
     quantity_text = "" if quantity_raw is None else str(quantity_raw)
     combined = " ".join(part for part in (quantity_text, name_text) if part)
-    parsed = parse_ingredient_text(combined, conversion_factors)
-    # Source names are authoritative; a number in a name is not a quantity.
-    parsed["ingredient_name"] = name_text
-    parsed["normalized_name"] = normalize_ingredient_name(name_text)
-    if not quantity_text.strip():
-        parsed.update(quantity=None, quantity_min=None, quantity_max=None,
-                      quantity_g=None, quantity_g_min=None, quantity_g_max=None,
-                      quantity_g_per_item=None, quantity_scope="UNSPECIFIED",
-                      unit=None, quantity_status="UNRESOLVED",
-                      conversion_source=None)
-    return parsed
+    return {
+        "original_text": combined,
+        "ingredient_name": name_text,
+        "normalized_name": normalize_ingredient_name(name_text),
+        "quantity": None, "quantity_min": None, "quantity_max": None,
+        "unit": None, "quantity_g": None, "quantity_g_min": None,
+        "quantity_g_max": None, "quantity_g_per_item": None,
+        "quantity_scope": "UNSPECIFIED", "quantity_status": "SOURCE_METADATA_ONLY",
+        "conversion_source": None,
+    }

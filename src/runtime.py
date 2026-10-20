@@ -21,6 +21,9 @@ from src.recipes.ingredient_identity_resolution import (
 )
 from src.recipes.hybrid_ingredient_mapping import HybridIngredientMappingService
 from src.recipes.recipe_nutrient_enrichment import RecipeNutrientEnrichmentService
+from src.recipes.ingredient_quantity_optimiser import IngredientQuantityOptimiser
+from src.recipes.culinary_quantity_validation import CulinaryQuantityValidationService
+from src.recipes.daily_meal_planner import DailyMealPlanner
 
 
 @dataclass
@@ -56,6 +59,19 @@ class RenAllyRuntime:
                 use_slm=mapping_use_slm,
             )
         return RecipeNutrientEnrichmentService(self.kg, mapping_service)
+
+    def create_ingredient_quantity_optimiser(self):
+        return IngredientQuantityOptimiser(self.kg)
+
+    def create_culinary_quantity_validator(self, *, model_provider=None):
+        return CulinaryQuantityValidationService(self.kg, model_provider=model_provider)
+
+    def create_daily_meal_planner(self):
+        return DailyMealPlanner(
+            self.kg, self.retriever, self.create_recipe_nutrient_enrichment(),
+            self.create_ingredient_quantity_optimiser(),
+            self.create_culinary_quantity_validator(),
+        )
 
     def close(self):
         self.kg.close()

@@ -27,7 +27,14 @@ class AdaptedRecipeNutritionEnrichmentService:
         change_detection_ms = (perf_counter() - phase) * 1000.0
 
         if original_enrichment is None:
-            original_enrichment = self.nutrient_service.enrich(original)
+            if original.get("source_dataset") == "Food.com Recipes and Reviews (Kaggle)":
+                original_enrichment = {
+                    "calculation_status": "UNAVAILABLE",
+                    "error": "Food.com source quantities are not ingredient weights.",
+                    "ingredient_mapping_enrichment": {"results": []},
+                }
+            else:
+                original_enrichment = self.nutrient_service.enrich(original)
         original_enrichment = copy.deepcopy(original_enrichment)
 
         phase = perf_counter()

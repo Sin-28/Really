@@ -44,15 +44,18 @@ def _state(value):
     return str(value or "").strip().casefold().replace("_", "-").replace(" ", "-")
 
 
-def _item(item, position):
+def _item(item, position, *, foodcom=False):
     if isinstance(item, str):
         item = {"name": item}
     if not isinstance(item, dict):
         return {"position": position, "valid": False, "source": copy.deepcopy(item)}
     name = str(item.get("name") or item.get("ingredient_name") or item.get("description") or "")
     quantity_raw = item.get("quantity_raw")
-    parsed = (parse_foodcom_ingredient(name, quantity_raw)
-              if quantity_raw is not None else parse_ingredient_text(name))
+    parsed = (parse_foodcom_ingredient(name, quantity_raw) if foodcom
+              else parse_ingredient_text(f"{quantity_raw} {name}" if quantity_raw is not None else name))
+    if not foodcom:
+        parsed["ingredient_name"] = name
+        parsed["normalized_name"] = normalize_ingredient_name(name)
     attrs = copy.deepcopy(item.get("attributes") or parsed.get("attributes") or {})
     state_text = f"{name} {item.get('food_state') or ''}".casefold()
     state_text = re.sub(r"\blow\s+sodium\b", "low-sodium", state_text)
@@ -72,6 +75,8 @@ def _item(item, position):
     unit = parsed.get("unit") or item.get("unit")
     if quantity_g is not None:
         quantity_signature = ("g", quantity_g)
+    elif foodcom:
+        quantity_signature = ("source_metadata", quantity_raw)
     else:
         quantity_signature = (unit, quantity, parsed.get("quantity_min"), parsed.get("quantity_max"))
     return {
@@ -126,8 +131,10 @@ class RecipeChangeDetector:
                 "changes": [],
                 "unresolved_changes": [{"reason": "EMPTY_ORIGINAL_OR_ADAPTED_INGREDIENT_LIST"}],
             }
-        original = [_item(value, index) for index, value in enumerate(original_raw)]
-        adapted = [_item(value, index) for index, value in enumerate(adapted_raw)]
+        original_foodcom = original_recipe.get("source_dataset") == "Food.com Recipes and Reviews (Kaggle)"
+        adapted_foodcom = adapted_recipe.get("source_dataset") == "Food.com Recipes and Reviews (Kaggle)"
+        original = [_item(value, index, foodcom=original_foodcom) for index, value in enumerate(original_raw)]
+        adapted = [_item(value, index, foodcom=adapted_foodcom) for index, value in enumerate(adapted_raw)]
         if any(not item["valid"] for item in original + adapted):
             return {
                 "version": CHANGE_DETECTION_VERSION,

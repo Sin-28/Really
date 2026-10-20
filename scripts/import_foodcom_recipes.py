@@ -1,7 +1,7 @@
 """Replace the Food.com recipe catalog in Neo4j from the expanded Kaggle CSV.
 
 Ingredient quantity strings and serving counts are preserved as source text.
-Parsed quantities are added to recipe details but are not used in nutrient calculations.
+Ingredient names are normalized for matching. Quantities remain source metadata.
 """
 import argparse
 import ast
@@ -19,9 +19,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.graph.neo4j_graph import load_project_env  # noqa: E402
-from src.recipes.ingredient_parser import (  # noqa: E402
-    normalize_ingredient_name, parse_foodcom_ingredient,
-)
+from src.recipes.ingredient_parser import parse_foodcom_ingredient  # noqa: E402
 
 
 DATASET_NAME = "Food.com Recipes and Reviews (Kaggle)"
@@ -124,20 +122,7 @@ def _recipe_row(raw):
     for position in range(max(len(ingredients), len(quantities))):
         ingredient_name = ingredients[position] if position < len(ingredients) else None
         quantity_raw = quantities[position] if position < len(quantities) else None
-        try:
-            parsed = parse_foodcom_ingredient(ingredient_name, quantity_raw)
-        except Exception:
-            # A malformed source field must not abort the entire CSV import.
-            parsed = {
-                "original_text": " ".join(str(part) for part in (quantity_raw, ingredient_name) if part),
-                "ingredient_name": ingredient_name,
-                "normalized_name": normalize_ingredient_name(ingredient_name),
-                "quantity": None, "quantity_min": None, "quantity_max": None,
-                "unit": None, "quantity_g": None,
-                "quantity_g_min": None, "quantity_g_max": None,
-                "quantity_g_per_item": None, "quantity_scope": "UNSPECIFIED",
-                "quantity_status": "UNPARSED", "conversion_source": None,
-            }
+        parsed = parse_foodcom_ingredient(ingredient_name, quantity_raw)
         ingredient_items.append({
             "position": position,
             "name": ingredient_name,

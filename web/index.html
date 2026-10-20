@@ -89,7 +89,17 @@
         <label class="number-row"><span>Sodium <small>mg</small></span><input id="meal-sodium" type="number" min="0" step="any" placeholder="—"></label>
         <label class="number-row"><span>Potassium <small>mg</small></span><input id="meal-potassium" type="number" min="0" step="any" placeholder="—"></label>
         <label class="number-row"><span>Phosphorus <small>mg</small></span><input id="meal-phosphorus" type="number" min="0" step="any" placeholder="—"></label>
+        <label class="number-row"><span>Protein minimum <small>g</small></span><input id="meal-protein-min" type="number" min="0" step="any" placeholder="—"></label>
         <label class="number-row"><span>Carbohydrate <small>g</small></span><input id="meal-carbohydrate" type="number" min="0" step="any" placeholder="—"></label>
+      </section>
+
+      <section class="limit-section">
+        <div class="section-heading"><h3>Explicit daily limits</h3><span>optional</span></div>
+        <p>For a breakfast, lunch, and dinner plan. Enter your own daily targets; blank fields are not assumed.</p>
+        <label class="number-row daily-limit-row"><span>Sodium <small>mg</small></span><input id="daily-sodium-min" type="number" min="0" step="any" placeholder="min"><input id="daily-sodium-max" type="number" min="0" step="any" placeholder="max"></label>
+        <label class="number-row daily-limit-row"><span>Potassium <small>mg</small></span><input id="daily-potassium-min" type="number" min="0" step="any" placeholder="min"><input id="daily-potassium-max" type="number" min="0" step="any" placeholder="max"></label>
+        <label class="number-row daily-limit-row"><span>Phosphorus <small>mg</small></span><input id="daily-phosphorus-min" type="number" min="0" step="any" placeholder="min"><input id="daily-phosphorus-max" type="number" min="0" step="any" placeholder="max"></label>
+        <label class="number-row daily-limit-row"><span>Protein <small>g</small></span><input id="daily-protein-min" type="number" min="0" step="any" placeholder="min"><input id="daily-protein-max" type="number" min="0" step="any" placeholder="max"></label>
       </section>
 
       <section class="limit-section remaining-section">
@@ -101,6 +111,8 @@
       </section>
 
       <div class="servings-row"><label for="servings">Servings</label><div class="stepper"><button type="button" id="servings-minus" aria-label="Decrease servings">−</button><input id="servings" type="number" min="1" max="20" value="1"><button type="button" id="servings-plus" aria-label="Increase servings">+</button></div></div>
+      <label class="slm-toggle"><input id="optimise-quantities" type="checkbox"><span>Try a new bounded ingredient combination for recommended dishes</span></label>
+      <label class="slm-toggle"><input id="assess-culinary-with-slm" type="checkbox"><span>Ask Qwen for an unverified culinary opinion when dish rules are missing</span></label>
       <label class="slm-toggle"><input id="use-slm" type="checkbox" checked><span>Use local Qwen SLM for question planning</span></label>
       <p class="slm-note">The default Qwen3-1.7B model routes requests, can propose a new composition from catalog foods, and drafts constrained cooking steps. For Food.com recipes, local Qwen also helps disambiguate USDA ingredient candidates. Candidate IDs and attributes are checked against local records; nutrient totals and limit results remain deterministic.</p>
       <div class="context-note"><strong>How to read this</strong><p>Recipe grams are per serving. Totals for the selected serving count appear in each answer. Source states and omissions are shown with the result.</p></div>

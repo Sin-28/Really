@@ -1,9 +1,8 @@
-"""Conservative recovery of Food.com ingredient quantities.
+"""Resolve explicitly measured ingredient amounts for non-Food.com recipes.
 
-This module keeps source quantity recovery separate from ingredient identity
-resolution. Weight units can be normalized here; volume and count units need
-an ingredient-specific, source-labelled factor after the hybrid mapper selects
-an authorized USDA FoodData Central record.
+Food.com source amounts are retained only as metadata. Other recipe inputs
+can resolve explicit weight units; volume and count conversions require an
+ingredient-specific, source-labelled factor.
 """
 
 import copy
@@ -14,12 +13,11 @@ from time import perf_counter
 from src.recipes.ingredient_parser import (
     WEIGHT_GRAMS,
     normalize_ingredient_name,
-    parse_foodcom_ingredient,
     parse_ingredient_text,
 )
 
 
-QUANTITY_RESOLUTION_VERSION = "foodcom-quantity-v1"
+QUANTITY_RESOLUTION_VERSION = "explicit-quantity-v2"
 
 
 def _as_list(value):
@@ -175,10 +173,23 @@ class IngredientQuantityResolver:
         started = perf_counter()
         rows, alignment_status = extract_recipe_ingredient_rows(recipe)
         ingredients = []
+        foodcom = (isinstance(recipe, dict) and
+                   recipe.get("source_dataset") == "Food.com Recipes and Reviews (Kaggle)")
         for position, source, kind in rows:
-            ingredients.append(self.resolve_item(
-                position, source, kind, alignment_status=alignment_status,
-            ))
+            if foodcom:
+                name = (source.get("name") or source.get("ingredient_name") or ""
+                        if isinstance(source, dict) else str(source or ""))
+                item = self._unresolved(position, source, "FOODCOM_QUANTITY_IS_METADATA", alignment_status)
+                raw = source.get("quantity_raw") if isinstance(source, dict) else None
+                item.update(original_text=" ".join(str(part) for part in (raw, name) if part),
+                            original_name=str(name), normalized_name=normalize_ingredient_name(name),
+                            quantity_raw=raw,
+                            quantity_status="SOURCE_METADATA_ONLY")
+                ingredients.append(item)
+            else:
+                ingredients.append(self.resolve_item(
+                    position, source, kind, alignment_status=alignment_status,
+                ))
         return {
             "version": QUANTITY_RESOLUTION_VERSION,
             "recipe_id": recipe.get("id") if isinstance(recipe, dict) else None,
@@ -234,7 +245,9 @@ class IngredientQuantityResolver:
                 source_name = parsed.get("ingredient_name")
                 original_text = str(quantity_raw)
             else:
-                parsed = parse_foodcom_ingredient(source_name, quantity_raw)
+                parsed = parse_ingredient_text(f"{quantity_raw} {source_name}")
+                parsed["ingredient_name"] = str(source_name)
+                parsed["normalized_name"] = normalize_ingredient_name(source_name)
                 original_text = parsed.get("original_text")
         elif original_text and (source_name is None or str(original_text).strip() != str(source_name).strip()):
             parsed = parse_ingredient_text(original_text)
@@ -272,7 +285,7 @@ class IngredientQuantityResolver:
             else:
                 parsed = copy.deepcopy(parsed_source)
         else:
-            parsed = parse_foodcom_ingredient(source_name, None)
+            parsed = parse_ingredient_text(source_name)
             original_text = str(source_name or "")
 
         # Source names remain authoritative for split fields. For a combined

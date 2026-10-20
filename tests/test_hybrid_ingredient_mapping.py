@@ -324,7 +324,7 @@ class HybridIngredientMappingTests(unittest.TestCase):
              patch("src.recipes.hybrid_ingredient_mapping.parse_ingredient_text",
                    side_effect=AssertionError("parsed Step 1 item should be reused")):
             result = self.service().resolve_recipe(self.recipe(item))
-        self.assertEqual(result["results"][0]["quantity_status"], "CONVERTED")
+        self.assertEqual(result["results"][0]["quantity_status"], "SOURCE_METADATA_ONLY")
         self.assertEqual(result["results"][0]["mapping"]["status"], "EXACT_IDENTITY")
 
     def test_duplicate_ingredient_contexts_share_one_lookup_but_keep_each_quantity(self):

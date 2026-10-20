@@ -41,6 +41,18 @@ def parse_budget_mapping(values, scope):
     for name, value in values.items():
         if value in (None, ""):
             continue
+        if isinstance(value, dict):
+            rule = {"scope": scope, "unit": NUTRIENT_UNITS.get(normalize_nutrient_name(name), "g")}
+            for direction in ("min", "max"):
+                if value.get(direction) not in (None, ""):
+                    _, parsed = parse_budget(name, value[direction], scope)
+                    rule[direction] = parsed["max"]
+            if not any(key in rule for key in ("min", "max")):
+                continue
+            if "min" in rule and "max" in rule and rule["min"] > rule["max"]:
+                raise ValueError(f"{name} minimum cannot exceed its maximum.")
+            budgets[normalize_nutrient_name(name)] = rule
+            continue
         nutrient, rule = parse_budget(name, value, scope)
         budgets[nutrient] = rule
     return budgets

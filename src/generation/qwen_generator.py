@@ -338,6 +338,24 @@ class QwenRecipeGenerator:
             raw, error_message="The local SLM did not return a usable ingredient evaluation."
         )
 
+    def assess_quantity_plausibility(self, evaluation_input):
+        """Give an optional, non-authoritative opinion on a constructed serving."""
+        messages = [
+            {"role": "system", "content":
+             "Assess only the culinary plausibility of the supplied newly constructed gram quantities "
+             "for the named dish. Do not infer Food.com quantity units, invent validated ranges or ratios, "
+             "calculate nutrients, or claim medical safety. Return JSON with status PLAUSIBLE, "
+             "QUESTIONABLE, or UNSURE and a brief reason. Your opinion is not verified evidence."},
+            {"role": "user", "content": json.dumps(evaluation_input, ensure_ascii=False, default=str)},
+        ]
+        raw = self._generate_text(messages, max_new_tokens=180, max_time=45.0,
+                                  fail_if_busy=True)
+        result = self._decode_json_object(raw, "The local SLM did not return a quantity assessment.")
+        status = str(result.get("status") or "").upper()
+        if status not in {"PLAUSIBLE", "QUESTIONABLE", "UNSURE"}:
+            raise ValueError("Unsupported quantity-assessment status.")
+        return {"status": status, "reason": str(result.get("reason") or "")[:500]}
+
     def evaluate_culinary_compatibility(self, evaluation_input):
         """Evaluate an adapted recipe's culinary plausibility, without editing it."""
         prompt_started = time.perf_counter()

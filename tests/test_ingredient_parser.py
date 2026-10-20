@@ -2,7 +2,6 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
 
 from scripts.import_foodcom_recipes import _recipe_row, import_recipes
 from src.graph.neo4j_graph import Neo4jKnowledgeGraph
@@ -94,7 +93,7 @@ class IngredientParserTests(unittest.TestCase):
         parsed = parse_foodcom_ingredient("2 percent milk", None)
         self.assertEqual(parsed["ingredient_name"], "2 percent milk")
         self.assertIsNone(parsed["quantity"])
-        self.assertEqual(parsed["quantity_status"], "UNRESOLVED")
+        self.assertEqual(parsed["quantity_status"], "SOURCE_METADATA_ONLY")
 
 
 class FoodComImportRegressionTests(unittest.TestCase):
@@ -105,15 +104,17 @@ class FoodComImportRegressionTests(unittest.TestCase):
         "RecipeServings": "2", "RecipeInstructions": 'c("Cook salmon")',
     }
 
-    def test_recipe_row_preserves_raw_fields_and_adds_parsing(self):
+    def test_recipe_row_preserves_raw_fields_without_calculated_weights(self):
         row = _recipe_row(self.RAW_RECIPE)
         details = json.loads(row["properties"]["details_json"])
         self.assertEqual(details["ingredients"], ["salmon steaks", "salt"])
         self.assertEqual(details["ingredient_quantities"], ["4 oz", "to taste"])
         self.assertEqual(details["ingredient_items"][0]["name"], "salmon steaks")
         self.assertEqual(details["ingredient_items"][0]["quantity_raw"], "4 oz")
-        self.assertEqual(details["ingredient_items"][0]["parsed"]["quantity_status"], "CONVERTED")
-        self.assertEqual(details["ingredient_items"][1]["parsed"]["quantity_status"], "UNRESOLVED")
+        self.assertEqual(details["ingredient_items"][0]["parsed"]["quantity_status"], "SOURCE_METADATA_ONLY")
+        self.assertIsNone(details["ingredient_items"][0]["parsed"]["quantity_g"])
+        self.assertIsNone(details["ingredient_items"][0]["parsed"]["quantity"])
+        self.assertEqual(details["ingredient_items"][1]["parsed"]["quantity_status"], "SOURCE_METADATA_ONLY")
         self.assertEqual(row["references"][0]["quantity_raw"], "4 oz")
         self.assertFalse(row["properties"]["nutrition_complete"])
 
@@ -126,14 +127,6 @@ class FoodComImportRegressionTests(unittest.TestCase):
         graph._rows = lambda *args, **kwargs: [{"details_json": json.dumps(old_details)}]
         result = graph.recipe_details("foodcom:42")
         self.assertEqual(result["raw_ingredient_items"], old_details["ingredient_items"])
-
-    def test_parser_error_does_not_abort_recipe_row(self):
-        with patch("scripts.import_foodcom_recipes.parse_foodcom_ingredient",
-                   side_effect=ValueError("malformed source")):
-            row = _recipe_row(self.RAW_RECIPE)
-        details = json.loads(row["properties"]["details_json"])
-        self.assertEqual(details["ingredient_items"][0]["quantity_raw"], "4 oz")
-        self.assertEqual(details["ingredient_items"][0]["parsed"]["quantity_status"], "UNPARSED")
 
     def test_csv_import_pipeline_stores_parsed_details(self):
         class Result:
@@ -174,7 +167,7 @@ class FoodComImportRegressionTests(unittest.TestCase):
         recipe_write = next(kwargs["rows"] for query, kwargs in driver.session_instance.calls
                             if "SET recipe += row.properties" in query)
         details = json.loads(recipe_write[0]["properties"]["details_json"])
-        self.assertEqual(details["ingredient_items"][0]["parsed"]["quantity_status"], "CONVERTED")
+        self.assertEqual(details["ingredient_items"][0]["parsed"]["quantity_status"], "SOURCE_METADATA_ONLY")
 
 
 if __name__ == "__main__":

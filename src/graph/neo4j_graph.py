@@ -393,6 +393,20 @@ class Neo4jKnowledgeGraph:
             after_recipe_id=str(after_recipe_id or ""), limit=bounded_limit,
         )
 
+    def foodcom_ingredient_links(self, recipe_ids):
+        """Read ingredient names from existing Food.com graph relationships."""
+        ids = list(dict.fromkeys(str(value) for value in recipe_ids))[:80]
+        if not ids:
+            return []
+        return self._rows(
+            "MATCH (recipe:FoodComRecipe)-[listed:LISTS_INGREDIENT_TEXT]->(ingredient:FoodComIngredient) "
+            "WHERE recipe.id IN $recipe_ids "
+            "RETURN recipe.id AS recipe_id, ingredient.name AS name, "
+            "ingredient.normalized_name AS normalized_name, listed.position AS position "
+            "ORDER BY recipe_id, position",
+            recipe_ids=ids,
+        )
+
     def recipe_details(self, recipe_id):
         """Return full recipe details, lazily loading large source records."""
         recipe = self.recipes.get(recipe_id)

@@ -89,3 +89,4 @@ body{overflow:hidden}
   .settings-panel{transition:none}
 }
 .ingredient-resolution-list{display:grid;gap:8px;margin:10px 0 14px}.ingredient-resolution-item{border:1px solid var(--line);border-radius:8px;background:#fff;padding:8px}.ingredient-resolution-item .result-head{padding:0;background:transparent;gap:8px}.ingredient-resolution-item .result-head strong{min-width:0;overflow-wrap:anywhere}.ingredient-resolution-item .status-pill{white-space:nowrap}.ingredient-resolution-item .quiet-note{margin:5px 0 0}.ingredient-resolution-item .result-details{margin-top:7px}
+.daily-limit-row{gap:5px}.daily-limit-row span{flex:1;min-width:0}.daily-limit-row input{width:55px;flex:0 0 55px}

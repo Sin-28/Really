@@ -73,8 +73,6 @@ class IngredientPremappingWorkflow:
     def _parsed_item(item):
         if not isinstance(item, dict):
             return None
-        if isinstance(item.get("parsed"), dict):
-            return item
         name, quantity = item.get("name"), item.get("quantity_raw")
         if not name:
             return None

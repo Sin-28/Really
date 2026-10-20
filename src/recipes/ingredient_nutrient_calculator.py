@@ -197,7 +197,12 @@ class IngredientNutrientCalculator:
     def calculate_recipe(self, recipe, mapping_enrichment, *, quantity_resolution=None,
                          food_record_cache=None):
         overall_started = perf_counter()
-        quantity_resolution = quantity_resolution or self.quantity_resolver.resolve_recipe(recipe)
+        # Old imported rows may contain parsed weights. Never trust them for
+        # Food.com, including when a caller supplies a cached resolution.
+        if isinstance(recipe, dict) and recipe.get("source_dataset") == "Food.com Recipes and Reviews (Kaggle)":
+            quantity_resolution = IngredientQuantityResolver().resolve_recipe(recipe)
+        else:
+            quantity_resolution = quantity_resolution or self.quantity_resolver.resolve_recipe(recipe)
         ingredients = quantity_resolution.get("ingredients") or []
         mapping_results = self._mapping_by_position(mapping_enrichment)
         mapping_ids = set()

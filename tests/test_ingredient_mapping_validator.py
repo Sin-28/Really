@@ -259,7 +259,7 @@ class IngredientMappingValidatorTests(unittest.TestCase):
         self.assertEqual(reused["status"], "CANDIDATE")
         self.assertEqual(reused["slm_evaluation"]["recommended_fdc_id"], 1)
 
-    def test_step_one_parsed_foodcom_item_is_accepted_and_quantity_is_passed(self):
+    def test_foodcom_item_is_accepted_without_inferred_quantity(self):
         recipe = _recipe_row({
             "RecipeId": "7", "Name": "Salmon", "RecipeIngredientParts": '["salmon steaks"]',
             "RecipeIngredientQuantities": '["4 oz"]', "RecipeServings": "1",
@@ -278,8 +278,8 @@ class IngredientMappingValidatorTests(unittest.TestCase):
             recipe_context={"name": "Salmon", "instructions": ["Bake"]},
         )
         self.assertEqual(result["status"], "AMBIGUOUS")
-        self.assertEqual(seen[0]["quantity"], 4.0)
-        self.assertEqual(seen[0]["unit"], "oz")
+        self.assertIsNone(seen[0]["quantity"])
+        self.assertIsNone(seen[0]["unit"])
         self.assertEqual(seen[0]["normalized_name"], "salmon")
         self.assertNotIn("recipe_context", result)
 

@@ -124,7 +124,8 @@ class HybridIngredientMappingService:
         return {
             **copy.deepcopy(source_item),
             "name": str(name),
-            "parsed": parse_foodcom_ingredient(name, quantity),
+            "parsed": (parse_ingredient_text(f"{quantity} {name}") if quantity is not None
+                       else parse_ingredient_text(name)),
         }
 
     @staticmethod
@@ -456,6 +457,14 @@ class HybridIngredientMappingService:
                 results.append(result)
                 continue
             try:
+                if (isinstance(recipe, dict)
+                        and recipe.get("source_dataset") == "Food.com Recipes and Reviews (Kaggle)"
+                        and isinstance(source_item, dict)):
+                    source_item = {**source_item}
+                    source_item["parsed"] = parse_foodcom_ingredient(
+                        source_item.get("name") or source_item.get("ingredient_name"),
+                        source_item.get("quantity_raw"),
+                    )
                 parsed_item = self._parsed_item(source_item, kind)
                 key = self.mapper.mapping_cache_key(parsed_item, dataset_scope=self.dataset_scope)
             except Exception as exc:
